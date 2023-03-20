@@ -3,32 +3,32 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>CLIENT_ID</string>
+	<string>496910333475-m64d0esi7rplohtjkra9d0qcn8ug4sm5.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>REVERSED_CLIENT_ID</string>
+	<string>com.googleusercontent.apps.496910333475-m64d0esi7rplohtjkra9d0qcn8ug4sm5</string>
 	<key>API_KEY</key>
-	<string>API_KEY</string>
+	<string>AIzaSyB6HFjhXCnTe200mbqD45juqH5W-YYQ5DA</string>
 	<key>GCM_SENDER_ID</key>
-	<string>GCM_SENDER_ID</string>
+	<string>496910333475</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>edu.stanford.cardinalkittemplateapplication</string>
+	<string>health.ownyourdata.app</string>
 	<key>PROJECT_ID</key>
-	<string>cardinalkittemplateapplication</string>
+	<string>ownyourdata-7edaf</string>
 	<key>STORAGE_BUCKET</key>
-	<string>STORAGE_BUCKET</string>
+	<string>ownyourdata-7edaf.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<false/>
+	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<false/>
+	<false></false>
 	<key>IS_APPINVITE_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>IS_GCM_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:123456789012:ios:1234567890123456789012</string>
+	<string>1:496910333475:ios:60c861c0513219d1352396</string>
 </dict>
 </plist>
