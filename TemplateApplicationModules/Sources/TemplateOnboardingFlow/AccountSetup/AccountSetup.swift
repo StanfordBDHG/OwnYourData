@@ -10,6 +10,7 @@ import Account
 import class FHIR.FHIR
 import FirebaseAccount
 import FirebaseAuth
+import FirebaseFirestore
 import Onboarding
 import SwiftUI
 
@@ -38,6 +39,36 @@ struct AccountSetup: View {
         )
             .onReceive(account.objectWillChange) {
                 if account.signedIn {
+                    
+                    if onboardingSteps.contains(where: { $0 == .signUp }) {
+                        guard let user = Auth.auth().currentUser else {
+                            return
+                        }
+                        
+                        let fullName = user.displayName?.components(separatedBy: " ")
+                        let firstName = fullName?[0] ?? ""
+                        let lastName = fullName?[1] ?? ""
+                        let email = user.email ?? ""
+                        
+                        let userData: [String: Any] = [
+                            "firstName": firstName,
+                            "lastName": lastName,
+                            "email": email,
+                            "signUpDate": Timestamp()
+                        ]
+                        
+                        Firestore.firestore().collection("users").document(user.uid).setData(userData) { err in
+                            if let err {
+                                print("Error uploading user data: \(err)")
+                            }
+                        }
+                        
+                        let defaults = UserDefaults.standard
+                        defaults.set(firstName, forKey: "firstName")
+                        defaults.set(lastName, forKey: "lastName")
+                        defaults.set(email, forKey: "email")
+                    }
+                    
                     onboardingSteps.append(.healthKitPermissions)
                     // Unfortunately, SwiftUI currently animates changes in the navigation path that do not change
                     // the current top view. Therefore we need to do the following async procedure to remove the

@@ -28,14 +28,15 @@ import TemplateSharedContext
 class TemplateAppDelegate: CardinalKitAppDelegate {
     override var configuration: Configuration {
         Configuration(standard: FHIR()) {
-            if !FeatureFlags.disableFirebase {
-                if FeatureFlags.useFirebaseEmulator {
-                    FirebaseAccountConfiguration(emulatorSettings: (host: "localhost", port: 9099))
-                } else {
-                    FirebaseAccountConfiguration()
-                }
-                firestore
-            }
+//            if !FeatureFlags.disableFirebase {
+//                if FeatureFlags.useFirebaseEmulator {
+//                    FirebaseAccountConfiguration(emulatorSettings: (host: "localhost", port: 9099))
+//                } else {
+//                    FirebaseAccountConfiguration()
+//                }
+//                firestore
+//            }
+            FirebaseAccountConfiguration()
             if HKHealthStore.isHealthDataAvailable() {
                 healthKit
             }
@@ -48,11 +49,11 @@ class TemplateAppDelegate: CardinalKitAppDelegate {
     
     private var firestore: Firestore<FHIR> {
         let settings = FirestoreSettings()
-        if FeatureFlags.useFirebaseEmulator {
-            settings.host = "localhost:8080"
-            settings.isPersistenceEnabled = false
-            settings.isSSLEnabled = false
-        }
+//        if FeatureFlags.useFirebaseEmulator {
+//            settings.host = "localhost:8080"
+//            settings.isPersistenceEnabled = false
+//            settings.isSSLEnabled = false
+//        }
         
         return Firestore(
             adapter: {

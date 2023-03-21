@@ -18,6 +18,10 @@ struct HomeView: View {
         case schedule
         case contact
         case mockUpload
+        case profileView
+        case homeTabView
+        case addDataView
+        case shareView
     }
     
     
@@ -26,21 +30,43 @@ struct HomeView: View {
     
     var body: some View {
         TabView(selection: $selectedTab) {
-            ScheduleView()
+            HomeTabView()
                 .tag(Tabs.schedule)
                 .tabItem {
-                    Label("SCHEDULE_TAB_TITLE", systemImage: "list.clipboard")
+                    Label("HOME_TAB_VIEW_TITLE", systemImage: "house")
                 }
-            Contacts()
-                .tag(Tabs.contact)
+            AddDataView()
+                .tag(Tabs.addDataView)
                 .tabItem {
-                    Label("CONTACTS_TAB_TITLE", systemImage: "person.fill")
+                    Label("ADD_DATA_TAB_TITLE", systemImage: "plus")
                 }
-            MockUploadList()
-                .tag(Tabs.mockUpload)
+            ShareView()
+                .tag(Tabs.shareView)
                 .tabItem {
-                    Label("MOCK_UPLOAD_TAB_TITLE", systemImage: "server.rack")
+                    Label("SHARE_DATA_TAB_TITLE", systemImage: "square.and.arrow.up")
                 }
+//            ScheduleView()
+//                .tag(Tabs.schedule)
+//                .tabItem {
+//                    Label("SCHEDULE_TAB_TITLE", systemImage: "list.clipboard")
+//                }
+//            Contacts()
+//                .tag(Tabs.contact)
+//                .tabItem {
+//                    Label("CONTACTS_TAB_TITLE", systemImage: "person.fill")
+//                }
+            
+            ProfileView()
+                .tag(Tabs.profileView)
+                .tabItem {
+                    Label("Profile", systemImage: "person.crop.circle")
+                }
+            
+//            MockUploadList()
+//                .tag(Tabs.mockUpload)
+//                .tabItem {
+//                    Label("MOCK_UPLOAD_TAB_TITLE", systemImage: "server.rack")
+//                }
         }
     }
 }

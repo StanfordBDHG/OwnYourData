@@ -20,17 +20,17 @@ struct Welcome: View {
             subtitle: "WELCOME_SUBTITLE".moduleLocalized,
             areas: [
                 .init(
-                    icon: Image(systemName: "apps.iphone"),
+                    icon: Image(systemName: "folder.badge.plus"),
                     title: "WELCOME_AREA1_TITLE".moduleLocalized,
                     description: "WELCOME_AREA1_DESCRIPTION".moduleLocalized
                 ),
                 .init(
-                    icon: Image(systemName: "shippingbox.fill"),
+                    icon: Image(systemName: "magnifyingglass"),
                     title: "WELCOME_AREA2_TITLE".moduleLocalized,
                     description: "WELCOME_AREA2_DESCRIPTION".moduleLocalized
                 ),
                 .init(
-                    icon: Image(systemName: "list.bullet.clipboard.fill"),
+                    icon: Image(systemName: "square.and.arrow.up"),
                     title: "WELCOME_AREA3_TITLE".moduleLocalized,
                     description: "WELCOME_AREA3_DESCRIPTION".moduleLocalized
                 )

@@ -11,9 +11,23 @@
 "CONTACTS_TAB_TITLE" = "Contacts";
 
 
-// MARK: - Mock Upload Data Storage Provider
-"MOCK_UPLOAD_TAB_TITLE" = "Mock Upload";
+//// MARK: - Mock Upload Data Storage Provider
+//"MOCK_UPLOAD_TAB_TITLE" = "Mock Upload";
+//
+
+//// MARK: - Schedule
+//"SCHEDULE_TAB_TITLE" = "Schedule";
+//
+
+// MARK: - AddDataView
+"ADD_DATA_TAB_TITLE" = "Add Data";
 
 
-// MARK: - Schedule
-"SCHEDULE_TAB_TITLE" = "Schedule";
+
+// MARK: - ShareView
+"SHARE_DATA_TAB_TITLE" = "Share Data";
+
+
+// MARK: - HomeTabView
+"HOME_TAB_VIEW_TITLE" = "Home";
+

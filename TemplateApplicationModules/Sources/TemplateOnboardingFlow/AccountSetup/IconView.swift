@@ -15,7 +15,7 @@ struct IconView: View {
     
     
     var body: some View {
-        Image(uiImage: Bundle.module.image(withName: "AppIcon", fileExtension: "png"))
+        Image(uiImage: Bundle.module.image(withName: "OwnYourData_icon_w", fileExtension: "png"))
             .resizable()
             .scaledToFill()
             .accessibilityLabel(Text("App Icon"))

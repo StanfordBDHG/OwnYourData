@@ -64,7 +64,7 @@
 "LOGIN_SUBTITLE" = "The Template Application demonstrates the usage of the Firebase Account Module to enable different authentication services, including an email and password-based login.";
 
 "SIGN_UP_TITLE" = "Sign Up";
-"SIGN_UP_SUBTITLE" = "The Template Application demonstrates the usage of the Firebase Account Module to enable different authentication services, including an email and password-based sign-up.";
+"SIGN_UP_SUBTITLE" = "Sign up with OwnYourData to start collecting your health data, looking for clinical trials and sharing with anyone YOU want.";
 
 
 // MARK: HealthKit
