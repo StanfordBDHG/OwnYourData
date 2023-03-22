@@ -100,6 +100,14 @@
       }
     },
     {
+      "identity" : "imagesource",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/StanfordBDHG/ImageSource.git",
+      "state" : {
+        "revision" : "9f942f21a485f4d552cfcefffae2e4077c0e9635"
+      }
+    },
+    {
       "identity" : "leveldb",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/firebase/leveldb.git",

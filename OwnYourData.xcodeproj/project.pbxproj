@@ -28,6 +28,13 @@
 		2F6025CB29BBE70F0045459E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2F6025CA29BBE70F0045459E /* GoogleService-Info.plist */; };
 		2F6025CD29BBE92B0045459E /* FHIRMockDataStorageProvider in Frameworks */ = {isa = PBXBuildFile; productRef = 2F6025CC29BBE92B0045459E /* FHIRMockDataStorageProvider */; };
 		2F6025D029BBEC610045459E /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 2F6025CF29BBEC610045459E /* FirebaseAuth */; };
+		2FB2943829CBA29900EE91A0 /* HealthRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB2943229CBA29900EE91A0 /* HealthRecordView.swift */; };
+		2FB2943929CBA29900EE91A0 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB2943329CBA29900EE91A0 /* ProfileView.swift */; };
+		2FB2943A29CBA29900EE91A0 /* AddDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB2943429CBA29900EE91A0 /* AddDataView.swift */; };
+		2FB2943B29CBA29900EE91A0 /* HomeTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB2943529CBA29900EE91A0 /* HomeTabView.swift */; };
+		2FB2943C29CBA29900EE91A0 /* ShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB2943629CBA29900EE91A0 /* ShareView.swift */; };
+		2FB2943D29CBA29900EE91A0 /* ClinicalTrialsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB2943729CBA29900EE91A0 /* ClinicalTrialsView.swift */; };
+		2FB2944029CBA4AE00EE91A0 /* ImageSource in Frameworks */ = {isa = PBXBuildFile; productRef = 2FB2943F29CBA4AE00EE91A0 /* ImageSource */; };
 		2FC9759F2978E39600BA99FE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2FC9759E2978E39600BA99FE /* Localizable.strings */; };
 		2FC975A82978F11A00BA99FE /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC975A72978F11A00BA99FE /* Home.swift */; };
 		2FED18F22999AAF400A51A28 /* Account in Frameworks */ = {isa = PBXBuildFile; productRef = 2FED18F12999AAF400A51A28 /* Account */; };
@@ -68,6 +75,12 @@
 		2F5E32BC297E05EA003432F8 /* TemplateAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateAppDelegate.swift; sourceTree = "<group>"; };
 		2F6025CA29BBE70F0045459E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2FAEC07F297F583900C11C42 /* TemplateApplication.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TemplateApplication.entitlements; sourceTree = "<group>"; };
+		2FB2943229CBA29900EE91A0 /* HealthRecordView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthRecordView.swift; sourceTree = "<group>"; };
+		2FB2943329CBA29900EE91A0 /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		2FB2943429CBA29900EE91A0 /* AddDataView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDataView.swift; sourceTree = "<group>"; };
+		2FB2943529CBA29900EE91A0 /* HomeTabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTabView.swift; sourceTree = "<group>"; };
+		2FB2943629CBA29900EE91A0 /* ShareView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareView.swift; sourceTree = "<group>"; };
+		2FB2943729CBA29900EE91A0 /* ClinicalTrialsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClinicalTrialsView.swift; sourceTree = "<group>"; };
 		2FC94CD4298B0A1D009C8209 /* TemplateApplication.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = TemplateApplication.xctestplan; sourceTree = "<group>"; };
 		2FC9759E2978E39600BA99FE /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		2FC975A72978F11A00BA99FE /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
@@ -101,6 +114,7 @@
 				2F38E23C29804EFA00E05C29 /* TemplateSchedule in Frameworks */,
 				2F6025D029BBEC610045459E /* FirebaseAuth in Frameworks */,
 				2F49B7802980418400BCB272 /* Onboarding in Frameworks */,
+				2FB2944029CBA4AE00EE91A0 /* ImageSource in Frameworks */,
 				2FED18F22999AAF400A51A28 /* Account in Frameworks */,
 				2F49B7762980407C00BCB272 /* CardinalKit in Frameworks */,
 				2F49B77C2980407C00BCB272 /* HealthKitToFHIRAdapter in Frameworks */,
@@ -169,6 +183,12 @@
 				2F5E32BC297E05EA003432F8 /* TemplateAppDelegate.swift */,
 				2F4E23822989D51F0013F3D9 /* TemplateAppTestingSetup.swift */,
 				2FC975A72978F11A00BA99FE /* Home.swift */,
+				2FB2943429CBA29900EE91A0 /* AddDataView.swift */,
+				2FB2943729CBA29900EE91A0 /* ClinicalTrialsView.swift */,
+				2FB2943229CBA29900EE91A0 /* HealthRecordView.swift */,
+				2FB2943529CBA29900EE91A0 /* HomeTabView.swift */,
+				2FB2943329CBA29900EE91A0 /* ProfileView.swift */,
+				2FB2943629CBA29900EE91A0 /* ShareView.swift */,
 				2FC9759D2978E30800BA99FE /* Supporting Files */,
 			);
 			path = TemplateApplication;
@@ -237,6 +257,7 @@
 				2FED18FD299AE00500A51A28 /* FirestoreStoragePrefixUserIdAdapter */,
 				2F6025CC29BBE92B0045459E /* FHIRMockDataStorageProvider */,
 				2F6025CF29BBEC610045459E /* FirebaseAuth */,
+				2FB2943F29CBA4AE00EE91A0 /* ImageSource */,
 			);
 			productName = TemplateApplication;
 			productReference = 653A254D283387FE005D4D48 /* OwnYourData.app */;
@@ -319,6 +340,7 @@
 				2F4E237F2989C5930013F3D9 /* XCRemoteSwiftPackageReference "XCTHealthKit" */,
 				2FEE103B2998E580000822E1 /* XCRemoteSwiftPackageReference "XCTestExtensions" */,
 				2F6025CE29BBEC610045459E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				2FB2943E29CBA4AE00EE91A0 /* XCRemoteSwiftPackageReference "ImageSource" */,
 			);
 			productRefGroup = 653A254E283387FE005D4D48 /* Products */;
 			projectDirPath = "";
@@ -384,10 +406,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FB2943829CBA29900EE91A0 /* HealthRecordView.swift in Sources */,
 				2FC975A82978F11A00BA99FE /* Home.swift in Sources */,
 				2F4E23832989D51F0013F3D9 /* TemplateAppTestingSetup.swift in Sources */,
 				2F5E32BD297E05EA003432F8 /* TemplateAppDelegate.swift in Sources */,
+				2FB2943D29CBA29900EE91A0 /* ClinicalTrialsView.swift in Sources */,
+				2FB2943929CBA29900EE91A0 /* ProfileView.swift in Sources */,
 				653A2551283387FE005D4D48 /* TemplateApplication.swift in Sources */,
+				2FB2943C29CBA29900EE91A0 /* ShareView.swift in Sources */,
+				2FB2943A29CBA29900EE91A0 /* AddDataView.swift in Sources */,
+				2FB2943B29CBA29900EE91A0 /* HomeTabView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -903,6 +931,14 @@
 				minimumVersion = 10.6.0;
 			};
 		};
+		2FB2943E29CBA4AE00EE91A0 /* XCRemoteSwiftPackageReference "ImageSource" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/StanfordBDHG/ImageSource.git";
+			requirement = {
+				kind = revision;
+				revision = 9f942f21a485f4d552cfcefffae2e4077c0e9635;
+			};
+		};
 		2FEE103B2998E580000822E1 /* XCRemoteSwiftPackageReference "XCTestExtensions" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/StanfordBDHG/XCTestExtensions";
@@ -984,6 +1020,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2F6025CE29BBEC610045459E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAuth;
+		};
+		2FB2943F29CBA4AE00EE91A0 /* ImageSource */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2FB2943E29CBA4AE00EE91A0 /* XCRemoteSwiftPackageReference "ImageSource" */;
+			productName = ImageSource;
 		};
 		2FED18F12999AAF400A51A28 /* Account */ = {
 			isa = XCSwiftPackageProductDependency;

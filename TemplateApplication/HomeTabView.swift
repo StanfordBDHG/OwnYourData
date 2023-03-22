@@ -6,36 +6,35 @@
 // SPDX-License-Identifier: MIT
 //
 
-import SwiftUI
 import FirebaseAccount
 import FirebaseAuth
 import SafariServices
+import SwiftUI
 import TemplateSharedContext
 
-struct HomeTabView: View {
-    @State private var userName: String = ""
 
+struct HomeTabView: View {
     var body: some View {
         VStack {
-            Image("OwnYourData_icon_w")
+            Image("Logo")
                 .resizable()
                 .scaledToFit()
+                .accessibilityLabel(Text("The OwnYourData App Icon"))
                 .padding()
-
             Text("Welcome,")
                 .offset(x: 0, y: -200)
                 .font(Font.system(size: 60))
                 .foregroundColor(Color.accentColor)
                 .fontWeight(.semibold)
                 .padding(.bottom, 1)
-
-            Text("\(userName).")
+            Text("\(Auth.auth().currentUser?.displayName ?? "").")
                 .offset(x: 0, y: -200)
                 .font(Font.system(size: 60))
                 .foregroundColor(Color.accentColor)
                 .fontWeight(.medium)
 
-            Spacer().frame(height: 40)
+            Spacer()
+                .frame(height: 40)
 
             VStack {
                 NavigationLink(destination: HealthRecordView()) {
@@ -64,22 +63,7 @@ struct HomeTabView: View {
                 }
             }
         }
-        .padding(.bottom, 100)
-        .onAppear {
-            getUserName()
-        }
-    }
-
-    func getUserName() {
-        if let user = Auth.auth().currentUser {
-            user.reload { error in
-                if let error = error {
-                    print("Error reloading user: \(error.localizedDescription)")
-                } else {
-                    userName = user.displayName?.split(separator: " ").first.map(String.init) ?? "User"
-                }
-            }
-        }
+            .padding(.bottom, 100)
     }
 }
 
@@ -88,4 +72,3 @@ struct HomeView_Previews: PreviewProvider {
         HomeView()
     }
 }
-
