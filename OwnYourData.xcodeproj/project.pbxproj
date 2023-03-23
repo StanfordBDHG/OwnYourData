@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27DD24A429CCE56400A6EEBC /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DD24A329CCE56300A6EEBC /* WebView.swift */; };
 		2F49B7762980407C00BCB272 /* CardinalKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2F49B7752980407B00BCB272 /* CardinalKit */; };
 		2F49B7782980407C00BCB272 /* FHIR in Frameworks */ = {isa = PBXBuildFile; productRef = 2F49B7772980407C00BCB272 /* FHIR */; };
 		2F49B77A2980407C00BCB272 /* HealthKitDataSource in Frameworks */ = {isa = PBXBuildFile; productRef = 2F49B7792980407C00BCB272 /* HealthKitDataSource */; };
@@ -77,6 +78,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		27DD24A329CCE56300A6EEBC /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		2F4E237D2989A2FE0013F3D9 /* OnboardingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTests.swift; sourceTree = "<group>"; };
 		2F4E23822989D51F0013F3D9 /* TemplateAppTestingSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateAppTestingSetup.swift; sourceTree = "<group>"; };
 		2F5E32BC297E05EA003432F8 /* TemplateAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateAppDelegate.swift; sourceTree = "<group>"; };
@@ -248,6 +250,7 @@
 				2FB2943529CBA29900EE91A0 /* HomeTabView.swift */,
 				2FB2943329CBA29900EE91A0 /* ProfileView.swift */,
 				2FB2943629CBA29900EE91A0 /* ShareView.swift */,
+				27DD24A329CCE56300A6EEBC /* WebView.swift */,
 				2FB2FCD929CBDE540027D85A /* Extensions & Infrastructure */,
 				2FC9759D2978E30800BA99FE /* Supporting Files */,
 			);
@@ -484,6 +487,7 @@
 				2FB2FCCF29CBDDC00027D85A /* IconView.swift in Sources */,
 				653A2551283387FE005D4D48 /* TemplateApplication.swift in Sources */,
 				2FB2943C29CBA29900EE91A0 /* ShareView.swift in Sources */,
+				27DD24A429CCE56400A6EEBC /* WebView.swift in Sources */,
 				2FB2943A29CBA29900EE91A0 /* AddDataView.swift in Sources */,
 				2FB2943B29CBA29900EE91A0 /* HomeTabView.swift in Sources */,
 			);

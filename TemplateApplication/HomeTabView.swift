@@ -16,75 +16,77 @@ struct HomeTabView: View {
     @State private var userName: String = ""
     
     var body: some View {
-        GeometryReader { geometry in
-            VStack {
+        NavigationStack {
+            GeometryReader { geometry in
                 VStack {
-                    Image("Logo")
-                        .resizable()
-                        .scaledToFit()
-                        .foregroundColor(Color.accentColor)
-                        .accessibilityLabel(Text("The OwnYourData App Icon"))
-                        .frame(width: 240, height: 240) // Make it twice as large
-                }
-                .frame(width: geometry.size.width, height: geometry.size.height / 2, alignment: .top)
-                Spacer().frame(height: 0)
-                
-                //    var body: some View {
-                VStack {
-                    Image("Logo")
-                        .resizable()
-                        .scaledToFit()
-                        .accessibilityLabel(Text("The OwnYourData App Icon"))
-                        .padding()
-                    
-                    Text("Welcome,")
-                        .offset(x: 0, y: -200)
-                        .font(Font.system(size: 60))
-                        .foregroundColor(Color.accentColor)
-                        .fontWeight(.semibold)
-                        .padding(.bottom, 1)
-                    
-                    Text("\(userName).")
-                        .offset(x: 0, y: -200)
-                        .font(Font.system(size: 60))
-                        .foregroundColor(Color.accentColor)
-                        .fontWeight(.medium)
-                    
-                    Spacer().frame(height: 0)
-                    
                     VStack {
-                        NavigationLink(destination: HealthRecordView()) {
-                            Text("Records")
-                                .font(.headline)
-                                .fontWeight(.bold)
-                                .padding()
-                                .frame(maxWidth: .infinity)
-                                .foregroundColor(Color.white)
-                                .background(Color(UIColor(named: "ButtonColor_light") ?? .gray))
-                                .cornerRadius(10)
-                                .padding(.leading)
-                                .padding(.trailing)
-                        }
-                        .padding(.bottom, 20)
-                        
-                        NavigationLink(destination: ClinicalTrialsView()) {
-                            Text("Find Clinical Trials")
-                                .font(.headline)
-                                .fontWeight(.bold)
-                                .padding()
-                                .frame(maxWidth: .infinity)
-                                .foregroundColor(.white)
-                                .background(Color(UIColor(named: "ButtonColor_light") ?? .gray))
-                                .cornerRadius(10)
-                                .padding(.leading)
-                                .padding(.trailing)
-                        }
+                        Image("Logo")
+                            .resizable()
+                            .scaledToFit()
+                            .foregroundColor(Color.accentColor)
+                            .accessibilityLabel(Text("The OwnYourData App Icon"))
+                            .frame(width: 240, height: 240) // Make it twice as large
                     }
-                    .padding(.top, -50) // Added negative padding to move the VStack closer
-                }
-                .padding(.bottom, 100)
-                .onAppear {
-                    getUserName()
+                    .frame(width: geometry.size.width, height: geometry.size.height / 2, alignment: .top)
+                    Spacer().frame(height: 0)
+
+                    //    var body: some View {
+                    VStack {
+                        Image("Logo")
+                            .resizable()
+                            .scaledToFit()
+                            .accessibilityLabel(Text("The OwnYourData App Icon"))
+                            .padding()
+
+                        Text("Welcome,")
+                            .offset(x: 0, y: -200)
+                            .font(Font.system(size: 60))
+                            .foregroundColor(Color.accentColor)
+                            .fontWeight(.semibold)
+                            .padding(.bottom, 1)
+
+                        Text("\(userName).")
+                            .offset(x: 0, y: -200)
+                            .font(Font.system(size: 60))
+                            .foregroundColor(Color.accentColor)
+                            .fontWeight(.medium)
+
+                        Spacer().frame(height: 0)
+
+                        VStack {
+                            NavigationLink(destination: HealthRecordView()) {
+                                Text("Records")
+                                    .font(.headline)
+                                    .fontWeight(.bold)
+                                    .padding()
+                                    .frame(maxWidth: .infinity)
+                                    .foregroundColor(Color.white)
+                                    .background(Color(UIColor(named: "ButtonColor_light") ?? .gray))
+                                    .cornerRadius(10)
+                                    .padding(.leading)
+                                    .padding(.trailing)
+                            }
+                            .padding(.bottom, 20)
+
+                            NavigationLink(destination: ClinicalTrialsView()) {
+                                Text("Find Clinical Trials")
+                                    .font(.headline)
+                                    .fontWeight(.bold)
+                                    .padding()
+                                    .frame(maxWidth: .infinity)
+                                    .foregroundColor(.white)
+                                    .background(Color(UIColor(named: "ButtonColor_light") ?? .gray))
+                                    .cornerRadius(10)
+                                    .padding(.leading)
+                                    .padding(.trailing)
+                            }
+                        }
+                        .padding(.top, -50) // Added negative padding to move the VStack closer
+                    }
+                    .padding(.bottom, 100)
+                    .onAppear {
+                        getUserName()
+                    }
                 }
             }
         }
