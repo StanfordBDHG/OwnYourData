@@ -10,7 +10,9 @@ import SwiftUI
 
 struct ClinicalTrialsView: View {
     var body: some View {
-        WebView(url: URL(string: "https://www.cancer.gov/about-cancer/treatment/clinical-trials/search")!)
+        if let url = URL(string: "https://www.cancer.gov/about-cancer/treatment/clinical-trials/search") {
+            WebView(url: url)
+        }
     }
 }
 
