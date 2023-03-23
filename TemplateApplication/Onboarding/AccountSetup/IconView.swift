@@ -7,7 +7,6 @@
 //
 
 import SwiftUI
-import TemplateSharedContext
 
 
 struct IconView: View {
@@ -15,10 +14,10 @@ struct IconView: View {
     
     
     var body: some View {
-        Image(uiImage: Bundle.module.image(withName: "AppIcon", fileExtension: "png"))
+        Image("Logo")
             .resizable()
             .scaledToFill()
-            .accessibilityLabel(Text("App Icon"))
+            .accessibilityLabel(Text("The OwnYourData App Icon"))
             .frame(width: size, height: size)
             .clipShape(RoundedRectangle(cornerRadius: size / 5))
             .shadow(color: Color(.systemGray4), radius: 4, x: 0, y: 4)

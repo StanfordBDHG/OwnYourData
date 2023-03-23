@@ -16,7 +16,7 @@ struct TemplateSignUp: View {
         SignUp {
             IconView()
                 .padding(.top, 32)
-            Text("SIGN_UP_SUBTITLE", bundle: .module)
+            Text("SIGN_UP_SUBTITLE")
                 .multilineTextAlignment(.center)
                 .padding()
             Spacer(minLength: 0)
