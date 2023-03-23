@@ -16,7 +16,7 @@ struct TemplateLogin: View {
         Login {
             IconView()
                 .padding(.top, 32)
-            Text("LOGIN_SUBTITLE", bundle: .module)
+            Text("LOGIN_SUBTITLE")
                 .multilineTextAlignment(.center)
                 .padding()
                 .padding()

@@ -10,7 +10,7 @@ import FirebaseAccount
 import FirebaseAuth
 import SafariServices
 import SwiftUI
-import TemplateSharedContext
+
 
 struct HomeTabView: View {
     @State private var userName: String = ""
@@ -80,7 +80,7 @@ struct HomeTabView: View {
                                 .padding(.trailing)
                         }
                     }
-                                     .padding(.top, -50) // Added negative padding to move the VStack closer
+                    .padding(.top, -50) // Added negative padding to move the VStack closer
                 }
                 .padding(.bottom, 100)
                 .onAppear {
@@ -89,23 +89,22 @@ struct HomeTabView: View {
             }
         }
     }
-            
-            func getUserName() {
-                if let user = Auth.auth().currentUser {
-                    user.reload { error in
-                        if let error = error {
-                            print("Error reloading user: \(error.localizedDescription)")
-                        } else {
-                            userName = user.displayName?.split(separator: " ").first.map(String.init) ?? "User"
-                        }
-                    }
+    
+    func getUserName() {
+        if let user = Auth.auth().currentUser {
+            user.reload { error in
+                if let error = error {
+                    print("Error reloading user: \(error.localizedDescription)")
+                } else {
+                    userName = user.displayName?.split(separator: " ").first.map(String.init) ?? "User"
                 }
             }
         }
-        
-        struct HomeView_Previews: PreviewProvider {
-            static var previews: some View {
-                HomeView()
-            }
-        }
-        
+    }
+}
+
+struct HomeView_Previews: PreviewProvider {
+    static var previews: some View {
+        HomeView()
+    }
+}
