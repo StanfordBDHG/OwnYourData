@@ -41,6 +41,9 @@ struct DocumentScanner: UIViewControllerRepresentable {
             }
             
             document = pdfDocument
+            controller.dismiss(animated: true)
+            
+            PDFDocument(url: <#T##URL#>)
         }
     }
     
