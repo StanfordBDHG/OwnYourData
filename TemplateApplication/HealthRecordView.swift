@@ -6,9 +6,20 @@
 // SPDX-License-Identifier: MIT
 //
 
-import SwiftUI
 import FirebaseAccount
 import FirebaseAuth
+import SwiftUI
+
+
+// Replace the following placeholder views with the actual implementation for each data element category
+struct ConditionsView: View { var body: some View { Text("Conditions View") } }
+struct MedicationRecordsView: View { var body: some View { Text("Medication Records View") } }
+struct AllergiesView: View { var body: some View { Text("Allergies View") } }
+struct ImmunizationsView: View { var body: some View { Text("Immunizations View") } }
+struct ClinicalVitalsView: View { var body: some View { Text("Clinical Vitals View") } }
+struct LabResultsView: View { var body: some View { Text("Lab Results View") } }
+struct ProceduresView: View { var body: some View { Text("Procedures View") } }
+struct OtherDocumentsGallery: View { var body: some View { Text("Other Documents Gallery") } }
 
 struct HealthRecordView: View {
     var body: some View {
@@ -44,20 +55,9 @@ struct HealthRecordView: View {
     }
 }
 
+
 struct HealthRecordView_Previews: PreviewProvider {
     static var previews: some View {
         HealthRecordView()
     }
 }
-
-// Replace the following placeholder views with the actual implementation for each data element category
-struct ConditionsView: View { var body: some View { Text("Conditions View") } }
-struct MedicationRecordsView: View { var body: some View { Text("Medication Records View") } }
-struct AllergiesView: View { var body: some View { Text("Allergies View") } }
-struct ImmunizationsView: View { var body: some View { Text("Immunizations View") } }
-struct ClinicalVitalsView: View { var body: some View { Text("Clinical Vitals View") } }
-struct LabResultsView: View { var body: some View { Text("Lab Results View") } }
-struct ProceduresView: View { var body: some View { Text("Procedures View") } }
-struct OtherDocumentsGallery: View { var body: some View { Text("Other Documents Gallery") } }
-
-

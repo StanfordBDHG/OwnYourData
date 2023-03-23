@@ -6,10 +6,10 @@
 // SPDX-License-Identifier: MIT
 //
 
-import SwiftUI
 import FirebaseAccount
 import FirebaseAuth
 import SafariServices
+import SwiftUI
 import TemplateSharedContext
 
 struct HomeTabView: View {
@@ -19,21 +19,22 @@ struct HomeTabView: View {
         GeometryReader { geometry in
             VStack {
                 VStack {
-                    Image("OwnYourData_Icon_White-1024")
+                    Image("Logo")
                         .resizable()
-                        .foregroundColor(Color.accentColor)
                         .scaledToFit()
+                        .foregroundColor(Color.accentColor)
+                        .accessibilityLabel(Text("The OwnYourData App Icon"))
                         .frame(width: 240, height: 240) // Make it twice as large
-                        .accessibility(label: Text("profile image"))
                 }
                 .frame(width: geometry.size.width, height: geometry.size.height / 2, alignment: .top)
                 Spacer().frame(height: 0)
                 
                 //    var body: some View {
                 VStack {
-                    Image("OwnYourData_icon_w")
+                    Image("Logo")
                         .resizable()
                         .scaledToFit()
+                        .accessibilityLabel(Text("The OwnYourData App Icon"))
                         .padding()
                     
                     Text("Welcome,")
@@ -80,7 +81,7 @@ struct HomeTabView: View {
                         }
                     }
                                      .padding(.top, -50) // Added negative padding to move the VStack closer
-                                 }
+                }
                 .padding(.bottom, 100)
                 .onAppear {
                     getUserName()

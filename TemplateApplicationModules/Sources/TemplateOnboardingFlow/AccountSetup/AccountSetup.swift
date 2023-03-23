@@ -39,7 +39,6 @@ struct AccountSetup: View {
         )
             .onReceive(account.objectWillChange) {
                 if account.signedIn {
-                    
                     if onboardingSteps.contains(where: { $0 == .signUp }) {
                         guard let user = Auth.auth().currentUser else {
                             return

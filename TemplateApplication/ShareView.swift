@@ -6,12 +6,12 @@
 // SPDX-License-Identifier: MIT
 //
 
-import SwiftUI
+import CardinalKit
 import FHIR
 import HealthKitDataSource
-import TemplateSharedContext
 import HealthKitToFHIRAdapter
-import CardinalKit
+import SwiftUI
+import TemplateSharedContext
 import UIKit
 
 
@@ -22,12 +22,12 @@ struct ShareView: View {
         GeometryReader { geometry in
             VStack {
                 VStack {
-                    Image("OwnYourData_Icon_White-1024")
+                    Image("Logo")
                         .resizable()
-                        .foregroundColor(Color.accentColor)
                         .scaledToFit()
+                        .foregroundColor(Color.accentColor)
+                        .accessibilityLabel(Text("The OwnYourData App Icon"))
                         .frame(width: 240, height: 240) // Make it twice as large
-                        .accessibility(label: Text("profile image"))
                 }
                 .frame(width: geometry.size.width, height: geometry.size.height / 2.5, alignment: .top)
                 Spacer().frame(height: 0)
@@ -39,7 +39,9 @@ struct ShareView: View {
                             .foregroundColor(Color.accentColor)
                             .multilineTextAlignment(.center)
                         Button(action: {
-                            let url = URL(string: "x-apple-health://")!
+                            guard let url = URL(string: "x-apple-health://") else {
+                                fatalError("Could not create a Health App URL")
+                            }
                             openURL(url)
                         }) {
                             Text("Open Health App")
@@ -64,7 +66,9 @@ struct ShareView: View {
                                         .foregroundColor(Color.accentColor)
                                         .multilineTextAlignment(.center)
                                     Button(action: {
-                                        let url = URL(string: "x-apple-health://")!
+                                        guard let url = URL(string: "x-apple-health://") else {
+                                            fatalError("Could not create a Health App URL")
+                                        }
                                         openURL(url)
                                     }) {
                                         Text("Select Documents")
@@ -79,11 +83,9 @@ struct ShareView: View {
                                             .padding(.trailing)
                                     }
                                 }
-                                
                             }
-                        }
-                    }
                 }
             }
         }
-
+            }
+        }

@@ -12,14 +12,14 @@
 # In general, you can use the options available
 # fastlane gym --help
 
-scheme("TemplateApplication")
+scheme("OwnYourData")
 
-project("TemplateApplication.xcodeproj")
+project("OwnYourData.xcodeproj")
 
 export_options(
   {
     provisioningProfiles: { 
-      "edu.stanford.cardinalkittemplateapplication" => "CardinalKit Template Application"
+      "edu.stanford.cs342.ownyourdata" => "CS342 OwnYourData"
     }
   }
 )

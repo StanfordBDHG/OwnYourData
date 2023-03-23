@@ -6,28 +6,31 @@
 // SPDX-License-Identifier: MIT
 //
 
-import SwiftUI
+import CardinalKit
 import FHIR
 import HealthKitDataSource
-import TemplateSharedContext
 import HealthKitToFHIRAdapter
-import CardinalKit
+import ImageSource
+import SwiftUI
+import TemplateSharedContext
 import UIKit
 
 
 struct AddDataView: View {
     @Environment(\.openURL) var openURL
-    @State var capturedImage: UIImage?
-    @State var showingPicker: Bool = false
+    @State var capturedImage: ImageState = .empty
+    @State var showingPicker = false
+    
     
     var body: some View {
         GeometryReader { geometry in
             VStack {
                 VStack {
-                    Image("OwnYourData_Icon_White-1024")
+                    Image("AppIcon")
                         .resizable()
-                        .foregroundColor(Color.accentColor)
                         .scaledToFit()
+                        .foregroundColor(Color.accentColor)
+                        .accessibilityLabel(Text("The OwnYourData App Icon"))
                         .frame(width: 240, height: 240) // Make it twice as large
                         .accessibility(label: Text("profile image"))
                 }
@@ -41,7 +44,9 @@ struct AddDataView: View {
                             .foregroundColor(Color.accentColor)
                             .multilineTextAlignment(.center)
                         Button(action: {
-                            let url = URL(string: "https://apps.apple.com/us/app/apple-health/id123456789")!
+                            guard let url = URL(string: "x-apple-health://") else {
+                                fatalError("Could not create a Health App URL")
+                            }
                             openURL(url)
                         }) {
                             Text("Select Health System")
@@ -66,7 +71,7 @@ struct AddDataView: View {
                             .multilineTextAlignment(.center)
                         Button(action: {
                             self.showingPicker.toggle()
-                        }){
+                        }) {
                             Text("Go to Camera")
                                 .font(.headline)
                                 .fontWeight(.bold)
@@ -80,7 +85,7 @@ struct AddDataView: View {
                         }
                     }
                 }.sheet(isPresented: $showingPicker) {
-                    CameraView(capturedImage: self.$capturedImage)
+                    Camera(image: $capturedImage)
                 }
             }
         }

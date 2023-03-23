@@ -6,35 +6,18 @@
 // SPDX-License-Identifier: MIT
 //
 
-import SwiftUI
 import FirebaseAccount
 import FirebaseAuth
 import FirebaseFirestore
+import SwiftUI
+
 
 struct ProfileView: View {
     let user = Auth.auth().currentUser
     @State private var firstName = ""
     @State private var lastName = ""
     @State private var email = ""
-        
     
-    func fetchUserData() {
-        if let currentUser = user {
-            let db = Firestore.firestore()
-            let docRef = db.collection("users").document(currentUser.uid)
-
-            docRef.getDocument { (document, error) in
-                if let document = document, document.exists {
-                    let data = document.data()
-                    self.firstName = data?["firstName"] as? String ?? ""
-                    self.lastName = data?["lastName"] as? String ?? ""
-                    self.email = currentUser.email ?? ""
-                } else {
-                    print("Document does not exist")
-                }
-            }
-        }
-    }
     
     var body: some View {
         VStack {
@@ -77,6 +60,24 @@ struct ProfileView: View {
             firstName = defaults.string(forKey: "firstName") ?? ""
             lastName = defaults.string(forKey: "lastName") ?? ""
             email = user?.email ?? ""
+        }
+    }
+    
+    
+    func fetchUserData() {
+        if let currentUser = user {
+            let docRef = Firestore.firestore().collection("users").document(currentUser.uid)
+
+            docRef.getDocument { document, _ in
+                if let document = document, document.exists {
+                    let data = document.data()
+                    self.firstName = data?["firstName"] as? String ?? ""
+                    self.lastName = data?["lastName"] as? String ?? ""
+                    self.email = currentUser.email ?? ""
+                } else {
+                    print("Document does not exist")
+                }
+            }
         }
     }
 }
