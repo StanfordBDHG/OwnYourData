@@ -22,6 +22,7 @@ struct TemplateApplication: App {
                 .sheet(isPresented: !$completedOnboardingFlow) {
                     OnboardingFlow()
                 }
+                .environmentObject(DocumentManager())
                 .testingSetup()
                 .cardinalKit(appDelegate)
         }

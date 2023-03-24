@@ -18,7 +18,6 @@ import UIKit
 
 struct AddDataView: View {
     @Environment(\.openURL) var openURL
-    @State var document: PDFDocument?
     @State var showingPicker = false
     
     
@@ -72,7 +71,7 @@ struct AddDataView: View {
             }
             .padding(.bottom, 30)
             .fullScreenCover(isPresented: $showingPicker) {
-                DocumentScanner(document: $document)
+                DocumentScanner()
                     .background {
                         Color.black.ignoresSafeArea()
                     }
