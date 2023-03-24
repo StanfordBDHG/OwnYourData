@@ -8,16 +8,14 @@
 
 import SwiftUI
 
-struct ClinicalTrialsView: View {
+struct DocumentGalleryView: View {
     var body: some View {
-        if let url = URL(string: "https://www.cancer.gov/about-cancer/treatment/clinical-trials/search") {
-            WebView(url: url)
-        }
+        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
 }
 
-struct ClinicalTrialsView_Previews: PreviewProvider {
+struct DocumentGalleryView_Previews: PreviewProvider {
     static var previews: some View {
-        ClinicalTrialsView()
+        DocumentGalleryView()
     }
 }
