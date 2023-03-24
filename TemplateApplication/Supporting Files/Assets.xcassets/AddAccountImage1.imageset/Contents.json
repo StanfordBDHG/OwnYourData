@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "AddAccountImage.png",
+      "filename" : "AddAccountsImage.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "AddAccountsImage 1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "AddAccountsImage 2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

@@ -82,6 +82,7 @@ struct AddRecordInstructView: View {
                     .foregroundColor(Color.accentColor)
                     .frame(width: 120, height: 120)
                     .padding(.leading, 45)
+                    .padding(.trailing, 10)
                 
             }
             HStack {
