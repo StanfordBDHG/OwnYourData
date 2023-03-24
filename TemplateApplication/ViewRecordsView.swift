@@ -64,7 +64,6 @@ struct ViewRecordsView: View {
                     .foregroundColor(Color.accentColor)
                     .frame(width: 120, height: 120)
                     .padding(.trailing, 0)
-                    
             }
             HStack {
                 Image(systemName: "3.circle.fill")
@@ -100,7 +99,6 @@ struct ViewRecordsView: View {
                     }
             }
         }
-        
     }
 }
 struct ViewRecordsView_Previews: PreviewProvider {
@@ -108,4 +106,3 @@ struct ViewRecordsView_Previews: PreviewProvider {
         RecordInstructView()
     }
 }
-

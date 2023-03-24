@@ -65,7 +65,6 @@ struct AddRecordInstructView: View {
                     .foregroundColor(Color.accentColor)
                     .frame(width: 120, height: 120)
                     .padding(.trailing, 0)
-                    
             }
             HStack {
                 Image(systemName: "3.circle.fill")
@@ -83,7 +82,6 @@ struct AddRecordInstructView: View {
                     .frame(width: 120, height: 120)
                     .padding(.leading, 45)
                     .padding(.trailing, 10)
-                
             }
             HStack {
                 Image(systemName: "4.circle.fill")
@@ -94,8 +92,7 @@ struct AddRecordInstructView: View {
                     .foregroundColor(Color.accentColor)
                     .font(.title3)
                     .padding(.trailing, 50)
-                
-                        }
+            }
             Spacer()
             HStack {
                 Text("Tap Health App \nto get started!")
@@ -120,7 +117,6 @@ struct AddRecordInstructView: View {
                     }
             }
         }
-        
     }
 }
 struct AddREcordInstructView_Previews: PreviewProvider {
@@ -128,4 +124,3 @@ struct AddREcordInstructView_Previews: PreviewProvider {
         RecordInstructView()
     }
 }
-
