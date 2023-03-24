@@ -27,7 +27,7 @@ struct ProfileView: View {
                 .scaledToFit()
                 .frame(width: 120, height: 120)
                 .accessibility(label: Text("profile image"))
-            
+
             VStack(spacing: 10) {
                 Text("\(firstName) \(lastName)")
                     .font(.title2)
@@ -35,7 +35,7 @@ struct ProfileView: View {
                     .font(.subheadline)
             }
             
-            Spacer().frame(height: 300)
+            Spacer()
             
             Button(action: {
                 let auth = Auth.auth()
@@ -51,10 +51,13 @@ struct ProfileView: View {
                     .fontWeight(.bold)
                     .padding()
                     .frame(maxWidth: .infinity)
-                    .background(Color(UIColor(named: "ButtonColor_dark") ?? .gray))
+                    .background(Color(UIColor(named: "ButtonColor_red") ?? .gray))
                     .foregroundColor(.white)
                     .cornerRadius(10)
-            }.padding()
+                    .padding(.leading)
+                    .padding(.trailing)
+            }
+                .padding(.bottom, 30)
         }.onAppear {
             let defaults = UserDefaults.standard
             firstName = defaults.string(forKey: "firstName") ?? ""
