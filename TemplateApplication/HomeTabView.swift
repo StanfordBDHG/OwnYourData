@@ -30,12 +30,12 @@ struct HomeTabView: View {
                 Text("\(userName).")
                     .font(Font.system(size: 60))
                     .foregroundColor(Color.accentColor)
-                    .fontWeight(.medium)
+                    .fontWeight(.semibold)
                 
                 Spacer()
                 
                 VStack {
-                    NavigationLink(destination: HealthRecordView()) {
+                    NavigationLink(destination: ViewRecordsView()) {
                         Text("Records")
                             .font(.headline)
                             .fontWeight(.bold)

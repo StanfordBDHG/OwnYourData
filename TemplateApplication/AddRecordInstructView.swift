@@ -15,7 +15,7 @@ import SwiftUI
 import UIKit
 
 
-struct RecordInstructView: View {
+struct AddRecordInstructView: View {
     @Environment(\.openURL) var openURL
     
     
@@ -44,7 +44,7 @@ struct RecordInstructView: View {
                     .accessibilityLabel(Text("Apple Health App"))
                     .foregroundColor(Color.accentColor)
                     .frame(width: 90, height: 90)
-                    .padding(.trailing, 20)
+                    .padding(.trailing, 18)
             }
             HStack {
                 Image(systemName: "2.circle.fill")
@@ -68,28 +68,28 @@ struct RecordInstructView: View {
                     .foregroundColor(Color(UIColor(named: "ButtonColor_light") ?? .gray))
                     .font(.title)
                     .frame(width: 90, height: 90)
-                Text("Scroll and select Health Records to share")
+                Text("Tap \"Add Account\" to select Health System")
                     .foregroundColor(Color.accentColor)
                     .font(.title3)
-                    .padding(.trailing, 150)
+//                    .padding(.trailing, 0)
+                Image("AddAccountImage")
+                    .resizable()
+                    .scaledToFit()
+                    .accessibilityLabel(Text("Apple Health App"))
+                    .foregroundColor(Color.accentColor)
+                    .frame(width: 120, height: 120)
+                    .padding(.leading, 45)
+                    .padding(.trailing, 10)
             }
             HStack {
                 Image(systemName: "4.circle.fill")
                     .foregroundColor(Color(UIColor(named: "ButtonColor_light") ?? .gray))
                     .font(.title)
                     .frame(width: 90, height: 90)
-                Text("Tap \"Export PDF\" on the top right to share PDF")
+                Text("Log into your health system and provide permission to \ndownload your health data to your phone")
                     .foregroundColor(Color.accentColor)
                     .font(.title3)
-                    .padding(.trailing, 10)
-                Spacer()
-                Image("ExportIconImage")
-                    .resizable()
-                    .scaledToFit()
-                    .accessibilityLabel(Text("Apple Health App"))
-                    .foregroundColor(Color.accentColor)
-                    .frame(width: 90, height: 90)
-                    .padding(.trailing, 10)
+                    .padding(.trailing, 50)
             }
             Spacer()
             HStack {
@@ -104,8 +104,8 @@ struct RecordInstructView: View {
                 Image("AppleHealthAppImage")
                     .resizable()
                     .scaledToFit()
-                    .foregroundColor(Color.accentColor)
                     .accessibilityLabel(Text("Apple Health App"))
+                    .foregroundColor(Color.accentColor)
                     .frame(width: 90, height: 90)
                     .padding(.bottom, 30)
                     .onTapGesture {
@@ -118,7 +118,9 @@ struct RecordInstructView: View {
         }
     }
 }
-struct RecordInstructView_Previews: PreviewProvider {
+
+
+struct AddREcordInstructView_Previews: PreviewProvider {
     static var previews: some View {
         RecordInstructView()
     }

@@ -23,10 +23,11 @@ struct ProfileView: View {
         VStack {
             Image(systemName: "person.circle.fill")
                 .resizable()
-                .foregroundColor(Color(UIColor(named: "ButtonColor_light") ?? .gray))
+                .foregroundColor(Color(UIColor(named: "ButtonColor_dark") ?? .gray))
                 .scaledToFit()
                 .frame(width: 120, height: 120)
                 .accessibility(label: Text("profile image"))
+                .padding(.top, 80)
 
             VStack(spacing: 10) {
                 Text("\(userName)")
@@ -51,11 +52,13 @@ struct ProfileView: View {
                     .fontWeight(.bold)
                     .padding()
                     .frame(maxWidth: .infinity)
-                    .background(Color(UIColor(named: "ButtonColor_red") ?? .gray))
+                    .background(Color(UIColor(named: "ButtonColor_light") ?? .gray))
                     .foregroundColor(.white)
                     .cornerRadius(10)
+                    .padding(.leading)
+                    .padding(.trailing)
             }
-                .padding()
+            .padding(.bottom, 30)
         }
             .task {
                 fetchUserData()

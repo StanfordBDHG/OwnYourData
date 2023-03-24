@@ -18,20 +18,17 @@ struct ShareView: View {
     @Environment(\.openURL) var openURL
     
     var body: some View {
-        NavigationStack {
+        NavigationView {
             VStack {
                 LogoView()
                 Spacer()
                 Text("Share \nHealth Records")
                     .font(.largeTitle)
                     .foregroundColor(Color.accentColor)
+                    .fontWeight(.medium)
                     .multilineTextAlignment(.center)
-                Button(action: {
-                    guard let url = URL(string: "x-apple-health://") else {
-                        fatalError("Could not create a Health App URL")
-                    }
-                    openURL(url)
-                }) {
+                
+                NavigationLink(destination: RecordInstructView()) {
                     Text("Open Health App")
                         .font(.headline)
                         .fontWeight(.bold)
@@ -50,6 +47,7 @@ struct ShareView: View {
                     Text("Share \nDocuments")
                         .font(.largeTitle)
                         .foregroundColor(Color.accentColor)
+                        .fontWeight(.medium)
                         .multilineTextAlignment(.center)
                     NavigationLink(destination: DocumentGalleryView()) {
                         Text("Scanned Documents")
@@ -85,5 +83,12 @@ struct ShareView: View {
                 .padding(.bottom, 30)
             }
         }
+    }
+}
+
+
+struct ShareView_Previews: PreviewProvider {
+    static var previews: some View {
+        AddDataView()
     }
 }

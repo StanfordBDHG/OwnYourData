@@ -63,9 +63,11 @@
 		653A2551283387FE005D4D48 /* TemplateApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653A2550283387FE005D4D48 /* TemplateApplication.swift */; };
 		653A255528338800005D4D48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 653A255428338800005D4D48 /* Assets.xcassets */; };
 		653A256228338800005D4D48 /* TemplateApplicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653A256128338800005D4D48 /* TemplateApplicationTests.swift */; };
+		FC024B5729CD9B1F00AFEFDF /* ViewRecordsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC024B5629CD9B1F00AFEFDF /* ViewRecordsView.swift */; };
 		FC1294D329CC1B760008FF21 /* DocumentGalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1294D229CC1B760008FF21 /* DocumentGalleryView.swift */; };
 		FCD3FFB729CD0C31004D1E0E /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD3FFB629CD0C31004D1E0E /* LogoView.swift */; };
 		FCD3FFB929CD1A49004D1E0E /* RecordInstructView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD3FFB829CD1A49004D1E0E /* RecordInstructView.swift */; };
+		FCD3FFBB29CD898D004D1E0E /* AddRecordInstructView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD3FFBA29CD898D004D1E0E /* AddRecordInstructView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,9 +132,11 @@
 		653A256128338800005D4D48 /* TemplateApplicationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateApplicationTests.swift; sourceTree = "<group>"; };
 		653A256728338800005D4D48 /* OwnYourDataUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OwnYourDataUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		653A258928339462005D4D48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FC024B5629CD9B1F00AFEFDF /* ViewRecordsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRecordsView.swift; sourceTree = "<group>"; };
 		FC1294D229CC1B760008FF21 /* DocumentGalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentGalleryView.swift; sourceTree = "<group>"; };
 		FCD3FFB629CD0C31004D1E0E /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
 		FCD3FFB829CD1A49004D1E0E /* RecordInstructView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordInstructView.swift; sourceTree = "<group>"; };
+		FCD3FFBA29CD898D004D1E0E /* AddRecordInstructView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecordInstructView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -269,7 +273,6 @@
 			isa = PBXGroup;
 			children = (
 				653A2550283387FE005D4D48 /* TemplateApplication.swift */,
-				FCD3FFB829CD1A49004D1E0E /* RecordInstructView.swift */,
 				FCD3FFB629CD0C31004D1E0E /* LogoView.swift */,
 				2F5E32BC297E05EA003432F8 /* TemplateAppDelegate.swift */,
 				2FB2FCD829CBDDC30027D85A /* Onboarding */,
@@ -280,6 +283,9 @@
 				2FB2943229CBA29900EE91A0 /* HealthRecordView.swift */,
 				2FA2023229CBCC0C0039C21A /* DocumentScanner.swift */,
 				2FB2943529CBA29900EE91A0 /* HomeTabView.swift */,
+				FCD3FFB829CD1A49004D1E0E /* RecordInstructView.swift */,
+				FC024B5629CD9B1F00AFEFDF /* ViewRecordsView.swift */,
+				FCD3FFBA29CD898D004D1E0E /* AddRecordInstructView.swift */,
 				2FB2943329CBA29900EE91A0 /* ProfileView.swift */,
 				2FB2943629CBA29900EE91A0 /* ShareView.swift */,
 				27DD24A329CCE56300A6EEBC /* WebView.swift */,
@@ -524,9 +530,11 @@
 				2FB2FCD629CBDDC00027D85A /* HealthKitPermissions.swift in Sources */,
 				2FB2FCD529CBDDC00027D85A /* OnboardingFlow.swift in Sources */,
 				2FB2FCCF29CBDDC00027D85A /* IconView.swift in Sources */,
+				FC024B5729CD9B1F00AFEFDF /* ViewRecordsView.swift in Sources */,
 				653A2551283387FE005D4D48 /* TemplateApplication.swift in Sources */,
 				2FB2943C29CBA29900EE91A0 /* ShareView.swift in Sources */,
 				27DD24A429CCE56400A6EEBC /* WebView.swift in Sources */,
+				FCD3FFBB29CD898D004D1E0E /* AddRecordInstructView.swift in Sources */,
 				2FB2943A29CBA29900EE91A0 /* AddDataView.swift in Sources */,
 				FC1294D329CC1B760008FF21 /* DocumentGalleryView.swift in Sources */,
 				2FB2943B29CBA29900EE91A0 /* HomeTabView.swift in Sources */,
