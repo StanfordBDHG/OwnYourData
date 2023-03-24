@@ -11,7 +11,6 @@ import HealthKitDataSource
 import HealthKitToFHIRAdapter
 import ImageSource
 import SwiftUI
-import TemplateSharedContext
 import UIKit
 
 

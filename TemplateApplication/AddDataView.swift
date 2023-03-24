@@ -80,7 +80,7 @@ struct AddDataView: View {
             }
         }
     }
-}
+
 
 
 struct AddDataView_Previews: PreviewProvider {
