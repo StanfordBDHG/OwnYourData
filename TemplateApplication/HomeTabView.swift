@@ -16,67 +16,69 @@ struct HomeTabView: View {
     @State private var userName: String = ""
     
     var body: some View {
-        VStack {
-            LogoView()
-            Text("Welcome,")
-                .font(Font.system(size: 60))
-                .foregroundColor(Color.accentColor)
-                .fontWeight(.semibold)
-                .padding(.bottom, 1)
-            
-            Text("\(userName).")
-                .font(Font.system(size: 60))
-                .foregroundColor(Color.accentColor)
-                .fontWeight(.medium)
-            
-            Spacer()
-            
+        NavigationStack {
             VStack {
-                NavigationLink(destination: HealthRecordView()) {
-                    Text("Records")
-                        .font(.headline)
-                        .fontWeight(.bold)
-                        .padding()
-                        .frame(maxWidth: .infinity)
-                        .foregroundColor(Color.white)
-                        .background(Color(UIColor(named: "ButtonColor_light") ?? .gray))
-                        .cornerRadius(10)
-                        .padding(.leading)
-                        .padding(.trailing)
-                }
-                .padding(.bottom, 20)
+                LogoView()
+                Text("Welcome,")
+                    .font(Font.system(size: 60))
+                    .foregroundColor(Color.accentColor)
+                    .fontWeight(.semibold)
+                    .padding(.bottom, 1)
                 
-                NavigationLink(destination: DocumentGalleryView()) {
-                    Text("Documents")
-                        .font(.headline)
-                        .fontWeight(.bold)
-                        .padding()
-                        .frame(maxWidth: .infinity)
-                        .foregroundColor(.white)
-                        .background(Color(UIColor(named: "ButtonColor_light") ?? .gray))
-                        .cornerRadius(10)
-                        .padding(.leading)
-                        .padding(.trailing)
-                }
-                .padding(.bottom, 20)
+                Text("\(userName).")
+                    .font(Font.system(size: 60))
+                    .foregroundColor(Color.accentColor)
+                    .fontWeight(.medium)
                 
-                NavigationLink(destination: ClinicalTrialsView()) {
-                    Text("Find Clinical Trials")
-                        .font(.headline)
-                        .fontWeight(.bold)
-                        .padding()
-                        .frame(maxWidth: .infinity)
-                        .foregroundColor(.white)
-                        .background(Color(UIColor(named: "ButtonColor_light") ?? .gray))
-                        .cornerRadius(10)
-                        .padding(.leading)
-                        .padding(.trailing)
+                Spacer()
+                
+                VStack {
+                    NavigationLink(destination: HealthRecordView()) {
+                        Text("Records")
+                            .font(.headline)
+                            .fontWeight(.bold)
+                            .padding()
+                            .frame(maxWidth: .infinity)
+                            .foregroundColor(Color.white)
+                            .background(Color(UIColor(named: "ButtonColor_light") ?? .gray))
+                            .cornerRadius(10)
+                            .padding(.leading)
+                            .padding(.trailing)
+                    }
+                    .padding(.bottom, 20)
+                    
+                    NavigationLink(destination: DocumentGalleryView()) {
+                        Text("Documents")
+                            .font(.headline)
+                            .fontWeight(.bold)
+                            .padding()
+                            .frame(maxWidth: .infinity)
+                            .foregroundColor(.white)
+                            .background(Color(UIColor(named: "ButtonColor_light") ?? .gray))
+                            .cornerRadius(10)
+                            .padding(.leading)
+                            .padding(.trailing)
+                    }
+                    .padding(.bottom, 20)
+                    
+                    NavigationLink(destination: ClinicalTrialsView()) {
+                        Text("Find Clinical Trials")
+                            .font(.headline)
+                            .fontWeight(.bold)
+                            .padding()
+                            .frame(maxWidth: .infinity)
+                            .foregroundColor(.white)
+                            .background(Color(UIColor(named: "ButtonColor_light") ?? .gray))
+                            .cornerRadius(10)
+                            .padding(.leading)
+                            .padding(.trailing)
+                    }
                 }
             }
-        }
-        .padding(.bottom, 30)
-        .onAppear {
-            getUserName()
+            .padding(.bottom, 30)
+            .onAppear {
+                getUserName()
+            }
         }
     }
     
