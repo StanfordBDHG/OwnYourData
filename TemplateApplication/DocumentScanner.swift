@@ -13,16 +13,16 @@ import VisionKit
 
 struct DocumentScanner: UIViewControllerRepresentable {
     class Coordinator: NSObject, VNDocumentCameraViewControllerDelegate {
-        @Binding var document: PDFDocument?
+        let documentManager: DocumentManager
         
         
-        init(document: Binding<PDFDocument?>) {
-            self._document = document
+        init(documentManager: DocumentManager) {
+            self.documentManager = documentManager
         }
         
         
         func documentCameraViewController(_ controller: VNDocumentCameraViewController, didFinishWith scan: VNDocumentCameraScan) {
-            let pdfDocument = self.document ?? PDFDocument()
+            let pdfDocument = PDFDocument()
             
             if pdfDocument.documentAttributes == nil {
                 pdfDocument.documentAttributes = [:]
@@ -40,13 +40,14 @@ struct DocumentScanner: UIViewControllerRepresentable {
                 pdfDocument.insert(pdfPage, at: pdfDocument.pageCount)
             }
             
-            document = pdfDocument
+            documentManager.store(document: pdfDocument, title: scan.title)
+            
             controller.dismiss(animated: true)
         }
     }
     
     
-    @Binding var document: PDFDocument?
+    @EnvironmentObject var documentManager: DocumentManager
     
     
     func makeUIViewController(context: Context) -> some VNDocumentCameraViewController {
@@ -56,7 +57,7 @@ struct DocumentScanner: UIViewControllerRepresentable {
     }
     
     func makeCoordinator() -> Coordinator {
-        Coordinator(document: $document)
+        Coordinator(documentManager: documentManager)
     }
     
     func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {}

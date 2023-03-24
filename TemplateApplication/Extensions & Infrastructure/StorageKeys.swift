@@ -18,4 +18,9 @@ public enum StorageKeys {
     // MARK: - Home
     /// The currently selected home tab.
     public static let homeTabSelection = "home.tabselection"
+    
+    
+    // MARK: - Name
+    /// The name of the currently signed in user
+    public static let userName = "user.name"
 }

@@ -16,6 +16,7 @@ import SwiftUI
 
 
 struct AccountSetup: View {
+    @AppStorage(StorageKeys.userName) var username = ""
     @Binding private var onboardingSteps: [OnboardingFlow.Step]
     @EnvironmentObject var account: Account
     
@@ -62,10 +63,7 @@ struct AccountSetup: View {
                             }
                         }
                         
-                        let defaults = UserDefaults.standard
-                        defaults.set(firstName, forKey: "firstName")
-                        defaults.set(lastName, forKey: "lastName")
-                        defaults.set(email, forKey: "email")
+                        self.username = "\(firstName) \(lastName)"
                     }
                     
                     onboardingSteps.append(.healthKitPermissions)

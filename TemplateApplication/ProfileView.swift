@@ -14,8 +14,8 @@ import SwiftUI
 
 struct ProfileView: View {
     let user = Auth.auth().currentUser
-    @State private var firstName = ""
-    @State private var lastName = ""
+    @AppStorage(StorageKeys.userName) var appStorageUserName = ""
+    @State private var userName = ""
     @State private var email = ""
     
     
@@ -30,7 +30,7 @@ struct ProfileView: View {
                 .padding(.top, 80)
 
             VStack(spacing: 10) {
-                Text("\(firstName) \(lastName)")
+                Text("\(userName)")
                     .font(.title2)
                 Text("Email: \(email)")
                     .font(.subheadline)
@@ -67,13 +67,15 @@ struct ProfileView: View {
     
     
     private func fetchUserData() {
+        self.userName = appStorageUserName
+        
         if let currentUser = user {
             let docRef = Firestore.firestore().collection("users").document(currentUser.uid)
             docRef.getDocument { document, _ in
                 if let document = document, document.exists {
                     let data = document.data()
-                    self.firstName = data?["firstName"] as? String ?? ""
-                    self.lastName = data?["lastName"] as? String ?? ""
+                    self.userName = "\(data?["firstName"] as? String ?? "") \(data?["lastName"] as? String ?? "")"
+                    self.appStorageUserName = self.userName
                     self.email = currentUser.email ?? ""
                 } else {
                     print("Document does not exist")

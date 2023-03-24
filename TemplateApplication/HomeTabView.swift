@@ -13,7 +13,9 @@ import SwiftUI
 
 
 struct HomeTabView: View {
+    @AppStorage(StorageKeys.userName) var appStorageUserName = ""
     @State private var userName: String = ""
+    
     
     var body: some View {
         NavigationStack {
@@ -48,7 +50,7 @@ struct HomeTabView: View {
                     .padding(.bottom, 20)
                     
                     NavigationLink(destination: DocumentGalleryView()) {
-                        Text("Documents")
+                        Text("Scanned Documents")
                             .font(.headline)
                             .fontWeight(.bold)
                             .padding()
@@ -83,6 +85,7 @@ struct HomeTabView: View {
     }
     
     func getUserName() {
+        userName = appStorageUserName.split(separator: " ").first.map(String.init) ?? ""
         if let user = Auth.auth().currentUser {
             user.reload { error in
                 if let error = error {

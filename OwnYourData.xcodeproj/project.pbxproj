@@ -49,6 +49,11 @@
 		2FB2FCD729CBDDC00027D85A /* Consent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB2FCCC29CBDDC00027D85A /* Consent.swift */; };
 		2FC9759F2978E39600BA99FE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2FC9759E2978E39600BA99FE /* Localizable.strings */; };
 		2FC975A82978F11A00BA99FE /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC975A72978F11A00BA99FE /* Home.swift */; };
+		2FE573A329CD4617008EBBD4 /* PDFDocument+Transferable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE573A229CD4617008EBBD4 /* PDFDocument+Transferable.swift */; };
+		2FE573A529CD464F008EBBD4 /* PDFListDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE573A429CD464F008EBBD4 /* PDFListDetailView.swift */; };
+		2FE573A729CD4672008EBBD4 /* PDFView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE573A629CD4672008EBBD4 /* PDFView.swift */; };
+		2FE573A929CD4697008EBBD4 /* PDFListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE573A829CD4697008EBBD4 /* PDFListRow.swift */; };
+		2FE573AB29CD46BF008EBBD4 /* DocumentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE573AA29CD46BF008EBBD4 /* DocumentManager.swift */; };
 		2FED18F22999AAF400A51A28 /* Account in Frameworks */ = {isa = PBXBuildFile; productRef = 2FED18F12999AAF400A51A28 /* Account */; };
 		2FED18F42999AAF400A51A28 /* FirebaseAccount in Frameworks */ = {isa = PBXBuildFile; productRef = 2FED18F32999AAF400A51A28 /* FirebaseAccount */; };
 		2FED18FA299A0C7600A51A28 /* FHIRToFirestoreAdapter in Frameworks */ = {isa = PBXBuildFile; productRef = 2FED18F9299A0C7600A51A28 /* FHIRToFirestoreAdapter */; };
@@ -115,6 +120,11 @@
 		2FC94CD4298B0A1D009C8209 /* TemplateApplication.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = TemplateApplication.xctestplan; sourceTree = "<group>"; };
 		2FC9759E2978E39600BA99FE /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		2FC975A72978F11A00BA99FE /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		2FE573A229CD4617008EBBD4 /* PDFDocument+Transferable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PDFDocument+Transferable.swift"; sourceTree = "<group>"; };
+		2FE573A429CD464F008EBBD4 /* PDFListDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFListDetailView.swift; sourceTree = "<group>"; };
+		2FE573A629CD4672008EBBD4 /* PDFView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFView.swift; sourceTree = "<group>"; };
+		2FE573A829CD4697008EBBD4 /* PDFListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFListRow.swift; sourceTree = "<group>"; };
+		2FE573AA29CD46BF008EBBD4 /* DocumentManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentManager.swift; sourceTree = "<group>"; };
 		653A254D283387FE005D4D48 /* OwnYourData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OwnYourData.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		653A2550283387FE005D4D48 /* TemplateApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateApplication.swift; sourceTree = "<group>"; };
 		653A255428338800005D4D48 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -224,6 +234,19 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		2FE573A129CD4600008EBBD4 /* Documents */ = {
+			isa = PBXGroup;
+			children = (
+				2FE573A229CD4617008EBBD4 /* PDFDocument+Transferable.swift */,
+				2FE573A429CD464F008EBBD4 /* PDFListDetailView.swift */,
+				2FE573A629CD4672008EBBD4 /* PDFView.swift */,
+				2FE573A829CD4697008EBBD4 /* PDFListRow.swift */,
+				2FE573AA29CD46BF008EBBD4 /* DocumentManager.swift */,
+				FC1294D229CC1B760008FF21 /* DocumentGalleryView.swift */,
+			);
+			path = Documents;
+			sourceTree = "<group>";
+		};
 		653A2544283387FE005D4D48 = {
 			isa = PBXGroup;
 			children = (
@@ -253,6 +276,7 @@
 				FCD3FFB629CD0C31004D1E0E /* LogoView.swift */,
 				2F5E32BC297E05EA003432F8 /* TemplateAppDelegate.swift */,
 				2FB2FCD829CBDDC30027D85A /* Onboarding */,
+				2FE573A129CD4600008EBBD4 /* Documents */,
 				2FC975A72978F11A00BA99FE /* Home.swift */,
 				2FB2943429CBA29900EE91A0 /* AddDataView.swift */,
 				2FB2943729CBA29900EE91A0 /* ClinicalTrialsView.swift */,
@@ -481,13 +505,17 @@
 				2FB2FCD229CBDDC00027D85A /* AccountSetup.swift in Sources */,
 				2FB2FCB829CBDC0E0027D85A /* StorageKeys.swift in Sources */,
 				2FB2FCD429CBDDC00027D85A /* String+ModuleLocalized.swift in Sources */,
+				2FE573A929CD4697008EBBD4 /* PDFListRow.swift in Sources */,
+				2FE573AB29CD46BF008EBBD4 /* DocumentManager.swift in Sources */,
 				2FA2023329CBCC0C0039C21A /* DocumentScanner.swift in Sources */,
 				2FB2943829CBA29900EE91A0 /* HealthRecordView.swift in Sources */,
 				FCD3FFB729CD0C31004D1E0E /* LogoView.swift in Sources */,
 				2FB2FCD029CBDDC00027D85A /* TemplateSignUp.swift in Sources */,
 				2FB2FCD729CBDDC00027D85A /* Consent.swift in Sources */,
 				2FB2FCD329CBDDC00027D85A /* TemplateLogin.swift in Sources */,
+				2FE573A729CD4672008EBBD4 /* PDFView.swift in Sources */,
 				2FC975A82978F11A00BA99FE /* Home.swift in Sources */,
+				2FE573A329CD4617008EBBD4 /* PDFDocument+Transferable.swift in Sources */,
 				2F4E23832989D51F0013F3D9 /* TemplateAppTestingSetup.swift in Sources */,
 				2F5E32BD297E05EA003432F8 /* TemplateAppDelegate.swift in Sources */,
 				2FB2FCD129CBDDC00027D85A /* UserView.swift in Sources */,
@@ -499,6 +527,7 @@
 				2FB2943D29CBA29900EE91A0 /* ClinicalTrialsView.swift in Sources */,
 				2FB2943929CBA29900EE91A0 /* ProfileView.swift in Sources */,
 				FCD3FFB929CD1A49004D1E0E /* RecordInstructView.swift in Sources */,
+				2FE573A529CD464F008EBBD4 /* PDFListDetailView.swift in Sources */,
 				2FB2FCD629CBDDC00027D85A /* HealthKitPermissions.swift in Sources */,
 				2FB2FCD529CBDDC00027D85A /* OnboardingFlow.swift in Sources */,
 				2FB2FCCF29CBDDC00027D85A /* IconView.swift in Sources */,

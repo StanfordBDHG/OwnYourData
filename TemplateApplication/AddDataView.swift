@@ -18,7 +18,6 @@ import UIKit
 
 struct AddDataView: View {
     @Environment(\.openURL) var openURL
-    @State var document: PDFDocument?
     @State var showingPicker = false
     
     
