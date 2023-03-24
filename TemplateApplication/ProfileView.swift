@@ -54,23 +54,18 @@ struct ProfileView: View {
                     .background(Color(UIColor(named: "ButtonColor_red") ?? .gray))
                     .foregroundColor(.white)
                     .cornerRadius(10)
-                    .padding(.leading)
-                    .padding(.trailing)
             }
-                .padding(.bottom, 30)
-        }.onAppear {
-            let defaults = UserDefaults.standard
-            firstName = defaults.string(forKey: "firstName") ?? ""
-            lastName = defaults.string(forKey: "lastName") ?? ""
-            email = user?.email ?? ""
+                .padding()
         }
+            .task {
+                fetchUserData()
+            }
     }
     
     
-    func fetchUserData() {
+    private func fetchUserData() {
         if let currentUser = user {
             let docRef = Firestore.firestore().collection("users").document(currentUser.uid)
-
             docRef.getDocument { document, _ in
                 if let document = document, document.exists {
                     let data = document.data()

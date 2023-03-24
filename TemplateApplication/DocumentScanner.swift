@@ -41,6 +41,7 @@ struct DocumentScanner: UIViewControllerRepresentable {
             }
             
             document = pdfDocument
+            controller.dismiss(animated: true)
         }
     }
     
