@@ -77,7 +77,6 @@ struct HomeTabView: View {
         .padding(.bottom, 30)
         .onAppear {
             getUserName()
-            
         }
     }
     

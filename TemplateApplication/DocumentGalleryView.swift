@@ -1,8 +1,9 @@
 //
-//  DocumentGalleryView.swift
-//  OwnYourData
+// This source file is part of the Stanford CardinalKit Template Application project
 //
-//  Created by Oliver Oppers Aalami on 3/22/23.
+// SPDX-FileCopyrightText: 2023 Stanford University
+//
+// SPDX-License-Identifier: MIT
 //
 
 import SwiftUI

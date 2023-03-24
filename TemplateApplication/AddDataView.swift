@@ -76,11 +76,10 @@ struct AddDataView: View {
                     .background {
                         Color.black.ignoresSafeArea()
                     }
-                }
             }
         }
+        }
     }
-
 
 
 struct AddDataView_Previews: PreviewProvider {

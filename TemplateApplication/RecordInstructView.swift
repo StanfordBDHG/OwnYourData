@@ -1,8 +1,9 @@
 //
-//  RecordInstructView.swift
-//  OwnYourData
+// This source file is part of the Stanford CardinalKit Template Application project
 //
-//  Created by Oliver Oppers Aalami on 3/23/23.
+// SPDX-FileCopyrightText: 2023 Stanford University
+//
+// SPDX-License-Identifier: MIT
 //
 
 import CardinalKit
@@ -27,10 +28,11 @@ struct RecordInstructView: View {
             Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
         }
     }
-    
-    struct RecordInstructView_Previews: PreviewProvider {
-        static var previews: some View {
-            RecordInstructView()
-        }
+}
+
+
+struct RecordInstructView_Previews: PreviewProvider {
+    static var previews: some View {
+        RecordInstructView()
     }
 }
