@@ -21,6 +21,10 @@ public enum StorageKeys {
     
     
     // MARK: - Name
-    /// The name of the currently signed in user
-    public static let userName = "user.name"
+    /// The first name of the currently signed in user
+    public static let firstName = "user.firstName"
+    /// The laste name of the currently signed in user
+    public static let lastName = "user.lastName"
+    /// The email of the currently signed in user
+    public static let email = "user.email"
 }

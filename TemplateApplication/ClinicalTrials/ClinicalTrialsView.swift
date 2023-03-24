@@ -8,6 +8,7 @@
 
 import SwiftUI
 
+
 struct ClinicalTrialsView: View {
     var body: some View {
         if let url = URL(string: "https://www.cancer.gov/about-cancer/treatment/clinical-trials/search") {

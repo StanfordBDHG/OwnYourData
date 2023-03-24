@@ -10,7 +10,7 @@ import PDFKit
 import SwiftUI
 
 
-struct DocumentGalleryView: View {
+struct DocumentGallery: View {
     @EnvironmentObject var documentManager: DocumentManager
     @State var documentScanner = false
     
@@ -49,6 +49,6 @@ struct DocumentGalleryView: View {
 
 struct DocumentGalleryView_Previews: PreviewProvider {
     static var previews: some View {
-        DocumentGalleryView()
+        DocumentGallery()
     }
 }

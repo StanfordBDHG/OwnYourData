@@ -10,25 +10,22 @@ import FHIRMockDataStorageProvider
 import SwiftUI
 
 
-struct HomeView: View {
+struct OwnYourDataTabView: View {
     enum Tabs: String {
-        case schedule
-        case contact
-        case mockUpload
-        case profileView
-        case homeTabView
+        case home
         case addDataView
         case shareView
+        case profileView
     }
     
     
-    @AppStorage(StorageKeys.homeTabSelection) var selectedTab = Tabs.schedule
+    @AppStorage(StorageKeys.homeTabSelection) var selectedTab = Tabs.home
     
     
     var body: some View {
         TabView(selection: $selectedTab) {
-            HomeTabView()
-                .tag(Tabs.schedule)
+            Home()
+                .tag(Tabs.home)
                 .tabItem {
                     Label("HOME_TAB_VIEW_TITLE", systemImage: "house")
                 }
@@ -55,7 +52,7 @@ struct HomeView: View {
 #if DEBUG
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        OwnYourDataTabView()
     }
 }
 #endif

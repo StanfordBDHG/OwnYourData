@@ -13,53 +13,52 @@ import SwiftUI
 
 
 struct ProfileView: View {
-    let user = Auth.auth().currentUser
-    @AppStorage(StorageKeys.userName) var appStorageUserName = ""
-    @State private var userName = ""
-    @State private var email = ""
+    @AppStorage(StorageKeys.firstName) var firstName = ""
+    @AppStorage(StorageKeys.lastName) var lastName = ""
+    @AppStorage(StorageKeys.email) var email = ""
+    @AppStorage(StorageKeys.onboardingFlowComplete) var completedOnboardingFlow = false
+    
+    @EnvironmentObject var documentManager: DocumentManager
     
     
     var body: some View {
         VStack {
             Image(systemName: "person.circle.fill")
                 .resizable()
-                .foregroundColor(Color(UIColor(named: "ButtonColor_dark") ?? .gray))
                 .scaledToFit()
-                .frame(width: 120, height: 120)
                 .accessibility(label: Text("profile image"))
+                .foregroundColor(Color("ButtonColor_dark"))
+                .frame(width: 120, height: 120)
                 .padding(.top, 80)
-
             VStack(spacing: 10) {
-                Text("\(userName)")
+                Text("\(firstName) \(lastName)")
                     .font(.title2)
                 Text("Email: \(email)")
                     .font(.subheadline)
             }
-            
             Spacer()
-            
-            Button(action: {
-                let auth = Auth.auth()
-                do {
-                    try auth.signOut()
-                    print("Logged out.")
-                } catch let signOutError as NSError {
-                    print("Error signing out: %@", signOutError)
+            OwnYourDataButton(
+                title: "Log Out",
+                action: {
+                    do {
+                        try Auth.auth().signOut()
+                        
+                        firstName = ""
+                        lastName = ""
+                        email = ""
+                        
+                        completedOnboardingFlow = false
+                        
+                        documentManager.removeAllDocuments()
+                        
+                        print("Logged out.")
+                    } catch {
+                        print("Error signing out: \(error)")
+                    }
                 }
-            }) {
-                Text("Log Out")
-                    .font(.headline)
-                    .fontWeight(.bold)
-                    .padding()
-                    .frame(maxWidth: .infinity)
-                    .background(Color(UIColor(named: "ButtonColor_light") ?? .gray))
-                    .foregroundColor(.white)
-                    .cornerRadius(10)
-                    .padding(.leading)
-                    .padding(.trailing)
-            }
-            .padding(.bottom, 30)
+            )
         }
+            .padding(.bottom, 30)
             .task {
                 fetchUserData()
             }
@@ -67,15 +66,14 @@ struct ProfileView: View {
     
     
     private func fetchUserData() {
-        self.userName = appStorageUserName
-        
-        if let currentUser = user {
+        if let currentUser = Auth.auth().currentUser {
             let docRef = Firestore.firestore().collection("users").document(currentUser.uid)
             docRef.getDocument { document, _ in
                 if let document = document, document.exists {
                     let data = document.data()
-                    self.userName = "\(data?["firstName"] as? String ?? "") \(data?["lastName"] as? String ?? "")"
-                    self.appStorageUserName = self.userName
+                    
+                    self.firstName = data?["firstName"] as? String ?? ""
+                    self.lastName = data?["lastName"] as? String ?? ""
                     self.email = currentUser.email ?? ""
                 } else {
                     print("Document does not exist")
@@ -84,6 +82,7 @@ struct ProfileView: View {
         }
     }
 }
+
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {

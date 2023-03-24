@@ -12,6 +12,7 @@ import SwiftUI
 
 struct Consent: View {
     @Binding private var onboardingSteps: [OnboardingFlow.Step]
+    @AppStorage(StorageKeys.onboardingFlowComplete) var completedOnboardingFlow = false
     
     
     private var consentDocument: Data {
@@ -37,7 +38,7 @@ struct Consent: View {
                 if !FeatureFlags.disableFirebase {
                     onboardingSteps.append(.accountSetup)
                 } else {
-                    onboardingSteps.append(.healthKitPermissions)
+                    completedOnboardingFlow = true
                 }
             }
         )

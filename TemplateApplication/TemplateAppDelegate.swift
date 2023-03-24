@@ -35,9 +35,6 @@ class TemplateAppDelegate: CardinalKitAppDelegate {
                 firestore
             }
             FirebaseAccountConfiguration()
-            if HKHealthStore.isHealthDataAvailable() {
-                healthKit
-            }
         }
     }
     
@@ -57,17 +54,5 @@ class TemplateAppDelegate: CardinalKitAppDelegate {
             },
             settings: settings
         )
-    }
-    
-    
-    private var healthKit: HealthKit<FHIR> {
-        HealthKit {
-            CollectSample(
-                HKQuantityType(.stepCount),
-                deliverySetting: .anchorQuery(.afterAuthorizationAndApplicationWillLaunch)
-            )
-        } adapter: {
-            HealthKitToFHIRAdapter()
-        }
     }
 }

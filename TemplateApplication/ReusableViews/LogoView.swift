@@ -8,17 +8,18 @@
 
 import SwiftUI
 
+
 struct LogoView: View {
     var body: some View {
         Image("Logo")
             .resizable()
             .scaledToFit()
-            .foregroundColor(Color.accentColor)
+            .foregroundColor(.accentColor)
             .accessibilityLabel(Text("The OwnYourData App Icon"))
-            .frame(width: 240, height: 240) // Make it twice as large
-            . padding(.vertical, -40)
+            .frame(width: 100, height: 100)
     }
 }
+
 
 struct LogoView_Previews: PreviewProvider {
     static var previews: some View {

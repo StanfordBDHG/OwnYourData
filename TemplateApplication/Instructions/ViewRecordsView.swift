@@ -100,6 +100,8 @@ struct ViewRecordsView: View {
         }
     }
 }
+
+
 struct ViewRecordsView_Previews: PreviewProvider {
     static var previews: some View {
         RecordInstructView()
