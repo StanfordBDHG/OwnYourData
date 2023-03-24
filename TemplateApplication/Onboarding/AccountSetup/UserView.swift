@@ -50,7 +50,7 @@ struct UserView: View {
                 Spacer()
                 VStack(spacing: 16) {
                     ProgressView()
-                    Text("USER_VIEW_LOADING", bundle: .module)
+                    Text("USER_VIEW_LOADING")
                         .multilineTextAlignment(.center)
                 }
                 Spacer()

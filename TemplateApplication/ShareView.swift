@@ -11,7 +11,6 @@ import FHIR
 import HealthKitDataSource
 import HealthKitToFHIRAdapter
 import SwiftUI
-import TemplateSharedContext
 import UIKit
 
 
@@ -46,32 +45,30 @@ struct ShareView: View {
             
             Spacer().frame(height: 40)
 
-                VStack {
-                    Text("Share \nDocuments")
-                        .font(.largeTitle)
-                        .foregroundColor(Color.accentColor)
-                        .multilineTextAlignment(.center)
-                    Button(action: {
-                        guard let url = URL(string: "x-apple-health://") else {
-                            fatalError("Could not create a Health App URL")
-                        }
-                        openURL(url)
-                    }) {
-                        Text("Select Documents")
-                            .font(.headline)
-                            .fontWeight(.bold)
-                            .padding()
-                            .frame(maxWidth: .infinity)
-                            .foregroundColor(Color.white)
-                            .background(Color(UIColor(named: "ButtonColor_light") ?? .gray))
-                            .cornerRadius(10)
-                            .padding(.leading)
-                            .padding(.trailing)
+            VStack {
+                Text("Share \nDocuments")
+                    .font(.largeTitle)
+                    .foregroundColor(Color.accentColor)
+                    .multilineTextAlignment(.center)
+                Button(action: {
+                    guard let url = URL(string: "x-apple-health://") else {
+                        fatalError("Could not create a Health App URL")
                     }
+                    openURL(url)
+                }) {
+                    Text("Select Documents")
+                        .font(.headline)
+                        .fontWeight(.bold)
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .foregroundColor(Color.white)
+                        .background(Color(UIColor(named: "ButtonColor_light") ?? .gray))
+                        .cornerRadius(10)
+                        .padding(.leading)
+                        .padding(.trailing)
                 }
-                .padding(.bottom, 30)
-                
             }
+            .padding(.bottom, 30)
         }
     }
-
+}

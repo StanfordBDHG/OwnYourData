@@ -10,7 +10,6 @@ import FHIR
 import HealthKitDataSource
 import Onboarding
 import SwiftUI
-import TemplateSharedContext
 
 
 struct HealthKitPermissions: View {
@@ -31,7 +30,7 @@ struct HealthKitPermissions: View {
                     Image(systemName: "heart.text.square.fill")
                         .font(.system(size: 150))
                         .foregroundColor(.accentColor)
-                    Text("HEALTHKIT_PERMISSIONS_DESCRIPTION", bundle: .module)
+                    Text("HEALTHKIT_PERMISSIONS_DESCRIPTION")
                         .multilineTextAlignment(.center)
                         .padding(.vertical, 16)
                     Spacer()

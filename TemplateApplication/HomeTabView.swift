@@ -10,7 +10,7 @@ import FirebaseAccount
 import FirebaseAuth
 import SafariServices
 import SwiftUI
-import TemplateSharedContext
+
 
 struct HomeTabView: View {
     @State private var userName: String = ""
@@ -93,6 +93,8 @@ struct HomeTabView: View {
         }
     }
 }
+
+
 struct HomeTabView_Previews: PreviewProvider {
     static var previews: some View {
         HomeTabView()

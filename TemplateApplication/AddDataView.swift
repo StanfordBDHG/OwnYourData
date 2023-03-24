@@ -11,14 +11,14 @@ import FHIR
 import HealthKitDataSource
 import HealthKitToFHIRAdapter
 import ImageSource
+import PDFKit
 import SwiftUI
-import TemplateSharedContext
 import UIKit
 
 
 struct AddDataView: View {
     @Environment(\.openURL) var openURL
-    @State var capturedImage: ImageState = .empty
+    @State var document: PDFDocument?
     @State var showingPicker = false
     
     
@@ -71,12 +71,18 @@ struct AddDataView: View {
                 }
             }
             .padding(.bottom, 30)
-            .sheet(isPresented: $showingPicker) {
-                Camera(image: $capturedImage)
+            .fullScreenCover(isPresented: $showingPicker) {
+                DocumentScanner(document: $document)
+                    .background {
+                        Color.black.ignoresSafeArea()
+                    }
+                }
             }
         }
     }
 }
+
+
 struct AddDataView_Previews: PreviewProvider {
     static var previews: some View {
         AddDataView()

@@ -102,9 +102,9 @@ struct AccountSetup: View {
         VStack {
             Group {
                 if account.signedIn {
-                    Text("ACCOUNT_SIGNED_IN_DESCRIPTION", bundle: .module)
+                    Text("ACCOUNT_SIGNED_IN_DESCRIPTION")
                 } else {
-                    Text("ACCOUNT_SETUP_DESCRIPTION", bundle: .module)
+                    Text("ACCOUNT_SETUP_DESCRIPTION")
                 }
             }
                 .multilineTextAlignment(.center)

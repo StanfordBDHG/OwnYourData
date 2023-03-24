@@ -6,6 +6,8 @@
 // SPDX-License-Identifier: MIT
 //
 
-// MARK: - Contacts
-"CONTACTS_NAVIGATION_TITLE" = "Contacts";
-"ALEXA_AALAMI_BIO" = "Alexa is an undergraduate studying Applied Math. She has a passion for design.";
+extension String {
+    var moduleLocalized: String {
+        String(localized: LocalizationValue(self), bundle: .main)
+    }
+}
