@@ -286,7 +286,6 @@
 				FCD3FFB829CD1A49004D1E0E /* RecordInstructView.swift */,
 				FC024B5629CD9B1F00AFEFDF /* ViewRecordsView.swift */,
 				FCD3FFBA29CD898D004D1E0E /* AddRecordInstructView.swift */,
-				FC1294D229CC1B760008FF21 /* DocumentGalleryView.swift */,
 				2FB2943329CBA29900EE91A0 /* ProfileView.swift */,
 				2FB2943629CBA29900EE91A0 /* ShareView.swift */,
 				27DD24A329CCE56300A6EEBC /* WebView.swift */,

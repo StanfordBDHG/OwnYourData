@@ -75,7 +75,7 @@ struct AddDataView: View {
                 }
                 .padding(.bottom, 30)
                 .fullScreenCover(isPresented: $showingPicker) {
-                    DocumentScanner(document: $document)
+                    DocumentScanner()
                         .background {
                             Color.black.ignoresSafeArea()
                         }
