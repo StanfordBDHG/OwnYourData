@@ -17,12 +17,7 @@ import UIKit
 
 struct AddRecordInstructView: View {
     @Environment(\.openURL) var openURL
-    let accentColor = Color("AccentColor")
-    let buttonColorLight = Color("ButtonColor_light")
-    let appleHealthAppImage = Image("AppleHealthAppImage")
-    let browseTabImage = Image("BrowseTabImage")
-    let addAccountImage = Image("AddAccountImage")
-    let sfSymbols = ["1.circle.fill", "2.circle.fill", "3.circle.fill", "4.circle.fill"]
+    
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -46,6 +41,7 @@ struct AddRecordInstructView: View {
                 Image("AppleHealthAppImage")
                     .resizable()
                     .scaledToFit()
+                    .accessibilityLabel(Text("Apple Health App"))
                     .foregroundColor(Color.accentColor)
                     .frame(width: 90, height: 90)
                     .padding(.trailing, 18)
@@ -62,6 +58,7 @@ struct AddRecordInstructView: View {
                 Image("BrowseTabImage")
                     .resizable()
                     .scaledToFit()
+                    .accessibilityLabel(Text("Apple Health App"))
                     .foregroundColor(Color.accentColor)
                     .frame(width: 120, height: 120)
                     .padding(.trailing, 0)
@@ -78,6 +75,7 @@ struct AddRecordInstructView: View {
                 Image("AddAccountImage")
                     .resizable()
                     .scaledToFit()
+                    .accessibilityLabel(Text("Apple Health App"))
                     .foregroundColor(Color.accentColor)
                     .frame(width: 120, height: 120)
                     .padding(.leading, 45)
@@ -106,6 +104,7 @@ struct AddRecordInstructView: View {
                 Image("AppleHealthAppImage")
                     .resizable()
                     .scaledToFit()
+                    .accessibilityLabel(Text("Apple Health App"))
                     .foregroundColor(Color.accentColor)
                     .frame(width: 90, height: 90)
                     .padding(.bottom, 30)
@@ -119,6 +118,8 @@ struct AddRecordInstructView: View {
         }
     }
 }
+
+
 struct AddREcordInstructView_Previews: PreviewProvider {
     static var previews: some View {
         RecordInstructView()

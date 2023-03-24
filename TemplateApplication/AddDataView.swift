@@ -83,11 +83,11 @@ struct AddDataView: View {
             }
         }
     }
-    
-    
-    struct AddDataView_Previews: PreviewProvider {
-        static var previews: some View {
-            AddDataView()
-        }
+}
+
+
+struct AddDataView_Previews: PreviewProvider {
+    static var previews: some View {
+        AddDataView()
     }
 }
