@@ -15,13 +15,13 @@ import SwiftUI
 import UIKit
 
 
-struct RecordInstructView: View {
+struct ViewRecordsView: View {
     @Environment(\.openURL) var openURL
     let accentColor = Color("AccentColor")
     let buttonColorLight = Color("ButtonColor_light")
     let appleHealthAppImage = Image("AppleHealthAppImage")
     let browseTabImage = Image("BrowseTabImage")
-    let sfSymbols = ["1.circle.fill", "2.circle.fill", "3.circle.fill", "4.circle.fill"]
+    let sfSymbols = ["1.circle.fill", "2.circle.fill", "3.circle.fill"]
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -71,27 +71,10 @@ struct RecordInstructView: View {
                     .foregroundColor(Color(UIColor(named: "ButtonColor_light") ?? .gray))
                     .font(.title)
                     .frame(width: 90, height: 90)
-                Text("Scroll and select Health Records to share")
+                Text("Select the records you would like to view!")
                     .foregroundColor(Color.accentColor)
                     .font(.title3)
-                    .padding(.trailing, 150)
-            }
-            HStack {
-                Image(systemName: "4.circle.fill")
-                    .foregroundColor(Color(UIColor(named: "ButtonColor_light") ?? .gray))
-                    .font(.title)
-                    .frame(width: 90, height: 90)
-                Text("Tap \"Export PDF\" on the top right to share PDF")
-                    .foregroundColor(Color.accentColor)
-                    .font(.title3)
-                    .padding(.trailing, 10)
-                Spacer()
-                Image("ExportIconImage")
-                    .resizable()
-                    .scaledToFit()
-                    .foregroundColor(Color.accentColor)
-                    .frame(width: 90, height: 90)
-                    .padding(.trailing, 10)
+                    .padding(.trailing, 50)
             }
             Spacer()
             HStack {
@@ -120,7 +103,7 @@ struct RecordInstructView: View {
         
     }
 }
-struct RecordInstructView_Previews: PreviewProvider {
+struct ViewRecordsView_Previews: PreviewProvider {
     static var previews: some View {
         RecordInstructView()
     }

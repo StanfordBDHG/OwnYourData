@@ -18,45 +18,18 @@ struct ShareView: View {
     @Environment(\.openURL) var openURL
     
     var body: some View {
-        VStack {
-            LogoView()
-            Spacer()
-            Text("Share \nHealth Records")
-                .font(.largeTitle)
-                .foregroundColor(Color.accentColor)
-                .multilineTextAlignment(.center)
-            Button(action: {
-                guard let url = URL(string: "x-apple-health://") else {
-                    fatalError("Could not create a Health App URL")
-                }
-                openURL(url)
-            }) {
-                Text("Open Health App")
-                    .font(.headline)
-                    .fontWeight(.bold)
-                    .padding()
-                    .frame(maxWidth: .infinity)
-                    .foregroundColor(Color.white)
-                    .background(Color(UIColor(named: "ButtonColor_light") ?? .gray))
-                    .cornerRadius(10)
-                    .padding(.leading)
-                    .padding(.trailing)
-            }
-            
-            Spacer().frame(height: 40)
-
+        NavigationView {
             VStack {
-                Text("Share \nDocuments")
+                LogoView()
+                Spacer()
+                Text("Share \nHealth Records")
                     .font(.largeTitle)
                     .foregroundColor(Color.accentColor)
+                    .fontWeight(.medium)
                     .multilineTextAlignment(.center)
-                Button(action: {
-                    guard let url = URL(string: "x-apple-health://") else {
-                        fatalError("Could not create a Health App URL")
-                    }
-                    openURL(url)
-                }) {
-                    Text("Select Documents")
+                
+                NavigationLink(destination: RecordInstructView()) {
+                    Text("Open Health App")
                         .font(.headline)
                         .fontWeight(.bold)
                         .padding()
@@ -67,8 +40,40 @@ struct ShareView: View {
                         .padding(.leading)
                         .padding(.trailing)
                 }
+                
+                Spacer().frame(height: 40)
+                
+                VStack {
+                    Text("Share \nDocuments")
+                        .font(.largeTitle)
+                        .foregroundColor(Color.accentColor)
+                        .fontWeight(.medium)
+                        .multilineTextAlignment(.center)
+                    Button(action: {
+                        guard let url = URL(string: "x-apple-health://") else {
+                            fatalError("Could not create a Health App URL")
+                        }
+                        openURL(url)
+                    }) {
+                        Text("Select Documents")
+                            .font(.headline)
+                            .fontWeight(.bold)
+                            .padding()
+                            .frame(maxWidth: .infinity)
+                            .foregroundColor(Color.white)
+                            .background(Color(UIColor(named: "ButtonColor_light") ?? .gray))
+                            .cornerRadius(10)
+                            .padding(.leading)
+                            .padding(.trailing)
+                    }
+                }
+                .padding(.bottom, 30)
             }
-            .padding(.bottom, 30)
+        }
+    }
+    struct ShareView_Previews: PreviewProvider {
+        static var previews: some View {
+            AddDataView()
         }
     }
 }
