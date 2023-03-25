@@ -16,7 +16,11 @@ import SwiftUI
 
 
 struct AccountSetup: View {
-    @AppStorage(StorageKeys.userName) var username = ""
+    @AppStorage(StorageKeys.onboardingFlowComplete) var completedOnboardingFlow = false
+    @AppStorage(StorageKeys.firstName) var firstName = ""
+    @AppStorage(StorageKeys.lastName) var lastName = ""
+    @AppStorage(StorageKeys.email) var email = ""
+    
     @Binding private var onboardingSteps: [OnboardingFlow.Step]
     @EnvironmentObject var account: Account
     
@@ -40,44 +44,33 @@ struct AccountSetup: View {
         )
             .onReceive(account.objectWillChange) {
                 if account.signedIn {
-                    if onboardingSteps.contains(where: { $0 == .signUp }) {
-                        guard let user = Auth.auth().currentUser else {
-                            return
-                        }
-                        
-                        let fullName = user.displayName?.components(separatedBy: " ")
-                        let firstName = fullName?[0] ?? ""
-                        let lastName = fullName?[1] ?? ""
-                        let email = user.email ?? ""
-                        
-                        let userData: [String: Any] = [
-                            "firstName": firstName,
-                            "lastName": lastName,
-                            "email": email,
-                            "signUpDate": Timestamp()
-                        ]
-                        
-                        Firestore.firestore().collection("users").document(user.uid).setData(userData) { err in
-                            if let err {
-                                print("Error uploading user data: \(err)")
-                            }
-                        }
-                        
-                        self.username = "\(firstName) \(lastName)"
+                    guard let user = Auth.auth().currentUser else {
+                        return
                     }
                     
-                    onboardingSteps.append(.healthKitPermissions)
-                    // Unfortunately, SwiftUI currently animates changes in the navigation path that do not change
-                    // the current top view. Therefore we need to do the following async procedure to remove the
-                    // `.login` and `.signUp` steps while disabling the animations before and re-enabling them
-                    // after the elements have been changed.
-                    Task { @MainActor in
-                        try? await Task.sleep(for: .seconds(1.0))
-                        UIView.setAnimationsEnabled(false)
-                        onboardingSteps.removeAll(where: { $0 == .login || $0 == .signUp })
-                        try? await Task.sleep(for: .seconds(1.0))
-                        UIView.setAnimationsEnabled(true)
+                    let fullName = user.displayName?.components(separatedBy: " ")
+                    let firstName = fullName?[0] ?? ""
+                    let lastName = fullName?[1] ?? ""
+                    let email = user.email ?? ""
+                    
+                    let userData: [String: Any] = [
+                        "firstName": firstName,
+                        "lastName": lastName,
+                        "email": email,
+                        "signUpDate": Timestamp()
+                    ]
+                    
+                    Firestore.firestore().collection("users").document(user.uid).setData(userData) { err in
+                        if let err {
+                            print("Error uploading user data: \(err)")
+                        }
                     }
+                    
+                    self.firstName = firstName
+                    self.lastName = lastName
+                    self.email = email
+                    
+                    completedOnboardingFlow = true
                 }
             }
     }
@@ -123,7 +116,7 @@ struct AccountSetup: View {
             OnboardingActionsView(
                 "ACCOUNT_NEXT".moduleLocalized,
                 action: {
-                    onboardingSteps.append(.healthKitPermissions)
+                    completedOnboardingFlow = true
                 }
             )
         } else {

@@ -16,26 +16,19 @@ class DocumentManager: ObservableObject {
         }
     }
     
-    
-    init() {
+    var documentURLs: [URL] {
         guard let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
-            return
+            return []
         }
         
         let ownYourDataDirectory = documentDirectory.appending(path: "OwnYourData")
-
-        
-        var documents: [PDFDocument] = []
-        do {
-            let items = try FileManager.default.contentsOfDirectory(at: ownYourDataDirectory, includingPropertiesForKeys: nil)
-            for item in items {
-                if let document = PDFDocument(url: item) {
-                    documents.append(document)
-                }
-            }
-            self.documents = documents
-        } catch {
-            return
+        return (try? FileManager.default.contentsOfDirectory(at: ownYourDataDirectory, includingPropertiesForKeys: nil)) ?? []
+    }
+    
+    
+    init() {
+        self.documents = documentURLs.compactMap { documentURL in
+            PDFDocument(url: documentURL)
         }
     }
     
@@ -74,6 +67,12 @@ class DocumentManager: ObservableObject {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                 self.objectWillChange.send()
             }
+        }
+    }
+    
+    func removeAllDocuments() {
+        for documentURL in documentURLs {
+            try? FileManager.default.removeItem(at: documentURL)
         }
     }
 }

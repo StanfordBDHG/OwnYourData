@@ -24,10 +24,8 @@
 		2F6025CD29BBE92B0045459E /* FHIRMockDataStorageProvider in Frameworks */ = {isa = PBXBuildFile; productRef = 2F6025CC29BBE92B0045459E /* FHIRMockDataStorageProvider */; };
 		2F6025D029BBEC610045459E /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 2F6025CF29BBEC610045459E /* FirebaseAuth */; };
 		2FA2023329CBCC0C0039C21A /* DocumentScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA2023229CBCC0C0039C21A /* DocumentScanner.swift */; };
-		2FB2943829CBA29900EE91A0 /* HealthRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB2943229CBA29900EE91A0 /* HealthRecordView.swift */; };
 		2FB2943929CBA29900EE91A0 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB2943329CBA29900EE91A0 /* ProfileView.swift */; };
 		2FB2943A29CBA29900EE91A0 /* AddDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB2943429CBA29900EE91A0 /* AddDataView.swift */; };
-		2FB2943B29CBA29900EE91A0 /* HomeTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB2943529CBA29900EE91A0 /* HomeTabView.swift */; };
 		2FB2943C29CBA29900EE91A0 /* ShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB2943629CBA29900EE91A0 /* ShareView.swift */; };
 		2FB2943D29CBA29900EE91A0 /* ClinicalTrialsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB2943729CBA29900EE91A0 /* ClinicalTrialsView.swift */; };
 		2FB2944029CBA4AE00EE91A0 /* ImageSource in Frameworks */ = {isa = PBXBuildFile; productRef = 2FB2943F29CBA4AE00EE91A0 /* ImageSource */; };
@@ -45,10 +43,16 @@
 		2FB2FCD329CBDDC00027D85A /* TemplateLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB2FCC829CBDDC00027D85A /* TemplateLogin.swift */; };
 		2FB2FCD429CBDDC00027D85A /* String+ModuleLocalized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB2FCC929CBDDC00027D85A /* String+ModuleLocalized.swift */; };
 		2FB2FCD529CBDDC00027D85A /* OnboardingFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB2FCCA29CBDDC00027D85A /* OnboardingFlow.swift */; };
-		2FB2FCD629CBDDC00027D85A /* HealthKitPermissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB2FCCB29CBDDC00027D85A /* HealthKitPermissions.swift */; };
 		2FB2FCD729CBDDC00027D85A /* Consent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB2FCCC29CBDDC00027D85A /* Consent.swift */; };
 		2FC9759F2978E39600BA99FE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2FC9759E2978E39600BA99FE /* Localizable.strings */; };
-		2FC975A82978F11A00BA99FE /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC975A72978F11A00BA99FE /* Home.swift */; };
+		2FC975A82978F11A00BA99FE /* OwnYourDataTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC975A72978F11A00BA99FE /* OwnYourDataTabView.swift */; };
+		2FCDD17729CE505D0097D6D2 /* OwnYourDataSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCDD17629CE505D0097D6D2 /* OwnYourDataSection.swift */; };
+		2FCDD17929CE50660097D6D2 /* OwnYourDataButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCDD17829CE50660097D6D2 /* OwnYourDataButton.swift */; };
+		2FCDD17A29CE51C30097D6D2 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB2943529CBA29900EE91A0 /* Home.swift */; };
+		2FCDD17F29CE603B0097D6D2 /* OpenAppleHealthApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCDD17E29CE603B0097D6D2 /* OpenAppleHealthApp.swift */; };
+		2FCDD18129CE60EB0097D6D2 /* Instructions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCDD18029CE60EB0097D6D2 /* Instructions.swift */; };
+		2FCDD18329CE64BE0097D6D2 /* InstructionsStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCDD18229CE64BE0097D6D2 /* InstructionsStep.swift */; };
+		2FCDD18529CE6A3E0097D6D2 /* HowItWorks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCDD18429CE6A3E0097D6D2 /* HowItWorks.swift */; };
 		2FE573A329CD4617008EBBD4 /* PDFDocument+Transferable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE573A229CD4617008EBBD4 /* PDFDocument+Transferable.swift */; };
 		2FE573A529CD464F008EBBD4 /* PDFListDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE573A429CD464F008EBBD4 /* PDFListDetailView.swift */; };
 		2FE573A729CD4672008EBBD4 /* PDFView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE573A629CD4672008EBBD4 /* PDFView.swift */; };
@@ -64,7 +68,7 @@
 		653A255528338800005D4D48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 653A255428338800005D4D48 /* Assets.xcassets */; };
 		653A256228338800005D4D48 /* TemplateApplicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653A256128338800005D4D48 /* TemplateApplicationTests.swift */; };
 		FC024B5729CD9B1F00AFEFDF /* ViewRecordsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC024B5629CD9B1F00AFEFDF /* ViewRecordsView.swift */; };
-		FC1294D329CC1B760008FF21 /* DocumentGalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1294D229CC1B760008FF21 /* DocumentGalleryView.swift */; };
+		FC1294D329CC1B760008FF21 /* DocumentGallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1294D229CC1B760008FF21 /* DocumentGallery.swift */; };
 		FCD3FFB729CD0C31004D1E0E /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD3FFB629CD0C31004D1E0E /* LogoView.swift */; };
 		FCD3FFB929CD1A49004D1E0E /* RecordInstructView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD3FFB829CD1A49004D1E0E /* RecordInstructView.swift */; };
 		FCD3FFBB29CD898D004D1E0E /* AddRecordInstructView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD3FFBA29CD898D004D1E0E /* AddRecordInstructView.swift */; };
@@ -95,10 +99,9 @@
 		2F6025CA29BBE70F0045459E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2FA2023229CBCC0C0039C21A /* DocumentScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentScanner.swift; sourceTree = "<group>"; };
 		2FAEC07F297F583900C11C42 /* TemplateApplication.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TemplateApplication.entitlements; sourceTree = "<group>"; };
-		2FB2943229CBA29900EE91A0 /* HealthRecordView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthRecordView.swift; sourceTree = "<group>"; };
 		2FB2943329CBA29900EE91A0 /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		2FB2943429CBA29900EE91A0 /* AddDataView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDataView.swift; sourceTree = "<group>"; };
-		2FB2943529CBA29900EE91A0 /* HomeTabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTabView.swift; sourceTree = "<group>"; };
+		2FB2943529CBA29900EE91A0 /* Home.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		2FB2943629CBA29900EE91A0 /* ShareView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareView.swift; sourceTree = "<group>"; };
 		2FB2943729CBA29900EE91A0 /* ClinicalTrialsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClinicalTrialsView.swift; sourceTree = "<group>"; };
 		2FB2FCB329CBDC0E0027D85A /* CodableArray+RawRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CodableArray+RawRepresentable.swift"; sourceTree = "<group>"; };
@@ -115,11 +118,16 @@
 		2FB2FCC829CBDDC00027D85A /* TemplateLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplateLogin.swift; sourceTree = "<group>"; };
 		2FB2FCC929CBDDC00027D85A /* String+ModuleLocalized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+ModuleLocalized.swift"; path = "TemplateApplication/Onboarding/String+ModuleLocalized.swift"; sourceTree = SOURCE_ROOT; };
 		2FB2FCCA29CBDDC00027D85A /* OnboardingFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnboardingFlow.swift; path = TemplateApplication/Onboarding/OnboardingFlow.swift; sourceTree = SOURCE_ROOT; };
-		2FB2FCCB29CBDDC00027D85A /* HealthKitPermissions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HealthKitPermissions.swift; path = TemplateApplication/Onboarding/HealthKitPermissions.swift; sourceTree = SOURCE_ROOT; };
 		2FB2FCCC29CBDDC00027D85A /* Consent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Consent.swift; path = TemplateApplication/Onboarding/Consent.swift; sourceTree = SOURCE_ROOT; };
 		2FC94CD4298B0A1D009C8209 /* TemplateApplication.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = TemplateApplication.xctestplan; sourceTree = "<group>"; };
 		2FC9759E2978E39600BA99FE /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
-		2FC975A72978F11A00BA99FE /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		2FC975A72978F11A00BA99FE /* OwnYourDataTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnYourDataTabView.swift; sourceTree = "<group>"; };
+		2FCDD17629CE505D0097D6D2 /* OwnYourDataSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnYourDataSection.swift; sourceTree = "<group>"; };
+		2FCDD17829CE50660097D6D2 /* OwnYourDataButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnYourDataButton.swift; sourceTree = "<group>"; };
+		2FCDD17E29CE603B0097D6D2 /* OpenAppleHealthApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAppleHealthApp.swift; sourceTree = "<group>"; };
+		2FCDD18029CE60EB0097D6D2 /* Instructions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instructions.swift; sourceTree = "<group>"; };
+		2FCDD18229CE64BE0097D6D2 /* InstructionsStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsStep.swift; sourceTree = "<group>"; };
+		2FCDD18429CE6A3E0097D6D2 /* HowItWorks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowItWorks.swift; sourceTree = "<group>"; };
 		2FE573A229CD4617008EBBD4 /* PDFDocument+Transferable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PDFDocument+Transferable.swift"; sourceTree = "<group>"; };
 		2FE573A429CD464F008EBBD4 /* PDFListDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFListDetailView.swift; sourceTree = "<group>"; };
 		2FE573A629CD4672008EBBD4 /* PDFView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFView.swift; sourceTree = "<group>"; };
@@ -133,7 +141,7 @@
 		653A256728338800005D4D48 /* OwnYourDataUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OwnYourDataUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		653A258928339462005D4D48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC024B5629CD9B1F00AFEFDF /* ViewRecordsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRecordsView.swift; sourceTree = "<group>"; };
-		FC1294D229CC1B760008FF21 /* DocumentGalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentGalleryView.swift; sourceTree = "<group>"; };
+		FC1294D229CC1B760008FF21 /* DocumentGallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentGallery.swift; sourceTree = "<group>"; };
 		FCD3FFB629CD0C31004D1E0E /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
 		FCD3FFB829CD1A49004D1E0E /* RecordInstructView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordInstructView.swift; sourceTree = "<group>"; };
 		FCD3FFBA29CD898D004D1E0E /* AddRecordInstructView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecordInstructView.swift; sourceTree = "<group>"; };
@@ -200,7 +208,6 @@
 			children = (
 				2FB2FCC329CBDDC00027D85A /* AccountSetup */,
 				2FB2FCCC29CBDDC00027D85A /* Consent.swift */,
-				2FB2FCCB29CBDDC00027D85A /* HealthKitPermissions.swift */,
 				2FB2FCC129CBDDBF0027D85A /* InterestingModules.swift */,
 				2FB2FCCA29CBDDC00027D85A /* OnboardingFlow.swift */,
 				2FB2FCC929CBDDC00027D85A /* String+ModuleLocalized.swift */,
@@ -234,6 +241,51 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		2FCDD17529CE50540097D6D2 /* ReusableViews */ = {
+			isa = PBXGroup;
+			children = (
+				FCD3FFB629CD0C31004D1E0E /* LogoView.swift */,
+				2FCDD17629CE505D0097D6D2 /* OwnYourDataSection.swift */,
+				2FCDD17829CE50660097D6D2 /* OwnYourDataButton.swift */,
+			);
+			path = ReusableViews;
+			sourceTree = "<group>";
+		};
+		2FCDD17B29CE57F30097D6D2 /* Tabs */ = {
+			isa = PBXGroup;
+			children = (
+				2FC975A72978F11A00BA99FE /* OwnYourDataTabView.swift */,
+				2FB2943529CBA29900EE91A0 /* Home.swift */,
+				2FB2943429CBA29900EE91A0 /* AddDataView.swift */,
+				2FB2943629CBA29900EE91A0 /* ShareView.swift */,
+				2FB2943329CBA29900EE91A0 /* ProfileView.swift */,
+			);
+			path = Tabs;
+			sourceTree = "<group>";
+		};
+		2FCDD17C29CE58210097D6D2 /* ClinicalTrials */ = {
+			isa = PBXGroup;
+			children = (
+				2FB2943729CBA29900EE91A0 /* ClinicalTrialsView.swift */,
+				27DD24A329CCE56300A6EEBC /* WebView.swift */,
+			);
+			path = ClinicalTrials;
+			sourceTree = "<group>";
+		};
+		2FCDD17D29CE58550097D6D2 /* Instructions */ = {
+			isa = PBXGroup;
+			children = (
+				FCD3FFB829CD1A49004D1E0E /* RecordInstructView.swift */,
+				FC024B5629CD9B1F00AFEFDF /* ViewRecordsView.swift */,
+				FCD3FFBA29CD898D004D1E0E /* AddRecordInstructView.swift */,
+				2FCDD18429CE6A3E0097D6D2 /* HowItWorks.swift */,
+				2FCDD18029CE60EB0097D6D2 /* Instructions.swift */,
+				2FCDD18229CE64BE0097D6D2 /* InstructionsStep.swift */,
+				2FCDD17E29CE603B0097D6D2 /* OpenAppleHealthApp.swift */,
+			);
+			path = Instructions;
+			sourceTree = "<group>";
+		};
 		2FE573A129CD4600008EBBD4 /* Documents */ = {
 			isa = PBXGroup;
 			children = (
@@ -242,7 +294,8 @@
 				2FE573A629CD4672008EBBD4 /* PDFView.swift */,
 				2FE573A829CD4697008EBBD4 /* PDFListRow.swift */,
 				2FE573AA29CD46BF008EBBD4 /* DocumentManager.swift */,
-				FC1294D229CC1B760008FF21 /* DocumentGalleryView.swift */,
+				2FA2023229CBCC0C0039C21A /* DocumentScanner.swift */,
+				FC1294D229CC1B760008FF21 /* DocumentGallery.swift */,
 			);
 			path = Documents;
 			sourceTree = "<group>";
@@ -273,22 +326,13 @@
 			isa = PBXGroup;
 			children = (
 				653A2550283387FE005D4D48 /* TemplateApplication.swift */,
-				FCD3FFB629CD0C31004D1E0E /* LogoView.swift */,
 				2F5E32BC297E05EA003432F8 /* TemplateAppDelegate.swift */,
+				2FCDD17B29CE57F30097D6D2 /* Tabs */,
 				2FB2FCD829CBDDC30027D85A /* Onboarding */,
 				2FE573A129CD4600008EBBD4 /* Documents */,
-				2FC975A72978F11A00BA99FE /* Home.swift */,
-				2FB2943429CBA29900EE91A0 /* AddDataView.swift */,
-				2FB2943729CBA29900EE91A0 /* ClinicalTrialsView.swift */,
-				2FB2943229CBA29900EE91A0 /* HealthRecordView.swift */,
-				2FA2023229CBCC0C0039C21A /* DocumentScanner.swift */,
-				2FB2943529CBA29900EE91A0 /* HomeTabView.swift */,
-				FCD3FFB829CD1A49004D1E0E /* RecordInstructView.swift */,
-				FC024B5629CD9B1F00AFEFDF /* ViewRecordsView.swift */,
-				FCD3FFBA29CD898D004D1E0E /* AddRecordInstructView.swift */,
-				2FB2943329CBA29900EE91A0 /* ProfileView.swift */,
-				2FB2943629CBA29900EE91A0 /* ShareView.swift */,
-				27DD24A329CCE56300A6EEBC /* WebView.swift */,
+				2FCDD17529CE50540097D6D2 /* ReusableViews */,
+				2FCDD17C29CE58210097D6D2 /* ClinicalTrials */,
+				2FCDD17D29CE58550097D6D2 /* Instructions */,
 				2FB2FCD929CBDE540027D85A /* Extensions & Infrastructure */,
 				2FC9759D2978E30800BA99FE /* Supporting Files */,
 			);
@@ -504,30 +548,35 @@
 				2FB2FCD229CBDDC00027D85A /* AccountSetup.swift in Sources */,
 				2FB2FCB829CBDC0E0027D85A /* StorageKeys.swift in Sources */,
 				2FB2FCD429CBDDC00027D85A /* String+ModuleLocalized.swift in Sources */,
+				2FCDD17729CE505D0097D6D2 /* OwnYourDataSection.swift in Sources */,
 				2FE573A929CD4697008EBBD4 /* PDFListRow.swift in Sources */,
 				2FE573AB29CD46BF008EBBD4 /* DocumentManager.swift in Sources */,
+				2FCDD18529CE6A3E0097D6D2 /* HowItWorks.swift in Sources */,
+				2FCDD17F29CE603B0097D6D2 /* OpenAppleHealthApp.swift in Sources */,
+				2FCDD18129CE60EB0097D6D2 /* Instructions.swift in Sources */,
 				2FA2023329CBCC0C0039C21A /* DocumentScanner.swift in Sources */,
-				2FB2943829CBA29900EE91A0 /* HealthRecordView.swift in Sources */,
 				FCD3FFB729CD0C31004D1E0E /* LogoView.swift in Sources */,
 				2FB2FCD029CBDDC00027D85A /* TemplateSignUp.swift in Sources */,
 				2FB2FCD729CBDDC00027D85A /* Consent.swift in Sources */,
 				2FB2FCD329CBDDC00027D85A /* TemplateLogin.swift in Sources */,
 				2FE573A729CD4672008EBBD4 /* PDFView.swift in Sources */,
-				2FC975A82978F11A00BA99FE /* Home.swift in Sources */,
+				2FC975A82978F11A00BA99FE /* OwnYourDataTabView.swift in Sources */,
 				2FE573A329CD4617008EBBD4 /* PDFDocument+Transferable.swift in Sources */,
 				2F4E23832989D51F0013F3D9 /* TemplateAppTestingSetup.swift in Sources */,
 				2F5E32BD297E05EA003432F8 /* TemplateAppDelegate.swift in Sources */,
 				2FB2FCD129CBDDC00027D85A /* UserView.swift in Sources */,
 				2FB2FCCE29CBDDC00027D85A /* Welcome.swift in Sources */,
+				2FCDD17A29CE51C30097D6D2 /* Home.swift in Sources */,
 				2FB2FCB929CBDC0E0027D85A /* FeatureFlags.swift in Sources */,
 				2FB2FCBA29CBDC0E0027D85A /* CodableArray+RawRepresentable.swift in Sources */,
 				2FB2FCCD29CBDDC00027D85A /* InterestingModules.swift in Sources */,
 				2FB2FCB729CBDC0E0027D85A /* Binding+Negate.swift in Sources */,
 				2FB2943D29CBA29900EE91A0 /* ClinicalTrialsView.swift in Sources */,
+				2FCDD18329CE64BE0097D6D2 /* InstructionsStep.swift in Sources */,
 				2FB2943929CBA29900EE91A0 /* ProfileView.swift in Sources */,
 				FCD3FFB929CD1A49004D1E0E /* RecordInstructView.swift in Sources */,
 				2FE573A529CD464F008EBBD4 /* PDFListDetailView.swift in Sources */,
-				2FB2FCD629CBDDC00027D85A /* HealthKitPermissions.swift in Sources */,
+				2FCDD17929CE50660097D6D2 /* OwnYourDataButton.swift in Sources */,
 				2FB2FCD529CBDDC00027D85A /* OnboardingFlow.swift in Sources */,
 				2FB2FCCF29CBDDC00027D85A /* IconView.swift in Sources */,
 				FC024B5729CD9B1F00AFEFDF /* ViewRecordsView.swift in Sources */,
@@ -536,8 +585,7 @@
 				27DD24A429CCE56400A6EEBC /* WebView.swift in Sources */,
 				FCD3FFBB29CD898D004D1E0E /* AddRecordInstructView.swift in Sources */,
 				2FB2943A29CBA29900EE91A0 /* AddDataView.swift in Sources */,
-				FC1294D329CC1B760008FF21 /* DocumentGalleryView.swift in Sources */,
-				2FB2943B29CBA29900EE91A0 /* HomeTabView.swift in Sources */,
+				FC1294D329CC1B760008FF21 /* DocumentGallery.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -654,7 +702,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 637867499T;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "TemplateApplication/Supporting Files/Info.plist";
@@ -846,7 +894,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 637867499T;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "TemplateApplication/Supporting Files/Info.plist";
