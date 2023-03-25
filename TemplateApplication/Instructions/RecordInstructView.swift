@@ -26,12 +26,14 @@ struct RecordInstructView: View {
                 InstructionsStep.browseTab,
                 InstructionsStep(title: "Scroll and select Health Records to share"),
                 InstructionsStep(title: "Tap \"Export PDF\" on the top right to share PDF") {
-                    Image("ExportIconImage")
-                        .resizable()
-                        .scaledToFit()
-                        .accessibilityLabel(Text("Export an health record in the Apple Health App"))
-                        .foregroundColor(Color.accentColor)
-                        .frame(width: 90, height: 90)
+                    Text("Export PDF")
+                        .foregroundColor(.blue)
+                        .frame(width: 120, height: 50)
+                        .background {
+                            Rectangle()
+                                .foregroundColor(Color(uiColor: .systemBackground))
+                                .shadow(color: .gray, radius: 4)
+                        }
                         .padding(.trailing, 10)
                 }
             ]

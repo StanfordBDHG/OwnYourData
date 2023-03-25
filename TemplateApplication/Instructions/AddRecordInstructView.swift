@@ -31,7 +31,8 @@ struct AddRecordInstructView: View {
                         .accessibilityLabel(Text("Add an account in the Apple Health app."))
                         .foregroundColor(Color.accentColor)
                         .frame(width: 120, height: 120)
-                        .padding(.leading, 45)
+                        .shadow(color: .gray, radius: 4)
+                        .padding(.leading, 16)
                 },
                 InstructionsStep(title: "Log into your health system and provide permission to \ndownload your health data to your phone")
             ]

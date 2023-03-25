@@ -45,7 +45,8 @@ extension InstructionsStep {
                 .accessibilityLabel(Text("Open the Apple Health app."))
                 .foregroundColor(.accentColor)
                 .frame(width: 90, height: 90)
-                .padding(.trailing, 18)
+                .shadow(color: .gray, radius: 4)
+                .padding(.trailing, 16)
         }
     }
     
@@ -56,8 +57,9 @@ extension InstructionsStep {
                 .scaledToFit()
                 .accessibilityLabel(Text("Navigate to the Browse tab."))
                 .foregroundColor(Color.accentColor)
-                .frame(width: 120, height: 120)
-                .padding(.trailing, 0)
+                .frame(width: 85, height: 85)
+                .shadow(color: .gray, radius: 4)
+                .padding(.trailing, 16)
         }
     }
 }

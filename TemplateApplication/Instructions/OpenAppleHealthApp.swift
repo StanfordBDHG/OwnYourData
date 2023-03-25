@@ -14,20 +14,20 @@ struct OpenAppleHealthApp: View {
     
     
     var body: some View {
-        HStack {
+        HStack(spacing: 16) {
             Text("Tap Health App \nto get started!")
                 .foregroundColor(.accentColor)
                 .font(.system(size: 30).weight(.bold))
-                .padding(.leading, 40)
-                .padding(.trailing, 10)
             Image("AppleHealthAppImage")
                 .resizable()
                 .scaledToFit()
                 .foregroundColor(Color.accentColor)
                 .accessibilityLabel(Text("Apple Health App"))
                 .frame(width: 90, height: 90)
+                .shadow(color: .gray, radius: 4)
         }
-            .padding(.bottom, 30)
+            .padding(.horizontal, 32)
+            .padding(.bottom, 32)
             .contentShape(Rectangle())
             .onTapGesture {
                 guard let url = URL(string: "x-apple-health://") else {
