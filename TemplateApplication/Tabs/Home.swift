@@ -26,7 +26,7 @@ struct Home: View {
                     .multilineTextAlignment(.center)
                 Spacer()
                 OwnYourDataButton(
-                    title: "Records",
+                    title: "Health Records",
                     destination: ViewRecordsView()
                 )
                 OwnYourDataButton(

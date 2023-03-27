@@ -20,7 +20,7 @@ struct AddDataView: View {
                 Spacer()
                 OwnYourDataSection(
                     title: "Connect to \nHealth System",
-                    buttonTitle: "Select Health System",
+                    buttonTitle: "Add Health System",
                     destination: AddRecordInstructView()
                 )
                 OwnYourDataSection(
