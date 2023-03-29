@@ -27,8 +27,8 @@ struct ShareView: View {
                     buttonTitle: "Scanned Documents",
                     destination: DocumentGallery()
                 )
-                    }
             }
+        }
                 .padding(.bottom, 30)
         }
     }
