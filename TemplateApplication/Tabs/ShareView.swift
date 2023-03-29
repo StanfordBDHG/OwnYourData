@@ -27,20 +27,11 @@ struct ShareView: View {
                     buttonTitle: "Scanned Documents",
                     destination: DocumentGallery()
                 )
-                OwnYourDataButton(
-                    title: "Apple Health Documents",
-                    action: {
-                        guard let url = URL(string: "x-apple-health://") else {
-                            fatalError("Could not create a Health App URL")
-                        }
-                        openURL(url)
-                    }
-                )
             }
+        }
                 .padding(.bottom, 30)
         }
     }
-}
 
 
 struct ShareView_Previews: PreviewProvider {

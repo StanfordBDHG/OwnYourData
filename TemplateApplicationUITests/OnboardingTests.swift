@@ -28,6 +28,6 @@ class OnboardingTests: XCTestCase {
     func testOnboardingFlow() throws {
         let app = XCUIApplication()
         
-        XCTAssertTrue(app.staticTexts["Access\nClinical Trials"].waitForExistence(timeout: 5))
+        XCTAssertTrue(app.staticTexts["What We\nOffer"].waitForExistence(timeout: 5))
     }
 }
