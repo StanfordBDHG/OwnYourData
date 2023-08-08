@@ -6,11 +6,11 @@
 // SPDX-License-Identifier: MIT
 //
 
-import Account
-import FirebaseAccount
 import Foundation
+import SpeziAccount
+import SpeziFirebaseAccount
+import SpeziViews
 import SwiftUI
-import Views
 
 
 struct UserView: View {
@@ -29,8 +29,7 @@ struct UserView: View {
     }
     
     
-    @ViewBuilder
-    private var userInformation: some View {
+    @ViewBuilder private var userInformation: some View {
         HStack(spacing: 16) {
             if account.signedIn,
                let user = firebaseAccountConfiguration.user,

@@ -6,10 +6,17 @@
 // SPDX-License-Identifier: MIT
 //
 
+import HealthKit
 import Spezi
 import SpeziHealthKit
 
 
-actor OwnYourDateStandard: Standard {
+actor OwnYourDateStandard: Standard, HealthKitConstraint {
+    func add(_ response: HKSample) async {
+        print(response)
+    }
     
+    func remove(removalContext: SpeziHealthKit.HKSampleRemovalContext) {
+        print(removalContext)
+    }
 }

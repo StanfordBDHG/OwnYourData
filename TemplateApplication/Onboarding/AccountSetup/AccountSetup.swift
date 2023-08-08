@@ -6,11 +6,11 @@
 // SPDX-License-Identifier: MIT
 //
 
-import Account
-import FirebaseAccount
 import FirebaseAuth
 import FirebaseFirestore
-import Onboarding
+import SpeziAccount
+import SpeziFirebaseAccount
+import SpeziOnboarding
 import SwiftUI
 
 
@@ -74,8 +74,7 @@ struct AccountSetup: View {
             }
     }
     
-    @ViewBuilder
-    private var accountImage: some View {
+    @ViewBuilder private var accountImage: some View {
         Group {
             if account.signedIn {
                 Image(systemName: "person.badge.shield.checkmark.fill")
@@ -87,8 +86,7 @@ struct AccountSetup: View {
             .foregroundColor(.accentColor)
     }
     
-    @ViewBuilder
-    private var accountDescription: some View {
+    @ViewBuilder private var accountDescription: some View {
         VStack {
             Group {
                 if account.signedIn {
@@ -109,8 +107,7 @@ struct AccountSetup: View {
         }
     }
     
-    @ViewBuilder
-    private var actionView: some View {
+    @ViewBuilder private var actionView: some View {
         if account.signedIn {
             OnboardingActionsView(
                 "ACCOUNT_NEXT".moduleLocalized,

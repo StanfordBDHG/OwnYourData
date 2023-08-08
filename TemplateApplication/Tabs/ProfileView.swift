@@ -6,9 +6,9 @@
 // SPDX-License-Identifier: MIT
 //
 
-import FirebaseAccount
 import FirebaseAuth
 import FirebaseFirestore
+import SpeziFirebaseAccount
 import SwiftUI
 
 

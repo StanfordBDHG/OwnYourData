@@ -7,12 +7,13 @@
 //
 
 import Spezi
-import FirebaseAccount
+import SpeziAccount
 import class FirebaseFirestore.FirestoreSettings
 import FirebaseAuth
-import FirestoreDataStorage
 import HealthKit
-import HealthKitDataSource
+import SpeziFirebaseAccount
+import SpeziFirestore
+import SpeziHealthKit
 import SwiftUI
 
 
@@ -33,11 +34,9 @@ class TemplateAppDelegate: SpeziAppDelegate {
     
     
     private var firestore: Firestore {
-        let settings = FirestoreSettings()
+        var settings = FirestoreSettings()
         if FeatureFlags.useFirebaseEmulator {
-            settings.host = "localhost:8080"
-            settings.isPersistenceEnabled = false
-            settings.isSSLEnabled = false
+            settings = .emulator
         }
         
         return Firestore(

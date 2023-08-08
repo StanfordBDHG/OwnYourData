@@ -126,6 +126,15 @@
       }
     },
     {
+      "identity" : "spezifirebase",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/StanfordSpezi/SpeziFirebase.git",
+      "state" : {
+        "revision" : "d57ddfb71d7ece1e5fecf1a1df34dc93e2c7c58d",
+        "version" : "0.4.0"
+      }
+    },
+    {
       "identity" : "spezihealthkit",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordSpezi/SpeziHealthKit.git",
