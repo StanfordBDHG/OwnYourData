@@ -6,11 +6,10 @@
 // SPDX-License-Identifier: MIT
 //
 
-import XCTest
+import Spezi
+import SpeziHealthKit
 
 
-class TemplateApplicationTests: XCTestCase {
-    func testExample() throws {
-        XCTAssertTrue(true)
-    }
+actor OwnYourDateStandard: Standard {
+    
 }

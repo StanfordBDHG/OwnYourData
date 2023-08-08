@@ -1,5 +1,5 @@
 //
-// This source file is part of the Stanford CardinalKit Template Application project
+// This source file is part of the Stanford OwnYourData Application project
 //
 // SPDX-FileCopyrightText: 2023 Stanford University
 //
@@ -9,7 +9,7 @@
 import SwiftUI
 
 
-/// Displays an multi-step onboarding flow for the CardinalKit Template Application.
+/// Displays an multi-step onboarding flow for the Stanford OwnYourData Applicationn.
 public struct OnboardingFlow: View {
     enum Step: String, Codable {
         case interestingModules

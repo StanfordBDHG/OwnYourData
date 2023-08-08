@@ -1,5 +1,5 @@
 //
-// This source file is part of the Stanford CardinalKit Template Application project
+// This source file is part of the Stanford OwnYourData Application project
 //
 // SPDX-FileCopyrightText: 2023 Stanford University
 //
@@ -7,7 +7,6 @@
 //
 
 import Account
-import class FHIR.FHIR
 import FirebaseAccount
 import Foundation
 import SwiftUI
@@ -16,7 +15,7 @@ import Views
 
 struct UserView: View {
     @EnvironmentObject var account: Account
-    @EnvironmentObject var firebaseAccountConfiguration: FirebaseAccountConfiguration<FHIR>
+    @EnvironmentObject var firebaseAccountConfiguration: FirebaseAccountConfiguration
     
     
     var body: some View {
@@ -65,7 +64,7 @@ struct SwiftUIView_Previews: PreviewProvider {
     static var previews: some View {
         UserView()
             .padding()
-            .environmentObject(FirebaseAccountConfiguration<FHIR>(emulatorSettings: (host: "localhost", port: 9099)))
+            .environmentObject(FirebaseAccountConfiguration(emulatorSettings: (host: "localhost", port: 9099)))
     }
 }
 #endif

@@ -1,5 +1,5 @@
 //
-// This source file is part of the Stanford CardinalKit Template Application project
+// This source file is part of the Stanford OwnYourData Application project
 //
 // SPDX-FileCopyrightText: 2023 Stanford University
 //
@@ -7,7 +7,6 @@
 //
 
 import Account
-import class FHIR.FHIR
 import FirebaseAccount
 import FirebaseAuth
 import FirebaseFirestore
@@ -148,7 +147,7 @@ struct AccountSetup_Previews: PreviewProvider {
     static var previews: some View {
         AccountSetup(onboardingSteps: $path)
             .environmentObject(Account(accountServices: []))
-            .environmentObject(FirebaseAccountConfiguration<FHIR>(emulatorSettings: (host: "localhost", port: 9099)))
+            .environmentObject(FirebaseAccountConfiguration(emulatorSettings: (host: "localhost", port: 9099)))
     }
 }
 #endif
