@@ -1,31 +1,25 @@
 //
-// This source file is part of the Stanford CardinalKit Template Application project
+// This source file is part of the Stanford OwnYourData Application project
 //
 // SPDX-FileCopyrightText: 2023 Stanford University
 //
 // SPDX-License-Identifier: MIT
 //
 
-import CardinalKit
-import FHIR
-import FHIRMockDataStorageProvider
-import FHIRToFirestoreAdapter
-import FirebaseAccount
+import Spezi
+import SpeziAccount
 import class FirebaseFirestore.FirestoreSettings
 import FirebaseAuth
-import FirestoreDataStorage
-import FirestoreStoragePrefixUserIdAdapter
 import HealthKit
-import HealthKitDataSource
-import HealthKitToFHIRAdapter
-import Questionnaires
-import Scheduler
+import SpeziFirebaseAccount
+import SpeziFirestore
+import SpeziHealthKit
 import SwiftUI
 
 
-class TemplateAppDelegate: CardinalKitAppDelegate {
+class TemplateAppDelegate: SpeziAppDelegate {
     override var configuration: Configuration {
-        Configuration(standard: FHIR()) {
+        Configuration(standard: OwnYourDateStandard()) {
             if !FeatureFlags.disableFirebase {
                 if FeatureFlags.useFirebaseEmulator {
                     FirebaseAccountConfiguration(emulatorSettings: (host: "localhost", port: 9099))
@@ -39,19 +33,13 @@ class TemplateAppDelegate: CardinalKitAppDelegate {
     }
     
     
-    private var firestore: Firestore<FHIR> {
-        let settings = FirestoreSettings()
+    private var firestore: Firestore {
+        var settings = FirestoreSettings()
         if FeatureFlags.useFirebaseEmulator {
-            settings.host = "localhost:8080"
-            settings.isPersistenceEnabled = false
-            settings.isSSLEnabled = false
+            settings = .emulator
         }
         
         return Firestore(
-            adapter: {
-                FHIRToFirestoreAdapter()
-                FirestoreStoragePrefixUserIdAdapter()
-            },
             settings: settings
         )
     }

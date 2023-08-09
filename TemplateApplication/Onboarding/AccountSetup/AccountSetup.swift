@@ -1,17 +1,16 @@
 //
-// This source file is part of the Stanford CardinalKit Template Application project
+// This source file is part of the Stanford OwnYourData Application project
 //
 // SPDX-FileCopyrightText: 2023 Stanford University
 //
 // SPDX-License-Identifier: MIT
 //
 
-import Account
-import class FHIR.FHIR
-import FirebaseAccount
 import FirebaseAuth
 import FirebaseFirestore
-import Onboarding
+import SpeziAccount
+import SpeziFirebaseAccount
+import SpeziOnboarding
 import SwiftUI
 
 
@@ -75,8 +74,7 @@ struct AccountSetup: View {
             }
     }
     
-    @ViewBuilder
-    private var accountImage: some View {
+    @ViewBuilder private var accountImage: some View {
         Group {
             if account.signedIn {
                 Image(systemName: "person.badge.shield.checkmark.fill")
@@ -88,8 +86,7 @@ struct AccountSetup: View {
             .foregroundColor(.accentColor)
     }
     
-    @ViewBuilder
-    private var accountDescription: some View {
+    @ViewBuilder private var accountDescription: some View {
         VStack {
             Group {
                 if account.signedIn {
@@ -110,8 +107,7 @@ struct AccountSetup: View {
         }
     }
     
-    @ViewBuilder
-    private var actionView: some View {
+    @ViewBuilder private var actionView: some View {
         if account.signedIn {
             OnboardingActionsView(
                 "ACCOUNT_NEXT".moduleLocalized,
@@ -148,7 +144,7 @@ struct AccountSetup_Previews: PreviewProvider {
     static var previews: some View {
         AccountSetup(onboardingSteps: $path)
             .environmentObject(Account(accountServices: []))
-            .environmentObject(FirebaseAccountConfiguration<FHIR>(emulatorSettings: (host: "localhost", port: 9099)))
+            .environmentObject(FirebaseAccountConfiguration(emulatorSettings: (host: "localhost", port: 9099)))
     }
 }
 #endif

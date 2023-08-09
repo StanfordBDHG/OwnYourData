@@ -1,22 +1,21 @@
 //
-// This source file is part of the Stanford CardinalKit Template Application project
+// This source file is part of the Stanford OwnYourData Application project
 //
 // SPDX-FileCopyrightText: 2023 Stanford University
 //
 // SPDX-License-Identifier: MIT
 //
 
-import Account
-import class FHIR.FHIR
-import FirebaseAccount
 import Foundation
+import SpeziAccount
+import SpeziFirebaseAccount
+import SpeziViews
 import SwiftUI
-import Views
 
 
 struct UserView: View {
     @EnvironmentObject var account: Account
-    @EnvironmentObject var firebaseAccountConfiguration: FirebaseAccountConfiguration<FHIR>
+    @EnvironmentObject var firebaseAccountConfiguration: FirebaseAccountConfiguration
     
     
     var body: some View {
@@ -30,8 +29,7 @@ struct UserView: View {
     }
     
     
-    @ViewBuilder
-    private var userInformation: some View {
+    @ViewBuilder private var userInformation: some View {
         HStack(spacing: 16) {
             if account.signedIn,
                let user = firebaseAccountConfiguration.user,
@@ -65,7 +63,7 @@ struct SwiftUIView_Previews: PreviewProvider {
     static var previews: some View {
         UserView()
             .padding()
-            .environmentObject(FirebaseAccountConfiguration<FHIR>(emulatorSettings: (host: "localhost", port: 9099)))
+            .environmentObject(FirebaseAccountConfiguration(emulatorSettings: (host: "localhost", port: 9099)))
     }
 }
 #endif

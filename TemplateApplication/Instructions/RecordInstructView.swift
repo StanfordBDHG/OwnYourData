@@ -1,18 +1,12 @@
 //
-// This source file is part of the Stanford CardinalKit Template Application project
+// This source file is part of the Stanford OwnYourData Application project
 //
 // SPDX-FileCopyrightText: 2023 Stanford University
 //
 // SPDX-License-Identifier: MIT
 //
 
-import CardinalKit
-import FHIR
-import HealthKitDataSource
-import HealthKitToFHIRAdapter
-import ImageSource
 import SwiftUI
-import UIKit
 
 
 struct RecordInstructView: View {

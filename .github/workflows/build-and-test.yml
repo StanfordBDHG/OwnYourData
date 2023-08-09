@@ -1,5 +1,5 @@
 #
-# This source file is part of the Stanford CardinalKit Template Application project
+# This source file is part of the Stanford OwnYourData Application project
 #
 # SPDX-FileCopyrightText: 2023 Stanford University
 #
@@ -25,7 +25,7 @@ jobs:
     uses: StanfordBDHG/.github/.github/workflows/xcodebuild-or-fastlane.yml@v2
     with:
       artifactname: OwnYourData.xcresult
-      runsonlabels: '["macos-13"]'
+      runsonlabels: '["macOS", "self-hosted"]'
       setupfirebaseemulator: true
       customcommand: "firebase emulators:exec 'fastlane test'"
   uploadcoveragereport:

@@ -1,13 +1,13 @@
 //
-// This source file is part of the Stanford CardinalKit Template Application project
+// This source file is part of the Stanford OwnYourData Application project
 //
 // SPDX-FileCopyrightText: 2023 Stanford University
 //
 // SPDX-License-Identifier: MIT
 //
 
-import Account
-import Onboarding
+import SpeziAccount
+import SpeziOnboarding
 import SwiftUI
 
 
