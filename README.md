@@ -10,8 +10,8 @@ SPDX-License-Identifier: MIT
 
 # Stanford OwnYourData Applicationn
 
-[![Beta Deployment](https://github.com/CS342/OwnYourData/actions/workflows/beta-deployment.yml/badge.svg)](https://github.com/CS342/OwnYourData/actions/workflows/beta-deployment.yml)
-[![codecov](https://codecov.io/gh/CS342/OwnYourData/branch/main/graph/badge.svg?token=9fvSAiFJUY)](https://codecov.io/gh/CS342/OwnYourData)
+[![Beta Deployment](https://github.com/StanfordBDHG/OwnYourData/actions/workflows/beta-deployment.yml/badge.svg)](https://github.com/StanfordBDHG/OwnYourData/actions/workflows/beta-deployment.yml)
+[![codecov](https://codecov.io/gh/StanfordBDHG/OwnYourData/branch/main/graph/badge.svg?token=9fvSAiFJUY)](https://codecov.io/gh/StanfordBDHG/OwnYourData)
 [![DOI](https://zenodo.org/badge/589846478.svg)](https://zenodo.org/badge/latestdoi/589846478)
 
 This repository contains the Stanford OwnYourData Applicationn.
