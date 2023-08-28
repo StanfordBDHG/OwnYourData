@@ -11,51 +11,43 @@ import SwiftUI
 
 
 struct Welcome: View {
-    @Binding private var onboardingSteps: [OnboardingFlow.Step]
+    @EnvironmentObject private var onboardingNavigationPath: OnboardingNavigationPath
     
     
     var body: some View {
         OnboardingView(
-            title: "WELCOME_TITLE".moduleLocalized,
-            subtitle: "WELCOME_SUBTITLE".moduleLocalized,
+            title: "WELCOME_TITLE",
+            subtitle: "WELCOME_SUBTITLE",
             areas: [
                 .init(
                     icon: Image(systemName: "folder.badge.plus"),
-                    title: "WELCOME_AREA1_TITLE".moduleLocalized,
-                    description: "WELCOME_AREA1_DESCRIPTION".moduleLocalized
+                    title: "WELCOME_AREA1_TITLE",
+                    description: "WELCOME_AREA1_DESCRIPTION"
                 ),
                 .init(
                     icon: Image(systemName: "magnifyingglass"),
-                    title: "WELCOME_AREA2_TITLE".moduleLocalized,
-                    description: "WELCOME_AREA2_DESCRIPTION".moduleLocalized
+                    title: "WELCOME_AREA2_TITLE",
+                    description: "WELCOME_AREA2_DESCRIPTION"
                 ),
                 .init(
                     icon: Image(systemName: "square.and.arrow.up"),
-                    title: "WELCOME_AREA3_TITLE".moduleLocalized,
-                    description: "WELCOME_AREA3_DESCRIPTION".moduleLocalized
+                    title: "WELCOME_AREA3_TITLE",
+                    description: "WELCOME_AREA3_DESCRIPTION"
                 )
             ],
-            actionText: "WELCOME_BUTTON".moduleLocalized,
+            actionText: "WELCOME_BUTTON",
             action: {
-                onboardingSteps.append(.interestingModules)
+                onboardingNavigationPath.nextStep()
             }
         )
-    }
-    
-    
-    init(onboardingSteps: Binding<[OnboardingFlow.Step]>) {
-        self._onboardingSteps = onboardingSteps
     }
 }
 
 
 #if DEBUG
 struct Welcome_Previews: PreviewProvider {
-    @State private static var path: [OnboardingFlow.Step] = []
-    
-    
     static var previews: some View {
-        Welcome(onboardingSteps: $path)
+        Welcome()
     }
 }
 #endif

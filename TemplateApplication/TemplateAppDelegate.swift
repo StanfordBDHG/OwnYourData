@@ -14,12 +14,17 @@ import HealthKit
 import SpeziFirebaseAccount
 import SpeziFirestore
 import SpeziHealthKit
+import SpeziOpenAI
 import SwiftUI
 
 
 class TemplateAppDelegate: SpeziAppDelegate {
     override var configuration: Configuration {
         Configuration(standard: OwnYourDateStandard()) {
+            if HKHealthStore.isHealthDataAvailable() {
+                healthKit
+            }
+            OpenAIComponent(openAIModel: .gpt3_5Turbo0613)
             if !FeatureFlags.disableFirebase {
                 if FeatureFlags.useFirebaseEmulator {
                     FirebaseAccountConfiguration(emulatorSettings: (host: "localhost", port: 9099))
@@ -42,5 +47,29 @@ class TemplateAppDelegate: SpeziAppDelegate {
         return Firestore(
             settings: settings
         )
+    }
+    
+    private var healthKit: HealthKit {
+        HealthKit {
+            CollectSamples(
+                [
+                    HKClinicalType(.allergyRecord),
+                    HKClinicalType(.clinicalNoteRecord),
+                    HKClinicalType(.conditionRecord),
+                    HKClinicalType(.coverageRecord),
+                    HKClinicalType(.immunizationRecord),
+                    HKClinicalType(.labResultRecord),
+                    HKClinicalType(.medicationRecord),
+                    HKClinicalType(.procedureRecord),
+                    HKClinicalType(.vitalSignRecord)
+                ],
+                predicate: HKQuery.predicateForSamples(
+                    withStart: Date.distantPast,
+                    end: nil,
+                    options: .strictEndDate
+                ),
+                deliverySetting: .anchorQuery(saveAnchor: false)
+            )
+        }
     }
 }

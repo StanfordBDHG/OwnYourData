@@ -70,8 +70,8 @@
 
 // MARK: HealthKit
 "HEALTHKIT_PERMISSIONS_TITLE" = "Health Data Access\nPermission";
-"HEALTHKIT_PERMISSIONS_SUBTITLE" = "Grant permission to OwnYourData to organize and share the health data on your phone.";
-"HEALTHKIT_PERMISSIONS_DESCRIPTION" = "This onboarding step allows you to customize the specific health data you would like for us to help organize to view and/or share when you are ready.";
+"HEALTHKIT_PERMISSIONS_SUBTITLE" = "Grant permission to OwnYourData to access your health records.";
+"HEALTHKIT_PERMISSIONS_DESCRIPTION" = "You can decide what health records should be available to the OwnYourData application. We use these health records to automatically provide you insights about your diagnosis and match you with clinical trials. The health data may be sent to third party providers like OpenAI for processing.";
 "HEALTHKIT_PERMISSIONS_BUTTON" = "Grant Access";
 
 
