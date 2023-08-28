@@ -14,8 +14,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/firebase/firebase-ios-sdk",
       "state" : {
-        "revision" : "df2171b0c6afb9e9d4f7e07669d558c510b9f6be",
-        "version" : "10.13.0"
+        "revision" : "2bfe6abe1014aafe5cf28401708f7d39f9926a76",
+        "version" : "10.14.0"
       }
     },
     {
@@ -72,6 +72,15 @@
       }
     },
     {
+      "identity" : "interop-ios-for-google-sdks",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/google/interop-ios-for-google-sdks.git",
+      "state" : {
+        "revision" : "2d12673670417654f08f5f90fdd62926dc3a2648",
+        "version" : "100.0.0"
+      }
+    },
+    {
       "identity" : "leveldb",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/firebase/leveldb.git",
@@ -94,8 +103,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/MacPaw/OpenAI",
       "state" : {
-        "revision" : "a51a7fde78173e57b9166d38d1f665d17a3c4383",
-        "version" : "0.2.3"
+        "revision" : "c45f3320ffa760f043c0239f724850c0e4f8bde5",
+        "version" : "0.2.4"
       }
     },
     {
@@ -112,8 +121,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordSpezi/Spezi.git",
       "state" : {
-        "revision" : "c98b2e550d83050b76693765884405737c302a77",
-        "version" : "0.7.0"
+        "revision" : "7462510badaa156c1e25efd7eabbf5b85ecb0098",
+        "version" : "0.7.2"
       }
     },
     {
@@ -121,8 +130,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordSpezi/SpeziAccount.git",
       "state" : {
-        "revision" : "5828932267c9f371bd0d821d85f915f07481739a",
-        "version" : "0.4.0"
+        "revision" : "520bb338bf32d98470cadd26bad87f5bda075337",
+        "version" : "0.4.1"
       }
     },
     {
@@ -148,8 +157,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordSpezi/SpeziML.git",
       "state" : {
-        "revision" : "c9ccec165312ab82e2a380d93f8896f7fec96a9d",
-        "version" : "0.2.0"
+        "revision" : "700ab5e524ec4f12f3012b514ea24822bdc6066b",
+        "version" : "0.2.2"
       }
     },
     {
@@ -157,8 +166,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordSpezi/SpeziOnboarding",
       "state" : {
-        "revision" : "a84ddd7cdb5ce48935ca3daf2a33ddc512d76b33",
-        "version" : "0.3.1"
+        "revision" : "63abc8bd50d1011a5908262756a74ad0e0a8691b",
+        "version" : "0.4.3"
       }
     },
     {
@@ -175,8 +184,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordSpezi/SpeziViews",
       "state" : {
-        "revision" : "c6975e84c735b8b8a13740012c1c194f48893fa8",
-        "version" : "0.3.0"
+        "revision" : "3131708f262064231751a8963eb263f8648b6879",
+        "version" : "0.4.1"
       }
     },
     {

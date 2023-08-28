@@ -15,13 +15,12 @@ import SwiftUI
 
 
 struct AccountSetup: View {
-    @AppStorage(StorageKeys.onboardingFlowComplete) var completedOnboardingFlow = false
-    @AppStorage(StorageKeys.firstName) var firstName = ""
-    @AppStorage(StorageKeys.lastName) var lastName = ""
-    @AppStorage(StorageKeys.email) var email = ""
-    
-    @Binding private var onboardingSteps: [OnboardingFlow.Step]
+    @EnvironmentObject private var onboardingNavigationPath: OnboardingNavigationPath
     @EnvironmentObject var account: Account
+    
+    @AppStorage(StorageKeys.firstName) private var firstName = ""
+    @AppStorage(StorageKeys.lastName) private var lastName = ""
+    @AppStorage(StorageKeys.email) private var email = ""
     
     
     var body: some View {
@@ -29,8 +28,8 @@ struct AccountSetup: View {
             contentView: {
                 VStack {
                     OnboardingTitleView(
-                        title: "ACCOUNT_TITLE".moduleLocalized,
-                        subtitle: "ACCOUNT_SUBTITLE".moduleLocalized
+                        title: "ACCOUNT_TITLE",
+                        subtitle: "ACCOUNT_SUBTITLE"
                     )
                     Spacer(minLength: 0)
                     accountImage
@@ -69,7 +68,7 @@ struct AccountSetup: View {
                     self.lastName = lastName
                     self.email = email
                     
-                    completedOnboardingFlow = true
+                    onboardingNavigationPath.nextStep()
                 }
             }
     }
@@ -110,39 +109,31 @@ struct AccountSetup: View {
     @ViewBuilder private var actionView: some View {
         if account.signedIn {
             OnboardingActionsView(
-                "ACCOUNT_NEXT".moduleLocalized,
+                "ACCOUNT_NEXT",
                 action: {
-                    completedOnboardingFlow = true
+                    onboardingNavigationPath.nextStep()
                 }
             )
         } else {
             OnboardingActionsView(
-                primaryText: "ACCOUNT_SIGN_UP".moduleLocalized,
+                primaryText: "ACCOUNT_SIGN_UP",
                 primaryAction: {
-                    onboardingSteps.append(.signUp)
+                    onboardingNavigationPath.append(customView: TemplateSignUp())
                 },
-                secondaryText: "ACCOUNT_LOGIN".moduleLocalized,
+                secondaryText: "ACCOUNT_LOGIN",
                 secondaryAction: {
-                    onboardingSteps.append(.login)
+                    onboardingNavigationPath.append(customView: TemplateLogin())
                 }
             )
         }
-    }
-    
-    
-    init(onboardingSteps: Binding<[OnboardingFlow.Step]>) {
-        self._onboardingSteps = onboardingSteps
     }
 }
 
 
 #if DEBUG
 struct AccountSetup_Previews: PreviewProvider {
-    @State private static var path: [OnboardingFlow.Step] = []
-    
-    
     static var previews: some View {
-        AccountSetup(onboardingSteps: $path)
+        AccountSetup()
             .environmentObject(Account(accountServices: []))
             .environmentObject(FirebaseAccountConfiguration(emulatorSettings: (host: "localhost", port: 9099)))
     }
