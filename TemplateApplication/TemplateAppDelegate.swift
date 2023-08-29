@@ -20,7 +20,7 @@ import SwiftUI
 
 class TemplateAppDelegate: SpeziAppDelegate {
     override var configuration: Configuration {
-        Configuration(standard: OwnYourDateStandard()) {
+        Configuration(standard: FHIR()) {
             if HKHealthStore.isHealthDataAvailable() {
                 healthKit
             }
