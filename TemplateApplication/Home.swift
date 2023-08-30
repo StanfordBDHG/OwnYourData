@@ -58,7 +58,7 @@ struct Home: View {
                     ProfileView()
                 }
                 .toolbar {
-                    ToolbarItem(placement: .topBarTrailing) {
+                    ToolbarItem(placement: .primaryAction) {
                         Button(
                             action: {
                                 showProfileView.toggle()
