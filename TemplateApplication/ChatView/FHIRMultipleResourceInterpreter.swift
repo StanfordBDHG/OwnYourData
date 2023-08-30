@@ -21,7 +21,7 @@ private enum FHIRMultipleResourceInterpreterConstants {
 
 class FHIRMultipleResourceInterpreter: DefaultInitializable, Component, ObservableObject, ObservableObjectProvider {
     @Dependency private var localStorage: LocalStorage
-    @Dependency private var openAIComponent = OpenAIComponent()
+    @Dependency private var openAIComponent: OpenAIComponent
     
     
     var interpretation: String? {
@@ -73,7 +73,7 @@ class FHIRMultipleResourceInterpreter: DefaultInitializable, Component, Observab
         var resourceCategories = String()
         
         for resource in resources {
-            resourceCategories += (resource.functionCallIdentifier + "\n")
+            resourceCategories += (resource.compactJSONDescription + "\n\n")
         }
         
         let chat = [

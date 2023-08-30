@@ -26,19 +26,21 @@ struct LLMSummaryView: View {
                 .font(.system(size: 90))
                 .foregroundColor(.accentColor)
                 .padding(.vertical, 8)
-            VStack(spacing: 8) {
+            VStack(alignment: .leading, spacing: 8) {
                 Text("INTRO_FUNCTIONALITY")
                 if viewState == .processing {
-                    ProgressView()
-                    Text("SUMMARY_LOADING")
-                        .font(.caption)
+                    VStack(alignment: .center) {
+                        ProgressView()
+                        Text("SUMMARY_LOADING")
+                            .font(.caption)
+                            .frame(maxWidth: .infinity)
+                    }
                 } else if let summary {
                     Text(summary)
                 }
                 Text("INSTRUCTIONS_WITH_RESOURCES")
             }
                 .frame(maxWidth: .infinity)
-                .multilineTextAlignment(.leading)
         }
             .padding()
             .background(

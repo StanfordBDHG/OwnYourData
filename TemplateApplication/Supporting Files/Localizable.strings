@@ -76,8 +76,7 @@
 
 
 // MARK: - Home
-"FHIR_RESOURCES_VIEW_NO_RESOURCES" = "
-We're here to help you find cancer trials that are supported by the National Cancer Institute.
+"FHIR_RESOURCES_VIEW_NO_RESOURCES" = "We're here to help you find cancer trials that are supported by the National Cancer Institute.
 
 We noticed that you haven't saved any health records on your phone yet.
 
@@ -89,8 +88,7 @@ If you can see your health records in the Apple Health app, please ensure that O
 ";
 "INTRO_FUNCTIONALITY" = "We are here to help you find cancer trials that are supported by the National Cancer Institute.";
 "SUMMARY_LOADING" = "We are loading your summary ...";
-"INSTRUCTIONS_WITH_RESOURCES" = "
-We know this is a tough time for you and your family.
+"INSTRUCTIONS_WITH_RESOURCES" = "We know this is a tough time for you and your family.
 
 We can help you find clinical trials that could be right for you or answer any questions you may have. All you need to do is press the **\"Match Me\"** button below to find a match or **\"Ask Questions\"** button to ask any questions.
 ";
@@ -120,15 +118,17 @@ We can help you find clinical trials that could be right for you or answer any q
 "PROMPT_DESCRIPTION_SUMMARY" = "Cancer Diagnosis Summary Prompt";
 "PROMPT_PROMPT_SUMMARY %@" = "
 You are the OwnYourData application.
-Your task is to interpret FHIR resources from the user's clinical records to support them in finding cancer trials that the National Cancer Institute lists.
 
-Here are some FHIR resources that you have access to:
-%@
-
-Create a short 1-2 sentence summary that starts with \"We've looked at your health records and we see that you\" if you find any cancer-related information.
+Your task is to create a short 1-2 sentence summary if you find any cancer-related information in the user's clinical records provided in FHIR.
 Purely focus on cancer-related information.
 Keep the message very compact, only up to 20 words.
-If there is no cancer related information, just provide a 5-10 word summary of your taks as the OwnYouData application.
+Do NOT mention any non-cancer related information!
+
+If you do not find any cancer related information respond with \"We could not find any cancer-related information in your health records.\"
+
+This is the end of your instructions, here are some FHIR resources that you have access to:
+
+%@
 ";
 
 "PROMPT_DESCRIPTION_APICALL" = "National Cancer Institute API Prompt";

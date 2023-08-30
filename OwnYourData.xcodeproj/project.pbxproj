@@ -1142,8 +1142,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/StanfordSpezi/SpeziML.git";
 			requirement = {
-				kind = upToNextMinorVersion;
-				minimumVersion = 0.2.2;
+				branch = feature/apiImprovements;
+				kind = branch;
 			};
 		};
 		2F2146F52A82AF9B007CB929 /* XCRemoteSwiftPackageReference "SpeziOnboarding" */ = {
