@@ -10,6 +10,15 @@
       }
     },
     {
+      "identity" : "fhirmodels",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/FHIRModels",
+      "state" : {
+        "revision" : "861afd5816a98d38f86220eab2f812d76cad84a0",
+        "version" : "0.5.0"
+      }
+    },
+    {
       "identity" : "firebase-ios-sdk",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/firebase/firebase-ios-sdk",
@@ -61,6 +70,15 @@
       "state" : {
         "revision" : "d415594121c9e8a4f9d79cecee0965cf35e74dbd",
         "version" : "3.1.1"
+      }
+    },
+    {
+      "identity" : "healthkitonfhir",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/StanfordBDHG/HealthKitOnFHIR.git",
+      "state" : {
+        "revision" : "fdf8e4543718a940643598e4bd5e750e9c4c5540",
+        "version" : "0.2.4"
       }
     },
     {
@@ -148,8 +166,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordSpezi/SpeziHealthKit.git",
       "state" : {
-        "branch" : "newSpeziStandard",
-        "revision" : "9ec56e35ccb47b322402bdd123cdbb18c3900ff8"
+        "revision" : "f8f664549e81c8fa107a1fff616e0eaca6e8a6fa",
+        "version" : "0.3.1"
       }
     },
     {
@@ -157,8 +175,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordSpezi/SpeziML.git",
       "state" : {
-        "revision" : "700ab5e524ec4f12f3012b514ea24822bdc6066b",
-        "version" : "0.2.2"
+        "branch" : "feature/apiImprovements",
+        "revision" : "8d3be96589f9ac30342b537917d37ff00d4ee058"
       }
     },
     {
