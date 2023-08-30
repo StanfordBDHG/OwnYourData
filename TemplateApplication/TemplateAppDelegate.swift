@@ -34,6 +34,7 @@ class TemplateAppDelegate: SpeziAppDelegate {
                 firestore
             }
             FirebaseAccountConfiguration()
+            FHIRMultipleResourceInterpreter()
         }
     }
     

@@ -22,7 +22,7 @@ actor FHIR: Standard, ObservableObject, ObservableObjectProvider, HealthKitConst
     private let logger = Logger(subsystem: "LLMonFHIR", category: "FHIR Standard")
     private let hkHealthStore: HKHealthStore?
     
-    private var _resources: [FHIRResource.ID: FHIRResource] = [:] {
+    @MainActor private var _resources: [FHIRResource.ID: FHIRResource] = [:] {
         didSet {
             _Concurrency.Task { @MainActor in
                 objectWillChange.send()
@@ -31,7 +31,7 @@ actor FHIR: Standard, ObservableObject, ObservableObjectProvider, HealthKitConst
     }
     
     
-    var resources: [FHIRResource] {
+    @MainActor var resources: [FHIRResource] {
         Array(_resources.values)
     }
     
@@ -55,14 +55,18 @@ actor FHIR: Standard, ObservableObject, ObservableObjectProvider, HealthKitConst
                 return
             }
             
-            _resources[id] = resource
+            _Concurrency.Task { @MainActor in
+                _resources[id] = resource
+            }
         } catch {
             logger.error("Could not transform HKSample: \(error)")
         }
     }
     
     func remove(sample: HKDeletedObject) async {
-        _resources[sample.uuid.uuidString] = nil
+        _Concurrency.Task { @MainActor in
+            _resources[sample.uuid.uuidString] = nil
+        }
     }
     
     

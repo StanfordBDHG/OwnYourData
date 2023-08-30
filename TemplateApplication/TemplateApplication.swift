@@ -18,7 +18,7 @@ struct TemplateApplication: App {
     
     var body: some Scene {
         WindowGroup {
-            OwnYourDataTabView()
+            Home()
                 .sheet(isPresented: !$completedOnboardingFlow) {
                     OnboardingFlow()
                 }
