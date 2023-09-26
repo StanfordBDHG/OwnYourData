@@ -33,6 +33,7 @@ struct DocumentGallery: View {
                         },
                         label: {
                             Image(systemName: "plus")
+                                .accessibilityLabel("Add Document")
                         }
                     )
                 }
