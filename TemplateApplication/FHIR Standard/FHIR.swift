@@ -35,6 +35,10 @@ actor FHIR: Standard, ObservableObject, ObservableObjectProvider, HealthKitConst
         Array(_resources.values)
     }
     
+    @MainActor var exportPackage: ExportPackage {
+        ExportPackage(resources: resources)
+    }
+    
     
     init() {
         guard HKHealthStore.isHealthDataAvailable() else {
