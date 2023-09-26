@@ -65,6 +65,7 @@ struct Home: View {
                             },
                             label: {
                                 Image(systemName: "person.crop.circle")
+                                    .accessibilityLabel("Profile View")
                             }
                         )
                     }

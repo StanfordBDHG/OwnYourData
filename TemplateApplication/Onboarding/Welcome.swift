@@ -20,17 +20,17 @@ struct Welcome: View {
             subtitle: "WELCOME_SUBTITLE",
             areas: [
                 .init(
-                    icon: Image(systemName: "folder.badge.plus"),
+                    icon: Image(systemName: "folder.badge.plus"), // swiftlint:disable:this accessibility_label_for_image
                     title: "WELCOME_AREA1_TITLE",
                     description: "WELCOME_AREA1_DESCRIPTION"
                 ),
                 .init(
-                    icon: Image(systemName: "magnifyingglass"),
+                    icon: Image(systemName: "magnifyingglass"), // swiftlint:disable:this accessibility_label_for_image
                     title: "WELCOME_AREA2_TITLE",
                     description: "WELCOME_AREA2_DESCRIPTION"
                 ),
                 .init(
-                    icon: Image(systemName: "square.and.arrow.up"),
+                    icon: Image(systemName: "square.and.arrow.up"), // swiftlint:disable:this accessibility_label_for_image
                     title: "WELCOME_AREA3_TITLE",
                     description: "WELCOME_AREA3_DESCRIPTION"
                 )

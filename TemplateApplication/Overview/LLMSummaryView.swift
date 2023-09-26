@@ -23,6 +23,7 @@ struct LLMSummaryView: View {
     var body: some View {
         VStack(alignment: .center) {
             Image(systemName: "magnifyingglass")
+                .accessibilityHidden(true)
                 .font(.system(size: 90))
                 .foregroundColor(.accentColor)
                 .padding(.vertical, 8)

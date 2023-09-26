@@ -13,6 +13,7 @@ struct InstructionsView: View {
     var body: some View {
         VStack(alignment: .center) {
             Image(systemName: "doc.text.magnifyingglass")
+                .accessibilityHidden(true)
                 .font(.system(size: 90))
                 .foregroundColor(.accentColor)
                 .padding(.vertical, 8)

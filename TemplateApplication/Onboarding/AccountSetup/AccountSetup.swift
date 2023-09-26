@@ -77,8 +77,10 @@ struct AccountSetup: View {
         Group {
             if account.signedIn {
                 Image(systemName: "person.badge.shield.checkmark.fill")
+                    .accessibilityLabel("You are signed in")
             } else {
                 Image(systemName: "person.fill.badge.plus")
+                    .accessibilityLabel("You can sign up or sign in")
             }
         }
             .font(.system(size: 150))
