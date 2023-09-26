@@ -17,6 +17,7 @@ struct Instructions: View {
         ForEach(steps, id: \.offset) { step in
             HStack {
                 Image(systemName: "\(step.offset + 1).circle.fill")
+                    .accessibilityHidden(true)
                     .foregroundColor(Color("ButtonColor_light"))
                     .font(.system(size: 45))
                     .frame(minHeight: 90)
