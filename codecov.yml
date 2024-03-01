@@ -1,5 +1,5 @@
 #
-# This source file is part of the Stanford OwnYourData Application project
+# This source file is part of the OwnYourData based on the Stanford Spezi Template Application project
 #
 # SPDX-FileCopyrightText: 2023 Stanford University
 #
@@ -16,21 +16,21 @@ comment:
 coverage:
   precision: 2
   range:
-  - 75.0
+  - 70.0
   - 90.0
   round: up
   status:
     patch:
       default:
         target: auto
-        threshold: 1.0
+        threshold: 5.0
     project:
       default:
         target: auto
-        threshold: 1.0
+        threshold: 5.0
 ignore:
-- ^TemplateApplicationUITests.*
-- ^TemplateApplicationTests.*
+- ^OwnYourDataUITests.*
+- ^OwnYourDataTests.*
 parsers:
   gcov:
     branch_detection:

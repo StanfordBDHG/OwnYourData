@@ -1,5 +1,5 @@
 #
-# This source file is part of the Stanford OwnYourData Application project
+# This source file is part of the OwnYourData based on the Stanford Spezi Template Application project
 #
 # SPDX-FileCopyrightText: 2023 Stanford University
 #
@@ -10,7 +10,8 @@
 *.xcodeproj
 .swiftpm
 .derivedData
-.build/
+.build
+.docs
 !OwnYourData.xcodeproj
 
 # IDE related folders
@@ -42,3 +43,6 @@ firebase-debug.*.log*
 
 # Firebase cache
 .firebase/
+
+# Swift Package List
+OwnYourData/package-list.json
