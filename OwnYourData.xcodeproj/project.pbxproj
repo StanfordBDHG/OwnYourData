@@ -35,6 +35,9 @@
 		2F42E9F82B91BBF300D88DB7 /* OpenAppleHealthApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F42E9F12B91BBF300D88DB7 /* OpenAppleHealthApp.swift */; };
 		2F42E9FA2B91BDD300D88DB7 /* InstructionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F42E9F92B91BDD300D88DB7 /* InstructionsView.swift */; };
 		2F42E9FF2B91BE3100D88DB7 /* FHIRStore+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F42E9FE2B91BE3100D88DB7 /* FHIRStore+Extensions.swift */; };
+		2F42EA052B91C24700D88DB7 /* ExportPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F42EA022B91C24700D88DB7 /* ExportPackage.swift */; };
+		2F42EA062B91C24700D88DB7 /* ShareFHIRButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F42EA032B91C24700D88DB7 /* ShareFHIRButton.swift */; };
+		2F42EA072B91C24700D88DB7 /* URL+Zip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F42EA042B91C24700D88DB7 /* URL+Zip.swift */; };
 		2F49B7762980407C00BCB272 /* Spezi in Frameworks */ = {isa = PBXBuildFile; productRef = 2F49B7752980407B00BCB272 /* Spezi */; };
 		2F4E237E2989A2FE0013F3D9 /* OnboardingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4E237D2989A2FE0013F3D9 /* OnboardingTests.swift */; };
 		2F4E23832989D51F0013F3D9 /* OwnYourDataTestingSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4E23822989D51F0013F3D9 /* OwnYourDataTestingSetup.swift */; };
@@ -132,6 +135,9 @@
 		2F42E9F12B91BBF300D88DB7 /* OpenAppleHealthApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenAppleHealthApp.swift; sourceTree = "<group>"; };
 		2F42E9F92B91BDD300D88DB7 /* InstructionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsView.swift; sourceTree = "<group>"; };
 		2F42E9FE2B91BE3100D88DB7 /* FHIRStore+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FHIRStore+Extensions.swift"; sourceTree = "<group>"; };
+		2F42EA022B91C24700D88DB7 /* ExportPackage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExportPackage.swift; sourceTree = "<group>"; };
+		2F42EA032B91C24700D88DB7 /* ShareFHIRButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareFHIRButton.swift; sourceTree = "<group>"; };
+		2F42EA042B91C24700D88DB7 /* URL+Zip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+Zip.swift"; sourceTree = "<group>"; };
 		2F4E237D2989A2FE0013F3D9 /* OnboardingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTests.swift; sourceTree = "<group>"; };
 		2F4E23822989D51F0013F3D9 /* OwnYourDataTestingSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnYourDataTestingSetup.swift; sourceTree = "<group>"; };
 		2F4E23862989DB360013F3D9 /* ContactsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTests.swift; sourceTree = "<group>"; };
@@ -277,6 +283,9 @@
 			isa = PBXGroup;
 			children = (
 				2F42E9FE2B91BE3100D88DB7 /* FHIRStore+Extensions.swift */,
+				2F42EA022B91C24700D88DB7 /* ExportPackage.swift */,
+				2F42EA032B91C24700D88DB7 /* ShareFHIRButton.swift */,
+				2F42EA042B91C24700D88DB7 /* URL+Zip.swift */,
 			);
 			path = FHIR;
 			sourceTree = "<group>";
@@ -644,6 +653,7 @@
 				2F42E9DE2B91BB2500D88DB7 /* PDFView.swift in Sources */,
 				2FE5DC3829EDD7CA004B9AB4 /* InterestingModules.swift in Sources */,
 				2F42E9F42B91BBF300D88DB7 /* Instructions.swift in Sources */,
+				2F42EA052B91C24700D88DB7 /* ExportPackage.swift in Sources */,
 				2F42E9E72B91BB8300D88DB7 /* WebView.swift in Sources */,
 				2FE5DC3529EDD7CA004B9AB4 /* Consent.swift in Sources */,
 				2FE5DC4529EDD7F2004B9AB4 /* Binding+Negate.swift in Sources */,
@@ -656,6 +666,7 @@
 				2FE5DC3729EDD7CA004B9AB4 /* OnboardingFlow.swift in Sources */,
 				2F1AC9DF2B4E840E00C24973 /* OwnYourData.docc in Sources */,
 				2F42E9D12B91BAB900D88DB7 /* LogoView.swift in Sources */,
+				2F42EA072B91C24700D88DB7 /* URL+Zip.swift in Sources */,
 				2FF53D8D2A8729D600042B76 /* OwnYourDataStandard.swift in Sources */,
 				2FE5DC4729EDD7F2004B9AB4 /* CodableArray+RawRepresentable.swift in Sources */,
 				A9720E432ABB68CC00872D23 /* AccountSetupHeader.swift in Sources */,
@@ -674,6 +685,7 @@
 				566155292AB8447C00209B80 /* Package+LicenseType.swift in Sources */,
 				5680DD392AB8983D004E6D4A /* PackageCell.swift in Sources */,
 				2F5E32BD297E05EA003432F8 /* OwnYourDataDelegate.swift in Sources */,
+				2F42EA062B91C24700D88DB7 /* ShareFHIRButton.swift in Sources */,
 				A9FE7AD02AA39BAB0077B045 /* AccountSheet.swift in Sources */,
 				653A2551283387FE005D4D48 /* OwnYourData.swift in Sources */,
 				2FE5DC3629EDD7CA004B9AB4 /* HealthKitPermissions.swift in Sources */,

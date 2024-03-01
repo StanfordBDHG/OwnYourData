@@ -10,7 +10,7 @@ import SpeziFHIR
 
 
 extension FHIRStore {
-    var isEmpty: Bool {
-        llmRelevantResources.isEmpty
+    @MainActor var exportPackage: ExportPackage {
+        ExportPackage(resources: llmRelevantResources)
     }
 }
