@@ -1,0 +1,204 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "Access Your Health Records" : {
+
+    },
+    "ACCOUNT_SUBTITLE" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Create an account with OwnYourData so we can help you. We don't see or store any of your health data. We only store your name and email address."
+          }
+        }
+      }
+    },
+    "Add an account in the Apple Health app." : {
+
+    },
+    "Add Document" : {
+
+    },
+    "Add Relevant Documents" : {
+
+    },
+    "Apple Health App" : {
+
+    },
+    "Ask Questions" : {
+
+    },
+    "Close" : {
+
+    },
+    "Control what you share and who you share it with." : {
+
+    },
+    "Could not load the consent document" : {
+
+    },
+    "Discover Clinical Trials" : {
+
+    },
+    "Documents" : {
+
+    },
+    "Download Your Records" : {
+
+    },
+    "Export" : {
+
+    },
+    "Export your health records to share them with the OwnYourData team." : {
+
+    },
+    "FHIR JSON Export Package" : {
+
+    },
+    "FHIR_RESOURCES_VIEW_NO_RESOURCES" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "We're here to help you find cancer trials that are supported by the National Cancer Institute.\n\nWe noticed that you haven't saved any health records on your phone yet.\n\nPlease follow the instructions to connect to retrieve your health records from your provider: [Apple Support - View health records on your iPhone or iPod touch](https://support.apple.com/en-us/HT208680).\n\nYou can find a list of supported institutions at [Apple Support - Institutions that support health records on iPhone and iPod touch](https://platform.openai.com/account/api-keys).\n\nIf you can see your health records in the Apple Health app, please ensure that OwnYourData has access to your health records in the Apple Health App. You can find these settings in the privacy section of your profile in Apple Health."
+          }
+        }
+      }
+    },
+    "Find clinical trials supported by the National Cancer Institute." : {
+
+    },
+    "Grant Access" : {
+
+    },
+    "Grant permission to OwnYourData to access your health records" : {
+
+    },
+    "Health Data Access\nPermission" : {
+
+    },
+    "HEALTHKIT_PERMISSIONS_DESCRIPTION" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You can decide what health records should be available to the OwnYourData application. We use these health records to automatically provide you insights about your diagnosis and match you with clinical trials. The health data may be sent to third party providers like OpenAI for processing."
+          }
+        }
+      }
+    },
+    "How It Works" : {
+
+    },
+    "Learn More" : {
+
+    },
+    "Learn More ..." : {
+
+    },
+    "License Information" : {
+
+    },
+    "Navigate to the Browse tab." : {
+
+    },
+    "Next" : {
+
+    },
+    "No Documents" : {
+
+    },
+    "Open the Apple Health app." : {
+
+    },
+    "Own your health journey." : {
+
+    },
+    "Packages" : {
+
+    },
+    "PDF" : {
+
+    },
+    "Please refer to the individual repository links for packages without license labels." : {
+
+    },
+    "Register" : {
+
+    },
+    "Repository Link" : {
+
+    },
+    "Resource Selection" : {
+
+    },
+    "Resource Settings" : {
+
+    },
+    "Scan important records with the camera on your phone to complete your records." : {
+
+    },
+    "Search ClinicalTrials.gov to find the right trial for you." : {
+
+    },
+    "Search for Active Trials" : {
+
+    },
+    "Select your health system(s) and download your health records to your phone." : {
+
+    },
+    "Share FHIR Resources" : {
+
+    },
+    "Share Your Data" : {
+
+    },
+    "Share your health data easily with those that need it." : {
+
+    },
+    "Step Content ..." : {
+
+    },
+    "Tap Health App \nto get started!" : {
+
+    },
+    "The following list contains all Swift Package dependencies of the SpeziOwnYourData." : {
+
+    },
+    "The OwnYourData App Icon" : {
+
+    },
+    "These are the steps to OwnYourData \nand connect with trials that matter." : {
+
+    },
+    "This project is licensed under the MIT License." : {
+
+    },
+    "Use HealthKit Resources" : {
+
+    },
+    "We help you connect to your Health System(s) to download your records." : {
+
+    },
+    "We respect your privacy. All data storage and sharing happens directly from your phone." : {
+
+    },
+    "Welcome,\n%@" : {
+
+    },
+    "Welcome!" : {
+
+    },
+    "What We Offer" : {
+
+    },
+    "You signed in with the following account:" : {
+
+    },
+    "Your Account" : {
+
+    }
+  },
+  "version" : "1.0"
+}

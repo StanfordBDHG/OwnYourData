@@ -1,247 +1,367 @@
 {
-  "pins" : [
-    {
-      "identity" : "abseil-cpp-binary",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/google/abseil-cpp-binary.git",
-      "state" : {
-        "revision" : "bfc0b6f81adc06ce5121eb23f628473638d67c5c",
-        "version" : "1.2022062300.0"
+  "object": {
+    "pins": [
+      {
+        "package": "abseil",
+        "repositoryURL": "https://github.com/google/abseil-cpp-binary.git",
+        "state": {
+          "branch": null,
+          "revision": "bfc0b6f81adc06ce5121eb23f628473638d67c5c",
+          "version": "1.2022062300.0"
+        }
+      },
+      {
+        "package": "AnyCodable",
+        "repositoryURL": "https://github.com/Flight-School/AnyCodable",
+        "state": {
+          "branch": null,
+          "revision": "862808b2070cd908cb04f9aafe7de83d35f81b05",
+          "version": "0.6.7"
+        }
+      },
+      {
+        "package": "AppCheck",
+        "repositoryURL": "https://github.com/google/app-check.git",
+        "state": {
+          "branch": null,
+          "revision": "3e464dad87dad2d29bb29a97836789bf0f8f67d2",
+          "version": "10.18.1"
+        }
+      },
+      {
+        "package": "FHIRModels",
+        "repositoryURL": "https://github.com/apple/FHIRModels",
+        "state": {
+          "branch": null,
+          "revision": "861afd5816a98d38f86220eab2f812d76cad84a0",
+          "version": "0.5.0"
+        }
+      },
+      {
+        "package": "Firebase",
+        "repositoryURL": "https://github.com/firebase/firebase-ios-sdk.git",
+        "state": {
+          "branch": null,
+          "revision": "f91c8167141d0279726c6f6d9d4a47c026785cbc",
+          "version": "10.21.0"
+        }
+      },
+      {
+        "package": "GoogleAppMeasurement",
+        "repositoryURL": "https://github.com/google/GoogleAppMeasurement.git",
+        "state": {
+          "branch": null,
+          "revision": "cb8617fab75d181270a1d8f763f26b15c73e2e1e",
+          "version": "10.21.0"
+        }
+      },
+      {
+        "package": "GoogleDataTransport",
+        "repositoryURL": "https://github.com/google/GoogleDataTransport.git",
+        "state": {
+          "branch": null,
+          "revision": "a637d318ae7ae246b02d7305121275bc75ed5565",
+          "version": "9.4.0"
+        }
+      },
+      {
+        "package": "GoogleUtilities",
+        "repositoryURL": "https://github.com/google/GoogleUtilities.git",
+        "state": {
+          "branch": null,
+          "revision": "830ffa9276e10267881f2697283c2fcd867603fd",
+          "version": "7.13.0"
+        }
+      },
+      {
+        "package": "gRPC",
+        "repositoryURL": "https://github.com/google/grpc-binary.git",
+        "state": {
+          "branch": null,
+          "revision": "a673bc2937fbe886dd1f99c401b01b6d977a9c98",
+          "version": "1.49.1"
+        }
+      },
+      {
+        "package": "GTMSessionFetcher",
+        "repositoryURL": "https://github.com/google/gtm-session-fetcher.git",
+        "state": {
+          "branch": null,
+          "revision": "76135c9f4e1ac85459d5fec61b6f76ac47ab3a4c",
+          "version": "3.3.1"
+        }
+      },
+      {
+        "package": "HealthKitOnFHIR",
+        "repositoryURL": "https://github.com/StanfordBDHG/HealthKitOnFHIR.git",
+        "state": {
+          "branch": null,
+          "revision": "825e96007d83ed83f81ee49eb3ebab29d7b7ba2f",
+          "version": "0.2.5"
+        }
+      },
+      {
+        "package": "InteropForGoogle",
+        "repositoryURL": "https://github.com/google/interop-ios-for-google-sdks.git",
+        "state": {
+          "branch": null,
+          "revision": "2d12673670417654f08f5f90fdd62926dc3a2648",
+          "version": "100.0.0"
+        }
+      },
+      {
+        "package": "leveldb",
+        "repositoryURL": "https://github.com/firebase/leveldb.git",
+        "state": {
+          "branch": null,
+          "revision": "43aaef65e0c665daadf848761d560e446d350d3d",
+          "version": "1.22.4"
+        }
+      },
+      {
+        "package": "llama",
+        "repositoryURL": "https://github.com/StanfordBDHG/llama.cpp",
+        "state": {
+          "branch": null,
+          "revision": "b0611c7d3cb049822f9911878514e4706b80e2ac",
+          "version": "0.1.8"
+        }
+      },
+      {
+        "package": "nanopb",
+        "repositoryURL": "https://github.com/firebase/nanopb.git",
+        "state": {
+          "branch": null,
+          "revision": "819d0a2173aff699fb8c364b6fb906f7cdb1a692",
+          "version": "2.30909.0"
+        }
+      },
+      {
+        "package": "OpenAI",
+        "repositoryURL": "https://github.com/MacPaw/OpenAI",
+        "state": {
+          "branch": null,
+          "revision": "35afc9a6ee127b8f22a85a31aec2036a987478af",
+          "version": "0.2.6"
+        }
+      },
+      {
+        "package": "Promises",
+        "repositoryURL": "https://github.com/google/promises.git",
+        "state": {
+          "branch": null,
+          "revision": "540318ecedd63d883069ae7f1ed811a2df00b6ac",
+          "version": "2.4.0"
+        }
+      },
+      {
+        "package": "ResearchKit",
+        "repositoryURL": "https://github.com/StanfordBDHG/ResearchKit",
+        "state": {
+          "branch": null,
+          "revision": "15f06cf7c1d2d22805b7b939823536bc78ad63a6",
+          "version": "2.2.25"
+        }
+      },
+      {
+        "package": "ResearchKitOnFHIR",
+        "repositoryURL": "https://github.com/StanfordBDHG/ResearchKitOnFHIR",
+        "state": {
+          "branch": null,
+          "revision": "300fbc0038df28f53a9b653298931f71aa6f0bb5",
+          "version": "1.1.1"
+        }
+      },
+      {
+        "package": "Semaphore",
+        "repositoryURL": "https://github.com/groue/Semaphore.git",
+        "state": {
+          "branch": null,
+          "revision": "f1c4a0acabeb591068dea6cffdd39660b86dec28",
+          "version": "0.0.8"
+        }
+      },
+      {
+        "package": "Spezi",
+        "repositoryURL": "https://github.com/StanfordSpezi/Spezi",
+        "state": {
+          "branch": null,
+          "revision": "0ced3efbc2af9513c07ac913ad762c773a00a6c8",
+          "version": "1.2.1"
+        }
+      },
+      {
+        "package": "SpeziAccount",
+        "repositoryURL": "https://github.com/StanfordSpezi/SpeziAccount.git",
+        "state": {
+          "branch": null,
+          "revision": "a7d289ef3be54de62b25dc92e8f7ff1a0f093906",
+          "version": "1.2.1"
+        }
+      },
+      {
+        "package": "SpeziChat",
+        "repositoryURL": "https://github.com/StanfordSpezi/SpeziChat",
+        "state": {
+          "branch": null,
+          "revision": "2334583105224b0c04fc36989db82b000021d31d",
+          "version": "0.1.9"
+        }
+      },
+      {
+        "package": "SpeziFHIR",
+        "repositoryURL": "https://github.com/StanfordSpezi/SpeziFHIR.git",
+        "state": {
+          "branch": null,
+          "revision": "9a171a21d7028042c30a24c661bfdfc6e363c9c3",
+          "version": "0.6.0"
+        }
+      },
+      {
+        "package": "SpeziFirebase",
+        "repositoryURL": "https://github.com/StanfordSpezi/SpeziFirebase.git",
+        "state": {
+          "branch": null,
+          "revision": "ca1edf678ec59e76c9869ee3448e6e165d9c2789",
+          "version": "1.0.0"
+        }
+      },
+      {
+        "package": "SpeziFoundation",
+        "repositoryURL": "https://github.com/StanfordSpezi/SpeziFoundation",
+        "state": {
+          "branch": null,
+          "revision": "01af5b91a54f30ddd121258e81aff2ddc2a99ff9",
+          "version": "1.0.4"
+        }
+      },
+      {
+        "package": "SpeziHealthKit",
+        "repositoryURL": "https://github.com/StanfordSpezi/SpeziHealthKit.git",
+        "state": {
+          "branch": null,
+          "revision": "b40695ffa4d1c9d58c5a0ee277640c2343fb5516",
+          "version": "0.5.1"
+        }
+      },
+      {
+        "package": "SpeziLLM",
+        "repositoryURL": "https://github.com/StanfordSpezi/SpeziLLM.git",
+        "state": {
+          "branch": null,
+          "revision": "6892c5dfe258371b6f3287f02b8fec57a611ba70",
+          "version": "0.7.0"
+        }
+      },
+      {
+        "package": "SpeziOnboarding",
+        "repositoryURL": "https://github.com/StanfordSpezi/SpeziOnboarding",
+        "state": {
+          "branch": null,
+          "revision": "91463ae190611bd14ef52b0657e8db3bf53c9ae8",
+          "version": "1.1.0"
+        }
+      },
+      {
+        "package": "SpeziQuestionnaire",
+        "repositoryURL": "https://github.com/StanfordSpezi/SpeziQuestionnaire.git",
+        "state": {
+          "branch": null,
+          "revision": "f25580e95bfdad02383980dcb94406cf97b08ea8",
+          "version": "1.0.2"
+        }
+      },
+      {
+        "package": "SpeziSpeech",
+        "repositoryURL": "https://github.com/StanfordSpezi/SpeziSpeech",
+        "state": {
+          "branch": null,
+          "revision": "60b8cdbf6f3d58b0d75eadf30db50f88848069aa",
+          "version": "1.0.1"
+        }
+      },
+      {
+        "package": "SpeziStorage",
+        "repositoryURL": "https://github.com/StanfordSpezi/SpeziStorage.git",
+        "state": {
+          "branch": null,
+          "revision": "eaed2220375c35400aa69d1f96a8d32b7e66b1c7",
+          "version": "1.0.0"
+        }
+      },
+      {
+        "package": "SpeziViews",
+        "repositoryURL": "https://github.com/StanfordSpezi/SpeziViews.git",
+        "state": {
+          "branch": null,
+          "revision": "4d2a724d97c8f19ac7de7aa2c046b1cb3ef7b279",
+          "version": "1.3.1"
+        }
+      },
+      {
+        "package": "swift-argument-parser",
+        "repositoryURL": "https://github.com/apple/swift-argument-parser",
+        "state": {
+          "branch": null,
+          "revision": "c8ed701b513cf5177118a175d85fbbbcd707ab41",
+          "version": "1.3.0"
+        }
+      },
+      {
+        "package": "swift-collections",
+        "repositoryURL": "https://github.com/apple/swift-collections.git",
+        "state": {
+          "branch": null,
+          "revision": "94cf62b3ba8d4bed62680a282d4c25f9c63c2efb",
+          "version": "1.1.0"
+        }
+      },
+      {
+        "package": "SwiftPackageList",
+        "repositoryURL": "https://github.com/FelixHerrmann/swift-package-list",
+        "state": {
+          "branch": null,
+          "revision": "412180a72b9a1f8262213c16459e3533b0385ea5",
+          "version": "3.1.0"
+        }
+      },
+      {
+        "package": "SwiftProtobuf",
+        "repositoryURL": "https://github.com/apple/swift-protobuf.git",
+        "state": {
+          "branch": null,
+          "revision": "65e8f29b2d63c4e38e736b25c27b83e012159be8",
+          "version": "1.25.2"
+        }
+      },
+      {
+        "package": "XCTestExtensions",
+        "repositoryURL": "https://github.com/StanfordBDHG/XCTestExtensions.git",
+        "state": {
+          "branch": null,
+          "revision": "1fe9b8e76aeb7a132af37bfa0892160c9b662dcc",
+          "version": "0.4.10"
+        }
+      },
+      {
+        "package": "XCTHealthKit",
+        "repositoryURL": "https://github.com/StanfordBDHG/XCTHealthKit.git",
+        "state": {
+          "branch": null,
+          "revision": "6e9344a2d632b801d94fe3bbd1d891817e032103",
+          "version": "0.3.5"
+        }
+      },
+      {
+        "package": "XCTRuntimeAssertions",
+        "repositoryURL": "https://github.com/StanfordBDHG/XCTRuntimeAssertions",
+        "state": {
+          "branch": null,
+          "revision": "51da3403f128b120705571ce61e0fe190f8889e6",
+          "version": "1.0.1"
+        }
       }
-    },
-    {
-      "identity" : "fhirmodels",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/apple/FHIRModels",
-      "state" : {
-        "revision" : "861afd5816a98d38f86220eab2f812d76cad84a0",
-        "version" : "0.5.0"
-      }
-    },
-    {
-      "identity" : "firebase-ios-sdk",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/firebase/firebase-ios-sdk",
-      "state" : {
-        "revision" : "2bfe6abe1014aafe5cf28401708f7d39f9926a76",
-        "version" : "10.14.0"
-      }
-    },
-    {
-      "identity" : "googleappmeasurement",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/google/GoogleAppMeasurement.git",
-      "state" : {
-        "revision" : "03b9beee1a61f62d32c521e172e192a1663a5e8b",
-        "version" : "10.13.0"
-      }
-    },
-    {
-      "identity" : "googledatatransport",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/google/GoogleDataTransport.git",
-      "state" : {
-        "revision" : "aae45a320fd0d11811820335b1eabc8753902a40",
-        "version" : "9.2.5"
-      }
-    },
-    {
-      "identity" : "googleutilities",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/google/GoogleUtilities.git",
-      "state" : {
-        "revision" : "c38ce365d77b04a9a300c31061c5227589e5597b",
-        "version" : "7.11.5"
-      }
-    },
-    {
-      "identity" : "grpc-binary",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/google/grpc-binary.git",
-      "state" : {
-        "revision" : "f1b366129d1125be7db83247e003fc333104b569",
-        "version" : "1.50.2"
-      }
-    },
-    {
-      "identity" : "gtm-session-fetcher",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/google/gtm-session-fetcher.git",
-      "state" : {
-        "revision" : "d415594121c9e8a4f9d79cecee0965cf35e74dbd",
-        "version" : "3.1.1"
-      }
-    },
-    {
-      "identity" : "healthkitonfhir",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/StanfordBDHG/HealthKitOnFHIR.git",
-      "state" : {
-        "revision" : "fdf8e4543718a940643598e4bd5e750e9c4c5540",
-        "version" : "0.2.4"
-      }
-    },
-    {
-      "identity" : "imagesource",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/StanfordBDHG/ImageSource.git",
-      "state" : {
-        "revision" : "9f942f21a485f4d552cfcefffae2e4077c0e9635"
-      }
-    },
-    {
-      "identity" : "interop-ios-for-google-sdks",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/google/interop-ios-for-google-sdks.git",
-      "state" : {
-        "revision" : "2d12673670417654f08f5f90fdd62926dc3a2648",
-        "version" : "100.0.0"
-      }
-    },
-    {
-      "identity" : "leveldb",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/firebase/leveldb.git",
-      "state" : {
-        "revision" : "0706abcc6b0bd9cedfbb015ba840e4a780b5159b",
-        "version" : "1.22.2"
-      }
-    },
-    {
-      "identity" : "nanopb",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/firebase/nanopb.git",
-      "state" : {
-        "revision" : "819d0a2173aff699fb8c364b6fb906f7cdb1a692",
-        "version" : "2.30909.0"
-      }
-    },
-    {
-      "identity" : "openai",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/MacPaw/OpenAI",
-      "state" : {
-        "revision" : "c45f3320ffa760f043c0239f724850c0e4f8bde5",
-        "version" : "0.2.4"
-      }
-    },
-    {
-      "identity" : "promises",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/google/promises.git",
-      "state" : {
-        "revision" : "e70e889c0196c76d22759eb50d6a0270ca9f1d9e",
-        "version" : "2.3.1"
-      }
-    },
-    {
-      "identity" : "spezi",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/StanfordSpezi/Spezi.git",
-      "state" : {
-        "revision" : "7462510badaa156c1e25efd7eabbf5b85ecb0098",
-        "version" : "0.7.2"
-      }
-    },
-    {
-      "identity" : "speziaccount",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/StanfordSpezi/SpeziAccount.git",
-      "state" : {
-        "revision" : "520bb338bf32d98470cadd26bad87f5bda075337",
-        "version" : "0.4.1"
-      }
-    },
-    {
-      "identity" : "spezifirebase",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/StanfordSpezi/SpeziFirebase.git",
-      "state" : {
-        "revision" : "d57ddfb71d7ece1e5fecf1a1df34dc93e2c7c58d",
-        "version" : "0.4.0"
-      }
-    },
-    {
-      "identity" : "spezihealthkit",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/StanfordSpezi/SpeziHealthKit.git",
-      "state" : {
-        "revision" : "f8f664549e81c8fa107a1fff616e0eaca6e8a6fa",
-        "version" : "0.3.1"
-      }
-    },
-    {
-      "identity" : "speziml",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/StanfordSpezi/SpeziML.git",
-      "state" : {
-        "branch" : "feature/apiImprovements",
-        "revision" : "8d3be96589f9ac30342b537917d37ff00d4ee058"
-      }
-    },
-    {
-      "identity" : "spezionboarding",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/StanfordSpezi/SpeziOnboarding",
-      "state" : {
-        "revision" : "63abc8bd50d1011a5908262756a74ad0e0a8691b",
-        "version" : "0.4.3"
-      }
-    },
-    {
-      "identity" : "spezistorage",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/StanfordSpezi/SpeziStorage",
-      "state" : {
-        "revision" : "77666f57cc0b7f148bc3949f173db8498ef9b4a6",
-        "version" : "0.4.1"
-      }
-    },
-    {
-      "identity" : "speziviews",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/StanfordSpezi/SpeziViews",
-      "state" : {
-        "revision" : "3131708f262064231751a8963eb263f8648b6879",
-        "version" : "0.4.1"
-      }
-    },
-    {
-      "identity" : "swift-protobuf",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/apple/swift-protobuf.git",
-      "state" : {
-        "revision" : "ce20dc083ee485524b802669890291c0d8090170",
-        "version" : "1.22.1"
-      }
-    },
-    {
-      "identity" : "xctestextensions",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/StanfordBDHG/XCTestExtensions",
-      "state" : {
-        "revision" : "625477e0937294cb3fd6e7bbf72b78f951644b1d",
-        "version" : "0.4.6"
-      }
-    },
-    {
-      "identity" : "xcthealthkit",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/StanfordBDHG/XCTHealthKit",
-      "state" : {
-        "revision" : "6e9344a2d632b801d94fe3bbd1d891817e032103",
-        "version" : "0.3.5"
-      }
-    },
-    {
-      "identity" : "xctruntimeassertions",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/StanfordBDHG/XCTRuntimeAssertions",
-      "state" : {
-        "revision" : "9226052589b8faece98861bc3d7b33b3ebfe4f5a",
-        "version" : "0.2.5"
-      }
-    }
-  ],
-  "version" : 2
+    ]
+  },
+  "version": 1
 }

@@ -1,0 +1,12 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+
+Files: OwnYourData/Resources/Assets.xcassets/*
+Copyright: 2024 Stanford University and the project authors (see CONTRIBUTORS.md)
+License: MIT
+Comment: All figures are part of the OwnYourData based on the Stanford Spezi Template Application project
+
+Files: NCIClinicalTrialsSearchAPI/*
+Copyright: 2024 National Cancer InstituteCI
+License: MIT
+Comment: The Swift Package was generated based on the OpenAPI spec retrived from https://clinicaltrialsapi.cancer.gov/doc. For information on NCI's efforts to improve how patients and oncologists find information and learn about cancer clinical trials please visit:
+https://www.cancer.gov/syndication/api.
