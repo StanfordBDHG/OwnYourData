@@ -17,16 +17,33 @@ The OwnYourData is using the [Spezi](https://github.com/StanfordSpezi/Spezi) eco
 > Do you want to learn more about the Stanford Spezi Template Application and how to use, extend, and modify this application? Check out the [Stanford Spezi Template Application documentation](https://stanfordspezi.github.io/SpeziTemplateApplication)
 
 
-## OwnYourData Features
+## Update the Web API
 
-*Provide a comprehensive description of your application, including figures showing the application. You can learn more on how to structure a README in the [Stanford Spezi Documentation Guide](https://swiftpackageindex.com/stanfordspezi/spezi/documentation/spezi/documentation-guide)*
+Install the OpenAPI Generator as described at https://github.com/OpenAPITools/openapi-generator.
 
+Please replace the `NCIClinicalTrialsSearchAPI.json` with the latest version of the OpenAPI spec.
 
-## Contributing
-
-*Ensure that you add an adequate contribution section to this README.*
+After you have installed the Generator and updated the open API spec, you can regenerate the client stub using the following command:
+```shell
+$ openapi-generator generate -i NCIClinicalTrialsSearchAPI.json -g swift5 -o ./NCIClinicalTrialsSearchAPI --skip-validate-spec
+```
 
 
 ## License
 
-This project is licensed under the MIT License. See [Licenses](LICENSES) for more information.
+This project is licensed under the MIT License. See [Licenses](https://github.com/StanfordBDHG/ResearchKitOnFHIR/tree/main/LICENSES) for more information.
+
+
+## Contributors
+
+This project is developed as part of the Stanford University projects at Stanford.
+See [CONTRIBUTORS.md](https://github.com/StanfordBDHG/ResearchKitOnFHIR/tree/main/CONTRIBUTORS.md) for a full list of all ResearchKitOnFHIR contributors.
+
+
+## Notices
+
+ResearchKit is a registered trademark of Apple, Inc.
+FHIR is a registered trademark of Health Level Seven International.
+
+![Stanford Byers Center for Biodesign Logo](https://raw.githubusercontent.com/StanfordBDHG/.github/main/assets/biodesign-footer-light.png#gh-light-mode-only)
+![Stanford Byers Center for Biodesign Logo](https://raw.githubusercontent.com/StanfordBDHG/.github/main/assets/biodesign-footer-dark.png#gh-dark-mode-only)
