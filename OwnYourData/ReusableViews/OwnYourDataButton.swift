@@ -38,7 +38,7 @@ struct OwnYourDataButton: View {
             .padding()
             .frame(maxWidth: .infinity)
             .foregroundColor(.white)
-            .background(Color("ButtonColor_light"))
+            .background(Color.accentColor)
             .cornerRadius(10)
             .padding(.horizontal)
     }

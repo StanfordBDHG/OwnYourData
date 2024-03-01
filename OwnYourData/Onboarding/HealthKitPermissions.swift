@@ -23,8 +23,8 @@ struct HealthKitPermissions: View {
             contentView: {
                 VStack {
                     OnboardingTitleView(
-                        title: "HEALTHKIT_PERMISSIONS_TITLE",
-                        subtitle: "HEALTHKIT_PERMISSIONS_SUBTITLE"
+                        title: "Health Data Access\nPermission",
+                        subtitle: "Grant permission to OwnYourData to access your health records"
                     )
                     Spacer()
                     Image(systemName: "heart.text.square.fill")
@@ -38,7 +38,7 @@ struct HealthKitPermissions: View {
                 }
             }, actionView: {
                 OnboardingActionsView(
-                    "HEALTHKIT_PERMISSIONS_BUTTON",
+                    "Grant Access",
                     action: {
                         do {
                             healthKitProcessing = true

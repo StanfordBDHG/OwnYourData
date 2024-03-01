@@ -38,6 +38,8 @@
 		2F42EA052B91C24700D88DB7 /* ExportPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F42EA022B91C24700D88DB7 /* ExportPackage.swift */; };
 		2F42EA062B91C24700D88DB7 /* ShareFHIRButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F42EA032B91C24700D88DB7 /* ShareFHIRButton.swift */; };
 		2F42EA072B91C24700D88DB7 /* URL+Zip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F42EA042B91C24700D88DB7 /* URL+Zip.swift */; };
+		2F42EA0E2B91CD7100D88DB7 /* OpenAIAPIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F42EA0D2B91CD7100D88DB7 /* OpenAIAPIKey.swift */; };
+		2F42EA112B91CF6F00D88DB7 /* ResourceSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F42EA102B91CF6F00D88DB7 /* ResourceSelection.swift */; };
 		2F49B7762980407C00BCB272 /* Spezi in Frameworks */ = {isa = PBXBuildFile; productRef = 2F49B7752980407B00BCB272 /* Spezi */; };
 		2F4E237E2989A2FE0013F3D9 /* OnboardingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4E237D2989A2FE0013F3D9 /* OnboardingTests.swift */; };
 		2F4E23832989D51F0013F3D9 /* OwnYourDataTestingSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4E23822989D51F0013F3D9 /* OwnYourDataTestingSetup.swift */; };
@@ -49,8 +51,6 @@
 		2FB099B12A875DF100B20952 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 2FB099B02A875DF100B20952 /* FirebaseFirestore */; };
 		2FB099B32A875DF100B20952 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2FB099B22A875DF100B20952 /* FirebaseFirestoreSwift */; };
 		2FB099B62A875E2B00B20952 /* HealthKitOnFHIR in Frameworks */ = {isa = PBXBuildFile; productRef = 2FB099B52A875E2B00B20952 /* HealthKitOnFHIR */; };
-		2FC3439029EE6346002D773C /* SocialSupportQuestionnaire.json in Resources */ = {isa = PBXBuildFile; fileRef = 2FE5DC5529EDD811004B9AB4 /* SocialSupportQuestionnaire.json */; };
-		2FC3439129EE6349002D773C /* AppIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FE5DC2A29EDD78D004B9AB4 /* AppIcon.png */; };
 		2FC3439229EE634B002D773C /* ConsentDocument.md in Resources */ = {isa = PBXBuildFile; fileRef = 2FE5DC2C29EDD78E004B9AB4 /* ConsentDocument.md */; };
 		2FC975A82978F11A00BA99FE /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC975A72978F11A00BA99FE /* Home.swift */; };
 		2FE5DC3529EDD7CA004B9AB4 /* Consent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE5DC2F29EDD7CA004B9AB4 /* Consent.swift */; };
@@ -138,6 +138,8 @@
 		2F42EA022B91C24700D88DB7 /* ExportPackage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExportPackage.swift; sourceTree = "<group>"; };
 		2F42EA032B91C24700D88DB7 /* ShareFHIRButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareFHIRButton.swift; sourceTree = "<group>"; };
 		2F42EA042B91C24700D88DB7 /* URL+Zip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+Zip.swift"; sourceTree = "<group>"; };
+		2F42EA0D2B91CD7100D88DB7 /* OpenAIAPIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIAPIKey.swift; sourceTree = "<group>"; };
+		2F42EA102B91CF6F00D88DB7 /* ResourceSelection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceSelection.swift; sourceTree = "<group>"; };
 		2F4E237D2989A2FE0013F3D9 /* OnboardingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTests.swift; sourceTree = "<group>"; };
 		2F4E23822989D51F0013F3D9 /* OwnYourDataTestingSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnYourDataTestingSetup.swift; sourceTree = "<group>"; };
 		2F4E23862989DB360013F3D9 /* ContactsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTests.swift; sourceTree = "<group>"; };
@@ -147,7 +149,6 @@
 		2FAEC07F297F583900C11C42 /* OwnYourData.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OwnYourData.entitlements; sourceTree = "<group>"; };
 		2FC94CD4298B0A1D009C8209 /* OwnYourData.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = OwnYourData.xctestplan; sourceTree = "<group>"; };
 		2FC975A72978F11A00BA99FE /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
-		2FE5DC2A29EDD78D004B9AB4 /* AppIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon.png; sourceTree = "<group>"; };
 		2FE5DC2C29EDD78E004B9AB4 /* ConsentDocument.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ConsentDocument.md; sourceTree = "<group>"; };
 		2FE5DC2F29EDD7CA004B9AB4 /* Consent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Consent.swift; sourceTree = "<group>"; };
 		2FE5DC3029EDD7CA004B9AB4 /* HealthKitPermissions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthKitPermissions.swift; sourceTree = "<group>"; };
@@ -159,7 +160,6 @@
 		2FE5DC4229EDD7F2004B9AB4 /* Binding+Negate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Binding+Negate.swift"; sourceTree = "<group>"; };
 		2FE5DC4329EDD7F2004B9AB4 /* Bundle+Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Image.swift"; sourceTree = "<group>"; };
 		2FE5DC4429EDD7F2004B9AB4 /* CodableArray+RawRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CodableArray+RawRepresentable.swift"; sourceTree = "<group>"; };
-		2FE5DC5529EDD811004B9AB4 /* SocialSupportQuestionnaire.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SocialSupportQuestionnaire.json; sourceTree = "<group>"; };
 		2FE5DCAC29EE6107004B9AB4 /* AccountOnboarding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountOnboarding.swift; sourceTree = "<group>"; };
 		2FF53D8C2A8729D600042B76 /* OwnYourDataStandard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OwnYourDataStandard.swift; sourceTree = "<group>"; };
 		566155282AB8447C00209B80 /* Package+LicenseType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Package+LicenseType.swift"; sourceTree = "<group>"; };
@@ -308,6 +308,7 @@
 				2FE5DC3429EDD7CA004B9AB4 /* Welcome.swift */,
 				2FE5DC3229EDD7CA004B9AB4 /* InterestingModules.swift */,
 				2FE5DCAC29EE6107004B9AB4 /* AccountOnboarding.swift */,
+				2F42EA0D2B91CD7100D88DB7 /* OpenAIAPIKey.swift */,
 				2FE5DC2F29EDD7CA004B9AB4 /* Consent.swift */,
 				2FE5DC3029EDD7CA004B9AB4 /* HealthKitPermissions.swift */,
 			);
@@ -320,8 +321,6 @@
 				653A255428338800005D4D48 /* Assets.xcassets */,
 				2FA0BFEC2ACC977500E0EF83 /* Localizable.xcstrings */,
 				2FE5DC2C29EDD78E004B9AB4 /* ConsentDocument.md */,
-				2FE5DC2A29EDD78D004B9AB4 /* AppIcon.png */,
-				2FE5DC5529EDD811004B9AB4 /* SocialSupportQuestionnaire.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -435,6 +434,7 @@
 				A9FE7ACF2AA39BAB0077B045 /* AccountSheet.swift */,
 				A9720E422ABB68CC00872D23 /* AccountSetupHeader.swift */,
 				A9DFE8A82ABE551400428242 /* AccountButton.swift */,
+				2F42EA102B91CF6F00D88DB7 /* ResourceSelection.swift */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -594,9 +594,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2FC3439229EE634B002D773C /* ConsentDocument.md in Resources */,
-				2FC3439129EE6349002D773C /* AppIcon.png in Resources */,
 				653A255528338800005D4D48 /* Assets.xcassets in Resources */,
-				2FC3439029EE6346002D773C /* SocialSupportQuestionnaire.json in Resources */,
 				2FA0BFED2ACC977500E0EF83 /* Localizable.xcstrings in Resources */,
 				2F6025CB29BBE70F0045459E /* GoogleService-Info.plist in Resources */,
 			);
@@ -653,6 +651,7 @@
 				2F42E9DE2B91BB2500D88DB7 /* PDFView.swift in Sources */,
 				2FE5DC3829EDD7CA004B9AB4 /* InterestingModules.swift in Sources */,
 				2F42E9F42B91BBF300D88DB7 /* Instructions.swift in Sources */,
+				2F42EA112B91CF6F00D88DB7 /* ResourceSelection.swift in Sources */,
 				2F42EA052B91C24700D88DB7 /* ExportPackage.swift in Sources */,
 				2F42E9E72B91BB8300D88DB7 /* WebView.swift in Sources */,
 				2FE5DC3529EDD7CA004B9AB4 /* Consent.swift in Sources */,
@@ -688,6 +687,7 @@
 				2F42EA062B91C24700D88DB7 /* ShareFHIRButton.swift in Sources */,
 				A9FE7AD02AA39BAB0077B045 /* AccountSheet.swift in Sources */,
 				653A2551283387FE005D4D48 /* OwnYourData.swift in Sources */,
+				2F42EA0E2B91CD7100D88DB7 /* OpenAIAPIKey.swift in Sources */,
 				2FE5DC3629EDD7CA004B9AB4 /* HealthKitPermissions.swift in Sources */,
 				5661552E2AB854C000209B80 /* PackageHelper.swift in Sources */,
 				2F42E9FF2B91BE3100D88DB7 /* FHIRStore+Extensions.swift in Sources */,
@@ -812,6 +812,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "OwnYourData/Supporting Files/Info.plist";
 				INFOPLIST_KEY_NSCameraUsageDescription = "This message should never appear. Please adjust this when you start using camera information. We have to put this in here as ResearchKit has the possibility to use it and not putting it here returns an error on AppStore Connect.";
+				INFOPLIST_KEY_NSHealthClinicalHealthRecordsShareUsageDescription = "The OwnYourData app needs access to your health records to display them in the application.";
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "The OwnYourData uses the step count to demonstrate Spezi's integration with HealthKit.";
 				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "The OwnYourData uses the step count to demonstrate Spezi's integration with HealthKit.";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "This message should never appear. Please adjust this when you start using location information. We have to put this in here as ResearchKit has the possibility to use it and not putting it here returns an error on AppStore Connect.";
@@ -1014,6 +1015,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "OwnYourData/Supporting Files/Info.plist";
 				INFOPLIST_KEY_NSCameraUsageDescription = "This message should never appear. Please adjust this when you start using camera information. We have to put this in here as ResearchKit has the possibility to use it and not putting it here returns an error on AppStore Connect.";
+				INFOPLIST_KEY_NSHealthClinicalHealthRecordsShareUsageDescription = "The OwnYourData app needs access to your health records to display them in the application.";
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "The OwnYourData uses the step count to demonstrate Spezi's integration with HealthKit.";
 				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "The OwnYourData uses the step count to demonstrate Spezi's integration with HealthKit.";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "This message should never appear. Please adjust this when you start using location information. We have to put this in here as ResearchKit has the possibility to use it and not putting it here returns an error on AppStore Connect.";
@@ -1061,6 +1063,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "OwnYourData/Supporting Files/Info.plist";
 				INFOPLIST_KEY_NSCameraUsageDescription = "This message should never appear. Please adjust this when you start using camera information. We have to put this in here as ResearchKit has the possibility to use it and not putting it here returns an error on AppStore Connect.";
+				INFOPLIST_KEY_NSHealthClinicalHealthRecordsShareUsageDescription = "The OwnYourData app needs access to your health records to display them in the application.";
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "The OwnYourData uses the step count to demonstrate Spezi's integration with HealthKit.";
 				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "The OwnYourData uses the step count to demonstrate Spezi's integration with HealthKit.";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "This message should never appear. Please adjust this when you start using location information. We have to put this in here as ResearchKit has the possibility to use it and not putting it here returns an error on AppStore Connect.";

@@ -7,14 +7,12 @@
 //
 
 import PDFKit
+import Spezi
 
 
-class DocumentManager: ObservableObject {
-    var documents: [PDFDocument] = [] {
-        willSet {
-            self.objectWillChange.send()
-        }
-    }
+@Observable
+class DocumentManager: Module, EnvironmentAccessible {
+    var documents: [PDFDocument] = []
     
     var documentURLs: [URL] {
         guard let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
@@ -64,9 +62,6 @@ class DocumentManager: ObservableObject {
         
         if let loadedFromURLDocument = PDFDocument(url: documentPath) {
             self.documents.append(loadedFromURLDocument)
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                self.objectWillChange.send()
-            }
         }
     }
     

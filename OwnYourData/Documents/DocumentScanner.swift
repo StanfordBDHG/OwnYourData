@@ -47,7 +47,7 @@ struct DocumentScanner: UIViewControllerRepresentable {
     }
     
     
-    @EnvironmentObject var documentManager: DocumentManager
+    @Environment(DocumentManager.self) var documentManager
     
     
     func makeUIViewController(context: Context) -> some VNDocumentCameraViewController {

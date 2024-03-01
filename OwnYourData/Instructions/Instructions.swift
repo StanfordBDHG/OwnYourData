@@ -18,7 +18,7 @@ struct Instructions: View {
             HStack {
                 Image(systemName: "\(step.offset + 1).circle.fill")
                     .accessibilityHidden(true)
-                    .foregroundColor(Color("ButtonColor_light"))
+                    .foregroundColor(.accentColor)
                     .font(.system(size: 45))
                     .frame(minHeight: 90)
                     .padding(.trailing, 10)

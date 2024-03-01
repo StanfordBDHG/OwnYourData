@@ -17,23 +17,24 @@ import SpeziHealthKit
 import SpeziLLM
 import SpeziLLMOpenAI
 import SpeziOnboarding
-import SpeziScheduler
 import SwiftUI
 
 
+// See https://swiftpackageindex.com/stanfordspezi/spezi/documentation/spezi/speziappdelegate
 class OwnYourDataDelegate: SpeziAppDelegate {
+    // See https://swiftpackageindex.com/stanfordspezi/spezi/documentation/spezi/speziappdelegate/configuration
     override var configuration: Configuration {
         Configuration(standard: OwnYourDataStandard()) {
             if !FeatureFlags.disableFirebase {
+                // See https://swiftpackageindex.com/stanfordspezi/speziaccount/documentation/speziaccount/initial-setup
                 AccountConfiguration(configuration: [
                     .requires(\.userId),
                     .requires(\.name),
-
-                    // additional values stored using the `FirestoreAccountStorage` within our Standard implementation
                     .collects(\.genderIdentity),
                     .collects(\.dateOfBirth)
                 ])
 
+                // See https://swiftpackageindex.com/stanfordspezi/spezifirebase/documentation/spezifirebaseaccount/firebaseaccountconfiguration
                 if FeatureFlags.useFirebaseEmulator {
                     FirebaseAccountConfiguration(
                         authenticationMethods: [.emailAndPassword, .signInWithApple],
@@ -43,6 +44,7 @@ class OwnYourDataDelegate: SpeziAppDelegate {
                     FirebaseAccountConfiguration(authenticationMethods: [.emailAndPassword, .signInWithApple])
                 }
                 firestore
+                // See https://swiftpackageindex.com/StanfordSpezi/SpeziFirebase/documentation/spezifirebasestorage
                 if FeatureFlags.useFirebaseEmulator {
                     FirebaseStorageConfiguration(emulatorSettings: (host: "localhost", port: 9199))
                 } else {
@@ -54,13 +56,20 @@ class OwnYourDataDelegate: SpeziAppDelegate {
                 healthKit
             }
             
+            // See https://swiftpackageindex.com/stanfordspezi/spezionboarding/documentation/spezionboarding/onboardingdatasource
+            OnboardingDataSource()
+            
+            // See https://swiftpackageindex.com/StanfordSpezi/SpeziLLM/documentation/spezillm
             LLMRunner {
                 LLMOpenAIPlatform(configuration: .init(concurrentStreams: 20))
             }
             FHIRInterpretationModule()
+            
+            DocumentManager()
         }
     }
     
+    // See https://swiftpackageindex.com/StanfordSpezi/SpeziFirebase/documentation/spezifirestore
     private var firestore: Firestore {
         let settings = FirestoreSettings()
         if FeatureFlags.useFirebaseEmulator {
@@ -74,6 +83,7 @@ class OwnYourDataDelegate: SpeziAppDelegate {
         )
     }
     
+    // See https://swiftpackageindex.com/StanfordSpezi/SpeziHealthKit/documentation/spezihealthkit
     private var healthKit: HealthKit {
         HealthKit {
             CollectSamples(

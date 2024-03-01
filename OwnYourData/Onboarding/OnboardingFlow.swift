@@ -46,6 +46,8 @@ struct OnboardingFlow: View {
             if HKHealthStore.isHealthDataAvailable() && !healthKitAuthorization {
                 HealthKitPermissions()
             }
+            
+            OpenAIAPIKey()
         }
             .interactiveDismissDisabled(!completedOnboardingFlow)
     }

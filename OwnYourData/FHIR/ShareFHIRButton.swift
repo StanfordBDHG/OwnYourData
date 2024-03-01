@@ -12,37 +12,41 @@ import SpeziFHIR
 import SwiftUI
 
 
-struct ShareFHIRButton: View {
+struct ShareFHIRSection: View {
     @Environment(FHIRStore.self) var fhirStore
     
     
     var body: some View {
-        VStack(alignment: .center, spacing: 8) {
-            ShareLink(
-                item: fhirStore.exportPackage,
-                preview: SharePreview(
-                    Text("FHIR JSON Export Package")
-                )
-            ) {
-                HStack {
-                    Image(systemName: "square.and.arrow.up")
-                        .accessibilityHidden(true)
-                    Text("Export")
+        Section(
+            content: {
+                ShareLink(
+                    item: fhirStore.exportPackage,
+                    preview: SharePreview(
+                        Text("FHIR JSON Export Package")
+                    )
+                ) {
+                    HStack {
+                        Spacer()
+                        Image(systemName: "square.and.arrow.up")
+                            .accessibilityHidden(true)
+                        Text("Export")
+                        Spacer()
+                    }
                 }
+            },
+            header: {
+                Text("Share FHIR Resources")
+            },
+            footer: {
+                Text("Export your health records to share them with the OwnYourData team.")
             }
-                .buttonStyle(.borderedProminent)
-            Text("Export your health records to share them with the OwnYourData team.")
-                .multilineTextAlignment(.center)
-                .foregroundStyle(Color.accentColor)
-                .font(.caption)
-        }
-            .padding()
+        )
     }
 }
 
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        ShareFHIRButton()
+        ShareFHIRSection()
     }
 }

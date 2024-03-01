@@ -15,19 +15,19 @@ struct ContributionsList: View {
     
     var body: some View {
             List {
-                Section(footer: Text("PROJECT_LICENSE_DESCRIPTION")) {
-                    Text("CONTRIBUTIONS_LIST_DESCRIPTION")
+                Section(footer: Text("This project is licensed under the MIT License.")) {
+                    Text("The following list contains all Swift Package dependencies of the SpeziOwnYourData.")
                 }
                 Section(
-                    header: Text("CONTRIBUTIONS_LIST_HEADER"),
-                    footer: Text("CONTRIBUTIONS_LIST_FOOTER")
+                    header: Text("Packages"),
+                    footer: Text("Please refer to the individual repository links for packages without license labels.")
                 ) {
                     ForEach(packages.sorted(by: { $0.name < $1.name }), id: \.name) { package in
                         PackageCell(package: package)
                     }
                 }
             }
-                .navigationTitle("LICENSE_INFO_TITLE")
+                .navigationTitle("License Information")
                 .navigationBarTitleDisplayMode(.inline)
     }
 }

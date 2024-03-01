@@ -25,12 +25,7 @@ struct AccountSheet: View {
             ZStack {
                 if account.signedIn && !isInSetup {
                     AccountOverview(isEditing: $overviewIsEditing) {
-                        NavigationLink {
-                            ContributionsList()
-                        } label: {
-                            Text("LICENSE_INFO_TITLE")
-                        }
-                        ShareFHIRButton()
+                        additionalSections
                     }
                         .onDisappear {
                             overviewIsEditing = false
@@ -59,12 +54,28 @@ struct AccountSheet: View {
         }
     }
 
-    var closeButton: some ToolbarContent {
+    private var closeButton: some ToolbarContent {
         ToolbarItem(placement: .cancellationAction) {
-            Button("CLOSE") {
+            Button("Close") {
                 dismiss()
             }
         }
+    }
+    
+    @ViewBuilder private var additionalSections: some View {
+        Section("License Information") {
+            NavigationLink {
+                ContributionsList()
+            } label: {
+                Text("License Information")
+            }
+        }
+        Section("Resource Selection") {
+            NavigationLink(destination: ResourceSelection()) {
+                Text("Resource Selection")
+            }
+        }
+        ShareFHIRSection()
     }
 }
 

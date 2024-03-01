@@ -16,35 +16,35 @@ struct Welcome: View {
     
     var body: some View {
         OnboardingView(
-            title: "WELCOME_TITLE",
-            subtitle: "WELCOME_SUBTITLE",
+            title: "What We Offer",
+            subtitle: "Own your health journey.",
             areas: [
                 OnboardingInformationView.Content(
                     icon: {
                         Image(systemName: "apps.iphone")
                             .accessibilityHidden(true)
                     },
-                    title: "WELCOME_AREA1_TITLE",
-                    description: "WELCOME_AREA1_DESCRIPTION"
+                    title: "Access Your Health Records",
+                    description: "We help you connect to your Health System(s) to download your records."
                 ),
                 OnboardingInformationView.Content(
                     icon: {
                         Image(systemName: "shippingbox.fill")
                             .accessibilityHidden(true)
                     },
-                    title: "WELCOME_AREA2_TITLE",
-                    description: "WELCOME_AREA2_DESCRIPTION"
+                    title: "Search for Active Trials",
+                    description: "Search ClinicalTrials.gov to find the right trial for you."
                 ),
                 OnboardingInformationView.Content(
                     icon: {
                         Image(systemName: "list.bullet.clipboard.fill")
                             .accessibilityHidden(true)
                     },
-                    title: "WELCOME_AREA3_TITLE",
-                    description: "WELCOME_AREA3_DESCRIPTION"
+                    title: "Share Your Data",
+                    description: "Share your health data easily with those that need it."
                 )
             ],
-            actionText: "WELCOME_BUTTON",
+            actionText: "Learn More",
             action: {
                 onboardingNavigationPath.nextStep()
             }

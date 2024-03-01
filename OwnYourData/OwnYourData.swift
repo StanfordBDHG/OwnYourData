@@ -11,6 +11,7 @@ import SpeziFirebaseAccount
 import SwiftUI
 
 
+// Learn more about the foundation of this application at https://spezi.health/SpeziTemplateApplication/documentation/templateapplication/
 @main
 struct OwnYourData: App {
     @UIApplicationDelegateAdaptor(OwnYourDataDelegate.self) var appDelegate

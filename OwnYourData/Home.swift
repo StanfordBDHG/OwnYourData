@@ -53,6 +53,11 @@ struct HomeView: View {
                     )
                 }
             }
+                .toolbar {
+                    if AccountButton.shouldDisplay {
+                        AccountButton(isPresented: $presentingAccount)
+                    }
+                }
         }
             .sheet(isPresented: $showClinicalTrialsView) {
                 ClinicalTrialsView()

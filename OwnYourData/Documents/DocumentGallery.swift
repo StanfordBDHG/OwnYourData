@@ -11,7 +11,7 @@ import SwiftUI
 
 
 struct DocumentGallery: View {
-    @EnvironmentObject var documentManager: DocumentManager
+    @Environment(DocumentManager.self) var documentManager
     @State var documentScanner = false
     
     

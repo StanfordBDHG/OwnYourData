@@ -17,7 +17,7 @@ struct AccountSetupHeader: View {
     
     var body: some View {
         VStack {
-            Text("ACCOUNT_TITLE")
+            Text("Your Account")
                 .font(.largeTitle)
                 .bold()
                 .padding(.bottom)
@@ -25,9 +25,9 @@ struct AccountSetupHeader: View {
             Text("ACCOUNT_SUBTITLE")
                 .padding(.bottom, 8)
             if account.signedIn, case .generic = setupState {
-                Text("ACCOUNT_SIGNED_IN_DESCRIPTION")
+                Text("You signed in with the following account:")
             } else {
-                Text("ACCOUNT_SETUP_DESCRIPTION")
+                Text("We respect your privacy. All data storage and sharing happens directly from your phone.")
             }
         }
             .multilineTextAlignment(.center)

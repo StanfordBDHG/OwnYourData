@@ -16,27 +16,27 @@ struct InterestingModules: View {
     
     var body: some View {
         SequentialOnboardingView(
-            title: "INTERESTING_MODULES_TITLE",
-            subtitle: "INTERESTING_MODULES_SUBTITLE",
+            title: "How It Works",
+            subtitle: "These are the steps to OwnYourData \nand connect with trials that matter.",
             content: [
                 SequentialOnboardingView.Content(
-                    title: "INTERESTING_MODULES_AREA1_TITLE",
-                    description: "INTERESTING_MODULES_AREA1_DESCRIPTION"
+                    title: "Download Your Records",
+                    description: "Select your health system(s) and download your health records to your phone."
                 ),
                 SequentialOnboardingView.Content(
-                    title: "INTERESTING_MODULES_AREA2_TITLE",
-                    description: "INTERESTING_MODULES_AREA2_DESCRIPTION"
+                    title: "Add Relevant Documents",
+                    description: "Scan important records with the camera on your phone to complete your records."
                 ),
                 SequentialOnboardingView.Content(
-                    title: "INTERESTING_MODULES_AREA3_TITLE",
-                    description: "INTERESTING_MODULES_AREA3_DESCRIPTION"
+                    title: "Discover Clinical Trials",
+                    description: "Find clinical trials supported by the National Cancer Institute."
                 ),
                 SequentialOnboardingView.Content(
-                    title: "INTERESTING_MODULES_AREA4_TITLE",
-                    description: "INTERESTING_MODULES_AREA4_DESCRIPTION"
+                    title: "Share Your Data",
+                    description: "Control what you share and who you share it with."
                 )
             ],
-            actionText: "INTERESTING_MODULES_BUTTON",
+            actionText: "Register",
             action: {
                 onboardingNavigationPath.nextStep()
             }
