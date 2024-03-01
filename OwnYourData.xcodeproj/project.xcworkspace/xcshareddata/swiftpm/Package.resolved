@@ -199,15 +199,6 @@
       }
     },
     {
-      "identity" : "spezicontact",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/StanfordSpezi/SpeziContact.git",
-      "state" : {
-        "revision" : "494b776f8c98d771e4a609a1fb706097dba4c030",
-        "version" : "1.0.0"
-      }
-    },
-    {
       "identity" : "spezifhir",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordSpezi/SpeziFHIR.git",

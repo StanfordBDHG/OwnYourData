@@ -7,29 +7,57 @@
 //
 
 import SpeziAccount
+import SpeziFHIR
+import SpeziFHIRLLM
 import SwiftUI
 
 
 struct HomeView: View {
-    enum Tabs: String {
-        case schedule
-        case contact
-        case mockUpload
-    }
-    
     static var accountEnabled: Bool {
         !FeatureFlags.disableFirebase && !FeatureFlags.skipOnboarding
     }
 
+    @Environment(Account.self) var account
+    @Environment(FHIRStore.self) var fjirStore
 
-    @AppStorage(StorageKeys.homeTabSelection) private var selectedTab = Tabs.schedule
     @State private var presentingAccount = false
+    @State private var showClinicalTrialsView = false
 
     
     var body: some View {
-        TabView(selection: $selectedTab) {
-            Text("Home ...")
+        NavigationStack {
+            ScrollView {
+                VStack(spacing: 20) {
+                    LogoView()
+                    welcome
+                        .font(.system(size: 60).weight(.semibold))
+                        .foregroundColor(.accentColor)
+                        .multilineTextAlignment(.center)
+                    if fjirStore.llmRelevantResources.isEmpty {
+                        InstructionsView()
+                    }
+                    OwnYourDataButton(title: "Match Me") {
+                        showClinicalTrialsView = true
+                    }
+                    OwnYourDataButton(
+                        title: "Ask Questions",
+                        destination: MultipleResourcesChatView(navigationTitle: "Ask Questions", textToSpeech: .constant(false))
+                    )
+                    OwnYourDataButton(
+                        title: "View Your Records",
+                        destination: ViewRecordsView()
+                    )
+                    OwnYourDataButton(
+                        title: "Update Information",
+                        destination: DocumentGallery()
+                    )
+                }
+            }
         }
+            .sheet(isPresented: $showClinicalTrialsView) {
+                ClinicalTrialsView()
+                    .edgesIgnoringSafeArea(.all)
+            }
             .sheet(isPresented: $presentingAccount) {
                 AccountSheet()
             }
@@ -37,6 +65,15 @@ struct HomeView: View {
                 AccountSheet()
             }
             .verifyRequiredAccountDetails(Self.accountEnabled)
+    }
+    
+    
+    @MainActor @ViewBuilder private var welcome: some View {
+        if let givenName = account.details?.name?.givenName {
+            Text("Welcome,\n\(givenName)")
+        } else {
+            Text("Welcome!")
+        }
     }
 }
 

@@ -15,6 +15,26 @@
 		2F42E9C22B91B70F00D88DB7 /* SpeziFHIRHealthKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2F42E9C12B91B70F00D88DB7 /* SpeziFHIRHealthKit */; };
 		2F42E9C42B91B70F00D88DB7 /* SpeziFHIRLLM in Frameworks */ = {isa = PBXBuildFile; productRef = 2F42E9C32B91B70F00D88DB7 /* SpeziFHIRLLM */; };
 		2F42E9C62B91B70F00D88DB7 /* SpeziFHIRMockPatients in Frameworks */ = {isa = PBXBuildFile; productRef = 2F42E9C52B91B70F00D88DB7 /* SpeziFHIRMockPatients */; };
+		2F42E9D02B91BAB900D88DB7 /* OwnYourDataSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F42E9CD2B91BAB900D88DB7 /* OwnYourDataSection.swift */; };
+		2F42E9D12B91BAB900D88DB7 /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F42E9CE2B91BAB900D88DB7 /* LogoView.swift */; };
+		2F42E9D22B91BAB900D88DB7 /* OwnYourDataButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F42E9CF2B91BAB900D88DB7 /* OwnYourDataButton.swift */; };
+		2F42E9DC2B91BB2500D88DB7 /* DocumentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F42E9D52B91BB2500D88DB7 /* DocumentManager.swift */; };
+		2F42E9DD2B91BB2500D88DB7 /* DocumentGallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F42E9D62B91BB2500D88DB7 /* DocumentGallery.swift */; };
+		2F42E9DE2B91BB2500D88DB7 /* PDFView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F42E9D72B91BB2500D88DB7 /* PDFView.swift */; };
+		2F42E9DF2B91BB2500D88DB7 /* PDFDocument+Transferable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F42E9D82B91BB2500D88DB7 /* PDFDocument+Transferable.swift */; };
+		2F42E9E02B91BB2500D88DB7 /* PDFListDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F42E9D92B91BB2500D88DB7 /* PDFListDetailView.swift */; };
+		2F42E9E12B91BB2500D88DB7 /* PDFListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F42E9DA2B91BB2500D88DB7 /* PDFListRow.swift */; };
+		2F42E9E22B91BB2500D88DB7 /* DocumentScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F42E9DB2B91BB2500D88DB7 /* DocumentScanner.swift */; };
+		2F42E9E72B91BB8300D88DB7 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F42E9E52B91BB8300D88DB7 /* WebView.swift */; };
+		2F42E9E82B91BB8300D88DB7 /* ClinicalTrialsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F42E9E62B91BB8300D88DB7 /* ClinicalTrialsView.swift */; };
+		2F42E9F22B91BBF300D88DB7 /* HowItWorks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F42E9EB2B91BBF300D88DB7 /* HowItWorks.swift */; };
+		2F42E9F32B91BBF300D88DB7 /* AddRecordInstructView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F42E9EC2B91BBF300D88DB7 /* AddRecordInstructView.swift */; };
+		2F42E9F42B91BBF300D88DB7 /* Instructions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F42E9ED2B91BBF300D88DB7 /* Instructions.swift */; };
+		2F42E9F52B91BBF300D88DB7 /* InstructionsStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F42E9EE2B91BBF300D88DB7 /* InstructionsStep.swift */; };
+		2F42E9F72B91BBF300D88DB7 /* ViewRecordsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F42E9F02B91BBF300D88DB7 /* ViewRecordsView.swift */; };
+		2F42E9F82B91BBF300D88DB7 /* OpenAppleHealthApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F42E9F12B91BBF300D88DB7 /* OpenAppleHealthApp.swift */; };
+		2F42E9FA2B91BDD300D88DB7 /* InstructionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F42E9F92B91BDD300D88DB7 /* InstructionsView.swift */; };
+		2F42E9FF2B91BE3100D88DB7 /* FHIRStore+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F42E9FE2B91BE3100D88DB7 /* FHIRStore+Extensions.swift */; };
 		2F49B7762980407C00BCB272 /* Spezi in Frameworks */ = {isa = PBXBuildFile; productRef = 2F49B7752980407B00BCB272 /* Spezi */; };
 		2F4E237E2989A2FE0013F3D9 /* OnboardingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4E237D2989A2FE0013F3D9 /* OnboardingTests.swift */; };
 		2F4E23832989D51F0013F3D9 /* OwnYourDataTestingSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4E23822989D51F0013F3D9 /* OwnYourDataTestingSetup.swift */; };
@@ -26,7 +46,6 @@
 		2FB099B12A875DF100B20952 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 2FB099B02A875DF100B20952 /* FirebaseFirestore */; };
 		2FB099B32A875DF100B20952 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2FB099B22A875DF100B20952 /* FirebaseFirestoreSwift */; };
 		2FB099B62A875E2B00B20952 /* HealthKitOnFHIR in Frameworks */ = {isa = PBXBuildFile; productRef = 2FB099B52A875E2B00B20952 /* HealthKitOnFHIR */; };
-		2FBD738C2A3BD150004228E7 /* SpeziScheduler in Frameworks */ = {isa = PBXBuildFile; productRef = 2FBD738B2A3BD150004228E7 /* SpeziScheduler */; };
 		2FC3439029EE6346002D773C /* SocialSupportQuestionnaire.json in Resources */ = {isa = PBXBuildFile; fileRef = 2FE5DC5529EDD811004B9AB4 /* SocialSupportQuestionnaire.json */; };
 		2FC3439129EE6349002D773C /* AppIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FE5DC2A29EDD78D004B9AB4 /* AppIcon.png */; };
 		2FC3439229EE634B002D773C /* ConsentDocument.md in Resources */ = {isa = PBXBuildFile; fileRef = 2FE5DC2C29EDD78E004B9AB4 /* ConsentDocument.md */; };
@@ -42,7 +61,6 @@
 		2FE5DC4629EDD7F2004B9AB4 /* Bundle+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE5DC4329EDD7F2004B9AB4 /* Bundle+Image.swift */; };
 		2FE5DC4729EDD7F2004B9AB4 /* CodableArray+RawRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE5DC4429EDD7F2004B9AB4 /* CodableArray+RawRepresentable.swift */; };
 		2FE5DC6429EDD883004B9AB4 /* SpeziAccount in Frameworks */ = {isa = PBXBuildFile; productRef = 2FE5DC6329EDD883004B9AB4 /* SpeziAccount */; };
-		2FE5DC6729EDD894004B9AB4 /* SpeziContact in Frameworks */ = {isa = PBXBuildFile; productRef = 2FE5DC6629EDD894004B9AB4 /* SpeziContact */; };
 		2FE5DC7229EDD8D3004B9AB4 /* SpeziHealthKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2FE5DC7129EDD8D3004B9AB4 /* SpeziHealthKit */; };
 		2FE5DC7529EDD8E6004B9AB4 /* SpeziFirebaseAccount in Frameworks */ = {isa = PBXBuildFile; productRef = 2FE5DC7429EDD8E6004B9AB4 /* SpeziFirebaseAccount */; };
 		2FE5DC7729EDD8E6004B9AB4 /* SpeziFirebaseConfiguration in Frameworks */ = {isa = PBXBuildFile; productRef = 2FE5DC7629EDD8E6004B9AB4 /* SpeziFirebaseConfiguration */; };
@@ -94,6 +112,26 @@
 /* Begin PBXFileReference section */
 		2F1AC9DE2B4E840E00C24973 /* OwnYourData.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = OwnYourData.docc; sourceTree = "<group>"; };
 		2F1B52CD2A4F5CCE003AE151 /* MockUploadTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUploadTests.swift; sourceTree = "<group>"; };
+		2F42E9CD2B91BAB900D88DB7 /* OwnYourDataSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OwnYourDataSection.swift; sourceTree = "<group>"; };
+		2F42E9CE2B91BAB900D88DB7 /* LogoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
+		2F42E9CF2B91BAB900D88DB7 /* OwnYourDataButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OwnYourDataButton.swift; sourceTree = "<group>"; };
+		2F42E9D52B91BB2500D88DB7 /* DocumentManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentManager.swift; sourceTree = "<group>"; };
+		2F42E9D62B91BB2500D88DB7 /* DocumentGallery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentGallery.swift; sourceTree = "<group>"; };
+		2F42E9D72B91BB2500D88DB7 /* PDFView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFView.swift; sourceTree = "<group>"; };
+		2F42E9D82B91BB2500D88DB7 /* PDFDocument+Transferable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PDFDocument+Transferable.swift"; sourceTree = "<group>"; };
+		2F42E9D92B91BB2500D88DB7 /* PDFListDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFListDetailView.swift; sourceTree = "<group>"; };
+		2F42E9DA2B91BB2500D88DB7 /* PDFListRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFListRow.swift; sourceTree = "<group>"; };
+		2F42E9DB2B91BB2500D88DB7 /* DocumentScanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentScanner.swift; sourceTree = "<group>"; };
+		2F42E9E52B91BB8300D88DB7 /* WebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		2F42E9E62B91BB8300D88DB7 /* ClinicalTrialsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClinicalTrialsView.swift; sourceTree = "<group>"; };
+		2F42E9EB2B91BBF300D88DB7 /* HowItWorks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HowItWorks.swift; sourceTree = "<group>"; };
+		2F42E9EC2B91BBF300D88DB7 /* AddRecordInstructView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddRecordInstructView.swift; sourceTree = "<group>"; };
+		2F42E9ED2B91BBF300D88DB7 /* Instructions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Instructions.swift; sourceTree = "<group>"; };
+		2F42E9EE2B91BBF300D88DB7 /* InstructionsStep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstructionsStep.swift; sourceTree = "<group>"; };
+		2F42E9F02B91BBF300D88DB7 /* ViewRecordsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewRecordsView.swift; sourceTree = "<group>"; };
+		2F42E9F12B91BBF300D88DB7 /* OpenAppleHealthApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenAppleHealthApp.swift; sourceTree = "<group>"; };
+		2F42E9F92B91BDD300D88DB7 /* InstructionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsView.swift; sourceTree = "<group>"; };
+		2F42E9FE2B91BE3100D88DB7 /* FHIRStore+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FHIRStore+Extensions.swift"; sourceTree = "<group>"; };
 		2F4E237D2989A2FE0013F3D9 /* OnboardingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTests.swift; sourceTree = "<group>"; };
 		2F4E23822989D51F0013F3D9 /* OwnYourDataTestingSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnYourDataTestingSetup.swift; sourceTree = "<group>"; };
 		2F4E23862989DB360013F3D9 /* ContactsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTests.swift; sourceTree = "<group>"; };
@@ -147,7 +185,6 @@
 				2FE5DC6429EDD883004B9AB4 /* SpeziAccount in Frameworks */,
 				2FB099AF2A875DF100B20952 /* FirebaseAuth in Frameworks */,
 				97D73D6A2AD860AD00B47FA0 /* SpeziFirebaseStorage in Frameworks */,
-				2FE5DC6729EDD894004B9AB4 /* SpeziContact in Frameworks */,
 				2FE5DC8429EDD934004B9AB4 /* SpeziQuestionnaire in Frameworks */,
 				2FB099B32A875DF100B20952 /* FirebaseFirestoreSwift in Frameworks */,
 				5661551D2AB8384200209B80 /* SwiftPackageList in Frameworks */,
@@ -164,7 +201,6 @@
 				2F42E9BD2B91B6EE00D88DB7 /* SpeziLLMOpenAI in Frameworks */,
 				2F49B7762980407C00BCB272 /* Spezi in Frameworks */,
 				2FE5DC8F29EDD980004B9AB4 /* SpeziViews in Frameworks */,
-				2FBD738C2A3BD150004228E7 /* SpeziScheduler in Frameworks */,
 				2FE5DC7929EDD8E6004B9AB4 /* SpeziFirestore in Frameworks */,
 				2FE5DC7729EDD8E6004B9AB4 /* SpeziFirebaseConfiguration in Frameworks */,
 				2F42E9C62B91B70F00D88DB7 /* SpeziFHIRMockPatients in Frameworks */,
@@ -190,6 +226,61 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F42E9CB2B91BAA900D88DB7 /* ReusableViews */ = {
+			isa = PBXGroup;
+			children = (
+				2F42E9CE2B91BAB900D88DB7 /* LogoView.swift */,
+				2F42E9CF2B91BAB900D88DB7 /* OwnYourDataButton.swift */,
+				2F42E9CD2B91BAB900D88DB7 /* OwnYourDataSection.swift */,
+			);
+			path = ReusableViews;
+			sourceTree = "<group>";
+		};
+		2F42E9D32B91BB1800D88DB7 /* Documents */ = {
+			isa = PBXGroup;
+			children = (
+				2F42E9D62B91BB2500D88DB7 /* DocumentGallery.swift */,
+				2F42E9D52B91BB2500D88DB7 /* DocumentManager.swift */,
+				2F42E9DB2B91BB2500D88DB7 /* DocumentScanner.swift */,
+				2F42E9D82B91BB2500D88DB7 /* PDFDocument+Transferable.swift */,
+				2F42E9D92B91BB2500D88DB7 /* PDFListDetailView.swift */,
+				2F42E9DA2B91BB2500D88DB7 /* PDFListRow.swift */,
+				2F42E9D72B91BB2500D88DB7 /* PDFView.swift */,
+			);
+			path = Documents;
+			sourceTree = "<group>";
+		};
+		2F42E9E32B91BB7000D88DB7 /* ClinicalTrials */ = {
+			isa = PBXGroup;
+			children = (
+				2F42E9E62B91BB8300D88DB7 /* ClinicalTrialsView.swift */,
+				2F42E9E52B91BB8300D88DB7 /* WebView.swift */,
+			);
+			path = ClinicalTrials;
+			sourceTree = "<group>";
+		};
+		2F42E9E92B91BBDD00D88DB7 /* Instructions */ = {
+			isa = PBXGroup;
+			children = (
+				2F42E9EC2B91BBF300D88DB7 /* AddRecordInstructView.swift */,
+				2F42E9EB2B91BBF300D88DB7 /* HowItWorks.swift */,
+				2F42E9ED2B91BBF300D88DB7 /* Instructions.swift */,
+				2F42E9EE2B91BBF300D88DB7 /* InstructionsStep.swift */,
+				2F42E9F12B91BBF300D88DB7 /* OpenAppleHealthApp.swift */,
+				2F42E9F02B91BBF300D88DB7 /* ViewRecordsView.swift */,
+				2F42E9F92B91BDD300D88DB7 /* InstructionsView.swift */,
+			);
+			path = Instructions;
+			sourceTree = "<group>";
+		};
+		2F42E9FC2B91BE2200D88DB7 /* FHIR */ = {
+			isa = PBXGroup;
+			children = (
+				2F42E9FE2B91BE3100D88DB7 /* FHIRStore+Extensions.swift */,
+			);
+			path = FHIR;
+			sourceTree = "<group>";
+		};
 		2FC9759D2978E30800BA99FE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -289,8 +380,13 @@
 				A9720E412ABB68B300872D23 /* Account */,
 				2FE5DC2829EDD398004B9AB4 /* Onboarding */,
 				56F6F29E2AB441640022FE5A /* Contributions */,
+				2F42E9D32B91BB1800D88DB7 /* Documents */,
+				2F42E9E32B91BB7000D88DB7 /* ClinicalTrials */,
+				2F42E9E92B91BBDD00D88DB7 /* Instructions */,
 				2FE5DC3C29EDD7DA004B9AB4 /* SharedContext */,
+				2F42E9FC2B91BE2200D88DB7 /* FHIR */,
 				2FE5DC3D29EDD7E4004B9AB4 /* Helper */,
+				2F42E9CB2B91BAA900D88DB7 /* ReusableViews */,
 				2FE5DC2D29EDD792004B9AB4 /* Resources */,
 				2FC9759D2978E30800BA99FE /* Supporting Files */,
 			);
@@ -355,7 +451,6 @@
 			packageProductDependencies = (
 				2F49B7752980407B00BCB272 /* Spezi */,
 				2FE5DC6329EDD883004B9AB4 /* SpeziAccount */,
-				2FE5DC6629EDD894004B9AB4 /* SpeziContact */,
 				2FE5DC7129EDD8D3004B9AB4 /* SpeziHealthKit */,
 				2FE5DC7429EDD8E6004B9AB4 /* SpeziFirebaseAccount */,
 				2FE5DC7629EDD8E6004B9AB4 /* SpeziFirebaseConfiguration */,
@@ -364,7 +459,6 @@
 				2FE5DC8929EDD972004B9AB4 /* SpeziLocalStorage */,
 				2FE5DC8B29EDD972004B9AB4 /* SpeziSecureStorage */,
 				2FE5DC8E29EDD980004B9AB4 /* SpeziViews */,
-				2FBD738B2A3BD150004228E7 /* SpeziScheduler */,
 				2FE5DC8029EDD91D004B9AB4 /* SpeziOnboarding */,
 				2FB099AE2A875DF100B20952 /* FirebaseAuth */,
 				2FB099B02A875DF100B20952 /* FirebaseFirestore */,
@@ -460,7 +554,6 @@
 			packageReferences = (
 				2F49B7742980407B00BCB272 /* XCRemoteSwiftPackageReference "Spezi" */,
 				2FE5DC6229EDD883004B9AB4 /* XCRemoteSwiftPackageReference "SpeziAccount" */,
-				2FE5DC6529EDD894004B9AB4 /* XCRemoteSwiftPackageReference "SpeziContact" */,
 				2FE5DC7029EDD8D3004B9AB4 /* XCRemoteSwiftPackageReference "SpeziHealthKit" */,
 				2FE5DC7329EDD8E6004B9AB4 /* XCRemoteSwiftPackageReference "SpeziFirebase" */,
 				2FE5DC8229EDD934004B9AB4 /* XCRemoteSwiftPackageReference "SpeziQuestionnaire" */,
@@ -543,22 +636,41 @@
 			buildActionMask = 2147483647;
 			files = (
 				2FE5DC4129EDD7EE004B9AB4 /* StorageKeys.swift in Sources */,
+				2F42E9F72B91BBF300D88DB7 /* ViewRecordsView.swift in Sources */,
+				2F42E9E22B91BB2500D88DB7 /* DocumentScanner.swift in Sources */,
 				2FE5DCB129EE6107004B9AB4 /* AccountOnboarding.swift in Sources */,
+				2F42E9F22B91BBF300D88DB7 /* HowItWorks.swift in Sources */,
 				2FE5DC3A29EDD7CA004B9AB4 /* Welcome.swift in Sources */,
+				2F42E9DE2B91BB2500D88DB7 /* PDFView.swift in Sources */,
 				2FE5DC3829EDD7CA004B9AB4 /* InterestingModules.swift in Sources */,
+				2F42E9F42B91BBF300D88DB7 /* Instructions.swift in Sources */,
+				2F42E9E72B91BB8300D88DB7 /* WebView.swift in Sources */,
 				2FE5DC3529EDD7CA004B9AB4 /* Consent.swift in Sources */,
 				2FE5DC4529EDD7F2004B9AB4 /* Binding+Negate.swift in Sources */,
 				2FC975A82978F11A00BA99FE /* Home.swift in Sources */,
+				2F42E9E12B91BB2500D88DB7 /* PDFListRow.swift in Sources */,
+				2F42E9F82B91BBF300D88DB7 /* OpenAppleHealthApp.swift in Sources */,
+				2F42E9D02B91BAB900D88DB7 /* OwnYourDataSection.swift in Sources */,
+				2F42E9F32B91BBF300D88DB7 /* AddRecordInstructView.swift in Sources */,
 				A9DFE8A92ABE551400428242 /* AccountButton.swift in Sources */,
 				2FE5DC3729EDD7CA004B9AB4 /* OnboardingFlow.swift in Sources */,
 				2F1AC9DF2B4E840E00C24973 /* OwnYourData.docc in Sources */,
+				2F42E9D12B91BAB900D88DB7 /* LogoView.swift in Sources */,
 				2FF53D8D2A8729D600042B76 /* OwnYourDataStandard.swift in Sources */,
 				2FE5DC4729EDD7F2004B9AB4 /* CodableArray+RawRepresentable.swift in Sources */,
 				A9720E432ABB68CC00872D23 /* AccountSetupHeader.swift in Sources */,
 				2FE5DC4029EDD7EE004B9AB4 /* FeatureFlags.swift in Sources */,
 				2FE5DC4629EDD7F2004B9AB4 /* Bundle+Image.swift in Sources */,
+				2F42E9DD2B91BB2500D88DB7 /* DocumentGallery.swift in Sources */,
+				2F42E9DF2B91BB2500D88DB7 /* PDFDocument+Transferable.swift in Sources */,
+				2F42E9F52B91BBF300D88DB7 /* InstructionsStep.swift in Sources */,
 				2F4E23832989D51F0013F3D9 /* OwnYourDataTestingSetup.swift in Sources */,
+				2F42E9DC2B91BB2500D88DB7 /* DocumentManager.swift in Sources */,
+				2F42E9E02B91BB2500D88DB7 /* PDFListDetailView.swift in Sources */,
+				2F42E9FA2B91BDD300D88DB7 /* InstructionsView.swift in Sources */,
 				56F6F2A02AB441930022FE5A /* ContributionsList.swift in Sources */,
+				2F42E9D22B91BAB900D88DB7 /* OwnYourDataButton.swift in Sources */,
+				2F42E9E82B91BB8300D88DB7 /* ClinicalTrialsView.swift in Sources */,
 				566155292AB8447C00209B80 /* Package+LicenseType.swift in Sources */,
 				5680DD392AB8983D004E6D4A /* PackageCell.swift in Sources */,
 				2F5E32BD297E05EA003432F8 /* OwnYourDataDelegate.swift in Sources */,
@@ -566,6 +678,7 @@
 				653A2551283387FE005D4D48 /* OwnYourData.swift in Sources */,
 				2FE5DC3629EDD7CA004B9AB4 /* HealthKitPermissions.swift in Sources */,
 				5661552E2AB854C000209B80 /* PackageHelper.swift in Sources */,
+				2F42E9FF2B91BE3100D88DB7 /* FHIRStore+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1127,14 +1240,6 @@
 				minimumVersion = 1.1.0;
 			};
 		};
-		2FE5DC6529EDD894004B9AB4 /* XCRemoteSwiftPackageReference "SpeziContact" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/StanfordSpezi/SpeziContact.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
 		2FE5DC7029EDD8D3004B9AB4 /* XCRemoteSwiftPackageReference "SpeziHealthKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/StanfordSpezi/SpeziHealthKit.git";
@@ -1273,19 +1378,10 @@
 			package = 2FB099B42A875E2B00B20952 /* XCRemoteSwiftPackageReference "HealthKitOnFHIR" */;
 			productName = HealthKitOnFHIR;
 		};
-		2FBD738B2A3BD150004228E7 /* SpeziScheduler */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = SpeziScheduler;
-		};
 		2FE5DC6329EDD883004B9AB4 /* SpeziAccount */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 2FE5DC6229EDD883004B9AB4 /* XCRemoteSwiftPackageReference "SpeziAccount" */;
 			productName = SpeziAccount;
-		};
-		2FE5DC6629EDD894004B9AB4 /* SpeziContact */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2FE5DC6529EDD894004B9AB4 /* XCRemoteSwiftPackageReference "SpeziContact" */;
-			productName = SpeziContact;
 		};
 		2FE5DC7129EDD8D3004B9AB4 /* SpeziHealthKit */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -52,6 +52,18 @@
         }
       }
     },
+    "Add an account in the Apple Health app." : {
+
+    },
+    "Add Document" : {
+
+    },
+    "Apple Health App" : {
+
+    },
+    "Ask Questions" : {
+
+    },
     "CLOSE" : {
       "comment" : "MARK: General",
       "localizations" : {
@@ -137,6 +149,12 @@
         }
       }
     },
+    "Documents" : {
+
+    },
+    "FHIR_RESOURCES_VIEW_NO_RESOURCES" : {
+
+    },
     "HEALTHKIT_PERMISSIONS_BUTTON" : {
       "localizations" : {
         "en" : {
@@ -178,7 +196,7 @@
         }
       }
     },
-    "Home ..." : {
+    "How It Works" : {
 
     },
     "INTERESTING_MODULES_AREA1_DESCRIPTION" : {
@@ -292,6 +310,9 @@
         }
       }
     },
+    "Learn More ..." : {
+
+    },
     "LELAND_STANFORD_BIO" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -324,6 +345,12 @@
           }
         }
       }
+    },
+    "Navigate to the Browse tab." : {
+
+    },
+    "No Documents" : {
+
     },
     "NOTIFICATION_PERMISSIONS_BUTTON" : {
       "extractionState" : "stale",
@@ -370,6 +397,12 @@
         }
       }
     },
+    "Open the Apple Health app." : {
+
+    },
+    "PDF" : {
+
+    },
     "PROJECT_LICENSE_DESCRIPTION" : {
       "localizations" : {
         "en" : {
@@ -412,6 +445,12 @@
           }
         }
       }
+    },
+    "Step Content ..." : {
+
+    },
+    "Tap Health App \nto get started!" : {
+
     },
     "TASK_CONTEXT_ACTION_QUESTIONNAIRE" : {
       "extractionState" : "stale",
@@ -467,6 +506,9 @@
           }
         }
       }
+    },
+    "The OwnYourData App Icon" : {
+
     },
     "WELCOME_AREA1_DESCRIPTION" : {
       "localizations" : {
@@ -558,6 +600,12 @@
           }
         }
       }
+    },
+    "Welcome,\n%@" : {
+
+    },
+    "Welcome!" : {
+
     }
   },
   "version" : "1.0"
