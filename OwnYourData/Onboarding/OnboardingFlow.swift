@@ -16,11 +16,8 @@ import SwiftUI
 /// Displays an multi-step onboarding flow for the OwnYourData.
 struct OnboardingFlow: View {
     @Environment(HealthKit.self) private var healthKitDataSource
-    @Environment(OwnYourDataScheduler.self) private var scheduler
-
-    @AppStorage(StorageKeys.onboardingFlowComplete) private var completedOnboardingFlow = false
     
-    @State private var localNotificationAuthorization = false
+    @AppStorage(StorageKeys.onboardingFlowComplete) private var completedOnboardingFlow = false
     
     
     private var healthKitAuthorization: Bool {
@@ -49,14 +46,7 @@ struct OnboardingFlow: View {
             if HKHealthStore.isHealthDataAvailable() && !healthKitAuthorization {
                 HealthKitPermissions()
             }
-            
-            if !localNotificationAuthorization {
-                NotificationPermissions()
-            }
         }
-            .task {
-                localNotificationAuthorization = await scheduler.localNotificationAuthorization
-            }
             .interactiveDismissDisabled(!completedOnboardingFlow)
     }
 }
@@ -72,8 +62,6 @@ struct OnboardingFlow: View {
             AccountConfiguration {
                 MockUserIdPasswordAccountService()
             }
-
-            OwnYourDataScheduler()
         }
 }
 #endif

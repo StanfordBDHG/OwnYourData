@@ -8,11 +8,14 @@
 
 import Spezi
 import SpeziAccount
+import SpeziFHIR
+import SpeziFHIRLLM
 import SpeziFirebaseAccount
 import SpeziFirebaseStorage
 import SpeziFirestore
 import SpeziHealthKit
-import SpeziMockWebService
+import SpeziLLM
+import SpeziLLMOpenAI
 import SpeziOnboarding
 import SpeziScheduler
 import SwiftUI
@@ -45,19 +48,18 @@ class OwnYourDataDelegate: SpeziAppDelegate {
                 } else {
                     FirebaseStorageConfiguration()
                 }
-            } else {
-                MockWebService()
             }
 
             if HKHealthStore.isHealthDataAvailable() {
                 healthKit
             }
             
-            OwnYourDataScheduler()
-            OnboardingDataSource()
+            LLMRunner {
+                LLMOpenAIPlatform(configuration: .init(concurrentStreams: 20))
+            }
+            FHIRInterpretationModule()
         }
     }
-    
     
     private var firestore: Firestore {
         let settings = FirestoreSettings()
@@ -72,12 +74,26 @@ class OwnYourDataDelegate: SpeziAppDelegate {
         )
     }
     
-    
     private var healthKit: HealthKit {
         HealthKit {
-            CollectSample(
-                HKQuantityType(.stepCount),
-                deliverySetting: .anchorQuery(.afterAuthorizationAndApplicationWillLaunch)
+            CollectSamples(
+                [
+                    HKClinicalType(.allergyRecord),
+                    HKClinicalType(.clinicalNoteRecord),
+                    HKClinicalType(.conditionRecord),
+                    HKClinicalType(.coverageRecord),
+                    HKClinicalType(.immunizationRecord),
+                    HKClinicalType(.labResultRecord),
+                    HKClinicalType(.medicationRecord),
+                    HKClinicalType(.procedureRecord),
+                    HKClinicalType(.vitalSignRecord)
+                ],
+                predicate: HKQuery.predicateForSamples(
+                    withStart: Date.distantPast,
+                    end: nil,
+                    options: .strictEndDate
+                ),
+                deliverySetting: .anchorQuery(saveAnchor: false)
             )
         }
     }

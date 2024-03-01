@@ -64,6 +64,7 @@
       }
     },
     "COMPLETED_TASK_LABEL %@" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -84,6 +85,7 @@
       }
     },
     "CONTACTS_NAVIGATION_TITLE" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -95,6 +97,7 @@
     },
     "CONTACTS_TAB_TITLE" : {
       "comment" : "MARK: - Contacts",
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -174,6 +177,9 @@
           }
         }
       }
+    },
+    "Home ..." : {
+
     },
     "INTERESTING_MODULES_AREA1_DESCRIPTION" : {
       "localizations" : {
@@ -287,6 +293,7 @@
       }
     },
     "LELAND_STANFORD_BIO" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -308,6 +315,7 @@
     },
     "MOCK_WEB_SERVICE_TAB_TITLE" : {
       "comment" : "MARK: - Mock Upload Data Storage Provider",
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -318,6 +326,7 @@
       }
     },
     "NOTIFICATION_PERMISSIONS_BUTTON" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -328,6 +337,7 @@
       }
     },
     "NOTIFICATION_PERMISSIONS_DESCRIPTION" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -338,6 +348,7 @@
       }
     },
     "NOTIFICATION_PERMISSIONS_SUBTITLE" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -349,6 +360,7 @@
     },
     "NOTIFICATION_PERMISSIONS_TITLE" : {
       "comment" : "MARK: Notifications",
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -379,6 +391,7 @@
       }
     },
     "SCHEDULE_LIST_TITLE" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -390,6 +403,7 @@
     },
     "SCHEDULE_TAB_TITLE" : {
       "comment" : "MARK: - Schedule",
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -400,6 +414,7 @@
       }
     },
     "TASK_CONTEXT_ACTION_QUESTIONNAIRE" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -410,6 +425,7 @@
       }
     },
     "TASK_CONTEXT_ACTION_TEST" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -420,6 +436,7 @@
       }
     },
     "TASK_LABEL %@" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -430,6 +447,7 @@
       }
     },
     "TASK_SOCIAL_SUPPORT_QUESTIONNAIRE_DESCRIPTION" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -440,6 +458,7 @@
       }
     },
     "TASK_SOCIAL_SUPPORT_QUESTIONNAIRE_TITLE" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {

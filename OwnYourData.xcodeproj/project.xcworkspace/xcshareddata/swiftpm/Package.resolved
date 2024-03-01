@@ -109,12 +109,30 @@
       }
     },
     {
+      "identity" : "llama.cpp",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/StanfordBDHG/llama.cpp",
+      "state" : {
+        "revision" : "b0611c7d3cb049822f9911878514e4706b80e2ac",
+        "version" : "0.1.8"
+      }
+    },
+    {
       "identity" : "nanopb",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/firebase/nanopb.git",
       "state" : {
         "revision" : "819d0a2173aff699fb8c364b6fb906f7cdb1a692",
         "version" : "2.30909.0"
+      }
+    },
+    {
+      "identity" : "openai",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/MacPaw/OpenAI",
+      "state" : {
+        "revision" : "35afc9a6ee127b8f22a85a31aec2036a987478af",
+        "version" : "0.2.6"
       }
     },
     {
@@ -145,6 +163,15 @@
       }
     },
     {
+      "identity" : "semaphore",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/groue/Semaphore.git",
+      "state" : {
+        "revision" : "f1c4a0acabeb591068dea6cffdd39660b86dec28",
+        "version" : "0.0.8"
+      }
+    },
+    {
       "identity" : "spezi",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordSpezi/Spezi",
@@ -163,12 +190,30 @@
       }
     },
     {
+      "identity" : "spezichat",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/StanfordSpezi/SpeziChat",
+      "state" : {
+        "revision" : "eae5c15b211f18e09aa98de63ce119629320afeb",
+        "version" : "0.1.8"
+      }
+    },
+    {
       "identity" : "spezicontact",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordSpezi/SpeziContact.git",
       "state" : {
         "revision" : "494b776f8c98d771e4a609a1fb706097dba4c030",
         "version" : "1.0.0"
+      }
+    },
+    {
+      "identity" : "spezifhir",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/StanfordSpezi/SpeziFHIR.git",
+      "state" : {
+        "revision" : "9a171a21d7028042c30a24c661bfdfc6e363c9c3",
+        "version" : "0.6.0"
       }
     },
     {
@@ -199,12 +244,12 @@
       }
     },
     {
-      "identity" : "spezimockwebservice",
+      "identity" : "spezillm",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/StanfordSpezi/SpeziMockWebService.git",
+      "location" : "https://github.com/StanfordSpezi/SpeziLLM.git",
       "state" : {
-        "revision" : "b18067d3499e630bbd995ef05a296ef8fdd42528",
-        "version" : "1.0.0"
+        "revision" : "6892c5dfe258371b6f3287f02b8fec57a611ba70",
+        "version" : "0.7.0"
       }
     },
     {
@@ -226,12 +271,12 @@
       }
     },
     {
-      "identity" : "spezischeduler",
+      "identity" : "spezispeech",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/StanfordSpezi/SpeziScheduler.git",
+      "location" : "https://github.com/StanfordSpezi/SpeziSpeech",
       "state" : {
-        "revision" : "ba391084109a9a16622b07e9dcefe2ab1552d2a2",
-        "version" : "0.8.1"
+        "revision" : "60b8cdbf6f3d58b0d75eadf30db50f88848069aa",
+        "version" : "1.0.1"
       }
     },
     {
