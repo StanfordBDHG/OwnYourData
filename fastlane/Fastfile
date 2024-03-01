@@ -47,7 +47,7 @@ platform :ios do
       xcargs: "-skipPackagePluginValidation",
       export_options: {
         provisioningProfiles: {
-          "edu.stanford.cs342.ownyourdata" => "CS342 OwnYourData"
+          "edu.stanford.cs342.ownyourdata" => "Stanford BDHG OwnYourData"
         }
       }
     )
