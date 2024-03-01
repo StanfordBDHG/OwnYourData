@@ -21,7 +21,7 @@ Run `pod install`
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://clinicaltrialsapi-int.cancer.gov/api/v2*
+All URIs are relative to *https://clinicaltrialsapi-int.cancer.gov/api/v2* <!-- markdown-link-check-disable-line -->
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
