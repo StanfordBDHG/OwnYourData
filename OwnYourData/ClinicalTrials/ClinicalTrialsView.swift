@@ -7,39 +7,41 @@
 //
 import Foundation
 import SwiftUI
+
 struct ClinicalTrialsView: View {
-    @State private var trials: [ClinicalTrial] = []
+    @State private var clinicalTrial: ClinicalTrial?
         
     var body: some View {
         VStack {
-            if trials.isEmpty {
-                Text("Loading...")
-                    .onAppear {
-                        fetchClinicalTrials { fetchedTrials in
-                            trials = fetchedTrials
+            if let trial = clinicalTrial {
+                List {
+                    ForEach(trial.data.indices, id: \.self) { index in
+                        let datum = trial.data[index]
+                        VStack(alignment: .leading) {
+                            Text(datum.officialTitle)
+                                .font(.headline)
+                            Text(datum.briefSummary)
+                                .font(.subheadline)
+                                .foregroundColor(.secondary)
                         }
                     }
-            } else {
-                List(trials) { trial in
-                    VStack(alignment: .leading) {
-                        Text(trial.data.officialTitle)
-                            .font(.headline)
-                        Text(trial.data.briefSummary)
-                            .font(.subheadline)
-                            .foregroundColor(.secondary)
-                    }
                 }
+            } else {
+                Text("Loading...")
             }
+        }
+        .onAppear {
+            fetchClinicalTrials()
         }
     }
 }
-func fetchClinicalTrials(completion: @escaping ([ClinicalTrial]) -> Void) {
+func fetchClinicalTrials() {
     // Parameters for the API Call
     let apiKey = "rQexsvuEeX62RJHrNO5Ex8HKzLx1iDUT34CL3DJA"
     let responseSize = 1
     
     guard let url = URL(string: "https://clinicaltrialsapi.cancer.gov/api/v2/trials?size=" + String(responseSize) + "&sites.recruitment_status=ACTIVE") else {
-        completion([])
+        print("Invalid URL")
         return
     }
     
@@ -49,45 +51,43 @@ func fetchClinicalTrials(completion: @escaping ([ClinicalTrial]) -> Void) {
     ]
     
     var request = URLRequest(url: url)
+    request.allHTTPHeaderFields = headers
+    
     let task = URLSession.shared.dataTask(with: request) { data, _, error in
         if let error = error {
             print("Error: \(error)")
-            completion([])
             return
         }
         guard let data = data else {
-            print("No data received")
-            completion([])
+            print("No data received: \(error?.localizedDescription ?? "Unkown error")")
             return
         }
-        
         if let jsonString = String(data: data, encoding: .utf8) {
             print("Received JSON: \(jsonString)")
         }
+        
         do {
-            let decodedData = try JSONDecoder().decode([ClinicalTrial].self, from: data)
-            // Store trials in a JSON file (e.g., UserDefaults, File system, etc.)
-            // For simplicity, this example will just call the completion with the result
-            completion(decodedData)
+            let decodedData = try JSONDecoder().decode(ClinicalTrial.self, from: data)
         } catch {
+            // Getting a KeyNotFound Error here
             print("Error decoding JSON: \(error)")
-            completion([])
         }
-    }
-    task.resume()
+    }.resume()
 }
+
 // MARK: - ClinicalTrial
-struct ClinicalTrial: Decodable, Identifiable {
-    let id: String
+struct ClinicalTrial: Codable {
     let total: Int
-    let data: Datum
+    let data: [Datum]
 }
 // MARK: - Datum
-struct Datum: Decodable {
+struct Datum: Codable, Identifiable, Hashable {
+    var id = UUID() // Identifier for each datum
     let interventionalModel, leadOrg: String
     let eligibility: Eligibility
     let sites: [Site]
-    let detailDescription, officialTitle: String
+    let detailDescription: String
+    let officialTitle: String
     let outcomeMeasures: [OutcomeMeasure]
     let phase: String
     let primaryPurpose: String
@@ -106,14 +106,26 @@ struct Datum: Decodable {
     let anatomicSites: [String]
     let startDateTypeCode, principalInvestigator, studySource, completionDate: String
     let studyProtocolType: String
+    
+    private enum CodingKeys: String, CodingKey {
+        case id = "id"
+    }
+    
+    static func == (lhs: Datum, rhs: Datum) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
 }
 // MARK: - Arm
-struct Arm: Decodable {
+struct Arm: Codable {
     let interventions: [Intervention]
     let name, armDescription, type: String
 }
 // MARK: - Intervention
-struct Intervention: Decodable {
+struct Intervention: Codable {
     let inclusionIndicator: InclusionIndicator
     let synonyms: [String]
     let nciThesaurusConceptID, name: String
@@ -122,23 +134,23 @@ struct Intervention: Decodable {
     let category: Category
     let parents: [String]
 }
-enum Category: String, Decodable {
+enum Category: String, Codable {
     case agent
     case agentCategory
     case other
 }
-enum InclusionIndicator: String, Decodable {
+enum InclusionIndicator: String, Codable {
     case tree
     case trial
 }
-enum InterventionType: String, Decodable {
+enum InterventionType: String, Codable {
     case biologicalVaccine
     case drug
     case other
     case procedureSurgery
 }
 // MARK: - Biomarker
-struct Biomarker: Decodable {
+struct Biomarker: Codable {
     let eligibilityCriterion: EligibilityCriterion
     let inclusionIndicator: InclusionIndicator
     let synonyms: [String]
@@ -148,26 +160,26 @@ struct Biomarker: Decodable {
     let ancestors, parents: [String]
     let assayPurpose: AssayPurpose
 }
-enum AssayPurpose: String, Decodable {
+enum AssayPurpose: String, Codable {
     case eligibilityCriterionExclusion
     case eligibilityCriterionInclusion
 }
-enum EligibilityCriterion: String, Decodable {
+enum EligibilityCriterion: String, Codable {
     case exclusion
     case inclusion
 }
-enum SemanticType: String, Decodable {
+enum SemanticType: String, Codable {
     case cellOrMolecularDysfunction
     case finding
     case geneOrGenome
     case laboratoryOrTestResult
 }
-enum BiomarkerType: String, Decodable {
+enum BiomarkerType: String, Codable {
     case branch
     case referenceGene
 }
 // MARK: - Disease
-struct Disease: Decodable {
+struct Disease: Codable {
     let inclusionIndicator: InclusionIndicator
     let isLeadDisease: Bool
     let synonyms: [String]
@@ -175,18 +187,18 @@ struct Disease: Decodable {
     let type: [DiseaseType]
     let parents: [String]
 }
-enum DiseaseType: String, Decodable {
+enum DiseaseType: String, Codable {
     case maintype
     case stage
     case subtype
 }
 // MARK: - Eligibility
-struct Eligibility: Decodable {
+struct Eligibility: Codable {
     let unstructured: [Unstructured]
     let structured: Structured
 }
 // MARK: - Structured
-struct Structured: Decodable {
+struct Structured: Codable {
     let maxAge: String
     let maxAgeNumber: Int
     let minAgeUnit, maxAgeUnit: String
@@ -197,13 +209,13 @@ struct Structured: Decodable {
     let minAgeNumber, minAgeInYears: Int
 }
 // MARK: - Unstructured
-struct Unstructured: Decodable {
+struct Unstructured: Codable {
     let inclusionIndicator: Bool
     let displayOrder: Int
     let unstructuredDescription: String
 }
 // MARK: - Masking
-struct Masking: Decodable {
+struct Masking: Codable {
     let masking, allocationCode: String
 }
 // MARK: - OtherID
@@ -211,18 +223,18 @@ struct OtherID {
     let name, value: String
 }
 // MARK: - OutcomeMeasure
-struct OutcomeMeasure: Decodable {
+struct OutcomeMeasure: Codable {
     let timeframe, name: String
     let outcomeMeasureDescription: String
     let typeCode: TypeCode
 }
-enum TypeCode: String, Decodable {
+enum TypeCode: String, Codable {
     case otherPreSpecified
     case primary
     case secondary
 }
 // MARK: - PriorTherapy
-struct PriorTherapy: Decodable {
+struct PriorTherapy: Codable {
     let eligibilityCriterion: EligibilityCriterion
     let inclusionIndicator: InclusionIndicator
     let synonyms: [String]
@@ -230,7 +242,7 @@ struct PriorTherapy: Decodable {
     let ancestorIDS, parents: [String]
 }
 // MARK: - Site
-struct Site: Decodable {
+struct Site: Codable {
     let orgStateOrProvince: String
     let contactName: String
     let contactPhone: String
@@ -244,7 +256,7 @@ struct Site: Decodable {
     let orgCoordinates: OrgCoordinates
 }
 // MARK: - OrgCoordinates
-struct OrgCoordinates: Decodable {
+struct OrgCoordinates: Codable {
     let lon, lat: Double
 }
 #Preview {
