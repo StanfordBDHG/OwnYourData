@@ -15,12 +15,11 @@ struct ClinicalTrialsView: View {
         VStack {
             if let trial = clinicalTrial {
                 List {
-                    ForEach(trial.data.indices, id: \.self) { index in
-                        let datum = trial.data[index]
+                    ForEach(trial.data, id: \.nctID) { datum in
                         VStack(alignment: .leading) {
-                            Text(datum.officialTitle)
+                            Text(datum.briefTitle ?? "No title available")
                                 .font(.headline)
-                            Text(datum.briefSummary)
+                            Text(datum.briefSummary ?? "No summary available")
                                 .font(.subheadline)
                                 .foregroundColor(.secondary)
                         }
@@ -34,45 +33,55 @@ struct ClinicalTrialsView: View {
             fetchClinicalTrials()
         }
     }
-}
-func fetchClinicalTrials() {
-    // Parameters for the API Call
-    let apiKey = "rQexsvuEeX62RJHrNO5Ex8HKzLx1iDUT34CL3DJA"
-    let responseSize = 1
     
-    guard let url = URL(string: "https://clinicaltrialsapi.cancer.gov/api/v2/trials?size=" + String(responseSize) + "&sites.recruitment_status=ACTIVE") else {
-        print("Invalid URL")
-        return
-    }
-    
-    let headers = [
-        "accept": "*/*",
-        "X-API-KEY": apiKey
-    ]
-    
-    var request = URLRequest(url: url)
-    request.allHTTPHeaderFields = headers
-    
-    let task = URLSession.shared.dataTask(with: request) { data, _, error in
-        if let error = error {
-            print("Error: \(error)")
+    func fetchClinicalTrials() {
+        // Parameters for the API Call
+        let apiKey = "rQexsvuEeX62RJHrNO5Ex8HKzLx1iDUT34CL3DJA"
+        let responseSize = 1
+        
+        guard let url = URL(string: "https://clinicaltrialsapi.cancer.gov/api/v2/trials?size=\(responseSize)&sites.recruitment_status=ACTIVE") else {
+            print("Invalid URL")
             return
-        }
-        guard let data = data else {
-            print("No data received: \(error?.localizedDescription ?? "Unkown error")")
-            return
-        }
-        if let jsonString = String(data: data, encoding: .utf8) {
-            print("Received JSON: \(jsonString)")
         }
         
-        do {
-            let decodedData = try JSONDecoder().decode(ClinicalTrial.self, from: data)
-        } catch {
-            // Getting a KeyNotFound Error here
-            print("Error decoding JSON: \(error)")
+        let headers = [
+            "accept": "*/*",
+            "X-API-KEY": apiKey
+        ]
+        
+        var request = URLRequest(url: url)
+        request.allHTTPHeaderFields = headers
+        
+        let task = URLSession.shared.dataTask(with: request) { data, _, error in
+            if let error = error {
+                print("Error: \(error)")
+                return
+            }
+            guard let data = data else {
+                print("No data received: \(error?.localizedDescription ?? "Unkown error")")
+                return
+            }
+            do {
+                let decodedData = try JSONDecoder().decode(ClinicalTrial.self, from: data)
+                print("decoded data retrieved, calling updateClinicalTrial")
+                print(decodedData)
+                updateClinicalTrial(decodedData)
+            } catch {
+                // Getting a KeyNotFound Error here
+                print("Error decoding JSON: \(error)")
+            }
         }
-    }.resume()
+        task.resume()
+    }
+    
+    func updateClinicalTrial(_ decodedData: ClinicalTrial) {
+        print("in the updateClinicalTrial func")
+        DispatchQueue.main.async {
+            clinicalTrial = decodedData // Update the state variable
+            print("updated the state variable")
+        }
+    }
+
 }
 
 // MARK: - ClinicalTrial
@@ -81,184 +90,76 @@ struct ClinicalTrial: Codable {
     let data: [Datum]
 }
 // MARK: - Datum
-struct Datum: Codable, Identifiable, Hashable {
-    var id = UUID() // Identifier for each datum
-    let interventionalModel, leadOrg: String
+struct Datum: Codable, Hashable {
     let eligibility: Eligibility
     let sites: [Site]
-    let detailDescription: String
-    let officialTitle: String
-    let outcomeMeasures: [OutcomeMeasure]
-    let phase: String
-    let primaryPurpose: String
-    let nctID: String
-    let biomarkers: [Biomarker]
+    let detailDescription: String?
+    let phase: String?
+    let primaryPurpose: String?
+    let nctID: String?
     let diseases: [Disease]
-    let activeSitesCount: Int
-    let arms: [Arm]
-    let nciID: String
-    let briefSummary, briefTitle: String
-    let minimumTargetAccrualNumber: Int
-    let priorTherapy: [PriorTherapy]
-    let currentTrialStatusSortOrder: Int
-    let startDate, recordVerificationDate, ctepID, currentTrialStatus: String
-    let masking: Masking
-    let anatomicSites: [String]
-    let startDateTypeCode, principalInvestigator, studySource, completionDate: String
-    let studyProtocolType: String
-    
-    private enum CodingKeys: String, CodingKey {
-        case id = "id"
-    }
-    
+    let nciID: String?
+    let briefSummary: String?
+    let briefTitle: String?
+    let currentTrialStatus: String?
+    let studyProtocolType: String?
+      
     static func == (lhs: Datum, rhs: Datum) -> Bool {
-        return lhs.id == rhs.id
+        return lhs.nctID == rhs.nctID
     }
     
     func hash(into hasher: inout Hasher) {
-        hasher.combine(id)
+        hasher.combine(nctID)
     }
 }
-// MARK: - Arm
-struct Arm: Codable {
-    let interventions: [Intervention]
-    let name, armDescription, type: String
-}
-// MARK: - Intervention
-struct Intervention: Codable {
-    let inclusionIndicator: InclusionIndicator
-    let synonyms: [String]
-    let nciThesaurusConceptID, name: String
-    let interventionDescription: String?
-    let type: InterventionType
-    let category: Category
-    let parents: [String]
-}
-enum Category: String, Codable {
-    case agent
-    case agentCategory
-    case other
-}
-enum InclusionIndicator: String, Codable {
-    case tree
-    case trial
-}
-enum InterventionType: String, Codable {
-    case biologicalVaccine
-    case drug
-    case other
-    case procedureSurgery
-}
-// MARK: - Biomarker
-struct Biomarker: Codable {
-    let eligibilityCriterion: EligibilityCriterion
-    let inclusionIndicator: InclusionIndicator
-    let synonyms: [String]
-    let nciThesaurusConceptID, name: String
-    let semanticTypes: [SemanticType]
-    let type: [BiomarkerType]
-    let ancestors, parents: [String]
-    let assayPurpose: AssayPurpose
-}
-enum AssayPurpose: String, Codable {
-    case eligibilityCriterionExclusion
-    case eligibilityCriterionInclusion
-}
-enum EligibilityCriterion: String, Codable {
-    case exclusion
-    case inclusion
-}
-enum SemanticType: String, Codable {
-    case cellOrMolecularDysfunction
-    case finding
-    case geneOrGenome
-    case laboratoryOrTestResult
-}
-enum BiomarkerType: String, Codable {
-    case branch
-    case referenceGene
-}
-// MARK: - Disease
-struct Disease: Codable {
-    let inclusionIndicator: InclusionIndicator
-    let isLeadDisease: Bool
-    let synonyms: [String]
-    let nciThesaurusConceptID, name: String
-    let type: [DiseaseType]
-    let parents: [String]
-}
-enum DiseaseType: String, Codable {
-    case maintype
-    case stage
-    case subtype
-}
+
 // MARK: - Eligibility
 struct Eligibility: Codable {
     let unstructured: [Unstructured]
     let structured: Structured
 }
-// MARK: - Structured
-struct Structured: Codable {
-    let maxAge: String
-    let maxAgeNumber: Int
-    let minAgeUnit, maxAgeUnit: String
-    let maxAgeInYears: Int
-    let gender: String
-    let acceptsHealthyVolunteers: Bool
-    let minAge: String
-    let minAgeNumber, minAgeInYears: Int
-}
 // MARK: - Unstructured
 struct Unstructured: Codable {
-    let inclusionIndicator: Bool
-    let displayOrder: Int
-    let unstructuredDescription: String
+    let inclusionIndicator: Bool?
+    let unstructuredDescription: String?
 }
-// MARK: - Masking
-struct Masking: Codable {
-    let masking, allocationCode: String
+// MARK: - Structured
+struct Structured: Codable {
+    let maxAgeInYears: Int?
+    let gender: String?
+    let acceptsHealthyVolunteers: Bool?
+    let minAgeInYears: Int?
 }
-// MARK: - OtherID
-struct OtherID {
-    let name, value: String
-}
-// MARK: - OutcomeMeasure
-struct OutcomeMeasure: Codable {
-    let timeframe, name: String
-    let outcomeMeasureDescription: String
-    let typeCode: TypeCode
-}
-enum TypeCode: String, Codable {
-    case otherPreSpecified
-    case primary
-    case secondary
-}
-// MARK: - PriorTherapy
-struct PriorTherapy: Codable {
-    let eligibilityCriterion: EligibilityCriterion
-    let inclusionIndicator: InclusionIndicator
-    let synonyms: [String]
-    let nciThesaurusConceptID, name: String
-    let ancestorIDS, parents: [String]
-}
+
 // MARK: - Site
 struct Site: Codable {
-    let orgStateOrProvince: String
-    let contactName: String
-    let contactPhone: String
-    let orgPostalCode: String
-    let contactEmail: String
-    let recruitmentStatus: String
-    let orgCity, orgEmail: String
-    let orgCountry: String
-    let orgFax, orgPhone: String
-    let orgName: String
-    let orgCoordinates: OrgCoordinates
+    let orgStateOrProvince: String?
+    let contactName: String?
+    let contactPhone: String?
+    let orgPostalCode: String?
+    let contactEmail: String?
+    let recruitmentStatus: String?
+    let orgCity: String?
+    let orgEmail: String?
+    let orgCountry: String?
+    let orgPhone: String?
+    let orgName: String?
+    let orgCoordinates: OrgCoordinates?
 }
 // MARK: - OrgCoordinates
 struct OrgCoordinates: Codable {
-    let lon, lat: Double
+    let lon, lat: Double?
 }
+
+// MARK: - Disease
+struct Disease: Codable {
+    let isLeadDisease: Bool?
+    let synonyms: [String]?
+    let nciThesaurusConceptID: String?
+    let name: String?
+    let parents: [String]?
+}
+
 #Preview {
     ClinicalTrialsView()
 }
