@@ -110,6 +110,7 @@
 
 /* Begin PBXFileReference section */
 		2F38F3982BE5A9E10002E7D5 /* NCIClinicalTrialsSearchAPI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = NCIClinicalTrialsSearchAPI; sourceTree = "<group>"; };
+		2F38F39C2BE5AB9F0002E7D5 /* NCIClinicalTrialsSearchAPI.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = NCIClinicalTrialsSearchAPI.json; sourceTree = "<group>"; };
 		2F42E9CD2B91BAB900D88DB7 /* OwnYourDataSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OwnYourDataSection.swift; sourceTree = "<group>"; };
 		2F42E9CE2B91BAB900D88DB7 /* LogoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
 		2F42E9CF2B91BAB900D88DB7 /* OwnYourDataButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OwnYourDataButton.swift; sourceTree = "<group>"; };
@@ -351,6 +352,7 @@
 			isa = PBXGroup;
 			children = (
 				2FC94CD4298B0A1D009C8209 /* OwnYourData.xctestplan */,
+				2F38F39C2BE5AB9F0002E7D5 /* NCIClinicalTrialsSearchAPI.json */,
 				2F38F3982BE5A9E10002E7D5 /* NCIClinicalTrialsSearchAPI */,
 				653A254F283387FE005D4D48 /* OwnYourData */,
 				653A256028338800005D4D48 /* OwnYourDataTests */,
