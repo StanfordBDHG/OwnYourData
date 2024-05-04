@@ -50,6 +50,547 @@
             "type":"integer",
             "minimum":1,
             "maximum":999
+         },
+         "TrialResponse": {
+           "type": "object",
+           "properties": {
+             "total": {
+               "type": "integer"
+             },
+             "data": {
+               "type": "array",
+               "items": {
+                 "$ref": "#/components/schemas/TrialDetail"
+               }
+             }
+           }
+         },
+         "TrialDetail": {
+           "type": "object",
+           "properties": {
+             "other_ids": {
+               "type": "array",
+               "items": {
+                 "$ref": "#/components/schemas/Identifier"
+               }
+             },
+             "amendment_date": {
+               "type": "string",
+               "format": "date"
+             },
+             "keywords": {
+               "type": ["string", "null"]
+             },
+             "dcp_id": {
+               "type": ["string", "null"]
+             },
+             "interventional_model": {
+               "type": "string"
+             },
+             "lead_org": {
+               "type": "string"
+             },
+             "eligibility": {
+               "$ref": "#/components/schemas/Eligibility"
+             },
+             "sites": {
+               "type": "array",
+               "items": {
+                 "$ref": "#/components/schemas/Site"
+               }
+             },
+             "completion_date_type_code": {
+               "type": "string"
+             },
+             "detail_description": {
+               "type": "string"
+             },
+             "official_title": {
+               "type": "string"
+             },
+             "_phase_sort_order": {
+               "type": "integer"
+             },
+             "collaborators": {
+               "type": "array",
+               "items": {
+                 "type": "string"
+               }
+             },
+             "associated_studies": {
+               "type": "array",
+               "items": {
+                 "type": "string"
+               }
+             },
+             "outcome_measures": {
+               "type": "array",
+               "items": {
+                 "$ref": "#/components/schemas/OutcomeMeasure"
+               }
+             },
+             "phase": {
+               "type": "string"
+             },
+             "central_contact": {
+               "$ref": "#/components/schemas/CentralContact"
+             },
+             "primary_purpose": {
+               "type": "string"
+             },
+             "number_of_arms": {
+               "type": "integer"
+             },
+             "_study_protocol_type_sort_order": {
+               "type": "integer"
+             },
+             "nct_id": {
+               "type": "string"
+             },
+             "biomarkers": {
+               "type": "array",
+               "items": {
+                 "type": "string"
+               }
+             },
+             "classification_code": {
+               "type": ["string", "null"]
+             },
+             "current_trial_status_date": {
+               "type": "string",
+               "format": "date"
+             },
+             "diseases": {
+               "type": "array",
+               "items": {
+                 "$ref": "#/components/schemas/Disease"
+               }
+             },
+             "_primary_purpose_sort_order": {
+               "type": "integer"
+             },
+             "protocol_id": {
+               "type": "string"
+             },
+             "active_sites_count": {
+               "type": "integer"
+             },
+             "lead_org_cancer_center": {
+               "type": ["string", "null"]
+             },
+             "arms": {
+               "type": "array",
+               "items": {
+                 "$ref": "#/components/schemas/Arm"
+               }
+             },
+             "study_model_code": {
+               "type": ["string", "null"]
+             },
+             "nci_id": {
+               "type": "string"
+             },
+             "why_study_stopped": {
+               "type": ["string", "null"]
+             },
+             "brief_summary": {
+               "type": "string"
+             },
+             "brief_title": {
+               "type": "string"
+             },
+             "status_history": {
+               "type": "array",
+               "items": {
+                 "$ref": "#/components/schemas/StatusHistory"
+               }
+             },
+             "study_population_description": {
+               "type": ["string", "null"]
+             },
+             "sampling_method_code": {
+               "type": ["string", "null"]
+             },
+             "minimum_target_accrual_number": {
+               "type": "integer"
+             },
+             "prior_therapy": {
+               "type": "array",
+               "items": {
+                 "type": "string"
+               }
+             },
+             "_current_trial_status_sort_order": {
+               "type": "integer"
+             },
+             "start_date": {
+               "type": "string",
+               "format": "date"
+             },
+             "record_verification_date": {
+               "type": "string",
+               "format": "date"
+             },
+             "ctep_id": {
+               "type": "string"
+             },
+             "current_trial_status": {
+               "type": "string"
+             },
+             "study_model_other_text": {
+               "type": ["string", "null"]
+             },
+             "masking": {
+               "$ref": "#/components/schemas/Masking"
+             },
+             "acronym": {
+               "type": ["string", "null"]
+             },
+             "nci_programs": {
+               "type": "array",
+               "items": {
+                 "type": "string"
+               }
+             },
+             "nci_funded": {
+               "type": "string"
+             },
+             "anatomic_sites": {
+               "type": "array",
+               "items": {
+                 "type": "string"
+               }
+             },
+             "ccr_id": {
+               "type": ["string", "null"]
+             },
+             "start_date_type_code": {
+               "type": "string"
+             },
+             "principal_investigator": {
+               "type": "string"
+             },
+             "study_source": {
+               "type": "string"
+             },
+             "completion_date": {
+               "type": "string",
+               "format": "date"
+             },
+             "study_subtype_code": {
+               "type": ["string", "null"]
+             },
+             "study_protocol_type": {
+               "type": "string"
+             }
+           }
+         },
+         "Identifier": {
+           "type": "object",
+           "properties": {
+             "name": {
+               "type": "string"
+             },
+             "value": {
+               "type": "string"
+             }
+           }
+         },
+         "Site": {
+           "type": "object",
+           "properties": {
+             "org_state_or_province": {
+               "type": "string"
+             },
+             "contact_name": {
+               "type": "string"
+             },
+             "contact_phone": {
+               "type": "string"
+             },
+             "recruitment_status_date": {
+               "type": "string",
+               "format": "date"
+             },
+             "org_address_line_2": {
+               "type": ["string", "null"]
+             },
+             "org_va": {
+               "type": "boolean"
+             },
+             "org_address_line_1": {
+               "type": "string"
+             },
+             "org_tty": {
+               "type": ["string", "null"]
+             },
+             "org_family": {
+               "type": ["string", "null"]
+             },
+             "org_postal_code": {
+               "type": "string"
+             },
+             "contact_email": {
+               "type": "string"
+             },
+             "recruitment_status": {
+               "type": "string"
+             },
+             "org_city": {
+               "type": "string"
+             },
+             "org_email": {
+               "type": ["string", "null"]
+             },
+             "org_country": {
+               "type": "string"
+             },
+             "org_fax": {
+               "type": "string"
+             },
+             "org_phone": {
+               "type": "string"
+             },
+             "org_name": {
+               "type": "string"
+             },
+             "org_coordinates": {
+               "$ref": "#/components/schemas/Coordinates"
+             }
+           }
+         },
+         "Coordinates": {
+           "type": "object",
+           "properties": {
+             "lon": {
+               "type": "number"
+             },
+             "lat": {
+               "type": "number"
+             }
+           }
+         },
+         "Eligibility": {
+           "type": "object",
+           "properties": {
+             "unstructured": {
+               "type": "array",
+               "items": {
+                 "$ref": "#/components/schemas/UnstructuredEligibility"
+               }
+             },
+             "structured": {
+               "$ref": "#/components/schemas/StructuredEligibility"
+             }
+           }
+         },
+         "UnstructuredEligibility": {
+           "type": "object",
+           "properties": {
+             "inclusion_indicator": {
+               "type": "boolean"
+             },
+             "display_order": {
+               "type": "integer"
+             },
+             "description": {
+               "type": "string"
+             }
+           }
+         },
+         "StructuredEligibility": {
+           "type": "object",
+           "properties": {
+             "max_age": {
+               "type": "string"
+             },
+             "max_age_number": {
+               "type": "integer"
+             },
+             "min_age_unit": {
+               "type": "string"
+             },
+             "max_age_unit": {
+               "type": "string"
+             },
+             "max_age_in_years": {
+               "type": "integer"
+             },
+             "gender": {
+               "type": "string"
+             },
+             "accepts_healthy_volunteers": {
+               "type": "boolean"
+             },
+             "min_age": {
+               "type": "string"
+             },
+             "min_age_number": {
+               "type": "integer"
+             },
+             "min_age_in_years": {
+               "type": "integer"
+             }
+           }
+         },
+         "OutcomeMeasure": {
+           "type": "object",
+           "properties": {
+             "timeframe": {
+               "type": "string"
+             },
+             "name": {
+               "type": "string"
+             },
+             "description": {
+               "type": "string"
+             },
+             "type_code": {
+               "type": "string"
+             }
+           }
+         },
+         "CentralContact": {
+           "type": "object",
+           "properties": {
+             "phone": {
+               "type": ["string", "null"]
+             },
+             "name": {
+               "type": ["string", "null"]
+             },
+             "type": {
+               "type": ["string", "null"]
+             },
+             "email": {
+               "type": ["string", "null"]
+             }
+           }
+         },
+         "Arm": {
+           "type": "object",
+           "properties": {
+             "interventions": {
+               "type": "array",
+               "items": {
+                 "$ref": "#/components/schemas/Intervention"
+               }
+             },
+             "name": {
+               "type": "string"
+             },
+             "description": {
+               "type": "string"
+             },
+             "type": {
+               "type": "string"
+             }
+           }
+         },
+         "Intervention": {
+           "type": "object",
+           "properties": {
+             "inclusion_indicator": {
+               "type": "string"
+             },
+             "synonyms": {
+               "type": "array",
+               "items": {
+                 "type": "string"
+               }
+             },
+             "nci_thesaurus_concept_id": {
+               "type": "string"
+             },
+             "name": {
+               "type": "string"
+             },
+             "description": {
+               "type": ["string", "null"]
+             },
+             "type": {
+               "type": "string"
+             },
+             "category": {
+               "type": "string"
+             },
+             "parents": {
+               "type": "array",
+               "items": {
+                 "type": "string"
+               }
+             }
+           }
+         },
+         "Disease": {
+           "type": "object",
+           "properties": {
+             "inclusion_indicator": {
+               "type": "string"
+             },
+             "is_lead_disease": {
+               "type": "boolean"
+             },
+             "synonyms": {
+               "type": "array",
+               "items": {
+                 "type": "string"
+               }
+             },
+             "nci_thesaurus_concept_id": {
+               "type": "string"
+             },
+             "name": {
+               "type": "string"
+             },
+             "type": {
+               "type": "array",
+               "items": {
+                 "type": "string"
+               }
+             },
+             "parents": {
+               "type": "array",
+               "items": {
+                 "type": "string"
+               }
+             }
+           }
+         },
+         "StatusHistory": {
+           "type": "object",
+           "properties": {
+             "status_date": {
+               "type": "string",
+               "format": "date"
+             },
+             "status": {
+               "type": "string"
+             }
+           }
+         },
+         "Masking": {
+           "type": "object",
+           "properties": {
+             "role_caregiver": {
+               "type": ["string", "null"]
+             },
+             "masking": {
+               "type": ["string", "null"]
+             },
+             "role_investigator": {
+               "type": ["string", "null"]
+             },
+             "role_outcome_assessor": {
+               "type": ["string", "null"]
+             },
+             "role_subject": {
+               "type": ["string", "null"]
+             },
+             "allocation_code": {
+               "type": "string"
+             }
+           }
          }
       },
       "parameters":{
@@ -501,6 +1042,13 @@
                            "type":"string"
                         }
                      }
+                  },
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "$ref": "#/components/schemas/TrialDetail"
+                      }
+                    }
                   }
                },
                "404":{
@@ -2550,7 +3098,14 @@
             ],
             "responses":{
                "200":{
-                  "description":"The list of results matching given search criteria."
+                  "description":"The list of results matching given search criteria.",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "$ref": "#/components/schemas/TrialResponse"
+                      }
+                    }
+                  }
                },
                "400":{
                   "description":"Bad Request."
@@ -2668,7 +3223,14 @@
             },
             "responses":{
                "200":{
-                  "description":"The list of results matching given search criteria."
+                  "description":"The list of results matching given search criteria.",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "$ref": "#/components/schemas/TrialResponse"
+                      }
+                    }
+                  }
                },
                "400":{
                   "description":"Bad Request."

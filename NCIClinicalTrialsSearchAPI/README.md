@@ -21,7 +21,7 @@ Run `pod install`
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://clinicaltrialsapi-int.cancer.gov/api/v2* <!-- markdown-link-check-disable-line -->
+All URIs are relative to *https://clinicaltrialsapi-int.cancer.gov/api/v2*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -36,6 +36,21 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Models
 
+ - [Arm](docs/Arm.md)
+ - [CentralContact](docs/CentralContact.md)
+ - [Coordinates](docs/Coordinates.md)
+ - [Disease](docs/Disease.md)
+ - [Eligibility](docs/Eligibility.md)
+ - [Identifier](docs/Identifier.md)
+ - [Intervention](docs/Intervention.md)
+ - [Masking](docs/Masking.md)
+ - [OutcomeMeasure](docs/OutcomeMeasure.md)
+ - [Site](docs/Site.md)
+ - [StatusHistory](docs/StatusHistory.md)
+ - [StructuredEligibility](docs/StructuredEligibility.md)
+ - [TrialDetail](docs/TrialDetail.md)
+ - [TrialResponse](docs/TrialResponse.md)
+ - [UnstructuredEligibility](docs/UnstructuredEligibility.md)
 
 
 <a id="documentation-for-authorization"></a>
