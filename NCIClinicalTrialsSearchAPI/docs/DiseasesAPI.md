@@ -1,6 +1,6 @@
 # DiseasesAPI
 
-All URIs are relative to *https://clinicaltrialsapi-int.cancer.gov/api/v2* <!-- markdown-link-check-disable-line -->
+All URIs are relative to *https://clinicaltrialsapi.cancer.gov/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------

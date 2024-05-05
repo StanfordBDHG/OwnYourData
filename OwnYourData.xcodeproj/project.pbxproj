@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2F31CE882B91D6E9002B0B29 /* OpenAPIClient in Frameworks */ = {isa = PBXBuildFile; productRef = 2F31CE872B91D6E9002B0B29 /* OpenAPIClient */; };
+		2F38F3A02BE805090002E7D5 /* NICTrialsAPIDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F38F39F2BE805090002E7D5 /* NICTrialsAPIDateFormatter.swift */; };
 		2F42E9BB2B91B6EE00D88DB7 /* SpeziLLM in Frameworks */ = {isa = PBXBuildFile; productRef = 2F42E9BA2B91B6EE00D88DB7 /* SpeziLLM */; };
 		2F42E9BD2B91B6EE00D88DB7 /* SpeziLLMOpenAI in Frameworks */ = {isa = PBXBuildFile; productRef = 2F42E9BC2B91B6EE00D88DB7 /* SpeziLLMOpenAI */; };
 		2F42E9C02B91B70F00D88DB7 /* SpeziFHIR in Frameworks */ = {isa = PBXBuildFile; productRef = 2F42E9BF2B91B70F00D88DB7 /* SpeziFHIR */; };
@@ -111,6 +112,7 @@
 /* Begin PBXFileReference section */
 		2F38F3982BE5A9E10002E7D5 /* NCIClinicalTrialsSearchAPI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = NCIClinicalTrialsSearchAPI; sourceTree = "<group>"; };
 		2F38F39C2BE5AB9F0002E7D5 /* NCIClinicalTrialsSearchAPI.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = NCIClinicalTrialsSearchAPI.json; sourceTree = "<group>"; };
+		2F38F39F2BE805090002E7D5 /* NICTrialsAPIDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NICTrialsAPIDateFormatter.swift; sourceTree = "<group>"; };
 		2F42E9CD2B91BAB900D88DB7 /* OwnYourDataSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OwnYourDataSection.swift; sourceTree = "<group>"; };
 		2F42E9CE2B91BAB900D88DB7 /* LogoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
 		2F42E9CF2B91BAB900D88DB7 /* OwnYourDataButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OwnYourDataButton.swift; sourceTree = "<group>"; };
@@ -255,6 +257,7 @@
 			children = (
 				2F42E9E62B91BB8300D88DB7 /* ClinicalTrialsView.swift */,
 				2F42E9E52B91BB8300D88DB7 /* WebView.swift */,
+				2F38F39F2BE805090002E7D5 /* NICTrialsAPIDateFormatter.swift */,
 			);
 			path = ClinicalTrials;
 			sourceTree = "<group>";
@@ -643,6 +646,7 @@
 				2FE5DC3A29EDD7CA004B9AB4 /* Welcome.swift in Sources */,
 				2F42E9DE2B91BB2500D88DB7 /* PDFView.swift in Sources */,
 				2FE5DC3829EDD7CA004B9AB4 /* InterestingModules.swift in Sources */,
+				2F38F3A02BE805090002E7D5 /* NICTrialsAPIDateFormatter.swift in Sources */,
 				2F42E9F42B91BBF300D88DB7 /* Instructions.swift in Sources */,
 				2F42EA112B91CF6F00D88DB7 /* ResourceSelection.swift in Sources */,
 				2F42EA052B91C24700D88DB7 /* ExportPackage.swift in Sources */,

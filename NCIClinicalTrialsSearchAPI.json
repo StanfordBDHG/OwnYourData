@@ -562,7 +562,7 @@
            "properties": {
              "status_date": {
                "type": "string",
-               "format": "date"
+               "format": "date-time"
              },
              "status": {
                "type": "string"
@@ -926,20 +926,8 @@
    },
    "servers":[
       {
-         "url":"https://clinicaltrialsapi-int.cancer.gov/api/v2",
-         "description":"INT Server"
-      },
-      {
-         "url":"https://clinicaltrialsapi-stage.cancer.gov/api/v2",
-         "description":"UAT Server"
-      },
-      {
-         "url":"https://clinicaltrialsapi.cancer.gov/v2",
+         "url":"https://clinicaltrialsapi.cancer.gov/api/v2",
          "description":"Production Server"
-      },
-      {
-         "url":"http://127.0.0.1:3000/v2",
-         "description":"Local Test Server"
       }
    ],
    "paths":{

@@ -6,13 +6,28 @@
 // SPDX-License-Identifier: MIT
 //
 
+import OpenAPIClient
 import SwiftUI
 
 
 struct ClinicalTrialsView: View {
     var body: some View {
-        if let url = URL(string: "https://www.cancer.gov/about-cancer/treatment/clinical-trials/search") {
-            WebView(url: url)
+        Button("Request Trials Data") {
+            print("Request trials data")
+            OpenAPIClientAPI.customHeaders = ["X-API-KEY": "tkMGxBkgOC4TDCUfjcPdw7eeZsuuZual632WpUnH"]
+            CodableHelper.dateFormatter = NICTrialsAPIDateFormatter()
+            TrialsAPI.getTrialById(id: "NCI-2019-02616") { data, error in
+                guard let data else {
+                    if let error {
+                        print("Error: \(error)")
+                    } else {
+                        print("Unkown Error")
+                    }
+                    return
+                }
+                
+                print(data)
+            }
         }
     }
 }

@@ -11,7 +11,7 @@ import SwiftUI
 
 
 struct AccountSetupHeader: View {
-    @Environment(Account.self) private var account
+    @Environment(Account.self) private var account: Account?
     @Environment(\._accountSetupState) private var setupState
     
     
@@ -24,7 +24,7 @@ struct AccountSetupHeader: View {
                 .padding(.top, 30)
             Text("ACCOUNT_SUBTITLE")
                 .padding(.bottom, 8)
-            if account.signedIn, case .generic = setupState {
+            if account?.signedIn ?? false, case .generic = setupState {
                 Text("You signed in with the following account:")
             } else {
                 Text("We respect your privacy. All data storage and sharing happens directly from your phone.")

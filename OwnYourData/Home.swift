@@ -17,7 +17,7 @@ struct HomeView: View {
         !FeatureFlags.disableFirebase && !FeatureFlags.skipOnboarding
     }
 
-    @Environment(Account.self) var account
+    @Environment(Account.self) var account: Account?
     @Environment(FHIRStore.self) var fjirStore
 
     @State private var presentingAccount = false
@@ -74,7 +74,7 @@ struct HomeView: View {
     
     
     @MainActor @ViewBuilder private var welcome: some View {
-        if let givenName = account.details?.name?.givenName {
+        if let givenName = account?.details?.name?.givenName {
             Text("Welcome,\n\(givenName)")
         } else {
             Text("Welcome!")
