@@ -38,6 +38,7 @@ Class | Method | HTTP request | Description
 
  - [Arm](docs/Arm.md)
  - [CentralContact](docs/CentralContact.md)
+ - [Collaborators](docs/Collaborators.md)
  - [Coordinates](docs/Coordinates.md)
  - [Disease](docs/Disease.md)
  - [Eligibility](docs/Eligibility.md)
@@ -49,7 +50,6 @@ Class | Method | HTTP request | Description
  - [StatusHistory](docs/StatusHistory.md)
  - [StructuredEligibility](docs/StructuredEligibility.md)
  - [TrialDetail](docs/TrialDetail.md)
- - [TrialDetailCollaboratorsInner](docs/TrialDetailCollaboratorsInner.md)
  - [TrialResponse](docs/TrialResponse.md)
  - [UnstructuredEligibility](docs/UnstructuredEligibility.md)
 

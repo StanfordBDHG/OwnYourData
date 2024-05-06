@@ -61,7 +61,7 @@ struct ClinicalTrialsView: View {
     }
         
     private func loadTrial(withId trialId: String) async throws -> TrialDetail {
-        OpenAPIClientAPI.customHeaders = ["X-API-KEY": "tkMGxBkgOC4TDCUfjcPdw7eeZsuuZual632WpUnH"]
+        OpenAPIClientAPI.customHeaders = ["X-API-KEY": ""]
         CodableHelper.dateFormatter = NICTrialsAPIDateFormatter()
         
         return try await withCheckedThrowingContinuation { continuation in

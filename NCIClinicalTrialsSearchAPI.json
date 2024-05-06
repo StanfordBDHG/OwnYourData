@@ -114,17 +114,7 @@
              "collaborators": {
                "type": "array",
                "items": {
-                 "type": "object",
-                 "properties": {
-                   "name": {
-                     "type": "string",
-                     "example": "National Cancer Institute"
-                   },
-                   "functional_role": {
-                     "type": "string",
-                     "example": "FUNDING_SOURCE"
-                   }
-                 }
+                  "$ref": "#/components/schemas/Collaborators"
                }
              },
              "associated_studies": {
@@ -379,6 +369,19 @@
                "type": "number"
              }
            }
+         },
+         "Collaborators": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "example": "National Cancer Institute"
+              },
+              "functional_role": {
+                "type": "string",
+                "example": "FUNDING_SOURCE"
+              }
+            }
          },
          "Eligibility": {
            "type": "object",
