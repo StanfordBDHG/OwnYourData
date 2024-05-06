@@ -37,7 +37,6 @@ jobs:
     with:
       artifactname: OwnYourData.xcresult
       runsonlabels: '["macOS", "self-hosted"]'
-      setupSimulators: true
       setupfirebaseemulator: true
       customcommand: "firebase emulators:exec 'fastlane test'"
   uploadcoveragereport:

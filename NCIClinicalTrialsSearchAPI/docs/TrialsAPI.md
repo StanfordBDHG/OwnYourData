@@ -1,6 +1,6 @@
 # TrialsAPI
 
-All URIs are relative to *https://clinicaltrialsapi-int.cancer.gov/api/v2* <!-- markdown-link-check-disable-line -->
+All URIs are relative to *https://clinicaltrialsapi.cancer.gov/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 # **getTrialById**
 ```swift
-    open class func getTrialById(id: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
+    open class func getTrialById(id: String, completion: @escaping (_ data: TrialDetail?, _ error: Error?) -> Void)
 ```
 
 Get One Trial
@@ -46,7 +46,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Void (empty response body)
+[**TrialDetail**](TrialDetail.md)
 
 ### Authorization
 
@@ -55,13 +55,13 @@ Void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **searchTrialsByGet**
 ```swift
-    open class func searchTrialsByGet(size: Int? = nil, from: Int? = nil, sort: String? = nil, order: String? = nil, missing: String? = nil, exists: String? = nil, include: String? = nil, exclude: String? = nil, export: String? = nil, email: String? = nil, filename: String? = nil, fulltext: String? = nil, fieldParamFulltext: String? = nil, trialids: String? = nil, trialIds: String? = nil, keyword: String? = nil, keywordField: String? = nil, aggField: String? = nil, aggName: String? = nil, aggMinCount: Int? = nil, sitesOrgNameFulltext: String? = nil, trialStatus: String? = nil, nciFunded: String? = nil, nciId: String? = nil, nctId: String? = nil, protocolId: String? = nil, ccrId: String? = nil, ctepId: String? = nil, dcpId: String? = nil, currentTrialStatus: String? = nil, phase: String? = nil, studyProtocolType: String? = nil, nciPrograms: String? = nil, briefTitle: String? = nil, briefSummary: String? = nil, officialTitle: String? = nil, primaryPurpose: String? = nil, acceptsHealthyVolunteersIndicator: String? = nil, eligibilityStructuredAcceptsHealthyVolunteers: Bool? = nil, acronym: String? = nil, amendmentDate: String? = nil, anatomicSites: String? = nil, armsDescription: String? = nil, armsName: String? = nil, armsType: String? = nil, armsInterventionsNciThesaurusConceptId: String? = nil, armsInterventionsDescription: String? = nil, armsInterventionsName: String? = nil, armsInterventionsType: String? = nil, armsInterventionsSynonyms: String? = nil, associatedStudiesStudyId: String? = nil, associatedStudiesStudyIdType: String? = nil, eligibilityStructuredGender: String? = nil, eligibilityStructuredMinAgeInYearsLte: Int? = nil, eligibilityStructuredMinAgeInYearsGte: Int? = nil, eligibilityStructuredMaxAgeInYearsLte: Int? = nil, eligibilityStructuredMaxAgeInYearsGte: Int? = nil, eligibilityStructuredMinAgeUnit: String? = nil, eligibilityStructuredMinAgeNumberLte: Int? = nil, eligibilityStructuredMinAgeNumberGte: Int? = nil, eligibilityStructuredMaxAgeUnit: String? = nil, eligibilityStructuredMaxAgeNumberLte: Int? = nil, eligibilityStructuredMaxAgeNumberGte: Int? = nil, currentTrialStatusDateLte: String? = nil, currentTrialStatusDateGte: String? = nil, recordVerificationDateLte: String? = nil, recordVerificationDateGte: String? = nil, sitesOrgCoordinatesLat: Double? = nil, sitesOrgCoordinatesLon: Double? = nil, sitesOrgCoordinatesDist: String? = nil, sitesContactEmail: String? = nil, sitesContactName: String? = nil, sitesContactNameAuto: String? = nil, sitesContactNameRaw: String? = nil, sitesContactPhone: String? = nil, sitesOrgAddressLine1: String? = nil, sitesOrgAddressLine2: String? = nil, sitesOrgCity: String? = nil, sitesOrgPostalCode: String? = nil, sitesOrgStateOrProvince: String? = nil, sitesOrgCountry: String? = nil, sitesOrgCountryRaw: String? = nil, sitesOrgEmail: String? = nil, sitesOrgFamily: String? = nil, sitesOrgFax: String? = nil, sitesOrgName: String? = nil, sitesOrgNameAuto: String? = nil, sitesOrgNameRaw: String? = nil, sitesOrgPhone: String? = nil, sitesRecruitmentStatus: String? = nil, sitesRecruitmentStatusDate: String? = nil, sitesRecruitmentStatusDateLte: String? = nil, sitesRecruitmentStatusDateGte: String? = nil, leadOrgCancerCenter: String? = nil, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
+    open class func searchTrialsByGet(size: Int? = nil, from: Int? = nil, sort: String? = nil, order: String? = nil, missing: String? = nil, exists: String? = nil, include: String? = nil, exclude: String? = nil, export: String? = nil, email: String? = nil, filename: String? = nil, fulltext: String? = nil, fieldParamFulltext: String? = nil, trialids: String? = nil, trialIds: String? = nil, keyword: String? = nil, keywordField: String? = nil, aggField: String? = nil, aggName: String? = nil, aggMinCount: Int? = nil, sitesOrgNameFulltext: String? = nil, trialStatus: String? = nil, nciFunded: String? = nil, nciId: String? = nil, nctId: String? = nil, protocolId: String? = nil, ccrId: String? = nil, ctepId: String? = nil, dcpId: String? = nil, currentTrialStatus: String? = nil, phase: String? = nil, studyProtocolType: String? = nil, nciPrograms: String? = nil, briefTitle: String? = nil, briefSummary: String? = nil, officialTitle: String? = nil, primaryPurpose: String? = nil, acceptsHealthyVolunteersIndicator: String? = nil, eligibilityStructuredAcceptsHealthyVolunteers: Bool? = nil, acronym: String? = nil, amendmentDate: String? = nil, anatomicSites: String? = nil, armsDescription: String? = nil, armsName: String? = nil, armsType: String? = nil, armsInterventionsNciThesaurusConceptId: String? = nil, armsInterventionsDescription: String? = nil, armsInterventionsName: String? = nil, armsInterventionsType: String? = nil, armsInterventionsSynonyms: String? = nil, associatedStudiesStudyId: String? = nil, associatedStudiesStudyIdType: String? = nil, eligibilityStructuredGender: String? = nil, eligibilityStructuredMinAgeInYearsLte: Int? = nil, eligibilityStructuredMinAgeInYearsGte: Int? = nil, eligibilityStructuredMaxAgeInYearsLte: Int? = nil, eligibilityStructuredMaxAgeInYearsGte: Int? = nil, eligibilityStructuredMinAgeUnit: String? = nil, eligibilityStructuredMinAgeNumberLte: Int? = nil, eligibilityStructuredMinAgeNumberGte: Int? = nil, eligibilityStructuredMaxAgeUnit: String? = nil, eligibilityStructuredMaxAgeNumberLte: Int? = nil, eligibilityStructuredMaxAgeNumberGte: Int? = nil, currentTrialStatusDateLte: String? = nil, currentTrialStatusDateGte: String? = nil, recordVerificationDateLte: String? = nil, recordVerificationDateGte: String? = nil, sitesOrgCoordinatesLat: Double? = nil, sitesOrgCoordinatesLon: Double? = nil, sitesOrgCoordinatesDist: String? = nil, sitesContactEmail: String? = nil, sitesContactName: String? = nil, sitesContactNameAuto: String? = nil, sitesContactNameRaw: String? = nil, sitesContactPhone: String? = nil, sitesOrgAddressLine1: String? = nil, sitesOrgAddressLine2: String? = nil, sitesOrgCity: String? = nil, sitesOrgPostalCode: String? = nil, sitesOrgStateOrProvince: String? = nil, sitesOrgCountry: String? = nil, sitesOrgCountryRaw: String? = nil, sitesOrgEmail: String? = nil, sitesOrgFamily: String? = nil, sitesOrgFax: String? = nil, sitesOrgName: String? = nil, sitesOrgNameAuto: String? = nil, sitesOrgNameRaw: String? = nil, sitesOrgPhone: String? = nil, sitesRecruitmentStatus: String? = nil, sitesRecruitmentStatusDate: String? = nil, sitesRecruitmentStatusDateLte: String? = nil, sitesRecruitmentStatusDateGte: String? = nil, leadOrgCancerCenter: String? = nil, completion: @escaping (_ data: TrialResponse?, _ error: Error?) -> Void)
 ```
 
 Search Trials by GET
@@ -282,7 +282,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Void (empty response body)
+[**TrialResponse**](TrialResponse.md)
 
 ### Authorization
 
@@ -291,13 +291,13 @@ Void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **searchTrialsByPost**
 ```swift
-    open class func searchTrialsByPost(body: AnyCodable, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
+    open class func searchTrialsByPost(body: AnyCodable, completion: @escaping (_ data: TrialResponse?, _ error: Error?) -> Void)
 ```
 
 Search Trials by POST
@@ -332,7 +332,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Void (empty response body)
+[**TrialResponse**](TrialResponse.md)
 
 ### Authorization
 
@@ -341,7 +341,7 @@ Void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

@@ -6,8 +6,17 @@
         "repositoryURL": "https://github.com/google/abseil-cpp-binary.git",
         "state": {
           "branch": null,
-          "revision": "bfc0b6f81adc06ce5121eb23f628473638d67c5c",
-          "version": "1.2022062300.0"
+          "revision": "748c7837511d0e6a507737353af268484e1745e2",
+          "version": "1.2024011601.1"
+        }
+      },
+      {
+        "package": "Antlr4",
+        "repositoryURL": "https://github.com/antlr/antlr4",
+        "state": {
+          "branch": null,
+          "revision": "7ed420ff2c78d62883875c442d75f32e73bc86c8",
+          "version": "4.13.1"
         }
       },
       {
@@ -24,8 +33,8 @@
         "repositoryURL": "https://github.com/google/app-check.git",
         "state": {
           "branch": null,
-          "revision": "3e464dad87dad2d29bb29a97836789bf0f8f67d2",
-          "version": "10.18.1"
+          "revision": "7d2688de038d5484866d835acb47b379722d610e",
+          "version": "10.19.0"
         }
       },
       {
@@ -42,8 +51,8 @@
         "repositoryURL": "https://github.com/firebase/firebase-ios-sdk.git",
         "state": {
           "branch": null,
-          "revision": "f91c8167141d0279726c6f6d9d4a47c026785cbc",
-          "version": "10.21.0"
+          "revision": "97940381e57703c07f31a8058d8f39ec53b7c272",
+          "version": "10.25.0"
         }
       },
       {
@@ -51,8 +60,8 @@
         "repositoryURL": "https://github.com/google/GoogleAppMeasurement.git",
         "state": {
           "branch": null,
-          "revision": "cb8617fab75d181270a1d8f763f26b15c73e2e1e",
-          "version": "10.21.0"
+          "revision": "16244d177c4e989f87b25e9db1012b382cfedc55",
+          "version": "10.25.0"
         }
       },
       {
@@ -69,8 +78,8 @@
         "repositoryURL": "https://github.com/google/GoogleUtilities.git",
         "state": {
           "branch": null,
-          "revision": "830ffa9276e10267881f2697283c2fcd867603fd",
-          "version": "7.13.0"
+          "revision": "8e5d57ed87057cd7b0e4e8f474d9e78f73eb85f7",
+          "version": "7.13.2"
         }
       },
       {
@@ -78,8 +87,8 @@
         "repositoryURL": "https://github.com/google/grpc-binary.git",
         "state": {
           "branch": null,
-          "revision": "a673bc2937fbe886dd1f99c401b01b6d977a9c98",
-          "version": "1.49.1"
+          "revision": "e9fad491d0673bdda7063a0341fb6b47a30c5359",
+          "version": "1.62.2"
         }
       },
       {
@@ -87,8 +96,8 @@
         "repositoryURL": "https://github.com/google/gtm-session-fetcher.git",
         "state": {
           "branch": null,
-          "revision": "76135c9f4e1ac85459d5fec61b6f76ac47ab3a4c",
-          "version": "3.3.1"
+          "revision": "0382ca27f22fb3494cf657d8dc356dc282cd1193",
+          "version": "3.4.1"
         }
       },
       {
@@ -96,8 +105,8 @@
         "repositoryURL": "https://github.com/StanfordBDHG/HealthKitOnFHIR.git",
         "state": {
           "branch": null,
-          "revision": "825e96007d83ed83f81ee49eb3ebab29d7b7ba2f",
-          "version": "0.2.5"
+          "revision": "418929f315f37e6d9c8f30f40030bc65b9cc47c9",
+          "version": "0.2.8"
         }
       },
       {
@@ -114,8 +123,8 @@
         "repositoryURL": "https://github.com/firebase/leveldb.git",
         "state": {
           "branch": null,
-          "revision": "43aaef65e0c665daadf848761d560e446d350d3d",
-          "version": "1.22.4"
+          "revision": "a0bc79961d7be727d258d33d5a6b2f1023270ba1",
+          "version": "1.22.5"
         }
       },
       {
@@ -123,8 +132,8 @@
         "repositoryURL": "https://github.com/StanfordBDHG/llama.cpp",
         "state": {
           "branch": null,
-          "revision": "b0611c7d3cb049822f9911878514e4706b80e2ac",
-          "version": "0.1.8"
+          "revision": "7bfd6d4b5bbc9fd47bd023bdbb35f96c827977f3",
+          "version": "0.2.1"
         }
       },
       {
@@ -132,17 +141,17 @@
         "repositoryURL": "https://github.com/firebase/nanopb.git",
         "state": {
           "branch": null,
-          "revision": "819d0a2173aff699fb8c364b6fb906f7cdb1a692",
-          "version": "2.30909.0"
+          "revision": "b7e1104502eca3a213b46303391ca4d3bc8ddec1",
+          "version": "2.30910.0"
         }
       },
       {
         "package": "OpenAI",
-        "repositoryURL": "https://github.com/MacPaw/OpenAI",
+        "repositoryURL": "https://github.com/StanfordBDHG/OpenAI",
         "state": {
           "branch": null,
-          "revision": "35afc9a6ee127b8f22a85a31aec2036a987478af",
-          "version": "0.2.6"
+          "revision": "29316babb446c34bb07bf528d96de7eb41e7b03c",
+          "version": "0.2.8"
         }
       },
       {
@@ -159,8 +168,8 @@
         "repositoryURL": "https://github.com/StanfordBDHG/ResearchKit",
         "state": {
           "branch": null,
-          "revision": "15f06cf7c1d2d22805b7b939823536bc78ad63a6",
-          "version": "2.2.25"
+          "revision": "3f70adf898b5985ba15e25d5074d86a9c657d305",
+          "version": "2.2.30"
         }
       },
       {
@@ -168,17 +177,8 @@
         "repositoryURL": "https://github.com/StanfordBDHG/ResearchKitOnFHIR",
         "state": {
           "branch": null,
-          "revision": "300fbc0038df28f53a9b653298931f71aa6f0bb5",
-          "version": "1.1.1"
-        }
-      },
-      {
-        "package": "Semaphore",
-        "repositoryURL": "https://github.com/groue/Semaphore.git",
-        "state": {
-          "branch": null,
-          "revision": "f1c4a0acabeb591068dea6cffdd39660b86dec28",
-          "version": "0.0.8"
+          "revision": "cdb24dd5607d5a63aaf3a3597c98122189cb548e",
+          "version": "1.3.0"
         }
       },
       {
@@ -186,8 +186,8 @@
         "repositoryURL": "https://github.com/StanfordSpezi/Spezi",
         "state": {
           "branch": null,
-          "revision": "0ced3efbc2af9513c07ac913ad762c773a00a6c8",
-          "version": "1.2.1"
+          "revision": "c43e4fa3d3938a847de2b677091a34ddaea5bc76",
+          "version": "1.2.3"
         }
       },
       {
@@ -195,8 +195,8 @@
         "repositoryURL": "https://github.com/StanfordSpezi/SpeziAccount.git",
         "state": {
           "branch": null,
-          "revision": "a7d289ef3be54de62b25dc92e8f7ff1a0f093906",
-          "version": "1.2.1"
+          "revision": "83f505c69865d5aaacf71fd5ae8d2ffb8c3187d8",
+          "version": "1.2.3"
         }
       },
       {
@@ -204,8 +204,8 @@
         "repositoryURL": "https://github.com/StanfordSpezi/SpeziChat",
         "state": {
           "branch": null,
-          "revision": "2334583105224b0c04fc36989db82b000021d31d",
-          "version": "0.1.9"
+          "revision": "aaa10d71431b78ece8bf29f95c0050632714984d",
+          "version": "0.2.0"
         }
       },
       {
@@ -213,8 +213,8 @@
         "repositoryURL": "https://github.com/StanfordSpezi/SpeziFHIR.git",
         "state": {
           "branch": null,
-          "revision": "9a171a21d7028042c30a24c661bfdfc6e363c9c3",
-          "version": "0.6.0"
+          "revision": "6eb16d2f80093d0c6db7d7966bc177e9454b5a49",
+          "version": "0.6.1"
         }
       },
       {
@@ -222,8 +222,8 @@
         "repositoryURL": "https://github.com/StanfordSpezi/SpeziFirebase.git",
         "state": {
           "branch": null,
-          "revision": "ca1edf678ec59e76c9869ee3448e6e165d9c2789",
-          "version": "1.0.0"
+          "revision": "16c1c751c14b08ae593eacf9bc2752c2e070fe2f",
+          "version": "1.1.0"
         }
       },
       {
@@ -240,8 +240,8 @@
         "repositoryURL": "https://github.com/StanfordSpezi/SpeziHealthKit.git",
         "state": {
           "branch": null,
-          "revision": "b40695ffa4d1c9d58c5a0ee277640c2343fb5516",
-          "version": "0.5.1"
+          "revision": "1e9cb5a6036ac7f4ff37ea1c3ed4898103339ad1",
+          "version": "0.5.3"
         }
       },
       {
@@ -249,8 +249,8 @@
         "repositoryURL": "https://github.com/StanfordSpezi/SpeziLLM.git",
         "state": {
           "branch": null,
-          "revision": "6892c5dfe258371b6f3287f02b8fec57a611ba70",
-          "version": "0.7.0"
+          "revision": "cbaf20496e600c985dea2358f35a497fe4964116",
+          "version": "0.8.1"
         }
       },
       {
@@ -258,8 +258,8 @@
         "repositoryURL": "https://github.com/StanfordSpezi/SpeziOnboarding",
         "state": {
           "branch": null,
-          "revision": "91463ae190611bd14ef52b0657e8db3bf53c9ae8",
-          "version": "1.1.0"
+          "revision": "8d6dda3501720a1952573439b21a503cbecd9e0f",
+          "version": "1.2.0"
         }
       },
       {
@@ -267,8 +267,8 @@
         "repositoryURL": "https://github.com/StanfordSpezi/SpeziQuestionnaire.git",
         "state": {
           "branch": null,
-          "revision": "f25580e95bfdad02383980dcb94406cf97b08ea8",
-          "version": "1.0.2"
+          "revision": "f9d9b6d99bb1e00bda2974b440dca8367733d591",
+          "version": "1.1.0"
         }
       },
       {
@@ -285,8 +285,8 @@
         "repositoryURL": "https://github.com/StanfordSpezi/SpeziStorage.git",
         "state": {
           "branch": null,
-          "revision": "eaed2220375c35400aa69d1f96a8d32b7e66b1c7",
-          "version": "1.0.0"
+          "revision": "b958df9b31f24800388a7bfc28f457ce7b82556c",
+          "version": "1.0.2"
         }
       },
       {
@@ -303,8 +303,8 @@
         "repositoryURL": "https://github.com/apple/swift-argument-parser",
         "state": {
           "branch": null,
-          "revision": "c8ed701b513cf5177118a175d85fbbbcd707ab41",
-          "version": "1.3.0"
+          "revision": "46989693916f56d1186bd59ac15124caef896560",
+          "version": "1.3.1"
         }
       },
       {
@@ -330,8 +330,8 @@
         "repositoryURL": "https://github.com/apple/swift-protobuf.git",
         "state": {
           "branch": null,
-          "revision": "65e8f29b2d63c4e38e736b25c27b83e012159be8",
-          "version": "1.25.2"
+          "revision": "9f0c76544701845ad98716f3f6a774a892152bcb",
+          "version": "1.26.0"
         }
       },
       {
