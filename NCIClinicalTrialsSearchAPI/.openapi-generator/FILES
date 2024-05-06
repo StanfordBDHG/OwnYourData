@@ -16,6 +16,8 @@ OpenAPIClient/Classes/OpenAPIs/JSONDataEncoding.swift
 OpenAPIClient/Classes/OpenAPIs/JSONEncodingHelper.swift
 OpenAPIClient/Classes/OpenAPIs/Models.swift
 OpenAPIClient/Classes/OpenAPIs/Models/Arm.swift
+OpenAPIClient/Classes/OpenAPIs/Models/AssociatedStudy.swift
+OpenAPIClient/Classes/OpenAPIs/Models/Biomarker.swift
 OpenAPIClient/Classes/OpenAPIs/Models/CentralContact.swift
 OpenAPIClient/Classes/OpenAPIs/Models/Collaborators.swift
 OpenAPIClient/Classes/OpenAPIs/Models/Coordinates.swift
@@ -25,6 +27,7 @@ OpenAPIClient/Classes/OpenAPIs/Models/Identifier.swift
 OpenAPIClient/Classes/OpenAPIs/Models/Intervention.swift
 OpenAPIClient/Classes/OpenAPIs/Models/Masking.swift
 OpenAPIClient/Classes/OpenAPIs/Models/OutcomeMeasure.swift
+OpenAPIClient/Classes/OpenAPIs/Models/PriorTherapy.swift
 OpenAPIClient/Classes/OpenAPIs/Models/Site.swift
 OpenAPIClient/Classes/OpenAPIs/Models/StatusHistory.swift
 OpenAPIClient/Classes/OpenAPIs/Models/StructuredEligibility.swift
@@ -38,6 +41,8 @@ OpenAPIClient/Classes/OpenAPIs/Validation.swift
 Package.swift
 README.md
 docs/Arm.md
+docs/AssociatedStudy.md
+docs/Biomarker.md
 docs/BiomarkersAPI.md
 docs/CentralContact.md
 docs/Collaborators.md
@@ -51,6 +56,7 @@ docs/InterventionsAPI.md
 docs/Masking.md
 docs/OrganizationsAPI.md
 docs/OutcomeMeasure.md
+docs/PriorTherapy.md
 docs/Site.md
 docs/StatusHistory.md
 docs/StructuredEligibility.md

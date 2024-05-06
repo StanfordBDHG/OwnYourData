@@ -20,7 +20,8 @@ struct ClinicalTrialsView: View {
         if let url = URL(string: "https://www.cancer.gov/about-cancer/treatment/clinical-trials/search") {
             WebView(url: url)
                 .task {
-                    await testNCIAPI()
+                    trials.append(contentsOf: (try? await loadTrials().data) ?? [])
+                    // await testNCIAPI()
                 }
                 .viewStateAlert(state: $viewState)
         }
@@ -61,11 +62,39 @@ struct ClinicalTrialsView: View {
     }
         
     private func loadTrial(withId trialId: String) async throws -> TrialDetail {
-        OpenAPIClientAPI.customHeaders = ["X-API-KEY": ""]
+        OpenAPIClientAPI.customHeaders = ["X-API-KEY": "tkMGxBkgOC4TDCUfjcPdw7eeZsuuZual632WpUnH"]
         CodableHelper.dateFormatter = NICTrialsAPIDateFormatter()
         
         return try await withCheckedThrowingContinuation { continuation in
             TrialsAPI.getTrialById(id: trialId) { data, error in
+                guard let data else {
+                    if let error {
+                        continuation.resume(throwing: error)
+                    } else {
+                        continuation.resume(throwing: DownloadException.responseFailed)
+                    }
+                    return
+                }
+                
+                continuation.resume(returning: data)
+            }
+        }
+    }
+    
+    private func loadTrials() async throws -> TrialResponse {
+        OpenAPIClientAPI.customHeaders = ["X-API-KEY": "tkMGxBkgOC4TDCUfjcPdw7eeZsuuZual632WpUnH"]
+        CodableHelper.dateFormatter = NICTrialsAPIDateFormatter()
+        
+        return try await withCheckedThrowingContinuation { continuation in
+            TrialsAPI.searchTrialsByGet(
+                size: 1,
+                keyword: "breast",
+                trialStatus: "OPEN",
+                primaryPurpose: "TREATMENT",
+                sitesOrgCoordinatesLat: 37.7749,
+                sitesOrgCoordinatesLon: -122.4194,
+                sitesOrgCoordinatesDist: "100mi"
+            ) { data, error in
                 guard let data else {
                     if let error {
                         continuation.resume(throwing: error)
