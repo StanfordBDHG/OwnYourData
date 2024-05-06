@@ -17,29 +17,31 @@ struct ClinicalTrialsView: View {
     
     
     var body: some View {
-        List {
-            if trials.isEmpty {
-                ProgressView()
-            } else {
-                ForEach(trials) { trial in
-                    VStack(alignment: .leading) {
-                        Text(trial.briefTitle ?? "No Title")
-                            .bold()
-                        Text(trial.id ?? "No NCI ID")
-                            .bold()
-                            .foregroundStyle(.secondary)
-                        Divider()
-                        Text(trial.detailDescription ?? "-")
-                            .font(.caption)
+        NavigationStack {
+            List {
+                if trials.isEmpty {
+                    ProgressView()
+                } else {
+                    ForEach(trials) { trial in
+                        VStack(alignment: .leading) {
+                            Text(trial.briefTitle ?? "No Title")
+                                .bold()
+                            Text(trial.id ?? "No NCI ID")
+                                .bold()
+                                .foregroundStyle(.secondary)
+                            Divider()
+                            Text(trial.detailDescription ?? "-")
+                                .font(.caption)
+                        }
                     }
                 }
             }
+                .navigationTitle("NCI Trials")
+                .task {
+                    trials.append(contentsOf: (try? await loadTrials().data) ?? [])
+                }
+                .viewStateAlert(state: $viewState)
         }
-            .navigationTitle("NCI Trials")
-            .task {
-                trials.append(contentsOf: (try? await loadTrials().data) ?? [])
-            }
-            .viewStateAlert(state: $viewState)
     }
     
     
