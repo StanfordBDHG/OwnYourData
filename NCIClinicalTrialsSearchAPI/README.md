@@ -49,6 +49,7 @@ Class | Method | HTTP request | Description
  - [StatusHistory](docs/StatusHistory.md)
  - [StructuredEligibility](docs/StructuredEligibility.md)
  - [TrialDetail](docs/TrialDetail.md)
+ - [TrialDetailCollaboratorsInner](docs/TrialDetailCollaboratorsInner.md)
  - [TrialResponse](docs/TrialResponse.md)
  - [UnstructuredEligibility](docs/UnstructuredEligibility.md)
 

@@ -28,6 +28,7 @@ OpenAPIClient/Classes/OpenAPIs/Models/Site.swift
 OpenAPIClient/Classes/OpenAPIs/Models/StatusHistory.swift
 OpenAPIClient/Classes/OpenAPIs/Models/StructuredEligibility.swift
 OpenAPIClient/Classes/OpenAPIs/Models/TrialDetail.swift
+OpenAPIClient/Classes/OpenAPIs/Models/TrialDetailCollaboratorsInner.swift
 OpenAPIClient/Classes/OpenAPIs/Models/TrialResponse.swift
 OpenAPIClient/Classes/OpenAPIs/Models/UnstructuredEligibility.swift
 OpenAPIClient/Classes/OpenAPIs/OpenISO8601DateFormatter.swift
@@ -53,6 +54,7 @@ docs/Site.md
 docs/StatusHistory.md
 docs/StructuredEligibility.md
 docs/TrialDetail.md
+docs/TrialDetailCollaboratorsInner.md
 docs/TrialResponse.md
 docs/TrialsAPI.md
 docs/UnstructuredEligibility.md

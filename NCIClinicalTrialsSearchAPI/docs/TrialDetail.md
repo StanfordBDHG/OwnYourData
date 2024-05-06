@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **detailDescription** | **String** |  | [optional] 
 **officialTitle** | **String** |  | [optional] 
 **phaseSortOrder** | **Int** |  | [optional] 
-**collaborators** | **[String]** |  | [optional] 
+**collaborators** | [TrialDetailCollaboratorsInner] |  | [optional] 
 **associatedStudies** | **[String]** |  | [optional] 
 **outcomeMeasures** | [OutcomeMeasure] |  | [optional] 
 **phase** | **String** |  | [optional] 
