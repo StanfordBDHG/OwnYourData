@@ -25,7 +25,7 @@ public struct TrialDetail: Codable, JSONEncodable, Hashable {
     public var officialTitle: String?
     public var phaseSortOrder: Int?
     public var collaborators: [Collaborators]?
-    public var associatedStudies: [String]?
+    public var associatedStudies: [AssociatedStudy]?
     public var outcomeMeasures: [OutcomeMeasure]?
     public var phase: String?
     public var centralContact: CentralContact?
@@ -33,7 +33,7 @@ public struct TrialDetail: Codable, JSONEncodable, Hashable {
     public var numberOfArms: Int?
     public var studyProtocolTypeSortOrder: Int?
     public var nctId: String?
-    public var biomarkers: [String]?
+    public var biomarkers: [Biomarker]?
     public var classificationCode: AnyCodable?
     public var currentTrialStatusDate: Date?
     public var diseases: [Disease]?
@@ -51,7 +51,7 @@ public struct TrialDetail: Codable, JSONEncodable, Hashable {
     public var studyPopulationDescription: AnyCodable?
     public var samplingMethodCode: AnyCodable?
     public var minimumTargetAccrualNumber: Int?
-    public var priorTherapy: [String]?
+    public var priorTherapy: [PriorTherapy]?
     public var currentTrialStatusSortOrder: Int?
     public var startDate: Date?
     public var recordVerificationDate: Date?
@@ -71,7 +71,7 @@ public struct TrialDetail: Codable, JSONEncodable, Hashable {
     public var studySubtypeCode: AnyCodable?
     public var studyProtocolType: String?
 
-    public init(otherIds: [Identifier]? = nil, amendmentDate: Date? = nil, keywords: AnyCodable? = nil, dcpId: AnyCodable? = nil, interventionalModel: String? = nil, leadOrg: String? = nil, eligibility: Eligibility? = nil, sites: [Site]? = nil, completionDateTypeCode: String? = nil, detailDescription: String? = nil, officialTitle: String? = nil, phaseSortOrder: Int? = nil, collaborators: [Collaborators]? = nil, associatedStudies: [String]? = nil, outcomeMeasures: [OutcomeMeasure]? = nil, phase: String? = nil, centralContact: CentralContact? = nil, primaryPurpose: String? = nil, numberOfArms: Int? = nil, studyProtocolTypeSortOrder: Int? = nil, nctId: String? = nil, biomarkers: [String]? = nil, classificationCode: AnyCodable? = nil, currentTrialStatusDate: Date? = nil, diseases: [Disease]? = nil, primaryPurposeSortOrder: Int? = nil, protocolId: String? = nil, activeSitesCount: Int? = nil, leadOrgCancerCenter: AnyCodable? = nil, arms: [Arm]? = nil, studyModelCode: AnyCodable? = nil, nciId: String? = nil, whyStudyStopped: AnyCodable? = nil, briefSummary: String? = nil, briefTitle: String? = nil, statusHistory: [StatusHistory]? = nil, studyPopulationDescription: AnyCodable? = nil, samplingMethodCode: AnyCodable? = nil, minimumTargetAccrualNumber: Int? = nil, priorTherapy: [String]? = nil, currentTrialStatusSortOrder: Int? = nil, startDate: Date? = nil, recordVerificationDate: Date? = nil, ctepId: String? = nil, currentTrialStatus: String? = nil, studyModelOtherText: AnyCodable? = nil, masking: Masking? = nil, acronym: AnyCodable? = nil, nciPrograms: [String]? = nil, nciFunded: String? = nil, anatomicSites: [String]? = nil, ccrId: AnyCodable? = nil, startDateTypeCode: String? = nil, principalInvestigator: String? = nil, studySource: String? = nil, completionDate: Date? = nil, studySubtypeCode: AnyCodable? = nil, studyProtocolType: String? = nil) {
+    public init(otherIds: [Identifier]? = nil, amendmentDate: Date? = nil, keywords: AnyCodable? = nil, dcpId: AnyCodable? = nil, interventionalModel: String? = nil, leadOrg: String? = nil, eligibility: Eligibility? = nil, sites: [Site]? = nil, completionDateTypeCode: String? = nil, detailDescription: String? = nil, officialTitle: String? = nil, phaseSortOrder: Int? = nil, collaborators: [Collaborators]? = nil, associatedStudies: [AssociatedStudy]? = nil, outcomeMeasures: [OutcomeMeasure]? = nil, phase: String? = nil, centralContact: CentralContact? = nil, primaryPurpose: String? = nil, numberOfArms: Int? = nil, studyProtocolTypeSortOrder: Int? = nil, nctId: String? = nil, biomarkers: [Biomarker]? = nil, classificationCode: AnyCodable? = nil, currentTrialStatusDate: Date? = nil, diseases: [Disease]? = nil, primaryPurposeSortOrder: Int? = nil, protocolId: String? = nil, activeSitesCount: Int? = nil, leadOrgCancerCenter: AnyCodable? = nil, arms: [Arm]? = nil, studyModelCode: AnyCodable? = nil, nciId: String? = nil, whyStudyStopped: AnyCodable? = nil, briefSummary: String? = nil, briefTitle: String? = nil, statusHistory: [StatusHistory]? = nil, studyPopulationDescription: AnyCodable? = nil, samplingMethodCode: AnyCodable? = nil, minimumTargetAccrualNumber: Int? = nil, priorTherapy: [PriorTherapy]? = nil, currentTrialStatusSortOrder: Int? = nil, startDate: Date? = nil, recordVerificationDate: Date? = nil, ctepId: String? = nil, currentTrialStatus: String? = nil, studyModelOtherText: AnyCodable? = nil, masking: Masking? = nil, acronym: AnyCodable? = nil, nciPrograms: [String]? = nil, nciFunded: String? = nil, anatomicSites: [String]? = nil, ccrId: AnyCodable? = nil, startDateTypeCode: String? = nil, principalInvestigator: String? = nil, studySource: String? = nil, completionDate: Date? = nil, studySubtypeCode: AnyCodable? = nil, studyProtocolType: String? = nil) {
         self.otherIds = otherIds
         self.amendmentDate = amendmentDate
         self.keywords = keywords

@@ -37,6 +37,8 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [Arm](docs/Arm.md)
+ - [AssociatedStudy](docs/AssociatedStudy.md)
+ - [Biomarker](docs/Biomarker.md)
  - [CentralContact](docs/CentralContact.md)
  - [Collaborators](docs/Collaborators.md)
  - [Coordinates](docs/Coordinates.md)
@@ -46,6 +48,7 @@ Class | Method | HTTP request | Description
  - [Intervention](docs/Intervention.md)
  - [Masking](docs/Masking.md)
  - [OutcomeMeasure](docs/OutcomeMeasure.md)
+ - [PriorTherapy](docs/PriorTherapy.md)
  - [Site](docs/Site.md)
  - [StatusHistory](docs/StatusHistory.md)
  - [StructuredEligibility](docs/StructuredEligibility.md)
