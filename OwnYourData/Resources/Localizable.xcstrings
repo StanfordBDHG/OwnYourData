@@ -38,6 +38,9 @@
     "Could not load the consent document" : {
 
     },
+    "Details" : {
+
+    },
     "Discover Clinical Trials" : {
 
     },
@@ -45,6 +48,12 @@
 
     },
     "Download Your Records" : {
+
+    },
+    "Enter Distance (mi)" : {
+
+    },
+    "Enter Zip Code" : {
 
     },
     "Export" : {
@@ -112,6 +121,9 @@
     "No Documents" : {
 
     },
+    "No trials found." : {
+
+    },
     "Open the Apple Health app." : {
 
     },
@@ -176,6 +188,9 @@
 
     },
     "This project is licensed under the MIT License." : {
+
+    },
+    "Update Search" : {
 
     },
     "Use HealthKit Resources" : {
