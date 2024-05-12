@@ -15,8 +15,7 @@ struct ClinicalTrialsView: View {
     @State private var viewState: ViewState = .idle
     @State private var trials: [TrialDetail] = []
     @State private var collapseStates: [Bool] = [] // Track collapsed state for each trial
-    @State private var isLoading: Bool = false // Track whether trials are being actively loaded
-    @State private var zipCode: String = "10027" // ZipCode search state variable, defaults to 10027
+    @State private var zipCode: String = "98155" // ZipCode search state variable, defaults to 10025
     @State private var searchDistance: String = "100" // Distance search state variable, default 100
     
     // Create a CLLocationManager instance to manage location services for trials match search
@@ -39,35 +38,51 @@ struct ClinicalTrialsView: View {
     
     @ViewBuilder
     private var content: some View {
-        if isLoading {
+        switch viewState {
+        case .processing:
             ProgressView()
-        } else if trials.isEmpty {
-            Text("No trials found.")
-        } else {
-            VStack(spacing: 10) {
-                // Horizontal bar for changing zip code and distance
-                searchBar
-                
-                List {
-                    ForEach(trials.indices, id: \.self) { index in
-                        TrialView(trial: trials[index], isCollapsedDescription: $collapseStates[index])
+        case .error(let error):
+            Text("Error: \(error.localizedDescription)")
+        case .idle:
+            if trials.isEmpty {
+                Text("No trials found.")
+            } else {
+                VStack(spacing: 10) {
+                    // Horizontal bar for changing zip code and distance
+                    searchBar
+                    
+                    List {
+                        ForEach(trials.indices, id: \.self) { index in
+                            TrialView(trial: trials[index], isCollapsedDescription: $collapseStates[index])
+                        }
                     }
+                    .navigationTitle("NCI Trials")
                 }
-                .navigationTitle("NCI Trials")
             }
         }
     }
     
     @ViewBuilder
     private var searchBar: some View {
-        if !isLoading && !trials.isEmpty {
-            HStack {
+        if viewState == .idle {
+            VStack(alignment: .leading, spacing: 4) {
+                // Label for Zip Code
+                Text("Zip Code (e.g. 10025)")
+                    .padding(.leading)
+                // Text field for Zip Code
                 TextField("Enter Zip Code", text: $zipCode)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding(.horizontal)
+                
+                // Label for Search Distance
+                Text("Search Distance (e.g. 100)")
+                    .padding(.leading)
+                // Text field for Search Distance
                 TextField("Enter Distance (mi)", text: $searchDistance)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding(.horizontal)
+                
+                // Update Search button
                 Button("Update Search") {
                     Task {
                         // Perform search with updated zip code and distance
@@ -93,9 +108,23 @@ struct ClinicalTrialsView: View {
         return nil
     }
     
+    // Function to convert coordinates to zip code
+    private func getZipCodeFromLocation(location: CLLocation) async {
+        do {
+            let placemarks = try await geocoder.reverseGeocodeLocation(location)
+            if let postalCode = placemarks.first?.postalCode {
+                zipCode = postalCode
+            } else {
+                print("Postal code not found in placemark")
+            }
+        } catch {
+            print("Reverse geocoding failed with error: \(error.localizedDescription)")
+        }
+    }
+    
     // Function to load the trials from NCI API
     private func loadTrials(latitude: Double, longitude: Double, zipCode: String, distance: String) async throws -> TrialResponse {
-        OpenAPIClientAPI.customHeaders = ["X-API-KEY": "rQexsvuEeX62RJHrNO5Ex8HKzLx1iDUT34CL3DJA"]
+        OpenAPIClientAPI.customHeaders = ["X-API-KEY": ""]
         CodableHelper.dateFormatter = NICTrialsAPIDateFormatter()
         
         return try await withCheckedThrowingContinuation { continuation in
@@ -125,7 +154,10 @@ struct ClinicalTrialsView: View {
     
     // Function to update search parameters
     private func fetchTrials() async {
-        isLoading = true
+        viewState = .processing // Set loading state
+        
+        locationManager.requestWhenInUseAuthorization()
+        
         // Reload trials with updated search parameters
         trials.removeAll() // Clear existing trials
         collapseStates.removeAll() // Clear existing collapse states
@@ -138,6 +170,9 @@ struct ClinicalTrialsView: View {
                 // Use userLocation if available
                 latitude = userLocation.coordinate.latitude
                 longitude = userLocation.coordinate.longitude
+                
+                // Get Zip Code from user's current location
+                await getZipCodeFromLocation(location: userLocation)
             } else {
                 // Convert zip code to coordinates if user location is not available
                 if let location = await getLocationFromZipCode(zipCode: zipCode) {
@@ -157,10 +192,12 @@ struct ClinicalTrialsView: View {
                 // Initialize collapse states for each trial
                 collapseStates = Array(repeating: false, count: trials.count)
             } catch {
-                print("Error loading trials: \(error)")
+                viewState = .error(error as? LocalizedError ?? FetchingError.unknownError) // Set error state
             }
             
-            isLoading = false
+            if viewState == .processing {
+                viewState = .idle // Set idle state if not already set by an error
+            }
         }
     }
 }
@@ -188,6 +225,17 @@ struct TrialView: View {
                     isCollapsedDescription.toggle()
                 }
             }
+        }
+    }
+}
+
+enum FetchingError: LocalizedError {
+    case unknownError
+    
+    var errorDescription: String? {
+        switch self {
+        case .unknownError:
+            return "An unknown error occurred while the fetching trials."
         }
     }
 }

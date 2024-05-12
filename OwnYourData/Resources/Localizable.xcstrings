@@ -56,6 +56,9 @@
     "Enter Zip Code" : {
 
     },
+    "Error: %@" : {
+
+    },
     "Export" : {
 
     },
@@ -157,6 +160,9 @@
     "Search ClinicalTrials.gov to find the right trial for you." : {
 
     },
+    "Search Distance (e.g. 100)" : {
+
+    },
     "Search for Active Trials" : {
 
     },
@@ -215,6 +221,9 @@
 
     },
     "Your Account" : {
+
+    },
+    "Zip Code (e.g. 10025)" : {
 
     }
   },
