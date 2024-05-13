@@ -12,11 +12,12 @@ import SpeziViews
 import SwiftUI
 
 struct ClinicalTrialsView: View {
-    @State private var viewState: ViewState = .idle
-    @State private var trials: [TrialDetail] = []
     @State private var collapseStates: [Bool] = [] // Track collapsed state for each trial
-    @State private var zipCode: String = "98155" // ZipCode search state variable, defaults to 10025
+    @State private var keywords: [String] = []
     @State private var searchDistance: String = "100" // Distance search state variable, default 100
+    @State private var trials: [TrialDetail] = []
+    @State private var viewState: ViewState = .idle
+    @State private var zipCode: String = "10025" // ZipCode search state variable, defaults to 10025
     
     // Create a CLLocationManager instance to manage location services for trials match search
     private let locationManager = CLLocationManager()
@@ -123,14 +124,14 @@ struct ClinicalTrialsView: View {
     }
     
     // Function to load the trials from NCI API
-    private func loadTrials(latitude: Double, longitude: Double, zipCode: String, distance: String) async throws -> TrialResponse {
+    private func loadTrials(latitude: Double, longitude: Double, zipCode: String, distance: String, keywords: [String]) async throws -> TrialResponse {
         OpenAPIClientAPI.customHeaders = ["X-API-KEY": ""]
         CodableHelper.dateFormatter = NICTrialsAPIDateFormatter()
         
         return try await withCheckedThrowingContinuation { continuation in
             TrialsAPI.searchTrialsByGet(
                 size: 50,
-                keyword: "breast",
+                keyword: keywords.joined(separator: ", "),
                 trialStatus: "OPEN",
                 phase: "III",
                 primaryPurpose: "TREATMENT",
@@ -186,7 +187,8 @@ struct ClinicalTrialsView: View {
                     latitude: latitude,
                     longitude: longitude,
                     zipCode: zipCode,
-                    distance: searchDistance
+                    distance: searchDistance,
+                    keywords: keywords
                 )
                 trials = trialResponse.data ?? []
                 // Initialize collapse states for each trial

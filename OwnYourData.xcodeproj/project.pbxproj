@@ -91,6 +91,7 @@
 		A9D83F962B083794000D0C78 /* SpeziFirebaseAccountStorage in Frameworks */ = {isa = PBXBuildFile; productRef = A9D83F952B083794000D0C78 /* SpeziFirebaseAccountStorage */; };
 		A9DFE8A92ABE551400428242 /* AccountButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DFE8A82ABE551400428242 /* AccountButton.swift */; };
 		A9FE7AD02AA39BAB0077B045 /* AccountSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FE7ACF2AA39BAB0077B045 /* AccountSheet.swift */; };
+		D6AAA9712BF23A9E00230DA6 /* ClinicalTrialLLM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AAA9702BF23A9E00230DA6 /* ClinicalTrialLLM.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -175,6 +176,7 @@
 		A9720E422ABB68CC00872D23 /* AccountSetupHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSetupHeader.swift; sourceTree = "<group>"; };
 		A9DFE8A82ABE551400428242 /* AccountButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountButton.swift; sourceTree = "<group>"; };
 		A9FE7ACF2AA39BAB0077B045 /* AccountSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSheet.swift; sourceTree = "<group>"; };
+		D6AAA9702BF23A9E00230DA6 /* ClinicalTrialLLM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClinicalTrialLLM.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -261,6 +263,7 @@
 				2F42E9E52B91BB8300D88DB7 /* WebView.swift */,
 				2F38F39F2BE805090002E7D5 /* NICTrialsAPIDateFormatter.swift */,
 				2F38F3A42BE8BC890002E7D5 /* TrialDetail+Identifiable.swift */,
+				D6AAA9702BF23A9E00230DA6 /* ClinicalTrialLLM.swift */,
 			);
 			path = ClinicalTrials;
 			sourceTree = "<group>";
@@ -641,6 +644,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6AAA9712BF23A9E00230DA6 /* ClinicalTrialLLM.swift in Sources */,
 				2FE5DC4129EDD7EE004B9AB4 /* StorageKeys.swift in Sources */,
 				2F42E9F72B91BBF300D88DB7 /* ViewRecordsView.swift in Sources */,
 				2F42E9E22B91BB2500D88DB7 /* DocumentScanner.swift in Sources */,
