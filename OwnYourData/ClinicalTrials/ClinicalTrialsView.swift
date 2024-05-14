@@ -8,21 +8,19 @@
 
 import CoreLocation
 import OpenAPIClient
+import SpeziLocation
 import SpeziViews
 import SwiftUI
 
 
 struct ClinicalTrialsView: View {
+    @Environment(SpeziLocation.self) private var speziLocation
+    
     @State private var viewState: ViewState = .idle
     @State private var trials: [TrialDetail] = []
     @State private var collapseStates: [Bool] = [] // Track collapsed state for each trial
     @State private var zipCode: String = "98155" // ZipCode search state variable, defaults to 10025
     @State private var searchDistance: String = "100" // Distance search state variable, default 100
-    
-    // Create a CLLocationManager instance to manage location services for trials match search
-    private let locationManager = CLLocationManager()
-    // Create a CLGeocoder instance to convert zip code to coordinates
-    private let geocoder = CLGeocoder()
     
     
     var body: some View {
@@ -38,12 +36,11 @@ struct ClinicalTrialsView: View {
         }
     }
     
-    @ViewBuilder
-    private var content: some View {
+    @ViewBuilder private var content: some View {
         switch viewState {
         case .processing:
             ProgressView()
-        case .error(let error):
+        case let .error(error):
             Text("Error: \(error.localizedDescription)")
         case .idle:
             if trials.isEmpty {
@@ -64,8 +61,7 @@ struct ClinicalTrialsView: View {
         }
     }
     
-    @ViewBuilder
-    private var searchBar: some View {
+    @ViewBuilder private var searchBar: some View {
         if viewState == .idle {
             VStack(alignment: .leading, spacing: 4) {
                 // Label for Zip Code
@@ -100,7 +96,7 @@ struct ClinicalTrialsView: View {
     // Function to convert zip code to coordinates
     private func getLocationFromZipCode(zipCode: String) async -> CLLocation? {
         do {
-            let placemarks = try await geocoder.geocodeAddressString(zipCode)
+            let placemarks = try await CLGeocoder().geocodeAddressString(zipCode)
             if let location = placemarks.first?.location {
                 return location
             }
@@ -113,7 +109,7 @@ struct ClinicalTrialsView: View {
     // Function to convert coordinates to zip code
     private func getZipCodeFromLocation(location: CLLocation) async {
         do {
-            let placemarks = try await geocoder.reverseGeocodeLocation(location)
+            let placemarks = try await CLGeocoder().reverseGeocodeLocation(location)
             if let postalCode = placemarks.first?.postalCode {
                 zipCode = postalCode
             } else {
@@ -125,7 +121,7 @@ struct ClinicalTrialsView: View {
     }
     
     // Function to load the trials from NCI API
-    private func loadTrials(latitude: Double, longitude: Double, zipCode: String, distance: String) async throws -> TrialResponse {
+    private func loadTrials(coordinate: CLLocationCoordinate2D?) async throws -> TrialResponse {
         OpenAPIClientAPI.customHeaders = ["X-API-KEY": ""]
         CodableHelper.dateFormatter = NICTrialsAPIDateFormatter()
         
@@ -136,8 +132,8 @@ struct ClinicalTrialsView: View {
                 trialStatus: "OPEN",
                 phase: "III",
                 primaryPurpose: "TREATMENT",
-                sitesOrgCoordinatesLat: latitude,
-                sitesOrgCoordinatesLon: longitude,
+                sitesOrgCoordinatesLat: coordinate?.latitude,
+                sitesOrgCoordinatesLon: coordinate?.longitude,
                 sitesOrgCoordinatesDist: searchDistance + "mi"
             ) { data, error in
                 guard let data else {
@@ -158,88 +154,26 @@ struct ClinicalTrialsView: View {
     private func fetchTrials() async {
         viewState = .processing // Set loading state
         
-        locationManager.requestWhenInUseAuthorization()
-        
         // Reload trials with updated search parameters
         trials.removeAll() // Clear existing trials
         collapseStates.removeAll() // Clear existing collapse states
         
         // Fetch trials with updated parameters
-        Task {
-            var latitude: Double = 0
-            var longitude: Double = 0
-            if let userLocation = locationManager.location {
-                // Use userLocation if available
-                latitude = userLocation.coordinate.latitude
-                longitude = userLocation.coordinate.longitude
-                
-                // Get Zip Code from user's current location
-                await getZipCodeFromLocation(location: userLocation)
-            } else {
-                // Convert zip code to coordinates if user location is not available
-                if let location = await getLocationFromZipCode(zipCode: zipCode) {
-                    latitude = location.coordinate.latitude
-                    longitude = location.coordinate.longitude
-                }
-            }
-            // Fetch trials based on obtained coordinates
-            do {
-                let trialResponse = try await loadTrials(
-                    latitude: latitude,
-                    longitude: longitude,
-                    zipCode: zipCode,
-                    distance: searchDistance
-                )
-                trials = trialResponse.data ?? []
-                // Initialize collapse states for each trial
-                collapseStates = Array(repeating: false, count: trials.count)
-            } catch {
-                viewState = .error(error as? LocalizedError ?? FetchingError.unknownError) // Set error state
-            }
-            
-            if viewState == .processing {
-                viewState = .idle // Set idle state if not already set by an error
-            }
+        var coordinate: CLLocationCoordinate2D?
+        
+        if let userLocation = try? await speziLocation.getLatestLocations().first {
+            coordinate = userLocation.coordinate
+            await getZipCodeFromLocation(location: userLocation)
+        } else if let location = await getLocationFromZipCode(zipCode: zipCode) {
+            coordinate = location.coordinate
         }
-    }
-}
-
-
-struct TrialView: View {
-    let trial: TrialDetail
-    @Binding var isCollapsedDescription: Bool
-    
-    var body: some View {
-        VStack(alignment: .leading) {
-            Text(trial.briefTitle ?? "No Title")
-                .bold()
-            Text(trial.id ?? "No NCI ID")
-                .bold()
-                .foregroundStyle(.secondary)
-            DisclosureGroup(isExpanded: $isCollapsedDescription) {
-                Text(trial.detailDescription ?? "-")
-                    .font(.caption)
-            } label: {
-                Text("Details")
-                    .foregroundColor(.blue)
-            }
-            .onTapGesture {
-                withAnimation {
-                    isCollapsedDescription.toggle()
-                }
-            }
-        }
-    }
-}
-
-
-enum FetchingError: LocalizedError {
-    case unknownError
-    
-    var errorDescription: String? {
-        switch self {
-        case .unknownError:
-            return "An unknown error occurred while the fetching trials."
+        
+        do {
+            trials = try await loadTrials(coordinate: coordinate).data ?? []
+            collapseStates = Array(repeating: false, count: trials.count)
+            viewState = .idle
+        } catch {
+            viewState = .error(AnyLocalizedError(error: error))
         }
     }
 }

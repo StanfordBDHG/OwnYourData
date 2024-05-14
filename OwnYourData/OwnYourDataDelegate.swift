@@ -16,6 +16,7 @@ import SpeziFirestore
 import SpeziHealthKit
 import SpeziLLM
 import SpeziLLMOpenAI
+import SpeziLocation
 import SpeziOnboarding
 import SwiftUI
 
@@ -66,6 +67,8 @@ class OwnYourDataDelegate: SpeziAppDelegate {
             FHIRInterpretationModule()
             
             DocumentManager()
+            
+            SpeziLocation()
         }
     }
     

@@ -110,7 +110,7 @@
         }
       },
       {
-        "package": "interop-ios-for-google-sdks",
+        "package": "InteropForGoogle",
         "repositoryURL": "https://github.com/google/interop-ios-for-google-sdks.git",
         "state": {
           "branch": null,
@@ -128,7 +128,7 @@
         }
       },
       {
-        "package": "llama.cpp",
+        "package": "llama",
         "repositoryURL": "https://github.com/StanfordBDHG/llama.cpp",
         "state": {
           "branch": null,
@@ -155,7 +155,7 @@
         }
       },
       {
-        "package": "promises",
+        "package": "Promises",
         "repositoryURL": "https://github.com/google/promises.git",
         "state": {
           "branch": null,
@@ -254,6 +254,15 @@
         }
       },
       {
+        "package": "SpeziLocation",
+        "repositoryURL": "https://github.com/vishnuravi/SpeziLocation",
+        "state": {
+          "branch": null,
+          "revision": "76c24a5f60ed889a9ebe5b972f203e6330a5a86a",
+          "version": null
+        }
+      },
+      {
         "package": "SpeziOnboarding",
         "repositoryURL": "https://github.com/StanfordSpezi/SpeziOnboarding",
         "state": {
@@ -317,7 +326,7 @@
         }
       },
       {
-        "package": "swift-package-list",
+        "package": "SwiftPackageList",
         "repositoryURL": "https://github.com/FelixHerrmann/swift-package-list",
         "state": {
           "branch": null,

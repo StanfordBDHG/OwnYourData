@@ -75,6 +75,9 @@
     "Grant permission to OwnYourData to access your health records." : {
 
     },
+    "Grant permission to OwnYourData to access your location." : {
+
+    },
     "Health Data Access\nPermission" : {
 
     },
@@ -100,6 +103,9 @@
     "License Information" : {
 
     },
+    "Location Access" : {
+
+    },
     "Navigate to the Browse tab." : {
 
     },
@@ -119,6 +125,9 @@
 
     },
     "Own your health journey." : {
+
+    },
+    "OwnYourData utilizes your location to display trials close you to." : {
 
     },
     "Packages" : {
