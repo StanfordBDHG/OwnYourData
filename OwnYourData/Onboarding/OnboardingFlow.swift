@@ -46,6 +46,7 @@ struct OnboardingFlow: View {
                 HealthKitPermissions()
             }
             
+            LocationPermissions()
             OpenAIAPIKey()
         }
             .interactiveDismissDisabled(!completedOnboardingFlow)

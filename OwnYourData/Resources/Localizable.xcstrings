@@ -38,6 +38,9 @@
     "Details" : {
 
     },
+    "Distance:" : {
+
+    },
     "Documents" : {
 
     },
@@ -45,9 +48,6 @@
 
     },
     "Enter Zip Code" : {
-
-    },
-    "Error: %@" : {
 
     },
     "Export" : {
@@ -118,9 +118,6 @@
     "No Documents" : {
 
     },
-    "No trials found." : {
-
-    },
     "Open the Apple Health app." : {
 
     },
@@ -146,9 +143,6 @@
 
     },
     "Resource Settings" : {
-
-    },
-    "Search Distance (e.g. 100)" : {
 
     },
     "Share FHIR Resources" : {
@@ -202,7 +196,7 @@
     "Your Account" : {
 
     },
-    "Zip Code (e.g. 10025)" : {
+    "Zip Code:" : {
 
     }
   },

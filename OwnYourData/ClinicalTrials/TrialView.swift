@@ -12,7 +12,8 @@ import SwiftUI
 
 struct TrialView: View {
     let trial: TrialDetail
-    @Binding var isCollapsedDescription: Bool
+    @State var isExpanded = false
+    
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -21,18 +22,18 @@ struct TrialView: View {
             Text(trial.id ?? "No NCI ID")
                 .bold()
                 .foregroundStyle(.secondary)
-            DisclosureGroup(isExpanded: $isCollapsedDescription) {
+            DisclosureGroup(isExpanded: $isExpanded) {
                 Text(trial.detailDescription ?? "-")
                     .font(.caption)
             } label: {
                 Text("Details")
                     .foregroundColor(.blue)
             }
-            .onTapGesture {
-                withAnimation {
-                    isCollapsedDescription.toggle()
+                .onTapGesture {
+                    withAnimation {
+                        isExpanded.toggle()
+                    }
                 }
-            }
         }
     }
 }

@@ -18,79 +18,67 @@ struct ClinicalTrialsView: View {
     
     @State private var viewState: ViewState = .idle
     @State private var trials: [TrialDetail] = []
-    @State private var collapseStates: [Bool] = [] // Track collapsed state for each trial
-    @State private var zipCode: String = "98155" // ZipCode search state variable, defaults to 10025
-    @State private var searchDistance: String = "100" // Distance search state variable, default 100
+    @State private var zipCode: String = "10025"
+    @State private var searchDistance: String = "100"
     
     
     var body: some View {
         NavigationStack {
             content
-                .onAppear {
-                    Task {
-                        // Start fetching trials when the view appears
-                        await fetchTrials()
-                    }
+                .task {
+                    await fetchTrials()
                 }
                 .viewStateAlert(state: $viewState)
+                .navigationTitle("NCI Trials")
         }
     }
     
-    @ViewBuilder private var content: some View {
-        switch viewState {
-        case .processing:
-            ProgressView()
-        case let .error(error):
-            Text("Error: \(error.localizedDescription)")
-        case .idle:
-            if trials.isEmpty {
-                Text("No trials found.")
-            } else {
-                VStack(spacing: 10) {
-                    // Horizontal bar for changing zip code and distance
-                    searchBar
-                    
-                    List {
-                        ForEach(trials.indices, id: \.self) { index in
-                            TrialView(trial: trials[index], isCollapsedDescription: $collapseStates[index])
+    @ViewBuilder @MainActor private var content: some View {
+//        switch viewState {
+//        case .processing, .error:
+//            VStack {
+//                ProgressView()
+//                Text("Loading NCI Trials")
+//            }
+//        case .idle:
+//            if trials.isEmpty {
+//                Text("No trials found.")
+//            } else {
+                List {
+                    searchSection
+                    Section {
+                        ForEach(trials, id: \.self) { trial in
+                            TrialView(trial: trial)
                         }
                     }
-                    .navigationTitle("NCI Trials")
                 }
-            }
-        }
+//            }
+//        }
     }
     
-    @ViewBuilder private var searchBar: some View {
-        if viewState == .idle {
-            VStack(alignment: .leading, spacing: 4) {
-                // Label for Zip Code
-                Text("Zip Code (e.g. 10025)")
-                    .padding(.leading)
-                // Text field for Zip Code
+    @ViewBuilder @MainActor private var searchSection: some View {
+        Section {
+            LabeledContent {
                 TextField("Enter Zip Code", text: $zipCode)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .padding(.horizontal)
-                
-                // Label for Search Distance
-                Text("Search Distance (e.g. 100)")
-                    .padding(.leading)
-                // Text field for Search Distance
-                TextField("Enter Distance (mi)", text: $searchDistance)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .padding(.horizontal)
-                
-                // Update Search button
-                Button("Update Search") {
-                    Task {
-                        // Perform search with updated zip code and distance
-                        await fetchTrials()
-                    }
-                }
-                .padding(.horizontal)
+            } label: {
+                Text("Zip Code:")
+                    .bold()
             }
-            .padding(.top)
+            LabeledContent {
+                TextField("Enter Distance (mi)", text: $searchDistance)
+            } label: {
+                Text("Distance:")
+                    .bold()
+            }
+            HStack {
+                Spacer()
+                AsyncButton("Update Search", state: $viewState) {
+                    await fetchTrials()
+                }
+                Spacer()
+            }
         }
+            .disabled(viewState == .processing)
     }
         
     // Function to convert zip code to coordinates
@@ -122,7 +110,7 @@ struct ClinicalTrialsView: View {
     
     // Function to load the trials from NCI API
     private func loadTrials(coordinate: CLLocationCoordinate2D?) async throws -> TrialResponse {
-        OpenAPIClientAPI.customHeaders = ["X-API-KEY": ""]
+        OpenAPIClientAPI.customHeaders = ["X-API-KEY": "tkMGxBkgOC4TDCUfjcPdw7eeZsuuZual632WpUnH"]
         CodableHelper.dateFormatter = NICTrialsAPIDateFormatter()
         
         return try await withCheckedThrowingContinuation { continuation in
@@ -150,13 +138,12 @@ struct ClinicalTrialsView: View {
         }
     }
     
-    // Function to update search parameters
+    
     private func fetchTrials() async {
         viewState = .processing // Set loading state
         
         // Reload trials with updated search parameters
         trials.removeAll() // Clear existing trials
-        collapseStates.removeAll() // Clear existing collapse states
         
         // Fetch trials with updated parameters
         var coordinate: CLLocationCoordinate2D?
@@ -170,7 +157,6 @@ struct ClinicalTrialsView: View {
         
         do {
             trials = try await loadTrials(coordinate: coordinate).data ?? []
-            collapseStates = Array(repeating: false, count: trials.count)
             viewState = .idle
         } catch {
             viewState = .error(AnyLocalizedError(error: error))
