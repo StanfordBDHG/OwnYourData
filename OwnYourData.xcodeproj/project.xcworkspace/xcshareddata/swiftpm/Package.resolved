@@ -78,8 +78,8 @@
         "repositoryURL": "https://github.com/google/GoogleUtilities.git",
         "state": {
           "branch": null,
-          "revision": "8e5d57ed87057cd7b0e4e8f474d9e78f73eb85f7",
-          "version": "7.13.2"
+          "revision": "57a1d307f42df690fdef2637f3e5b776da02aad6",
+          "version": "7.13.3"
         }
       },
       {
@@ -195,8 +195,8 @@
         "repositoryURL": "https://github.com/StanfordSpezi/SpeziAccount.git",
         "state": {
           "branch": null,
-          "revision": "83f505c69865d5aaacf71fd5ae8d2ffb8c3187d8",
-          "version": "1.2.3"
+          "revision": "2de07209430fe7b13c44790eab948b30482fcb9d",
+          "version": "1.2.4"
         }
       },
       {
@@ -251,6 +251,15 @@
           "branch": null,
           "revision": "cbaf20496e600c985dea2358f35a497fe4964116",
           "version": "0.8.1"
+        }
+      },
+      {
+        "package": "SpeziLocation",
+        "repositoryURL": "https://github.com/vishnuravi/SpeziLocation",
+        "state": {
+          "branch": null,
+          "revision": "76c24a5f60ed889a9ebe5b972f203e6330a5a86a",
+          "version": null
         }
       },
       {

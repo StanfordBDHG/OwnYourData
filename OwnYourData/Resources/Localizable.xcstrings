@@ -20,9 +20,6 @@
     "Add Document" : {
 
     },
-    "Add Relevant Documents" : {
-
-    },
     "Apple Health App" : {
 
     },
@@ -32,22 +29,25 @@
     "Close" : {
 
     },
-    "Control what you share and who you share it with." : {
-
-    },
     "Could not load the consent document" : {
 
     },
     "Data Sharing" : {
 
     },
-    "Discover Clinical Trials" : {
+    "Details" : {
+
+    },
+    "Distance:" : {
 
     },
     "Documents" : {
 
     },
-    "Download Your Records" : {
+    "Enter Distance (mi)" : {
+
+    },
+    "Enter Zip Code" : {
 
     },
     "Export" : {
@@ -69,13 +69,13 @@
         }
       }
     },
-    "Find clinical trials supported by the National Cancer Institute." : {
-
-    },
     "Grant Access" : {
 
     },
     "Grant permission to OwnYourData to access your health records." : {
+
+    },
+    "Grant permission to OwnYourData to access your location." : {
 
     },
     "Health Data Access\nPermission" : {
@@ -103,6 +103,9 @@
     "License Information" : {
 
     },
+    "Location Access" : {
+
+    },
     "Navigate to the Browse tab." : {
 
     },
@@ -121,6 +124,9 @@
     "Own your health journey." : {
 
     },
+    "OwnYourData utilizes your location to display trials close you to." : {
+
+    },
     "Packages" : {
 
     },
@@ -128,9 +134,6 @@
 
     },
     "Please refer to the individual repository links for packages without license labels." : {
-
-    },
-    "Register" : {
 
     },
     "Repository Link" : {
@@ -142,16 +145,7 @@
     "Resource Settings" : {
 
     },
-    "Scan important records with the camera on your phone to complete your records." : {
-
-    },
-    "Select your health system(s) and download your health records to your phone." : {
-
-    },
     "Share FHIR Resources" : {
-
-    },
-    "Share Your Data" : {
 
     },
     "Share your data with trial coordinators." : {
@@ -169,13 +163,13 @@
     "The OwnYourData App Icon" : {
 
     },
-    "These are the steps to OwnYourData \nand connect with trials that matter." : {
-
-    },
     "This project is licensed under the MIT License." : {
 
     },
     "Trial Matching" : {
+
+    },
+    "Update Search" : {
 
     },
     "Use HealthKit Resources" : {
@@ -185,9 +179,6 @@
 
     },
     "We help you securely access your health records" : {
-
-    },
-    "We respect your privacy. All data storage and sharing happens directly from your phone." : {
 
     },
     "Welcome,\n%@" : {
@@ -203,6 +194,9 @@
 
     },
     "Your Account" : {
+
+    },
+    "Zip Code:" : {
 
     }
   },
