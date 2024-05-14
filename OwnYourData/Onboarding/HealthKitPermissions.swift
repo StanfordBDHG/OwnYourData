@@ -24,7 +24,7 @@ struct HealthKitPermissions: View {
                 VStack {
                     OnboardingTitleView(
                         title: "Health Data Access\nPermission",
-                        subtitle: "Grant permission to OwnYourData to access your health records"
+                        subtitle: "Grant permission to OwnYourData to access your health records."
                     )
                     Spacer()
                     Image(systemName: "heart.text.square.fill")

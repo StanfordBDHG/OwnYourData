@@ -26,8 +26,6 @@ struct AccountSetupHeader: View {
                 .padding(.bottom, 8)
             if account?.signedIn ?? false, case .generic = setupState {
                 Text("You signed in with the following account:")
-            } else {
-                Text("We respect your privacy. All data storage and sharing happens directly from your phone.")
             }
         }
             .multilineTextAlignment(.center)

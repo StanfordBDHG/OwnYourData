@@ -24,24 +24,24 @@ struct Welcome: View {
                         Image(systemName: "apps.iphone")
                             .accessibilityHidden(true)
                     },
-                    title: "Access Your Health Records",
-                    description: "We help you connect to your Health System(s) to download your records."
+                    title: "Access to Your Health Records",
+                    description: "We help you securely access your health records"
                 ),
                 OnboardingInformationView.Content(
                     icon: {
                         Image(systemName: "shippingbox.fill")
                             .accessibilityHidden(true)
                     },
-                    title: "Search for Active Trials",
-                    description: "Search ClinicalTrials.gov to find the right trial for you."
+                    title: "Trial Matching",
+                    description: "We automatically match you to active trials."
                 ),
                 OnboardingInformationView.Content(
                     icon: {
                         Image(systemName: "list.bullet.clipboard.fill")
                             .accessibilityHidden(true)
                     },
-                    title: "Share Your Data",
-                    description: "Share your health data easily with those that need it."
+                    title: "Data Sharing",
+                    description: "Share your data with trial coordinators."
                 )
             ],
             actionText: "Learn More",
