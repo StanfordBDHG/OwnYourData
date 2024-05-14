@@ -10,7 +10,7 @@ SPDX-License-Identifier: MIT
 
 # OwnYourData
 
-This repository contains the OwnYourData.
+This repository contains the OwnYourData app.
 The OwnYourData is using the [Spezi](https://github.com/StanfordSpezi/Spezi) ecosystem and builds on top of the [Stanford Spezi Template Application](https://github.com/StanfordSpezi/SpeziTemplateApplication).
 
 > [!NOTE]  

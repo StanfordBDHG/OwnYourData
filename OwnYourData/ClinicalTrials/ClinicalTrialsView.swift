@@ -11,6 +11,7 @@ import OpenAPIClient
 import SpeziViews
 import SwiftUI
 
+
 struct ClinicalTrialsView: View {
     @State private var viewState: ViewState = .idle
     @State private var trials: [TrialDetail] = []
@@ -22,6 +23,7 @@ struct ClinicalTrialsView: View {
     private let locationManager = CLLocationManager()
     // Create a CLGeocoder instance to convert zip code to coordinates
     private let geocoder = CLGeocoder()
+    
     
     var body: some View {
         NavigationStack {
@@ -202,6 +204,7 @@ struct ClinicalTrialsView: View {
     }
 }
 
+
 struct TrialView: View {
     let trial: TrialDetail
     @Binding var isCollapsedDescription: Bool
@@ -228,6 +231,7 @@ struct TrialView: View {
         }
     }
 }
+
 
 enum FetchingError: LocalizedError {
     case unknownError

@@ -1,7 +1,7 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "Access Your Health Records" : {
+    "Access to Your Health Records" : {
 
     },
     "ACCOUNT_SUBTITLE" : {
@@ -9,7 +9,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Create an account with OwnYourData so we can help you. We don't see or store any of your health data. We only store your name and email address."
+            "value" : "Create an account with OwnYourData.                                    \n\nOur app was built to keep your data secure and protect your privacy. Your data is encrypted and you are always in control of your health information. "
           }
         }
       }
@@ -18,9 +18,6 @@
 
     },
     "Add Document" : {
-
-    },
-    "Add Relevant Documents" : {
 
     },
     "Apple Health App" : {
@@ -32,22 +29,16 @@
     "Close" : {
 
     },
-    "Control what you share and who you share it with." : {
+    "Could not load the consent document" : {
 
     },
-    "Could not load the consent document" : {
+    "Data Sharing" : {
 
     },
     "Details" : {
 
     },
-    "Discover Clinical Trials" : {
-
-    },
     "Documents" : {
-
-    },
-    "Download Your Records" : {
 
     },
     "Enter Distance (mi)" : {
@@ -73,18 +64,15 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "We're here to help you find cancer trials that are supported by the National Cancer Institute.\n\nWe noticed that you haven't saved any health records on your phone yet.\n\nPlease follow the instructions to connect to retrieve your health records from your provider: [Apple Support - View health records on your iPhone or iPod touch](https://support.apple.com/en-us/HT208680).\n\nYou can find a list of supported institutions at [Apple Support - Institutions that support health records on iPhone and iPod touch](https://platform.openai.com/account/api-keys).\n\nIf you can see your health records in the Apple Health app, please ensure that OwnYourData has access to your health records in the Apple Health App. You can find these settings in the privacy section of your profile in Apple Health."
+            "value" : "Find National Cancer Institute supported trials.\n\nWe noticed that you haven't saved any health records on your phone yet.\n\nPlease follow the instructions to retrieve your health records: [Apple Support - View health records on your iPhone or iPod touch](https://support.apple.com/en-us/HT208680).\n\nYou can find a list of supported institutions at [Apple Support - Institutions that support health records on iPhone and iPod touch](https://platform.openai.com/account/api-keys).\n\nPlease ensure that OwnYourData has access to your health records in the Apple Health App. You can find these settings in the privacy section of your profile in Apple Health."
           }
         }
       }
     },
-    "Find clinical trials supported by the National Cancer Institute." : {
-
-    },
     "Grant Access" : {
 
     },
-    "Grant permission to OwnYourData to access your health records" : {
+    "Grant permission to OwnYourData to access your health records." : {
 
     },
     "Health Data Access\nPermission" : {
@@ -95,7 +83,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "You can decide what health records should be available to the OwnYourData application. We use these health records to automatically provide you insights about your diagnosis and match you with clinical trials. The health data may be sent to third party providers like OpenAI for processing."
+            "value" : "You have complete control of what records you share with OwnYourData. We use this information to provide insights about your diagnosis and match you to trials."
           }
         }
       }
@@ -142,9 +130,6 @@
     "Please refer to the individual repository links for packages without license labels." : {
 
     },
-    "Register" : {
-
-    },
     "Repository Link" : {
 
     },
@@ -154,28 +139,13 @@
     "Resource Settings" : {
 
     },
-    "Scan important records with the camera on your phone to complete your records." : {
-
-    },
-    "Search ClinicalTrials.gov to find the right trial for you." : {
-
-    },
     "Search Distance (e.g. 100)" : {
-
-    },
-    "Search for Active Trials" : {
-
-    },
-    "Select your health system(s) and download your health records to your phone." : {
 
     },
     "Share FHIR Resources" : {
 
     },
-    "Share Your Data" : {
-
-    },
-    "Share your health data easily with those that need it." : {
+    "Share your data with trial coordinators." : {
 
     },
     "Step Content ..." : {
@@ -190,10 +160,10 @@
     "The OwnYourData App Icon" : {
 
     },
-    "These are the steps to OwnYourData \nand connect with trials that matter." : {
+    "This project is licensed under the MIT License." : {
 
     },
-    "This project is licensed under the MIT License." : {
+    "Trial Matching" : {
 
     },
     "Update Search" : {
@@ -202,10 +172,10 @@
     "Use HealthKit Resources" : {
 
     },
-    "We help you connect to your Health System(s) to download your records." : {
+    "We automatically match you to active trials." : {
 
     },
-    "We respect your privacy. All data storage and sharing happens directly from your phone." : {
+    "We help you securely access your health records" : {
 
     },
     "Welcome,\n%@" : {
