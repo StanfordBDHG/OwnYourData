@@ -84,13 +84,50 @@ struct ResourceSelection: View {
     private var mockPatients: [ModelsR4.Bundle] {
         get async {
             await [
-                .allen322Ferry570,
-                .beatris270Bogan287,
-                .edythe31Morar593,
-                .gonzalo160Duenas839,
-                .jacklyn830Veum823,
-                .milton509Ortiz186
+                .breastCancerExample
             ]
+        }
+    }
+}
+
+
+extension ModelsR4.Bundle {
+    private static var _breastCancerExample: ModelsR4.Bundle?
+    /// Example FHIR resources packed into a bundle to represent the simulated patient named Jamison785 Denesik803.
+    public static var breastCancerExample: ModelsR4.Bundle {
+        get async {
+            if let breastCancerExample = _breastCancerExample {
+                return breastCancerExample
+            }
+            
+            let breastCancerExample = await Foundation.Bundle.main.improvedLoadFHIRBundle(
+                withName: "BreastCancerExample"
+            )
+            ModelsR4.Bundle._breastCancerExample = breastCancerExample
+            return breastCancerExample
+        }
+    }
+}
+
+
+extension Foundation.Bundle {
+    /// Loads a FHIR `Bundle` from a Foundation `Bundle`.
+    /// - Parameter name: Name of the JSON file in the Foundation `Bundle`
+    /// - Returns: The FHIR `Bundle`
+    public func improvedLoadFHIRBundle(withName name: String) async -> ModelsR4.Bundle {
+        guard let resourceURL = self.url(forResource: name, withExtension: "json") else {
+            fatalError("Could not find the resource \"\(name)\".json in the SpeziFHIRMockPatients Resources folder.")
+        }
+        
+        let loadingTask = _Concurrency.Task {
+            let resourceData = try Data(contentsOf: resourceURL)
+            return try JSONDecoder().decode(Bundle.self, from: resourceData)
+        }
+        
+        do {
+            return try await loadingTask.value
+        } catch {
+            fatalError("Could not decode the FHIR bundle named \"\(name).json\": \(error)")
         }
     }
 }

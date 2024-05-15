@@ -50,6 +50,9 @@
     "Enter Zip Code" : {
 
     },
+    "Error matching you to NCI trials. Please try again." : {
+
+    },
     "Export" : {
 
     },
@@ -94,6 +97,18 @@
     "How It Works" : {
 
     },
+    "Identified Keywords: %@" : {
+
+    },
+    "Identifying best matching trials ..." : {
+
+    },
+    "Inspecting FHIR resources ..." : {
+
+    },
+    "Keyword Identification Prompt" : {
+      "comment" : "Title of the keyword identification prompt."
+    },
     "Learn More" : {
 
     },
@@ -103,7 +118,78 @@
     "License Information" : {
 
     },
+    "LLM_GET_FHIR_RESOURCES_FUNCTION_DESCRIPTION" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Retrieve specific FHIR (Fast Healthcare Interoperability Resources) from a healthcare data store based on the given identifiers. This function filters and summarizes relevant health records, providing detailed summaries of the most pertinent information. If no matching resources are found, it will notify you accordingly. Use this function to access the latest and most relevant health records efficiently."
+          }
+        }
+      }
+    },
+    "LLM_GET_FHIR_RESOURCES_PARAMETER_DESCRIPTION" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Specify a list of resource identifiers to retrieve FHIR resources from the data store. These identifiers should correspond to the health records you need. The function will filter and fetch only the relevant resources based on these identifiers, allowing for efficient and targeted data retrieval. Use this parameter to guide the function in fetching the specific health information required for your task."
+          }
+        }
+      }
+    },
+    "LLM_GET_TRIALS_FUNCTION_DESCRIPTION" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Retrieve specific clinical trials from the NCI (National Cancer Institute) Trials API using the provided trial identifiers. This function filters the trials based on the given identifiers and returns detailed information about each trial, including titles, descriptions, and inclusion criteria. Use this function to access and summarize relevant clinical trial data efficiently."
+          }
+        }
+      }
+    },
+    "LLM_GET_TRIALS_PARAMETER_DESCRIPTION" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Specify a list of trial identifiers to retrieve detailed information about clinical trials from the NCI Trials API. These identifiers should correspond to the trials you need. The function will filter and fetch the relevant trials based on these identifiers, providing comprehensive details for each trial. Use this parameter to guide the function in fetching specific clinical trial information required for your task."
+          }
+        }
+      }
+    },
+    "LLM_KEYWORD_IDENTIFICATION_PROMPT" : {
+      "comment" : "Content of the keyword identification prompt.",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Your task is to identify a minimal set of distinct and unique keywords to conduct a trial search for a patient diagnosed with cancer.  \nUtilize the \"get_resources\" function to access the patient's FHIR resources. \nThe generic patient information will be passed into this context after this prompt.\nUtilize the function call as often as needed until you have a comprehensive picture of the patient's health status and you feel confident that you can respond with a few distinct keywords for the NIC trials API search. \nAvoid any generic terms like \"cancer\" and other elements that might appear in all trial descriptions. Only try to provide 5 or less keywords.\nTry to be as concrete and as narrow as possible based on the relevant FHIR resources.\n Do not engage in any conversation; only respond with a list of keywords separated by commas without any other context, introduction, or surrounding information. \nThe resulting strings will be parsed for further processing."
+          }
+        }
+      }
+    },
+    "LLM_TRIAL_MATCHING_PROMPT" : {
+      "comment" : "Content of the trial matching prompt.",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Your task is to identify a set of matching trials for the patient diagnosed with cancer using the NCI trials API.   You will be provided with a set of keywords identified in a previous run of an LLM based on the patient's FHIR health records. \nYou can request any health records using the get_records function calling mechanisms. Utilize the function call as often as needed until you have a comprehensive picture of the patient's health status.  Utilize the get_trials function to retrieve information about the possible trials retrieved from the NCI API using the keywords identified in a previous run. Ensure that the trial description and inclusion criteria match the patient's health records. \nRespond with all trial identifiers that seem a good match. The trial identifies must be separated by commas.\nIt is encouraged to return 3-5 possible matching trials to provide the patient some choice but ensure that the trials are matching the patient profile. Only use the trial identifiers that are parameter options for the get_trials function; do not make up or combine trial identifiers. \nDo not engage in any conversation; only respond with a list of identifiers separated by commas without any other context, introduction, or surrounding information. \nThe resulting identifiers will be parsed for further processing."
+          }
+        }
+      }
+    },
+    "Loading NCI Trials" : {
+
+    },
+    "Loading NCI trials based on FHIR resources ..." : {
+
+    },
     "Location Access" : {
+
+    },
+    "Match Me" : {
 
     },
     "Navigate to the Browse tab." : {
@@ -116,6 +202,9 @@
 
     },
     "No Documents" : {
+
+    },
+    "No trials found." : {
 
     },
     "Open the Apple Health app." : {
@@ -136,6 +225,9 @@
     "Please refer to the individual repository links for packages without license labels." : {
 
     },
+    "Reload Matching" : {
+
+    },
     "Repository Link" : {
 
     },
@@ -151,6 +243,9 @@
     "Share your data with trial coordinators." : {
 
     },
+    "Start Matching" : {
+
+    },
     "Step Content ..." : {
 
     },
@@ -160,8 +255,21 @@
     "The following list contains all Swift Package dependencies of the SpeziOwnYourData." : {
 
     },
+    "The medical record does not include any FHIR resources for the search term %@." : {
+
+    },
     "The OwnYourData App Icon" : {
 
+    },
+    "This is the summary of the requested %@:\n\n%@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "This is the summary of the requested %1$@:\n\n%2$@"
+          }
+        }
+      }
     },
     "This project is licensed under the MIT License." : {
 
@@ -169,10 +277,16 @@
     "Trial Matching" : {
 
     },
+    "Trial Matching Prompt" : {
+      "comment" : "Title of the trial matching prompt."
+    },
     "Update Search" : {
 
     },
     "Use HealthKit Resources" : {
+
+    },
+    "Use the OwnYourData algorithm to match you to possible NCI trials." : {
 
     },
     "We automatically match you to active trials." : {

@@ -21,6 +21,7 @@ struct HomeView: View {
     @Environment(FHIRStore.self) var fjirStore
 
     @State private var presentingAccount = false
+    @State private var showMatchingView = false
     @State private var showClinicalTrialsView = false
 
     
@@ -37,6 +38,9 @@ struct HomeView: View {
                         InstructionsView()
                     }
                     OwnYourDataButton(title: "Match Me") {
+                        showMatchingView = true
+                    }
+                    OwnYourDataButton(title: "Local NCI Trials") {
                         showClinicalTrialsView = true
                     }
                     OwnYourDataButton(
@@ -59,9 +63,11 @@ struct HomeView: View {
                     }
                 }
         }
+            .sheet(isPresented: $showMatchingView) {
+                MatchingView()
+            }
             .sheet(isPresented: $showClinicalTrialsView) {
-                ClinicalTrialsView()
-                    .edgesIgnoringSafeArea(.all)
+                ViewClinicalTrialsView()
             }
             .sheet(isPresented: $presentingAccount) {
                 AccountSheet()

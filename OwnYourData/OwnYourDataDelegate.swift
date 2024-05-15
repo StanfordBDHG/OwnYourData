@@ -69,6 +69,8 @@ class OwnYourDataDelegate: SpeziAppDelegate {
             DocumentManager()
             
             SpeziLocation()
+            
+            MatchingModule()
         }
     }
     
