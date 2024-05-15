@@ -13,7 +13,8 @@ import SpeziLocation
 
 @Observable
 class NCITrialsModel {
-    private static let apiKey: String = "tkMGxBkgOC4TDCUfjcPdw7eeZsuuZual632WpUnH"
+    #warning("Insert NIC Token here to test the app.")
+    private static let apiKey: String = ""
     
     
     private let locationModule: SpeziLocation
