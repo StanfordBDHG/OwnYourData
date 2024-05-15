@@ -6,6 +6,7 @@
 // SPDX-License-Identifier: MIT
 //
 
+import OpenAPIClient
 import Spezi
 import SpeziFHIR
 import SpeziFHIRLLM
@@ -13,6 +14,7 @@ import SpeziLLM
 import SpeziLLMOpenAI
 import SpeziLocalStorage
 import SpeziLocation
+import SpeziViews
 import SwiftUI
 
 
@@ -20,12 +22,7 @@ import SwiftUI
 class MatchingModule: Module, EnvironmentAccessible, DefaultInitializable {
     public enum Defaults {
         public static var llmSchema: LLMOpenAISchema {
-            .init(
-                parameters: .init(
-                    modelType: .gpt4_turbo_preview,
-                    systemPrompts: []   // No system prompt as this will be determined later by the resource interpreter
-                )
-            )
+            LLMOpenAISchema(parameters: LLMOpenAIParameters(modelType: .gpt4_turbo_preview))
         }
     }
     
@@ -34,11 +31,12 @@ class MatchingModule: Module, EnvironmentAccessible, DefaultInitializable {
     @ObservationIgnored @Dependency private var llmRunner: LLMRunner
     @ObservationIgnored @Dependency private var fhirStore: FHIRStore
     @ObservationIgnored @Dependency private var locationModule: SpeziLocation
-
     
     @ObservationIgnored @Model private var resourceSummary: FHIRResourceSummary
     @ObservationIgnored @Model private var nciTrialsModel: NCITrialsModel
     
+    var state: MatchingState = .idle
+    private(set) var matchingTrials: [TrialDetail] = []
     private var keywords: [String] = []
     
     
@@ -58,7 +56,23 @@ class MatchingModule: Module, EnvironmentAccessible, DefaultInitializable {
     
     
     @MainActor
-    func keywordIdentification() async throws -> [String] {
+    private func matchTrials() async throws {
+        do {
+            self.state = .fhirInspection
+            let keywords = try await keywordIdentification()
+            self.state = .nciLoading
+            try await nciTrialsModel.fetchTrials(keywords: keywords)
+            self.state = .matching
+            let matchingTrialIds = try await trialsIdentificaiton()
+            matchingTrials = nciTrialsModel.trials.filter({ trial in matchingTrialIds.contains(where: { $0 == trial.nciId }) })
+            self.state = .idle
+        } catch {
+            self.state = .error(AnyLocalizedError(error: error))
+        }
+    }
+    
+    @MainActor
+    private func keywordIdentification() async throws -> [String] {
         let llm = llmRunner(
             with: LLMOpenAISchema(parameters: .init(modelType: .gpt4_turbo_preview)) {
                 GetFHIRResourceLLMFunction(
@@ -89,7 +103,7 @@ class MatchingModule: Module, EnvironmentAccessible, DefaultInitializable {
     }
     
     @MainActor
-    func trialsIdentificaiton() async throws -> [String] {
+    private func trialsIdentificaiton() async throws -> [String] {
         if nciTrialsModel.trials.isEmpty {
             try await nciTrialsModel.fetchTrials(keywords: keywords)
         }

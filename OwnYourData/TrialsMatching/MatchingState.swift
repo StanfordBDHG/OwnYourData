@@ -7,10 +7,25 @@
 //
 
 import Foundation
+import SpeziViews
 
 
-enum MatchingState {
+enum MatchingState: OperationState {
+    case idle
     case fhirInspection
     case nciLoading
     case matching
+    case error(LocalizedError)
+    
+    
+    var representation: ViewState {
+        switch self {
+        case .idle:
+            .idle
+        case .fhirInspection, .nciLoading, .matching:
+            .processing
+        case .error(let error):
+            .error(error)
+        }
+    }
 }
