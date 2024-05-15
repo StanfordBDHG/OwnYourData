@@ -14,7 +14,7 @@ import SpeziLocation
 @Observable
 class NCITrialsModel {
     #warning("Insert NIC Token here to test the app.")
-    private static let apiKey: String = "tkMGxBkgOC4TDCUfjcPdw7eeZsuuZual632WpUnH"
+    private static let apiKey: String = ""
     
     
     private let locationModule: SpeziLocation
@@ -72,7 +72,7 @@ class NCITrialsModel {
         OpenAPIClientAPI.customHeaders = ["X-API-KEY": Self.apiKey]
         CodableHelper.dateFormatter = NICTrialsAPIDateFormatter()
         
-        let keywords = keywords.filter({ !$0.isEmpty })
+        let keywords = keywords.filter { !$0.isEmpty }
         
         return try await withCheckedThrowingContinuation { continuation in
             TrialsAPI.searchTrialsByGet(

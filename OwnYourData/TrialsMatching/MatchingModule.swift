@@ -74,12 +74,7 @@ class MatchingModule: Module, EnvironmentAccessible, DefaultInitializable {
             }
             let matchingTrialIds = try await trialsIdentificaiton()
             
-            print(matchingTrialIds)
-            print(nciTrialsModel.trials.map({ $0.llmIdentifier }))
-            
-            matchingTrials = nciTrialsModel.trials.filter({ trial in matchingTrialIds.contains(where: { $0 == trial.llmIdentifier }) })
-            
-            print(matchingTrials)
+            matchingTrials = nciTrialsModel.trials.filter { trial in matchingTrialIds.contains(where: { $0 == trial.llmIdentifier }) }
             
             withAnimation {
                 self.state = .idle
@@ -118,7 +113,7 @@ class MatchingModule: Module, EnvironmentAccessible, DefaultInitializable {
             output.append(token)
         }
         
-        keywords = output.components(separatedBy: ",").flatMap({ $0.components(separatedBy: " ") }).filter({ !$0.isEmpty })
+        keywords = output.components(separatedBy: ",").flatMap { $0.components(separatedBy: " ") }.filter { !$0.isEmpty }
         return keywords
     }
     
