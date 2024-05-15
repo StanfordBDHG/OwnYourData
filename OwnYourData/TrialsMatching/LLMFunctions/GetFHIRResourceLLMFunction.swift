@@ -16,7 +16,7 @@ struct GetFHIRResourceLLMFunction: LLMFunction {
     static let logger = Logger(subsystem: "edu.stanford.cs342.ownyourdata", category: "FHIRGetResourceLLMFunction")
     
     static let name = "get_resources"
-    static let description = String(localized: "GET_FHIR_RESOURCES_FUNCTION_DESCRIPTION")
+    static let description = String(localized: "LLM_GET_FHIR_RESOURCES_FUNCTION_DESCRIPTION")
     
     private let fhirStore: FHIRStore
     private let resourceSummary: FHIRResourceSummary
@@ -43,7 +43,7 @@ struct GetFHIRResourceLLMFunction: LLMFunction {
         }
         
         _resources = Parameter(
-            description: String(localized: "GET_FHIR_RESOURCES_PARAMETER_DESCRIPTION"),
+            description: String(localized: "LLM_GET_FHIR_RESOURCES_PARAMETER_DESCRIPTION"),
             enum: Array(allResourcesFunctionCallIdentifiers)
         )
     }

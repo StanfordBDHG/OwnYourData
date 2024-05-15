@@ -16,7 +16,7 @@ struct GetTrialsLLMFunction: LLMFunction {
     static let logger = Logger(subsystem: "edu.stanford.cs342.ownyourdata", category: "GetTrialLLMFunction")
     
     static let name = "get_trials"
-    static let description = String(localized: "GET_TRIALS_FUNCTION_DESCRIPTION")
+    static let description = String(localized: "LLM_GET_TRIALS_FUNCTION_DESCRIPTION")
     
     private let nciTrialsModel: NCITrialsModel
     
@@ -30,7 +30,7 @@ struct GetTrialsLLMFunction: LLMFunction {
         self.nciTrialsModel = nciTrialsModel
         
         _trailIdentifiers = Parameter(
-            description: String(localized: "GET_TRIALS_PARAMETER_DESCRIPTION"),
+            description: String(localized: "LLM_GET_TRIALS_PARAMETER_DESCRIPTION"),
             enum: nciTrialsModel.trials.compactMap({ $0.llmIdentifier })
         )
     }

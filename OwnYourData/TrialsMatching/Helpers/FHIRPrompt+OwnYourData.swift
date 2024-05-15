@@ -18,7 +18,7 @@ extension FHIRPrompt {
                 comment: "Title of the keyword identification prompt."
             ),
             defaultPrompt: String(
-                localized: "Keyword Identification Prompt Content",
+                localized: "LLM_KEYWORD_IDENTIFICATION_PROMPT",
                 comment: "Content of the keyword identification prompt."
             )
         )
@@ -32,7 +32,7 @@ extension FHIRPrompt {
                 comment: "Title of the trial matching prompt."
             ),
             defaultPrompt: String(
-                localized: "Trial Matching Prompt Content",
+                localized: "LLM_TRIAL_MATCHING_PROMPT",
                 comment: "Content of the trial matching prompt."
             )
         )

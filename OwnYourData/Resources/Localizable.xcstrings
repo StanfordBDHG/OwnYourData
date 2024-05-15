@@ -72,18 +72,6 @@
         }
       }
     },
-    "GET_FHIR_RESOURCES_FUNCTION_DESCRIPTION" : {
-
-    },
-    "GET_FHIR_RESOURCES_PARAMETER_DESCRIPTION" : {
-
-    },
-    "GET_TRIALS_FUNCTION_DESCRIPTION" : {
-
-    },
-    "GET_TRIALS_PARAMETER_DESCRIPTION" : {
-
-    },
     "Grant Access" : {
 
     },
@@ -121,9 +109,6 @@
     "Keyword Identification Prompt" : {
       "comment" : "Title of the keyword identification prompt."
     },
-    "Keyword Identification Prompt Content" : {
-      "comment" : "Content of the keyword identification prompt."
-    },
     "Learn More" : {
 
     },
@@ -132,6 +117,24 @@
     },
     "License Information" : {
 
+    },
+    "LLM_GET_FHIR_RESOURCES_FUNCTION_DESCRIPTION" : {
+
+    },
+    "LLM_GET_FHIR_RESOURCES_PARAMETER_DESCRIPTION" : {
+
+    },
+    "LLM_GET_TRIALS_FUNCTION_DESCRIPTION" : {
+
+    },
+    "LLM_GET_TRIALS_PARAMETER_DESCRIPTION" : {
+
+    },
+    "LLM_KEYWORD_IDENTIFICATION_PROMPT" : {
+      "comment" : "Content of the keyword identification prompt."
+    },
+    "LLM_TRIAL_MATCHING_PROMPT" : {
+      "comment" : "Content of the trial matching prompt."
     },
     "Loading NCI Trials" : {
 
@@ -232,9 +235,6 @@
     },
     "Trial Matching Prompt" : {
       "comment" : "Title of the trial matching prompt."
-    },
-    "Trial Matching Prompt Content" : {
-      "comment" : "Content of the trial matching prompt."
     },
     "Update Search" : {
 
