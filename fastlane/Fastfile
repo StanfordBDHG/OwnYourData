@@ -80,7 +80,7 @@ platform :ios do
       ],
       submit_beta_review: true,
       notify_external_testers: true,
-      expire_previous_builds: true,
+      expire_previous_builds: false,
       changelog: commit[:message]
     )
   end
