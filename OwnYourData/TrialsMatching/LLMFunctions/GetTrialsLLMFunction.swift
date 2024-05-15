@@ -38,9 +38,18 @@ struct GetTrialsLLMFunction: LLMFunction {
     
     func execute() async throws -> String? {
         trailIDs
-            .map { _ in
-                ""
+            .compactMap { trailId in
+                nciTrialsModel.trials.first(where: { $0.nciId == trailId })
+                    .map { trial in
+                        """
+                        **Trial \(trailId)**
+                        
+                        Title: \(trial.briefTitle ?? "") (\(trial.officialTitle ?? ""))
+                        Description: \(trial.detailDescription ?? "")
+                        Incluision Criteria: \(trial.eligibility?.unstructured?.compactMap({ $0.description }).joined() ?? "")
+                        """
+                    }
             }
-            .joined(separator: "\n\n")
+            .joined(separator: "\n\n\n")
     }
 }

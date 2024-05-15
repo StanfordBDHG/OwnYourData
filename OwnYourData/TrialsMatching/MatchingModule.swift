@@ -16,13 +16,6 @@ import SpeziLocation
 import SwiftUI
 
 
-enum MatchingState {
-    case fhirInspection
-    case nciLoading
-    case matching
-}
-
-
 @Observable
 class MatchingModule: Module, EnvironmentAccessible, DefaultInitializable {
     public enum Defaults {
@@ -133,17 +126,4 @@ class MatchingModule: Module, EnvironmentAccessible, DefaultInitializable {
         
         return output.components(separatedBy: ",")
     }
-}
-
-
-struct MatchingStateView: View {
-    var body: some View {
-        Group {
-        }
-    }
-}
-
-
-#Preview {
-    MatchingStateView()
 }

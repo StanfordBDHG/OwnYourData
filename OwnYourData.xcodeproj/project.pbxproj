@@ -56,6 +56,8 @@
 		2FB4DBC62BF48E4F00E68AD9 /* GetTrialsLLMFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB4DBC52BF48E4F00E68AD9 /* GetTrialsLLMFunction.swift */; };
 		2FB4DBC92BF48E7400E68AD9 /* FHIRPrompt+OwnYourData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB4DBC82BF48E7400E68AD9 /* FHIRPrompt+OwnYourData.swift */; };
 		2FB4DBCD2BF4915900E68AD9 /* NCITrialsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB4DBCC2BF4915900E68AD9 /* NCITrialsModel.swift */; };
+		2FB4DBD52BF4946E00E68AD9 /* MatchingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB4DBD42BF4946E00E68AD9 /* MatchingState.swift */; };
+		2FB4DBD72BF4948700E68AD9 /* MatchingStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB4DBD62BF4948700E68AD9 /* MatchingStateView.swift */; };
 		2FC3439229EE634B002D773C /* ConsentDocument.md in Resources */ = {isa = PBXBuildFile; fileRef = 2FE5DC2C29EDD78E004B9AB4 /* ConsentDocument.md */; };
 		2FC975A82978F11A00BA99FE /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC975A72978F11A00BA99FE /* Home.swift */; };
 		2FCDFF7C2BF33E5400158BDE /* SpeziLocation in Frameworks */ = {isa = PBXBuildFile; productRef = 2FCDFF7B2BF33E5400158BDE /* SpeziLocation */; };
@@ -159,6 +161,8 @@
 		2FB4DBC52BF48E4F00E68AD9 /* GetTrialsLLMFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTrialsLLMFunction.swift; sourceTree = "<group>"; };
 		2FB4DBC82BF48E7400E68AD9 /* FHIRPrompt+OwnYourData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FHIRPrompt+OwnYourData.swift"; sourceTree = "<group>"; };
 		2FB4DBCC2BF4915900E68AD9 /* NCITrialsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCITrialsModel.swift; sourceTree = "<group>"; };
+		2FB4DBD42BF4946E00E68AD9 /* MatchingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingState.swift; sourceTree = "<group>"; };
+		2FB4DBD62BF4948700E68AD9 /* MatchingStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingStateView.swift; sourceTree = "<group>"; };
 		2FC94CD4298B0A1D009C8209 /* OwnYourData.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = OwnYourData.xctestplan; sourceTree = "<group>"; };
 		2FC975A72978F11A00BA99FE /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		2FCDFF7E2BF33ED800158BDE /* LocationPermissions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPermissions.swift; sourceTree = "<group>"; };
@@ -311,10 +315,11 @@
 		2FB4DBB92BF479CF00E68AD9 /* TrialsMatching */ = {
 			isa = PBXGroup;
 			children = (
+				2FB4DBD22BF4946100E68AD9 /* Helpers */,
 				2FB4DBCF2BF492F600E68AD9 /* LLMFunctions */,
-				2FB4DBC02BF47ABA00E68AD9 /* FHIRResource+Identifier.swift */,
+				2FB4DBD42BF4946E00E68AD9 /* MatchingState.swift */,
 				2FB4DBB72BF4781D00E68AD9 /* MatchingModule.swift */,
-				2FB4DBC82BF48E7400E68AD9 /* FHIRPrompt+OwnYourData.swift */,
+				2FB4DBD62BF4948700E68AD9 /* MatchingStateView.swift */,
 			);
 			path = TrialsMatching;
 			sourceTree = "<group>";
@@ -326,6 +331,15 @@
 				2FB4DBC52BF48E4F00E68AD9 /* GetTrialsLLMFunction.swift */,
 			);
 			path = LLMFunctions;
+			sourceTree = "<group>";
+		};
+		2FB4DBD22BF4946100E68AD9 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				2FB4DBC02BF47ABA00E68AD9 /* FHIRResource+Identifier.swift */,
+				2FB4DBC82BF48E7400E68AD9 /* FHIRPrompt+OwnYourData.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		2FC9759D2978E30800BA99FE /* Supporting Files */ = {
@@ -685,6 +699,7 @@
 				2FE5DC4129EDD7EE004B9AB4 /* StorageKeys.swift in Sources */,
 				2F42E9F72B91BBF300D88DB7 /* ViewRecordsView.swift in Sources */,
 				2F42E9E22B91BB2500D88DB7 /* DocumentScanner.swift in Sources */,
+				2FB4DBD72BF4948700E68AD9 /* MatchingStateView.swift in Sources */,
 				2FE5DCB129EE6107004B9AB4 /* AccountOnboarding.swift in Sources */,
 				2F42E9F22B91BBF300D88DB7 /* HowItWorks.swift in Sources */,
 				2FE5DC3A29EDD7CA004B9AB4 /* Welcome.swift in Sources */,
@@ -724,6 +739,7 @@
 				2F42E9E02B91BB2500D88DB7 /* PDFListDetailView.swift in Sources */,
 				2FCDFF822BF3417300158BDE /* TrialView.swift in Sources */,
 				2F38F3A52BE8BC890002E7D5 /* TrialDetail+Identifiable.swift in Sources */,
+				2FB4DBD52BF4946E00E68AD9 /* MatchingState.swift in Sources */,
 				2F42E9FA2B91BDD300D88DB7 /* InstructionsView.swift in Sources */,
 				56F6F2A02AB441930022FE5A /* ContributionsList.swift in Sources */,
 				2F42E9D22B91BAB900D88DB7 /* OwnYourDataButton.swift in Sources */,
