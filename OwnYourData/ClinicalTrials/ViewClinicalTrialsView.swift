@@ -13,7 +13,7 @@ import SpeziViews
 import SwiftUI
 
 
-struct ClinicalTrialsView: View {
+struct ViewClinicalTrialsView: View {
     @Environment(NCITrialsModel.self) private var nciTrialsModel
     
     @State private var viewState: ViewState = .idle
@@ -94,5 +94,5 @@ struct ClinicalTrialsView: View {
 
 
 #Preview {
-    ClinicalTrialsView()
+    ViewClinicalTrialsView()
 }

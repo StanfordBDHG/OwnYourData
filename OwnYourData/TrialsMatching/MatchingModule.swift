@@ -56,7 +56,7 @@ class MatchingModule: Module, EnvironmentAccessible, DefaultInitializable {
     
     
     @MainActor
-    private func matchTrials() async throws {
+    func matchTrials() async {
         do {
             self.state = .fhirInspection
             let keywords = try await keywordIdentification()

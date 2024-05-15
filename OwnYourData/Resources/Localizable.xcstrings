@@ -50,6 +50,9 @@
     "Enter Zip Code" : {
 
     },
+    "Error matching you to NCI trials. Please try again." : {
+
+    },
     "Export" : {
 
     },
@@ -109,6 +112,12 @@
     "Identified Keywords: %@" : {
 
     },
+    "Identifying best matching trials ..." : {
+
+    },
+    "Inspecting FHIR resources ..." : {
+
+    },
     "Keyword Identification Prompt" : {
       "comment" : "Title of the keyword identification prompt."
     },
@@ -127,7 +136,13 @@
     "Loading NCI Trials" : {
 
     },
+    "Loading NCI trials based on FHIR resources ..." : {
+
+    },
     "Location Access" : {
+
+    },
+    "Match Me" : {
 
     },
     "Navigate to the Browse tab." : {
@@ -161,6 +176,9 @@
 
     },
     "Please refer to the individual repository links for packages without license labels." : {
+
+    },
+    "Reload Matching" : {
 
     },
     "Repository Link" : {
@@ -219,6 +237,9 @@
 
     },
     "Use HealthKit Resources" : {
+
+    },
+    "Use the OwnYourData algorithm to match you to possible NCI trials." : {
 
     },
     "We automatically match you to active trials." : {
