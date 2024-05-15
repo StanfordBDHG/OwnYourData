@@ -17,7 +17,7 @@ struct MatchingView: View {
     var body: some View {
         NavigationStack {
             Group {
-                if matchingModule.matchingTrials.isEmpty || matchingModule.state.representation == .processing {
+                if matchingModule.matchingTrials.isEmpty {
                     MatchingStateView()
                 } else {
                     List {
@@ -45,6 +45,9 @@ struct MatchingView: View {
                     }
                 }
                 .viewStateAlert(state: matchingModule.state)
+                .task {
+                    await matchingModule.matchTrials()
+                }
         }
     }
 }

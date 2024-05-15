@@ -75,7 +75,7 @@ class NCITrialsModel {
         
         return try await withCheckedThrowingContinuation { continuation in
             TrialsAPI.searchTrialsByGet(
-                size: 50,
+                size: 20,
                 keyword: keywords.isEmpty ? nil : keywords.joined(separator: " "),
                 trialStatus: "OPEN",
                 phase: "III",
@@ -86,16 +86,6 @@ class NCITrialsModel {
             ) { data, error in
                 guard let data else {
                     if let error {
-                        switch error as? ErrorResponse {
-                        case let .error(int, data, response, error):
-                            print(keywords)
-                            print(int)
-                            print(String(data: data!, encoding: .utf8)!)
-                            print(response!)
-                            print(error)
-                        default:
-                            print(error)
-                        }
                         continuation.resume(throwing: error)
                     } else {
                         continuation.resume(throwing: DownloadException.responseFailed)

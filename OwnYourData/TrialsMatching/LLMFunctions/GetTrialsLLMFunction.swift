@@ -29,6 +29,8 @@ struct GetTrialsLLMFunction: LLMFunction {
     ) {
         self.nciTrialsModel = nciTrialsModel
         
+        print(nciTrialsModel.trials.compactMap({ $0.llmIdentifier }))
+        
         _trailIdentifiers = Parameter(
             description: String(localized: "LLM_GET_TRIALS_PARAMETER_DESCRIPTION"),
             enum: nciTrialsModel.trials.compactMap({ $0.llmIdentifier })

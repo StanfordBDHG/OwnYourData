@@ -60,6 +60,7 @@
 		2FB4DBD72BF4948700E68AD9 /* MatchingStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB4DBD62BF4948700E68AD9 /* MatchingStateView.swift */; };
 		2FB4DBDB2BF4A08000E68AD9 /* MatchingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB4DBDA2BF4A08000E68AD9 /* MatchingView.swift */; };
 		2FB4DBDE2BF4A62100E68AD9 /* TrialDetail+LLMIndentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB4DBDD2BF4A62100E68AD9 /* TrialDetail+LLMIndentifier.swift */; };
+		2FB4DBE42BF4AEF200E68AD9 /* BreastCancerExample.json in Resources */ = {isa = PBXBuildFile; fileRef = 2FB4DBE22BF4AE4200E68AD9 /* BreastCancerExample.json */; };
 		2FC3439229EE634B002D773C /* ConsentDocument.md in Resources */ = {isa = PBXBuildFile; fileRef = 2FE5DC2C29EDD78E004B9AB4 /* ConsentDocument.md */; };
 		2FC975A82978F11A00BA99FE /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC975A72978F11A00BA99FE /* Home.swift */; };
 		2FCDFF7C2BF33E5400158BDE /* SpeziLocation in Frameworks */ = {isa = PBXBuildFile; productRef = 2FCDFF7B2BF33E5400158BDE /* SpeziLocation */; };
@@ -167,6 +168,7 @@
 		2FB4DBD62BF4948700E68AD9 /* MatchingStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingStateView.swift; sourceTree = "<group>"; };
 		2FB4DBDA2BF4A08000E68AD9 /* MatchingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingView.swift; sourceTree = "<group>"; };
 		2FB4DBDD2BF4A62100E68AD9 /* TrialDetail+LLMIndentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TrialDetail+LLMIndentifier.swift"; sourceTree = "<group>"; };
+		2FB4DBE22BF4AE4200E68AD9 /* BreastCancerExample.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = BreastCancerExample.json; sourceTree = "<group>"; };
 		2FC94CD4298B0A1D009C8209 /* OwnYourData.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = OwnYourData.xctestplan; sourceTree = "<group>"; };
 		2FC975A72978F11A00BA99FE /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		2FCDFF7E2BF33ED800158BDE /* LocationPermissions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPermissions.swift; sourceTree = "<group>"; };
@@ -348,6 +350,14 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		2FB4DBE12BF4AE2500E68AD9 /* ExamplePatients */ = {
+			isa = PBXGroup;
+			children = (
+				2FB4DBE22BF4AE4200E68AD9 /* BreastCancerExample.json */,
+			);
+			path = ExamplePatients;
+			sourceTree = "<group>";
+		};
 		2FC9759D2978E30800BA99FE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -375,6 +385,7 @@
 		2FE5DC2D29EDD792004B9AB4 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2FB4DBE12BF4AE2500E68AD9 /* ExamplePatients */,
 				653A255428338800005D4D48 /* Assets.xcassets */,
 				2FA0BFEC2ACC977500E0EF83 /* Localizable.xcstrings */,
 				2FE5DC2C29EDD78E004B9AB4 /* ConsentDocument.md */,
@@ -657,6 +668,7 @@
 				653A255528338800005D4D48 /* Assets.xcassets in Resources */,
 				2FA0BFED2ACC977500E0EF83 /* Localizable.xcstrings in Resources */,
 				2F6025CB29BBE70F0045459E /* GoogleService-Info.plist in Resources */,
+				2FB4DBE42BF4AEF200E68AD9 /* BreastCancerExample.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

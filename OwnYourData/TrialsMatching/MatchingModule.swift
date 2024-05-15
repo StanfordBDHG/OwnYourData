@@ -66,11 +66,21 @@ class MatchingModule: Module, EnvironmentAccessible, DefaultInitializable {
                 self.state = .nciLoading
             }
             try await nciTrialsModel.fetchTrials(keywords: keywords)
+            if nciTrialsModel.trials.isEmpty {
+                try await nciTrialsModel.fetchTrials()
+            }
             withAnimation {
                 self.state = .matching
             }
             let matchingTrialIds = try await trialsIdentificaiton()
-            matchingTrials = nciTrialsModel.trials.filter({ trial in matchingTrialIds.contains(where: { $0 == trial.nciId }) })
+            
+            print(matchingTrialIds)
+            print(nciTrialsModel.trials.map({ $0.llmIdentifier }))
+            
+            matchingTrials = nciTrialsModel.trials.filter({ trial in matchingTrialIds.contains(where: { $0 == trial.llmIdentifier }) })
+            
+            print(matchingTrials)
+            
             withAnimation {
                 self.state = .idle
             }
@@ -108,16 +118,12 @@ class MatchingModule: Module, EnvironmentAccessible, DefaultInitializable {
             output.append(token)
         }
         
-        keywords = output.components(separatedBy: ",")
+        keywords = output.components(separatedBy: ",").flatMap({ $0.components(separatedBy: " ") }).filter({ !$0.isEmpty })
         return keywords
     }
     
     @MainActor
     private func trialsIdentificaiton() async throws -> [String] {
-        if nciTrialsModel.trials.isEmpty {
-            try await nciTrialsModel.fetchTrials(keywords: keywords)
-        }
-        
         let llm = llmRunner(
             with: LLMOpenAISchema(parameters: .init(modelType: .gpt4_turbo_preview)) {
                 GetFHIRResourceLLMFunction(

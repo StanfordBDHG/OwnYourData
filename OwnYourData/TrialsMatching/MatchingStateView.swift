@@ -14,7 +14,7 @@ private struct MatchingstateLogo: View {
     let text: LocalizedStringResource
     
     var body: some View {
-        VStack {
+        VStack(spacing: 32) {
             Image(systemName: image)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
@@ -23,6 +23,7 @@ private struct MatchingstateLogo: View {
                 .padding()
                 .accessibilityHidden(true)
             Text(text)
+                .multilineTextAlignment(.center)
             ProgressView()
                 .padding()
         }
@@ -35,6 +36,12 @@ struct MatchingStateView: View {
     
     
     var body: some View {
+        content
+            .padding(32)
+    }
+    
+    
+    @ViewBuilder private var content: some View {
         switch matchingModule.state {
         case .idle:
             VStack {
