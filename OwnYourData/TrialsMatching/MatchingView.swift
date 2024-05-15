@@ -16,19 +16,33 @@ struct MatchingView: View {
     
     var body: some View {
         NavigationStack {
-            MatchingStateView()
+            Group {
+                if matchingModule.matchingTrials.isEmpty || matchingModule.state.representation == .processing {
+                    MatchingStateView()
+                } else {
+                    List {
+                        Section {
+                            ForEach(matchingModule.matchingTrials, id: \.self) { trial in
+                                TrialView(trial: trial)
+                            }
+                        }
+                    }
+                }
+            }
                 .navigationTitle("Match Me")
                 .toolbar {
-                    AsyncButton(
-                        action: {
-                            await matchingModule.matchTrials()
-                        },
-                        label: {
-                            Image(systemName: "arrow.counterclockwise")
-                                .accessibilityLabel(Text("Reload Matching"))
-                        }
-                    )
-                        .disabled(matchingModule.state.representation == .processing)
+                    if !(matchingModule.matchingTrials.isEmpty || matchingModule.state.representation == .processing) {
+                        AsyncButton(
+                            action: {
+                                await matchingModule.matchTrials()
+                            },
+                            label: {
+                                Image(systemName: "arrow.counterclockwise")
+                                    .accessibilityLabel(Text("Reload Matching"))
+                            }
+                        )
+                            .disabled(matchingModule.state.representation == .processing)
+                    }
                 }
                 .viewStateAlert(state: matchingModule.state)
         }

@@ -58,16 +58,26 @@ class MatchingModule: Module, EnvironmentAccessible, DefaultInitializable {
     @MainActor
     func matchTrials() async {
         do {
-            self.state = .fhirInspection
+            withAnimation {
+                self.state = .fhirInspection
+            }
             let keywords = try await keywordIdentification()
-            self.state = .nciLoading
+            withAnimation {
+                self.state = .nciLoading
+            }
             try await nciTrialsModel.fetchTrials(keywords: keywords)
-            self.state = .matching
+            withAnimation {
+                self.state = .matching
+            }
             let matchingTrialIds = try await trialsIdentificaiton()
             matchingTrials = nciTrialsModel.trials.filter({ trial in matchingTrialIds.contains(where: { $0 == trial.nciId }) })
-            self.state = .idle
+            withAnimation {
+                self.state = .idle
+            }
         } catch {
-            self.state = .error(AnyLocalizedError(error: error))
+            withAnimation {
+                self.state = .error(AnyLocalizedError(error: error))
+            }
         }
     }
     

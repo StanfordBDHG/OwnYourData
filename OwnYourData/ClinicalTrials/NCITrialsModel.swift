@@ -71,10 +71,12 @@ class NCITrialsModel {
         OpenAPIClientAPI.customHeaders = ["X-API-KEY": Self.apiKey]
         CodableHelper.dateFormatter = NICTrialsAPIDateFormatter()
         
+        let keywords = keywords.filter({ !$0.isEmpty })
+        
         return try await withCheckedThrowingContinuation { continuation in
             TrialsAPI.searchTrialsByGet(
                 size: 50,
-                keyword: keywords.joined(separator: ", "),
+                keyword: keywords.isEmpty ? nil : keywords.joined(separator: " "),
                 trialStatus: "OPEN",
                 phase: "III",
                 primaryPurpose: "TREATMENT",
@@ -84,6 +86,16 @@ class NCITrialsModel {
             ) { data, error in
                 guard let data else {
                     if let error {
+                        switch error as? ErrorResponse {
+                        case let .error(int, data, response, error):
+                            print(keywords)
+                            print(int)
+                            print(String(data: data!, encoding: .utf8)!)
+                            print(response!)
+                            print(error)
+                        default:
+                            print(error)
+                        }
                         continuation.resume(throwing: error)
                     } else {
                         continuation.resume(throwing: DownloadException.responseFailed)

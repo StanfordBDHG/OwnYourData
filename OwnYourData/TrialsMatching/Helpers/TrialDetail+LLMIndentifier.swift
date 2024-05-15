@@ -6,11 +6,12 @@
 // SPDX-License-Identifier: MIT
 //
 
+import Foundation
 import OpenAPIClient
 
 
-extension TrialsDetail {
-    var alphanumeric: String {
-        return self.components(separatedBy: CharacterSet.alphanumerics.inverted).joined().lowercased()
+extension TrialDetail {
+    var llmIdentifier: String? {
+        briefTitle?.components(separatedBy: CharacterSet.alphanumerics.inverted).joined()
     }
 }

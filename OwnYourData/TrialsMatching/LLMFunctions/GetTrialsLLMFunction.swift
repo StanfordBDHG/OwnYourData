@@ -21,7 +21,7 @@ struct GetTrialsLLMFunction: LLMFunction {
     private let nciTrialsModel: NCITrialsModel
     
     
-    @Parameter var trailIDs: [String]
+    @Parameter var trailIdentifiers: [String]
     
     
     init(
@@ -29,20 +29,20 @@ struct GetTrialsLLMFunction: LLMFunction {
     ) {
         self.nciTrialsModel = nciTrialsModel
         
-        _trailIDs = Parameter(
+        _trailIdentifiers = Parameter(
             description: String(localized: "GET_TRIALS_PARAMETER_DESCRIPTION"),
-            enum: nciTrialsModel.trials.compactMap({ $0.nciId })
+            enum: nciTrialsModel.trials.compactMap({ $0.llmIdentifier })
         )
     }
     
     
     func execute() async throws -> String? {
-        trailIDs
-            .compactMap { trailId in
-                nciTrialsModel.trials.first(where: { $0.nciId == trailId })
+        trailIdentifiers
+            .compactMap { trailIdentifier in
+                nciTrialsModel.trials.first(where: { $0.llmIdentifier == trailIdentifier })
                     .map { trial in
                         """
-                        **Trial \(trailId)**
+                        **Trial \(trailIdentifier)**
                         
                         Title: \(trial.briefTitle ?? "") (\(trial.officialTitle ?? ""))
                         Description: \(trial.detailDescription ?? "")

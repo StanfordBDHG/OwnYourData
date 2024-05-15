@@ -35,6 +35,7 @@ struct ViewClinicalTrialsView: View {
         case .processing, .error:
             VStack {
                 ProgressView()
+                    .padding()
                 Text("Loading NCI Trials")
             }
         case .idle:

@@ -24,6 +24,7 @@ private struct MatchingstateLogo: View {
                 .accessibilityHidden(true)
             Text(text)
             ProgressView()
+                .padding()
         }
     }
 }
@@ -41,6 +42,11 @@ struct MatchingStateView: View {
                 Text("Use the OwnYourData algorithm to match you to possible NCI trials.")
                     .multilineTextAlignment(.center)
                     .padding()
+                Button("Start Matching") {
+                    Task {
+                        await matchingModule.matchTrials()
+                    }
+                }
             }
             
         case .fhirInspection:
