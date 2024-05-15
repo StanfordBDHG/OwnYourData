@@ -69,6 +69,18 @@
         }
       }
     },
+    "GET_FHIR_RESOURCES_FUNCTION_DESCRIPTION" : {
+
+    },
+    "GET_FHIR_RESOURCES_PARAMETER_DESCRIPTION" : {
+
+    },
+    "GET_TRIALS_FUNCTION_DESCRIPTION" : {
+
+    },
+    "GET_TRIALS_PARAMETER_DESCRIPTION" : {
+
+    },
     "Grant Access" : {
 
     },
@@ -94,6 +106,15 @@
     "How It Works" : {
 
     },
+    "Identified Keywords: %@" : {
+
+    },
+    "Keyword Identification Prompt" : {
+      "comment" : "Title of the keyword identification prompt."
+    },
+    "Keyword Identification Prompt Content" : {
+      "comment" : "Content of the keyword identification prompt."
+    },
     "Learn More" : {
 
     },
@@ -101,6 +122,9 @@
 
     },
     "License Information" : {
+
+    },
+    "Loading NCI Trials" : {
 
     },
     "Location Access" : {
@@ -116,6 +140,9 @@
 
     },
     "No Documents" : {
+
+    },
+    "No trials found." : {
 
     },
     "Open the Apple Health app." : {
@@ -160,14 +187,33 @@
     "The following list contains all Swift Package dependencies of the SpeziOwnYourData." : {
 
     },
+    "The medical record does not include any FHIR resources for the search term %@." : {
+
+    },
     "The OwnYourData App Icon" : {
 
+    },
+    "This is the summary of the requested %@:\n\n%@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "This is the summary of the requested %1$@:\n\n%2$@"
+          }
+        }
+      }
     },
     "This project is licensed under the MIT License." : {
 
     },
     "Trial Matching" : {
 
+    },
+    "Trial Matching Prompt" : {
+      "comment" : "Title of the trial matching prompt."
+    },
+    "Trial Matching Prompt Content" : {
+      "comment" : "Content of the trial matching prompt."
     },
     "Update Search" : {
 

@@ -50,6 +50,12 @@
 		2FB099B12A875DF100B20952 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 2FB099B02A875DF100B20952 /* FirebaseFirestore */; };
 		2FB099B32A875DF100B20952 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2FB099B22A875DF100B20952 /* FirebaseFirestoreSwift */; };
 		2FB099B62A875E2B00B20952 /* HealthKitOnFHIR in Frameworks */ = {isa = PBXBuildFile; productRef = 2FB099B52A875E2B00B20952 /* HealthKitOnFHIR */; };
+		2FB4DBB82BF4781D00E68AD9 /* MatchingModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB4DBB72BF4781D00E68AD9 /* MatchingModule.swift */; };
+		2FB4DBBB2BF479E600E68AD9 /* GetFHIRResourceLLMFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB4DBBA2BF479E600E68AD9 /* GetFHIRResourceLLMFunction.swift */; };
+		2FB4DBC12BF47ABA00E68AD9 /* FHIRResource+Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB4DBC02BF47ABA00E68AD9 /* FHIRResource+Identifier.swift */; };
+		2FB4DBC62BF48E4F00E68AD9 /* GetTrialsLLMFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB4DBC52BF48E4F00E68AD9 /* GetTrialsLLMFunction.swift */; };
+		2FB4DBC92BF48E7400E68AD9 /* FHIRPrompt+OwnYourData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB4DBC82BF48E7400E68AD9 /* FHIRPrompt+OwnYourData.swift */; };
+		2FB4DBCD2BF4915900E68AD9 /* NCITrialsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB4DBCC2BF4915900E68AD9 /* NCITrialsModel.swift */; };
 		2FC3439229EE634B002D773C /* ConsentDocument.md in Resources */ = {isa = PBXBuildFile; fileRef = 2FE5DC2C29EDD78E004B9AB4 /* ConsentDocument.md */; };
 		2FC975A82978F11A00BA99FE /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC975A72978F11A00BA99FE /* Home.swift */; };
 		2FCDFF7C2BF33E5400158BDE /* SpeziLocation in Frameworks */ = {isa = PBXBuildFile; productRef = 2FCDFF7B2BF33E5400158BDE /* SpeziLocation */; };
@@ -147,6 +153,12 @@
 		2F6025CA29BBE70F0045459E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2FA0BFEC2ACC977500E0EF83 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		2FAEC07F297F583900C11C42 /* OwnYourData.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OwnYourData.entitlements; sourceTree = "<group>"; };
+		2FB4DBB72BF4781D00E68AD9 /* MatchingModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingModule.swift; sourceTree = "<group>"; };
+		2FB4DBBA2BF479E600E68AD9 /* GetFHIRResourceLLMFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetFHIRResourceLLMFunction.swift; sourceTree = "<group>"; };
+		2FB4DBC02BF47ABA00E68AD9 /* FHIRResource+Identifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FHIRResource+Identifier.swift"; sourceTree = "<group>"; };
+		2FB4DBC52BF48E4F00E68AD9 /* GetTrialsLLMFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTrialsLLMFunction.swift; sourceTree = "<group>"; };
+		2FB4DBC82BF48E7400E68AD9 /* FHIRPrompt+OwnYourData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FHIRPrompt+OwnYourData.swift"; sourceTree = "<group>"; };
+		2FB4DBCC2BF4915900E68AD9 /* NCITrialsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCITrialsModel.swift; sourceTree = "<group>"; };
 		2FC94CD4298B0A1D009C8209 /* OwnYourData.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = OwnYourData.xctestplan; sourceTree = "<group>"; };
 		2FC975A72978F11A00BA99FE /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		2FCDFF7E2BF33ED800158BDE /* LocationPermissions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPermissions.swift; sourceTree = "<group>"; };
@@ -261,6 +273,7 @@
 		2F42E9E32B91BB7000D88DB7 /* ClinicalTrials */ = {
 			isa = PBXGroup;
 			children = (
+				2FB4DBCC2BF4915900E68AD9 /* NCITrialsModel.swift */,
 				2F42E9E62B91BB8300D88DB7 /* ClinicalTrialsView.swift */,
 				2FCDFF812BF3417300158BDE /* TrialView.swift */,
 				2F42E9E52B91BB8300D88DB7 /* WebView.swift */,
@@ -293,6 +306,26 @@
 				2F42EA042B91C24700D88DB7 /* URL+Zip.swift */,
 			);
 			path = FHIR;
+			sourceTree = "<group>";
+		};
+		2FB4DBB92BF479CF00E68AD9 /* TrialsMatching */ = {
+			isa = PBXGroup;
+			children = (
+				2FB4DBCF2BF492F600E68AD9 /* LLMFunctions */,
+				2FB4DBC02BF47ABA00E68AD9 /* FHIRResource+Identifier.swift */,
+				2FB4DBB72BF4781D00E68AD9 /* MatchingModule.swift */,
+				2FB4DBC82BF48E7400E68AD9 /* FHIRPrompt+OwnYourData.swift */,
+			);
+			path = TrialsMatching;
+			sourceTree = "<group>";
+		};
+		2FB4DBCF2BF492F600E68AD9 /* LLMFunctions */ = {
+			isa = PBXGroup;
+			children = (
+				2FB4DBBA2BF479E600E68AD9 /* GetFHIRResourceLLMFunction.swift */,
+				2FB4DBC52BF48E4F00E68AD9 /* GetTrialsLLMFunction.swift */,
+			);
+			path = LLMFunctions;
 			sourceTree = "<group>";
 		};
 		2FC9759D2978E30800BA99FE /* Supporting Files */ = {
@@ -395,6 +428,7 @@
 				2FE5DC2829EDD398004B9AB4 /* Onboarding */,
 				56F6F29E2AB441640022FE5A /* Contributions */,
 				2F42E9D32B91BB1800D88DB7 /* Documents */,
+				2FB4DBB92BF479CF00E68AD9 /* TrialsMatching */,
 				2F42E9E32B91BB7000D88DB7 /* ClinicalTrials */,
 				2F42E9E92B91BBDD00D88DB7 /* Instructions */,
 				2FE5DC3C29EDD7DA004B9AB4 /* SharedContext */,
@@ -655,6 +689,7 @@
 				2F42E9F22B91BBF300D88DB7 /* HowItWorks.swift in Sources */,
 				2FE5DC3A29EDD7CA004B9AB4 /* Welcome.swift in Sources */,
 				2F42E9DE2B91BB2500D88DB7 /* PDFView.swift in Sources */,
+				2FB4DBBB2BF479E600E68AD9 /* GetFHIRResourceLLMFunction.swift in Sources */,
 				2F38F3A02BE805090002E7D5 /* NICTrialsAPIDateFormatter.swift in Sources */,
 				2F42E9F42B91BBF300D88DB7 /* Instructions.swift in Sources */,
 				2FCDFF7F2BF33ED800158BDE /* LocationPermissions.swift in Sources */,
@@ -671,6 +706,7 @@
 				A9DFE8A92ABE551400428242 /* AccountButton.swift in Sources */,
 				2FE5DC3729EDD7CA004B9AB4 /* OnboardingFlow.swift in Sources */,
 				2F42E9D12B91BAB900D88DB7 /* LogoView.swift in Sources */,
+				2FB4DBC12BF47ABA00E68AD9 /* FHIRResource+Identifier.swift in Sources */,
 				2F42EA072B91C24700D88DB7 /* URL+Zip.swift in Sources */,
 				2FF53D8D2A8729D600042B76 /* OwnYourDataStandard.swift in Sources */,
 				2FE5DC4729EDD7F2004B9AB4 /* CodableArray+RawRepresentable.swift in Sources */,
@@ -680,7 +716,10 @@
 				2F42E9DD2B91BB2500D88DB7 /* DocumentGallery.swift in Sources */,
 				2F42E9DF2B91BB2500D88DB7 /* PDFDocument+Transferable.swift in Sources */,
 				2F42E9F52B91BBF300D88DB7 /* InstructionsStep.swift in Sources */,
+				2FB4DBC92BF48E7400E68AD9 /* FHIRPrompt+OwnYourData.swift in Sources */,
+				2FB4DBC62BF48E4F00E68AD9 /* GetTrialsLLMFunction.swift in Sources */,
 				2F4E23832989D51F0013F3D9 /* OwnYourDataTestingSetup.swift in Sources */,
+				2FB4DBCD2BF4915900E68AD9 /* NCITrialsModel.swift in Sources */,
 				2F42E9DC2B91BB2500D88DB7 /* DocumentManager.swift in Sources */,
 				2F42E9E02B91BB2500D88DB7 /* PDFListDetailView.swift in Sources */,
 				2FCDFF822BF3417300158BDE /* TrialView.swift in Sources */,
@@ -697,6 +736,7 @@
 				653A2551283387FE005D4D48 /* OwnYourData.swift in Sources */,
 				2F42EA0E2B91CD7100D88DB7 /* OpenAIAPIKey.swift in Sources */,
 				2FE5DC3629EDD7CA004B9AB4 /* HealthKitPermissions.swift in Sources */,
+				2FB4DBB82BF4781D00E68AD9 /* MatchingModule.swift in Sources */,
 				5661552E2AB854C000209B80 /* PackageHelper.swift in Sources */,
 				2F42E9FF2B91BE3100D88DB7 /* FHIRStore+Extensions.swift in Sources */,
 			);
@@ -1231,7 +1271,7 @@
 			repositoryURL = "https://github.com/StanfordSpezi/SpeziLLM.git";
 			requirement = {
 				kind = upToNextMinorVersion;
-				minimumVersion = 0.8.1;
+				minimumVersion = 0.8.2;
 			};
 		};
 		2F42E9BE2B91B70F00D88DB7 /* XCRemoteSwiftPackageReference "SpeziFHIR" */ = {
