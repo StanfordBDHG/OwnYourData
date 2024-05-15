@@ -38,8 +38,8 @@ struct GetTrialsLLMFunction: LLMFunction {
     
     func execute() async throws -> String? {
         trailIDs
-            .map { trailID in
-                return ""
+            .map { _ in
+                ""
             }
             .joined(separator: "\n\n")
     }
