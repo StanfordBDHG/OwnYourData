@@ -77,7 +77,7 @@ class NCITrialsModel {
         return try await withCheckedThrowingContinuation { continuation in
             TrialsAPI.searchTrialsByGet(
                 size: 20,
-                keyword: keywords.isEmpty ? nil : keywords.joined(separator: " "),
+                keyword: keywords.isEmpty ? nil : keywords,
                 trialStatus: "OPEN",
                 phase: "III",
                 primaryPurpose: "TREATMENT",
