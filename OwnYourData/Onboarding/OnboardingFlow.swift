@@ -47,7 +47,6 @@ struct OnboardingFlow: View {
             }
             
             LocationPermissions()
-            OpenAIAPIKey()
         }
             .interactiveDismissDisabled(!completedOnboardingFlow)
     }

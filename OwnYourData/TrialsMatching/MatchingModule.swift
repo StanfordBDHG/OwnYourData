@@ -31,9 +31,9 @@ class MatchingModule: Module, EnvironmentAccessible, DefaultInitializable {
     @ObservationIgnored @Dependency private var llmRunner: LLMRunner
     @ObservationIgnored @Dependency private var fhirStore: FHIRStore
     @ObservationIgnored @Dependency private var locationModule: SpeziLocation
-    
+    @ObservationIgnored @Dependency private var nciTrialsModel: NCITrialsModule?
+
     @ObservationIgnored @Model private var resourceSummary: FHIRResourceSummary
-    @ObservationIgnored @Model private var nciTrialsModel: NCITrialsModel
     
     var state: MatchingState = .idle
     private(set) var matchingTrials: [TrialDetail] = []
@@ -49,15 +49,16 @@ class MatchingModule: Module, EnvironmentAccessible, DefaultInitializable {
             llmRunner: llmRunner,
             llmSchema: Defaults.llmSchema
         )
-        nciTrialsModel = NCITrialsModel(
-            locationModule: locationModule
-        )
     }
     
     
     @MainActor
     func matchTrials() async {
         do {
+            guard let nciTrialsModel else {
+                fatalError("Error that NCI Trials Module was not initialized in the Spezi Configuratin.")
+            }
+            
             withAnimation {
                 self.state = .fhirInspection
             }
@@ -119,6 +120,10 @@ class MatchingModule: Module, EnvironmentAccessible, DefaultInitializable {
     
     @MainActor
     private func trialsIdentificaiton() async throws -> [String] {
+        guard let nciTrialsModel else {
+            fatalError("Error that NCI Trials Module was not initialized in the Spezi Configuratin.")
+        }
+        
         let llm = llmRunner(
             with: LLMOpenAISchema(parameters: .init(modelType: .gpt4_turbo_preview)) {
                 GetFHIRResourceLLMFunction(
@@ -126,7 +131,7 @@ class MatchingModule: Module, EnvironmentAccessible, DefaultInitializable {
                     resourceSummary: self.resourceSummary,
                     resourceCountLimit: 100
                 )
-                GetTrialsLLMFunction(nciTrialsModel: self.nciTrialsModel)
+                GetTrialsLLMFunction(nciTrialsModel: nciTrialsModel)
             }
         )
         

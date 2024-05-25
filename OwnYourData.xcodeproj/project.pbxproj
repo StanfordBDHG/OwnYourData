@@ -55,7 +55,7 @@
 		2FB4DBC12BF47ABA00E68AD9 /* FHIRResource+Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB4DBC02BF47ABA00E68AD9 /* FHIRResource+Identifier.swift */; };
 		2FB4DBC62BF48E4F00E68AD9 /* GetTrialsLLMFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB4DBC52BF48E4F00E68AD9 /* GetTrialsLLMFunction.swift */; };
 		2FB4DBC92BF48E7400E68AD9 /* FHIRPrompt+OwnYourData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB4DBC82BF48E7400E68AD9 /* FHIRPrompt+OwnYourData.swift */; };
-		2FB4DBCD2BF4915900E68AD9 /* NCITrialsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB4DBCC2BF4915900E68AD9 /* NCITrialsModel.swift */; };
+		2FB4DBCD2BF4915900E68AD9 /* NCITrialsModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB4DBCC2BF4915900E68AD9 /* NCITrialsModule.swift */; };
 		2FB4DBD52BF4946E00E68AD9 /* MatchingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB4DBD42BF4946E00E68AD9 /* MatchingState.swift */; };
 		2FB4DBD72BF4948700E68AD9 /* MatchingStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB4DBD62BF4948700E68AD9 /* MatchingStateView.swift */; };
 		2FB4DBDB2BF4A08000E68AD9 /* MatchingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB4DBDA2BF4A08000E68AD9 /* MatchingView.swift */; };
@@ -163,7 +163,7 @@
 		2FB4DBC02BF47ABA00E68AD9 /* FHIRResource+Identifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FHIRResource+Identifier.swift"; sourceTree = "<group>"; };
 		2FB4DBC52BF48E4F00E68AD9 /* GetTrialsLLMFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTrialsLLMFunction.swift; sourceTree = "<group>"; };
 		2FB4DBC82BF48E7400E68AD9 /* FHIRPrompt+OwnYourData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FHIRPrompt+OwnYourData.swift"; sourceTree = "<group>"; };
-		2FB4DBCC2BF4915900E68AD9 /* NCITrialsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCITrialsModel.swift; sourceTree = "<group>"; };
+		2FB4DBCC2BF4915900E68AD9 /* NCITrialsModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCITrialsModule.swift; sourceTree = "<group>"; };
 		2FB4DBD42BF4946E00E68AD9 /* MatchingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingState.swift; sourceTree = "<group>"; };
 		2FB4DBD62BF4948700E68AD9 /* MatchingStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingStateView.swift; sourceTree = "<group>"; };
 		2FB4DBDA2BF4A08000E68AD9 /* MatchingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingView.swift; sourceTree = "<group>"; };
@@ -283,7 +283,7 @@
 		2F42E9E32B91BB7000D88DB7 /* ClinicalTrials */ = {
 			isa = PBXGroup;
 			children = (
-				2FB4DBCC2BF4915900E68AD9 /* NCITrialsModel.swift */,
+				2FB4DBCC2BF4915900E68AD9 /* NCITrialsModule.swift */,
 				2F42E9E62B91BB8300D88DB7 /* ViewClinicalTrialsView.swift */,
 				2FCDFF812BF3417300158BDE /* TrialView.swift */,
 				2F42E9E52B91BB8300D88DB7 /* WebView.swift */,
@@ -753,7 +753,7 @@
 				2FB4DBC92BF48E7400E68AD9 /* FHIRPrompt+OwnYourData.swift in Sources */,
 				2FB4DBC62BF48E4F00E68AD9 /* GetTrialsLLMFunction.swift in Sources */,
 				2F4E23832989D51F0013F3D9 /* OwnYourDataTestingSetup.swift in Sources */,
-				2FB4DBCD2BF4915900E68AD9 /* NCITrialsModel.swift in Sources */,
+				2FB4DBCD2BF4915900E68AD9 /* NCITrialsModule.swift in Sources */,
 				2F42E9DC2B91BB2500D88DB7 /* DocumentManager.swift in Sources */,
 				2F42E9E02B91BB2500D88DB7 /* PDFListDetailView.swift in Sources */,
 				2FCDFF822BF3417300158BDE /* TrialView.swift in Sources */,

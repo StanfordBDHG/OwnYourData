@@ -8,24 +8,22 @@
 
 import CoreLocation
 import OpenAPIClient
+import Spezi
 import SpeziLocation
 
 
 @Observable
-class NCITrialsModel {
-    #warning("Insert NIC Token here to test the app.")
-    private static let apiKey: String = ""
+class NCITrialsModule: Module, EnvironmentAccessible {
+    @ObservationIgnored @Dependency private var locationModule: SpeziLocation
     
-    
-    private let locationModule: SpeziLocation
-    
+    private let apiKey: String
     private(set) var trials: [TrialDetail] = []
     var zipCode: String = "10025"
     var searchDistance: String = "100"
     
     
-    init(locationModule: SpeziLocation) {
-        self.locationModule = locationModule
+    init(apiKey: String) {
+        self.apiKey = apiKey
     }
     
     
@@ -69,14 +67,14 @@ class NCITrialsModel {
     }
     
     private func loadTrials(keywords: [String], coordinate: CLLocationCoordinate2D?) async throws -> TrialResponse {
-        OpenAPIClientAPI.customHeaders = ["X-API-KEY": Self.apiKey]
+        OpenAPIClientAPI.customHeaders = ["X-API-KEY": apiKey]
         CodableHelper.dateFormatter = NICTrialsAPIDateFormatter()
         
         let keywords = keywords.filter { !$0.isEmpty }
         
         return try await withCheckedThrowingContinuation { continuation in
             TrialsAPI.searchTrialsByGet(
-                size: 20,
+                size: 50,
                 keyword: keywords.isEmpty ? nil : keywords,
                 trialStatus: "OPEN",
                 phase: "III",
