@@ -14,7 +14,7 @@ import SwiftUI
 
 
 struct ViewClinicalTrialsView: View {
-    @Environment(NCITrialsModel.self) private var nciTrialsModel
+    @Environment(NCITrialsModule.self) private var nciTrialsModel
     
     @State private var viewState: ViewState = .idle
     

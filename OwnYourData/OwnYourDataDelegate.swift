@@ -62,7 +62,7 @@ class OwnYourDataDelegate: SpeziAppDelegate {
             
             // See https://swiftpackageindex.com/StanfordSpezi/SpeziLLM/documentation/spezillm
             LLMRunner {
-                LLMOpenAIPlatform(configuration: .init(concurrentStreams: 20))
+                LLMOpenAIPlatform(configuration: .init(concurrentStreams: 20, apiToken: self.openAIToken))
             }
             FHIRInterpretationModule()
             
@@ -71,6 +71,8 @@ class OwnYourDataDelegate: SpeziAppDelegate {
             SpeziLocation()
             
             MatchingModule()
+            
+            NCITrialsModule(apiKey: self.nciAPIToken)
         }
     }
     
@@ -111,5 +113,27 @@ class OwnYourDataDelegate: SpeziAppDelegate {
                 deliverySetting: .anchorQuery(saveAnchor: false)
             )
         }
+    }
+    
+    nonisolated private var plist: [String: Any] {
+        guard let url = Bundle.main.url(forResource: "GoogleService-Info", withExtension: "plist"),
+              let data = try? Data(contentsOf: url),
+              let plist = try? PropertyListSerialization.propertyList(from: data, format: nil) as? [String: Any] else {
+            return [:]
+        }
+        
+        return plist
+    }
+    
+    nonisolated private var openAIToken: String? {
+        plist["OPENAI_KEY"] as? String
+    }
+    
+    nonisolated private var nciAPIToken: String {
+        guard let nciAPIToken = plist["NCI_API_KEY"] as? String else {
+            fatalError("Please provide a valid NCI API key in the GoogleService-Info.plist")
+        }
+        
+        return nciAPIToken
     }
 }

@@ -18,14 +18,14 @@ struct GetTrialsLLMFunction: LLMFunction {
     static let name = "get_trials"
     static let description = String(localized: "LLM_GET_TRIALS_FUNCTION_DESCRIPTION")
     
-    private let nciTrialsModel: NCITrialsModel
+    private let nciTrialsModel: NCITrialsModule
     
     
     @Parameter var trailIdentifiers: [String]
     
     
     init(
-        nciTrialsModel: NCITrialsModel
+        nciTrialsModel: NCITrialsModule
     ) {
         self.nciTrialsModel = nciTrialsModel
                 

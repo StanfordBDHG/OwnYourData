@@ -1558,8 +1558,13 @@
                   "description": "Text to be searched in multiple fields. It can be combined with <code>keyword_field</code>.<br><br><code>keyword</code> filter results by examining a variety of text-based fields <i>(By default: &#42;_id, other_ids.value, diseases.name._fulltext, diseases.synonyms._fulltext, brief_title, brief_summary, official_title, detail_description, official_title, brief_title, brief_summary, diseases.name._fulltext, detail_description, sites.org_name._fulltext, collaborators.name._fulltext, principal_investigator._fulltext, sites.contact_name._fulltext, sites.org_city._fulltext, sites.org_state_or_province._fulltext, arms.interventions.name, arms.interventions.synonyms, biomarkers.name, biomarkers.synonyms, prior_therapy.name, prior_therapy.synonyms)</i>.<br><br>Mutiple <code>keyword</code>s (with a maximum of 10 allowed) will give you an OR condition of between values in all configured fields.",
                   "required": false,
                   "schema": {
-                     "type": "string"
+                     "type": "array",
+                     "items": {
+                       "type": "string"
+                     }
                   },
+                  "style": "form",
+                  "explode": true,
                   "examples": {
                      "": {
                         "value": ""
