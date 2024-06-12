@@ -25,7 +25,7 @@ struct Welcome: View {
                             .accessibilityHidden(true)
                     },
                     title: "Access to Your Health Records",
-                    description: "We help you securely access your health records"
+                    description: "Securely access your health records."
                 ),
                 OnboardingInformationView.Content(
                     icon: {
@@ -33,7 +33,7 @@ struct Welcome: View {
                             .accessibilityHidden(true)
                     },
                     title: "Trial Matching",
-                    description: "We automatically match you to active trials."
+                    description: "Automatically match to active trials."
                 ),
                 OnboardingInformationView.Content(
                     icon: {

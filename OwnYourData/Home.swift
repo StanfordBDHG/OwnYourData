@@ -48,10 +48,6 @@ struct HomeView: View {
                         destination: MultipleResourcesChatView(navigationTitle: "Ask Questions", textToSpeech: .constant(false))
                     )
                     OwnYourDataButton(
-                        title: "View Your Records",
-                        destination: ViewRecordsView()
-                    )
-                    OwnYourDataButton(
                         title: "Update Information",
                         destination: DocumentGallery()
                     )

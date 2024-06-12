@@ -26,6 +26,9 @@
     "Ask Questions" : {
 
     },
+    "Automatically match to active trials." : {
+
+    },
     "Close" : {
 
     },
@@ -237,6 +240,9 @@
     "Resource Settings" : {
 
     },
+    "Securely access your health records." : {
+
+    },
     "Share FHIR Resources" : {
 
     },
@@ -287,12 +293,6 @@
 
     },
     "Use the OwnYourData algorithm to match you to possible NCI trials." : {
-
-    },
-    "We automatically match you to active trials." : {
-
-    },
-    "We help you securely access your health records" : {
 
     },
     "Welcome,\n%@" : {
