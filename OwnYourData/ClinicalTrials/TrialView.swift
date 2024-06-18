@@ -37,10 +37,12 @@ struct TrialView: View {
                 .onTapGesture {
                     withAnimation {
                         isExpanded.toggle()
+                        if llmSummary == nil {
+                            Task {
+                                await generateLLMSummary()
+                            }
+                        }
                     }
-                }
-                .task {
-                    await generateLLMSummary()
                 }
         }
     }
