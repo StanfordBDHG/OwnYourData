@@ -23,8 +23,8 @@ struct InstructionsView: View {
             Text("FHIR_RESOURCES_VIEW_NO_RESOURCES")
                 .frame(maxWidth: .infinity)
                 .multilineTextAlignment(.leading)
-            Text("Learn More ...")
-                .foregroundColor(.accentColor)
+            //Text("Learn More ...")
+            //    .foregroundColor(.accentColor)
         }
             .padding()
             .background(
@@ -33,12 +33,12 @@ struct InstructionsView: View {
                     .shadow(radius: 5)
             )
             .padding()
-            .contentShape(Rectangle())
-            .onTapGesture {
-                displayInstructions.toggle()
-            }
-            .sheet(isPresented: $displayInstructions) {
-                AddRecordInstructView()
-            }
+            //.contentShape(Rectangle())
+            //.onTapGesture {
+            //    displayInstructions.toggle()
+            //}
+            //.sheet(isPresented: $displayInstructions) {
+            //    AddRecordInstructView()
+            //}
     }
 }

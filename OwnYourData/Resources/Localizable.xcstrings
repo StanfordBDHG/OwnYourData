@@ -70,7 +70,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Find National Cancer Institute supported trials.\n\nWe noticed that you haven't saved any health records on your phone yet.\n\nPlease follow the instructions to retrieve your health records: [Apple Support - View health records on your iPhone or iPod touch](https://support.apple.com/en-us/HT208680).\n\nYou can find a list of supported institutions at [Apple Support - Institutions that support health records on iPhone and iPod touch](https://platform.openai.com/account/api-keys).\n\nPlease ensure that OwnYourData has access to your health records in the Apple Health App. You can find these settings in the privacy section of your profile in Apple Health."
+            "value" : "We noticed that you haven't saved any health records on your phone yet.\n\nPlease follow these [instructions](https://support.apple.com/en-us/HT208680).\n to retrieve your health records.\n\nYou can find a list of supported institutions at [Apple Support - Institutions that support health records on iPhone and iPod touch](https://platform.openai.com/account/api-keys).\n\nPlease ensure that OwnYourData has access to your health records in the Apple Health App. You can find these settings in the privacy section of your profile in Apple Health."
           }
         }
       }
@@ -113,9 +113,6 @@
       "comment" : "Title of the keyword identification prompt."
     },
     "Learn More" : {
-
-    },
-    "Learn More ..." : {
 
     },
     "License Information" : {
@@ -295,7 +292,7 @@
     "Use the OwnYourData algorithm to match you to possible NCI trials." : {
 
     },
-    "Welcome,\n%@" : {
+    "Welcome,\n%@!" : {
 
     },
     "Welcome!" : {
