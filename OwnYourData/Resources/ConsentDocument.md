@@ -64,4 +64,4 @@ You can withdraw your consent at any time by adjusting your settings in the appl
 
 6. **Contact Us**
 
-   If you have any questions or concerns about our privacy practices or your data, please contact our support team at alexa.aalmai@gmail.com
+   If you have any questions or concerns about our privacy practices or your data, please contact our support team at alexa.aalami@gmail.com

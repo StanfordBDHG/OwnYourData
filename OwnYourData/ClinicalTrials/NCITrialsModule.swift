@@ -66,15 +66,16 @@ class NCITrialsModule: Module, EnvironmentAccessible {
         }
     }
     
-    private func loadTrials(keywords: [String], coordinate: CLLocationCoordinate2D?) async throws -> TrialResponse {
+    private func loadTrials(keywords: [String], coordinate: CLLocationCoordinate2D?, from: Int = 0) async throws -> TrialResponse {
         OpenAPIClientAPI.customHeaders = ["X-API-KEY": apiKey]
         CodableHelper.dateFormatter = NICTrialsAPIDateFormatter()
         
         let keywords = keywords.filter { !$0.isEmpty }
         
-        return try await withCheckedThrowingContinuation { continuation in
+        var data: TrialResponse = try await withCheckedThrowingContinuation { continuation in
             TrialsAPI.searchTrialsByGet(
                 size: 50,
+                from: from,
                 keyword: keywords.isEmpty ? nil : keywords,
                 trialStatus: "OPEN",
                 phase: "III",
@@ -95,5 +96,13 @@ class NCITrialsModule: Module, EnvironmentAccessible {
                 continuation.resume(returning: data)
             }
         }
+        
+        if from + 50 < data.total ?? 0 {
+            data.data?.append(
+                contentsOf: try await loadTrials(keywords: keywords, coordinate: coordinate, from: from + 50).data ?? []
+            )
+        }
+        
+        return data
     }
 }

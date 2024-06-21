@@ -48,10 +48,6 @@ struct HomeView: View {
                         destination: MultipleResourcesChatView(navigationTitle: "Ask Questions", textToSpeech: .constant(false))
                     )
                     OwnYourDataButton(
-                        title: "View Your Records",
-                        destination: ViewRecordsView()
-                    )
-                    OwnYourDataButton(
                         title: "Update Information",
                         destination: DocumentGallery()
                     )
@@ -81,9 +77,9 @@ struct HomeView: View {
     
     @MainActor @ViewBuilder private var welcome: some View {
         if let givenName = account?.details?.name?.givenName {
-            Text("Welcome,\n\(givenName)")
+            Text("Welcome,\n\(givenName).")
         } else {
-            Text("Welcome!")
+            Text("Welcome.")
         }
     }
 }
