@@ -22,7 +22,7 @@ import SwiftUI
 class MatchingModule: Module, EnvironmentAccessible, DefaultInitializable {
     public enum Defaults {
         public static var llmSchema: LLMOpenAISchema {
-            LLMOpenAISchema(parameters: LLMOpenAIParameters(modelType: .gpt4_turbo_preview))
+            LLMOpenAISchema(parameters: LLMOpenAIParameters(modelType: .gpt4_turbo))
         }
     }
     
@@ -90,7 +90,7 @@ class MatchingModule: Module, EnvironmentAccessible, DefaultInitializable {
     @MainActor
     private func keywordIdentification() async throws -> [String] {
         let llm = llmRunner(
-            with: LLMOpenAISchema(parameters: .init(modelType: .gpt4_turbo_preview)) {
+            with: LLMOpenAISchema(parameters: .init(modelType: .gpt4_turbo)) {
                 GetFHIRResourceLLMFunction(
                     fhirStore: self.fhirStore,
                     resourceSummary: self.resourceSummary,
@@ -125,7 +125,7 @@ class MatchingModule: Module, EnvironmentAccessible, DefaultInitializable {
         }
         
         let llm = llmRunner(
-            with: LLMOpenAISchema(parameters: .init(modelType: .gpt4_turbo_preview)) {
+            with: LLMOpenAISchema(parameters: .init(modelType: .gpt4_turbo)) {
                 GetFHIRResourceLLMFunction(
                     fhirStore: self.fhirStore,
                     resourceSummary: self.resourceSummary,
