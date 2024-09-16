@@ -153,9 +153,18 @@ extension KeyedEncodingContainerProtocol {
     }
 
     public mutating func encode(_ value: Decimal, forKey key: Self.Key) throws {
-        var mutableValue = value
-        let stringValue = NSDecimalString(&mutableValue, Locale(identifier: "en_US"))
-        try encode(stringValue, forKey: key)
+        if #available(iOS 15.0, *) {
+            try encode(value.formatted(.number.locale(Locale(identifier: "en_US"))), forKey: key)
+        } else {
+            preconditionFailure(
+                """
+                Temporary workaround for (133371820) (FB14696453).
+                https://developer.apple.com/documentation/xcode-release-notes/xcode-16-release-notes
+                
+                As QDG doesn't support iOS 15 or earlier this precondition should never be called.
+                """
+            )
+        }
     }
 
     public mutating func encodeIfPresent(_ value: Decimal?, forKey key: Self.Key) throws {
