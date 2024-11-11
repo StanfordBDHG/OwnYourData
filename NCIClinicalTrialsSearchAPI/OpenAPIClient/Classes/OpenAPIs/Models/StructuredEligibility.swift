@@ -21,9 +21,9 @@ public struct StructuredEligibility: Codable, JSONEncodable, Hashable {
     public var acceptsHealthyVolunteers: Bool?
     public var minAge: String?
     public var minAgeNumber: Int?
-    public var minAgeInYears: Int?
+    public var minAgeInYears: Double?
 
-    public init(maxAge: String? = nil, maxAgeNumber: Int? = nil, minAgeUnit: String? = nil, maxAgeUnit: String? = nil, maxAgeInYears: Int? = nil, gender: String? = nil, acceptsHealthyVolunteers: Bool? = nil, minAge: String? = nil, minAgeNumber: Int? = nil, minAgeInYears: Int? = nil) {
+    public init(maxAge: String? = nil, maxAgeNumber: Int? = nil, minAgeUnit: String? = nil, maxAgeUnit: String? = nil, maxAgeInYears: Int? = nil, gender: String? = nil, acceptsHealthyVolunteers: Bool? = nil, minAge: String? = nil, minAgeNumber: Int? = nil, minAgeInYears: Double? = nil) {
         self.maxAge = maxAge
         self.maxAgeNumber = maxAgeNumber
         self.minAgeUnit = minAgeUnit

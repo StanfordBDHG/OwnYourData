@@ -12,7 +12,7 @@
 import Foundation
 
 
-class NICTrialsAPIDateFormatter: DateFormatter {
+class NICTrialsAPIDateFormatter: DateFormatter, @unchecked Sendable {
     static let withoutSeconds: DateFormatter = {
         let formatter = DateFormatter()
         formatter.calendar = Calendar(identifier: .iso8601)

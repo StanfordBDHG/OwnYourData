@@ -67,7 +67,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Find National Cancer Institute supported trials.\n\nWe noticed that you haven't saved any health records on your phone yet.\n\nPlease follow the instructions to retrieve your health records: [Apple Support - View health records on your iPhone or iPod touch](https://support.apple.com/en-us/HT208680).\n\nYou can find a list of supported institutions at [Apple Support - Institutions that support health records on iPhone and iPod touch](https://platform.openai.com/account/api-keys).\n\nPlease ensure that OwnYourData has access to your health records in the Apple Health App. You can find these settings in the privacy section of your profile in Apple Health."
+            "value" : "Find National Cancer Institute supported trials.\n\nWe noticed that you haven’t saved any health records on your phone yet.\n\nPlease follow the instructions to retrieve your health records: [Apple Support - View health records on your iPhone or iPod touch](https://support.apple.com/en-us/HT208680).\n\nYou can find a list of supported institutions at [Apple Support - Institutions that support health records on iPhone and iPod touch](https://platform.openai.com/account/api-keys).\n\nPlease ensure that OwnYourData has access to your health records in the Apple Health App. You can find these settings in the privacy section of your profile in Apple Health."
           }
         }
       }
@@ -101,10 +101,24 @@
 
     },
     "Identifying best matching trials ..." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Identifying best matching trials …"
+          }
+        }
+      }
     },
     "Inspecting FHIR resources ..." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inspecting FHIR resources …"
+          }
+        }
+      }
     },
     "Keyword Identification Prompt" : {
       "comment" : "Title of the keyword identification prompt."
@@ -113,7 +127,14 @@
 
     },
     "Learn More ..." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Learn More …"
+          }
+        }
+      }
     },
     "License Information" : {
 
@@ -164,7 +185,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Your task is to identify a minimal set of distinct and unique keywords to conduct a trial search for a patient diagnosed with cancer.  \nUtilize the \"get_resources\" function to access the patient's FHIR resources. \nThe generic patient information will be passed into this context after this prompt.\nUtilize the function call as often as needed until you have a comprehensive picture of the patient's health status and you feel confident that you can respond with a few distinct keywords for the NIC trials API search. \nAvoid any generic terms like \"cancer\" and other elements that might appear in all trial descriptions. Only try to provide 5 or less keywords.\nTry to be as concrete and as narrow as possible based on the relevant FHIR resources.\n Do not engage in any conversation; only respond with a list of keywords separated by commas without any other context, introduction, or surrounding information. \nThe resulting strings will be parsed for further processing."
+            "value" : "Your task is to identify a minimal set of distinct and unique keywords to conduct a trial search for a patient diagnosed with cancer.  \nUtilize the “get_resources” function to access the patient’s FHIR resources. \nThe generic patient information will be passed into this context after this prompt.\nUtilize the function call as often as needed until you have a comprehensive picture of the patient’s health status and you feel confident that you can respond with a few distinct keywords for the NIC trials API search. \nAvoid any generic terms like “cancer” and other elements that might appear in all trial descriptions. Only try to provide 5 or less keywords.\nTry to be as concrete and as narrow as possible based on the relevant FHIR resources.\n Do not engage in any conversation; only respond with a list of keywords separated by commas without any other context, introduction, or surrounding information. \nThe resulting strings will be parsed for further processing."
           }
         }
       }
@@ -175,7 +196,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Your task is to identify a set of matching trials for the patient diagnosed with cancer using the NCI trials API.   You will be provided with a set of keywords identified in a previous run of an LLM based on the patient's FHIR health records. \nYou can request any health records using the get_records function calling mechanisms. Utilize the function call as often as needed until you have a comprehensive picture of the patient's health status.  Utilize the get_trials function to retrieve information about the possible trials retrieved from the NCI API using the keywords identified in a previous run. Ensure that the trial description and inclusion criteria match the patient's health records. \nRespond with all trial identifiers that seem a good match. The trial identifies must be separated by commas.\nIt is encouraged to return 3-5 possible matching trials to provide the patient some choice but ensure that the trials are matching the patient profile. Only use the trial identifiers that are parameter options for the get_trials function; do not make up or combine trial identifiers. \nDo not engage in any conversation; only respond with a list of identifiers separated by commas without any other context, introduction, or surrounding information. \nThe resulting identifiers will be parsed for further processing."
+            "value" : "Your task is to identify a set of matching trials for the patient diagnosed with cancer using the NCI trials API.   You will be provided with a set of keywords identified in a previous run of an LLM based on the patient’s FHIR health records. \nYou can request any health records using the get_records function calling mechanisms. Utilize the function call as often as needed until you have a comprehensive picture of the patient’s health status.  Utilize the get_trials function to retrieve information about the possible trials retrieved from the NCI API using the keywords identified in a previous run. Ensure that the trial description and inclusion criteria match the patient’s health records. \nRespond with all trial identifiers that seem a good match. The trial identifies must be separated by commas.\nIt is encouraged to return 3-5 possible matching trials to provide the patient some choice but ensure that the trials are matching the patient profile. Only use the trial identifiers that are parameter options for the get_trials function; do not make up or combine trial identifiers. \nDo not engage in any conversation; only respond with a list of identifiers separated by commas without any other context, introduction, or surrounding information. \nThe resulting identifiers will be parsed for further processing."
           }
         }
       }
@@ -184,7 +205,14 @@
 
     },
     "Loading NCI trials based on FHIR resources ..." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Loading NCI trials based on FHIR resources …"
+          }
+        }
+      }
     },
     "Location Access" : {
 

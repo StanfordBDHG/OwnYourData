@@ -25,6 +25,7 @@ import SwiftUI
 class OwnYourDataDelegate: SpeziAppDelegate {
     // See https://swiftpackageindex.com/stanfordspezi/spezi/documentation/spezi/speziappdelegate/configuration
     override var configuration: Configuration {
+        // swiftlint:disable:next closure_body_length
         Configuration(standard: OwnYourDataStandard()) {
             if !FeatureFlags.disableFirebase {
                 // See https://swiftpackageindex.com/stanfordspezi/speziaccount/documentation/speziaccount/initial-setup
@@ -64,8 +65,24 @@ class OwnYourDataDelegate: SpeziAppDelegate {
             LLMRunner {
                 LLMOpenAIPlatform(configuration: .init(concurrentStreams: 20, apiToken: self.openAIToken))
             }
-            FHIRInterpretationModule()
-            
+            FHIRInterpretationModule(
+                summaryLLMSchema: LLMOpenAISchema(
+                    parameters: .init(
+                        modelType: .gpt4_o,
+                        systemPrompts: []
+                    )
+                ),
+                interpretationLLMSchema: LLMOpenAISchema(
+                    parameters: .init(
+                        modelType: .gpt4_o,
+                        systemPrompts: []
+                    )
+                ),
+                multipleResourceInterpretationOpenAIModel: .gpt4_o,
+                resourceCountLimit: 250,
+                allowedResourcesFunctionCallIdentifiers: nil
+            )
+
             DocumentManager()
             
             SpeziLocation()

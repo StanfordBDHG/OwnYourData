@@ -23,7 +23,7 @@ import SpeziQuestionnaire
 import SwiftUI
 
 
-actor OwnYourDataStandard: Standard, EnvironmentAccessible, HealthKitConstraint, OnboardingConstraint, AccountStorageConstraint {
+actor OwnYourDataStandard: Standard, EnvironmentAccessible, HealthKitConstraint, ConsentConstraint, AccountStorageConstraint {
     enum OwnYourDataStandardError: Error {
         case userNotAuthenticatedYet
     }
@@ -32,8 +32,8 @@ actor OwnYourDataStandard: Standard, EnvironmentAccessible, HealthKitConstraint,
         Firestore.firestore().collection("users")
     }
 
-    @Dependency var fhirStore: FHIRStore
-    @Dependency var accountStorage: FirestoreAccountStorage?
+    @Dependency(FHIRStore.self) var fhirStore
+    @Dependency(FirestoreAccountStorage.self) var accountStorage: FirestoreAccountStorage?
 
     @AccountReference var account: Account
     
@@ -106,38 +106,33 @@ actor OwnYourDataStandard: Standard, EnvironmentAccessible, HealthKitConstraint,
     
     /// Stores the given consent form in the user's document directory with a unique timestamped filename.
     ///
-    /// - Parameter consent: The consent form's data to be stored as a `PDFDocument`.
-    func store(consent: PDFDocument) async {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd_HHmmss"
-        let dateString = formatter.string(from: Date())
-        
+    /// - Parameter consent: The consent form's data to be stored as a `SpeziOnboarding.ConsentDocumentExport`.
+    func store(consent: SpeziOnboarding.ConsentDocumentExport) async throws {
+        guard let consentData = await consent.pdf.dataRepresentation() else {
+            logger.error("Could not store consent form.")
+            return
+        }
+
         guard !FeatureFlags.disableFirebase else {
             guard let basePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
                 logger.error("Could not create path for writing consent form to user document directory.")
                 return
             }
-            
-            let filePath = basePath.appending(path: "consentForm_\(dateString).pdf")
-            consent.write(to: filePath)
-            
+
+            let filePath = await basePath.appending(path: "\(consent.documentIdentifier).pdf")
+            try consentData.write(to: filePath)
+
             return
         }
-        
+
         do {
-            guard let consentData = consent.dataRepresentation() else {
-                logger.error("Could not store consent form.")
-                return
-            }
-            
             let metadata = StorageMetadata()
             metadata.contentType = "application/pdf"
-            _ = try await userBucketReference.child("consent/\(dateString).pdf").putDataAsync(consentData, metadata: metadata)
+            _ = try await userBucketReference.child("consent/\(consent.documentIdentifier).pdf").putDataAsync(consentData, metadata: metadata)
         } catch {
             logger.error("Could not store consent form: \(error)")
         }
     }
-
 
     func create(_ identifier: AdditionalRecordId, _ details: SignupDetails) async throws {
         guard let accountStorage else {

@@ -14,13 +14,13 @@ import SpeziLocation
 
 @Observable
 class NCITrialsModule: Module, EnvironmentAccessible {
-    @ObservationIgnored @Dependency private var locationModule: SpeziLocation
-    
+    @ObservationIgnored @Dependency(SpeziLocation.self) private var locationModule
+
     private let apiKey: String
     private(set) var trials: [TrialDetail] = []
     var zipCode: String = "10025"
-    var searchDistance: String = "100"
-    
+    var searchDistance: String = "50"  // Miles
+
     
     init(apiKey: String) {
         self.apiKey = apiKey
