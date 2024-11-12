@@ -9,7 +9,7 @@
 import OpenAPIClient
 
 
-extension TrialDetail: Identifiable {
+extension TrialDetail: @retroactive Identifiable {
     public var id: String? {
         self.nciId
     }

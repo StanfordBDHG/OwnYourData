@@ -18,7 +18,7 @@ struct HomeView: View {
     }
 
     @Environment(Account.self) var account: Account?
-    @Environment(FHIRStore.self) var fjirStore
+    @Environment(FHIRStore.self) var fhirStore
 
     @State private var presentingAccount = false
     @State private var showMatchingView = false
@@ -34,7 +34,7 @@ struct HomeView: View {
                         .font(.system(size: 60).weight(.semibold))
                         .foregroundColor(.accentColor)
                         .multilineTextAlignment(.center)
-                    if fjirStore.llmRelevantResources.isEmpty {
+                    if fhirStore.llmRelevantResources.isEmpty {
                         InstructionsView()
                     }
                     OwnYourDataButton(title: "Match Me") {

@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **acceptsHealthyVolunteers** | **Bool** |  | [optional] 
 **minAge** | **String** |  | [optional] 
 **minAgeNumber** | **Int** |  | [optional] 
-**minAgeInYears** | **Int** |  | [optional] 
+**minAgeInYears** | **Double** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

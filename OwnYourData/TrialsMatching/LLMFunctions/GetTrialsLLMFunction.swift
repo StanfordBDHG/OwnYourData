@@ -46,7 +46,7 @@ struct GetTrialsLLMFunction: LLMFunction {
                         
                         Title: \(trial.briefTitle ?? "") (\(trial.officialTitle ?? ""))
                         Description: \(trial.detailDescription ?? "")
-                        Incluision Criteria: \(trial.eligibility?.unstructured?.compactMap { $0.description }.joined() ?? "")
+                        Inclusion Criteria: \(trial.eligibility?.unstructured?.compactMap { $0.description }.joined() ?? "")
                         """
                     }
             }

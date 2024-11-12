@@ -22,16 +22,16 @@ import SwiftUI
 class MatchingModule: Module, EnvironmentAccessible, DefaultInitializable {
     public enum Defaults {
         public static var llmSchema: LLMOpenAISchema {
-            LLMOpenAISchema(parameters: LLMOpenAIParameters(modelType: .gpt4_turbo))
+            LLMOpenAISchema(parameters: LLMOpenAIParameters(modelType: .gpt4_o))
         }
     }
     
     
-    @ObservationIgnored @Dependency private var localStorage: LocalStorage
-    @ObservationIgnored @Dependency private var llmRunner: LLMRunner
-    @ObservationIgnored @Dependency private var fhirStore: FHIRStore
-    @ObservationIgnored @Dependency private var locationModule: SpeziLocation
-    @ObservationIgnored @Dependency private var nciTrialsModel: NCITrialsModule?
+    @ObservationIgnored @Dependency(LocalStorage.self) private var localStorage
+    @ObservationIgnored @Dependency(LLMRunner.self) private var llmRunner
+    @ObservationIgnored @Dependency(FHIRStore.self) private var fhirStore
+    @ObservationIgnored @Dependency(SpeziLocation.self) private var locationModule
+    @ObservationIgnored @Dependency(NCITrialsModule.self) private var nciTrialsModel: NCITrialsModule?
 
     @ObservationIgnored @Model private var resourceSummary: FHIRResourceSummary
     
@@ -67,6 +67,7 @@ class MatchingModule: Module, EnvironmentAccessible, DefaultInitializable {
                 self.state = .nciLoading
             }
             try await nciTrialsModel.fetchTrials(keywords: keywords)
+            // If no trials are returned based on the keywords, search for all trials in a 100 mile radius
             if nciTrialsModel.trials.isEmpty {
                 try await nciTrialsModel.fetchTrials()
             }
@@ -90,7 +91,7 @@ class MatchingModule: Module, EnvironmentAccessible, DefaultInitializable {
     @MainActor
     private func keywordIdentification() async throws -> [String] {
         let llm = llmRunner(
-            with: LLMOpenAISchema(parameters: .init(modelType: .gpt4_turbo)) {
+            with: LLMOpenAISchema(parameters: .init(modelType: .gpt4_o)) {
                 GetFHIRResourceLLMFunction(
                     fhirStore: self.fhirStore,
                     resourceSummary: self.resourceSummary,
@@ -121,11 +122,11 @@ class MatchingModule: Module, EnvironmentAccessible, DefaultInitializable {
     @MainActor
     private func trialsIdentificaiton() async throws -> [String] {
         guard let nciTrialsModel else {
-            fatalError("Error that NCI Trials Module was not initialized in the Spezi Configuratin.")
+            fatalError("Error that NCI Trials Module was not initialized in the Spezi Configuration.")
         }
         
         let llm = llmRunner(
-            with: LLMOpenAISchema(parameters: .init(modelType: .gpt4_turbo)) {
+            with: LLMOpenAISchema(parameters: .init(modelType: .gpt4_o)) {
                 GetFHIRResourceLLMFunction(
                     fhirStore: self.fhirStore,
                     resourceSummary: self.resourceSummary,
