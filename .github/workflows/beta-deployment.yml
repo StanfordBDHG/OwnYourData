@@ -31,6 +31,7 @@ jobs:
       googleserviceinfoplistpath: 'OwnYourData/Supporting Files/GoogleService-Info.plist'
       setupsigning: true
       fastlanelane: beta
+      runsonlabels: '["macOS", "self-hosted"]'
     secrets: inherit
   deployfirebase:
     name: Deploy Firebase Project
